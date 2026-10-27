@@ -377,3 +377,13 @@
 .reference-line{line-height:1.65;margin:0 0 10px;white-space:pre-wrap;overflow-wrap:anywhere}
 .reference-url{word-break:break-all;text-decoration:underline;text-underline-offset:3px}
 .reference-url:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+
+/* Jury usability: keep critical dosing prominent, but never change medical source text. */
+.reference-section.reference-dosing {border:2px solid var(--color-border, #b8bec8);padding:20px;border-radius:14px;margin:16px 0;background:var(--surface-secondary,rgba(125,125,125,.06))}
+.reference-dosing h3{display:flex;gap:10px;align-items:center;font-size:1.2rem}
+.reference-dosing .reference-line{line-height:1.7;max-width:76ch;padding-left:14px;border-left:3px solid currentColor}
+.invite-share{display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:20px;align-items:start;overflow-wrap:anywhere}
+.invite-qr{width:180px;height:180px;max-width:100%;background:white;padding:12px;border:1px solid #ddd;border-radius:12px}
+#catalog-detail{scroll-margin-top:95px;margin-block:20px}
+@media(max-width:650px){.invite-share{grid-template-columns:1fr}.reference-section.reference-dosing{padding:12px}}
