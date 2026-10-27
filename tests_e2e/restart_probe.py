@@ -12,6 +12,11 @@ def private_json(path,data):
     fd=os.open(path,os.O_CREAT|os.O_WRONLY|os.O_TRUNC,0o600)
     with os.fdopen(fd,'w') as f:json.dump(data,f)
 
+def key_hashes():
+    if os.environ.get('CC_QA_CONTAINER')=='1':
+        return json.loads((WS/'workspace-key-hashes.json').read_text())
+    return {name:hashlib.sha256((WS/name).read_bytes()).hexdigest() for name in ('session.secret','identity-fernet.key')}
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('mode',choices=['capture','verify']);args=p.parse_args()
     with sync_playwright() as pw:
@@ -27,7 +32,7 @@ def main():
                 draft=mutate(page,'PUT',base+'/draft',{'definition_version':version,'revision':detail['draft']['revision'],'answers':answers,'last_page':0});assert draft.ok
                 submitted=mutate(page,'POST',base+'/submit',{'definition_version':version,'revision':draft.json()['draft']['revision'],'idempotency_key':'restart-proof'});assert submitted.ok and submitted.json()['score']==4
                 private_json(WS/'restart-session.json',context.storage_state())
-                private_json(WS/'restart-probe.json',{'assignment':aid,'score':4,'key_hashes':{name:hashlib.sha256((WS/name).read_bytes()).hexdigest() for name in ('session.secret','identity-fernet.key')}})
+                private_json(WS/'restart-probe.json',{'assignment':aid,'score':4,'key_hashes':key_hashes()})
         else:
             data=json.loads((WS/'restart-probe.json').read_text())
             context=browser.new_context(storage_state=str(WS/'restart-session.json'));page=context.new_page()
@@ -38,6 +43,6 @@ def main():
                 show(page,'/patient/profile');page.get_by_role('link',name='Открыть историю результатов').click()
                 target=page.locator('a[href="/#/patient/questionnaires/'+data['assignment']+'/result"]');expect(target).to_be_visible();target.click()
                 expect(page.locator('#main')).to_contain_text('4 из 6 баллов')
-                for name,digest in data['key_hashes'].items():assert hashlib.sha256((WS/name).read_bytes()).hexdigest()==digest
+                assert key_hashes()==data['key_hashes'],'Private key hashes changed across restart'
         context.close();browser.close()
 if __name__=='__main__':main()

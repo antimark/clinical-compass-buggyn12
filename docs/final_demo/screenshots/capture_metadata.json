@@ -1,0 +1,29 @@
+[
+  {
+    "file": "01_homepage_light.png",
+    "route": "/",
+    "theme": "light"
+  },
+  {
+    "file": "02_doctor_ci_light.png",
+    "route": "/doctor/patients/c260f6987c60470e9a444e989d4c6e43/clinical-intelligence?case=effcae294dea4e31",
+    "theme": "light"
+  },
+  {
+    "file": "03_signals_dark.png",
+    "route": "/doctor/alerts",
+    "theme": "dark",
+    "limitation": "Current linked synthetic cohort has no active signals; critical/noncritical events not invented."
+  },
+  {
+    "file": "04_patient_light.png",
+    "route": "/patient/questionnaires/dq_b429f04f84c14753808027ed44850a0d/result",
+    "theme": "light"
+  },
+  {
+    "file": "05_research_light.png",
+    "route": "/research/demo-v3",
+    "theme": "light",
+    "limitation": "Actual aggregate and formula; this implemented route has no plotted chart."
+  }
+]

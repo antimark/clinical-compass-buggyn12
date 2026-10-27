@@ -4,6 +4,7 @@ Run against a private evaluation workspace: PYTHONPATH=backend:. python -m pytes
 import json
 import os
 import secrets
+import re
 from pathlib import Path
 from urllib.parse import quote, urlsplit
 import pytest
@@ -194,3 +195,46 @@ def test_live_server_validation_csrf_revision_and_idempotency(page,code,count):
     try:
         r=outsider.request.get(BASE+base+'/result');assert r.status==401
     finally:outsider.close()
+
+
+def test_catalog_search_crosslink_and_back_recovery(page):
+    show(page,'/clinical-library?type=medicine')
+    page.locator('#catalog-q').fill('сертралин')
+    page.locator('form[data-form=catalog-search] button').click()
+    expect(page.locator('#main')).to_contain_text(re.compile('сертралин',re.I))
+    show(page,'/clinical-library?type=medicine&item=medicine%3Asertraline')
+    detail=page.locator('#catalog-detail');expect(detail.locator('h2')).to_be_visible()
+    links=detail.locator('a[href*="item="]')
+    if links.count():
+        original=page.url;links.first.click();expect(page).not_to_have_url(original)
+        expect(page.locator('#catalog-detail h2')).to_be_visible();page.go_back();expect(page).to_have_url(original)
+        expect(page.locator('#catalog-detail h2')).to_be_visible()
+    page.locator('#catalog-q').fill('no-match-synthetic-jury')
+    page.locator('form[data-form=catalog-search] button').click()
+    expect(page.locator('#main')).to_contain_text('Найдено: 0')
+    page.locator('#catalog-q').fill('');page.locator('form[data-form=catalog-search] button').click()
+    expect(page.locator('#main')).to_contain_text('Найдено: 77')
+
+
+def test_guest_wrong_role_retains_unsaved_state(page):
+    workspace=Path(os.environ.get('CC_QA_WORKSPACE','/private/tmp/clinical-compass-jury-20261027'))
+    actor=json.loads((workspace/'jury-actors.json').read_text())['doctor']
+    fill_guest(page,'phq_2',2)
+    transfers=[];page.on('request',lambda r:transfers.append(r.url) if r.url.endswith('/questionnaires/self-assign') else None)
+    login(page,actor['email'],actor['password']);expect(page).to_have_url(BASE+'/#/doctor')
+    assert not transfers
+    show(page,'/assessments/phq_2/result');expect(page.locator('#main')).to_contain_text('требуется аккаунт пациента')
+    assert page.evaluate('sessionStorage.getItem("cc_pilot_guest_result_v1")') is not None
+    assert mutate(page,'POST','/api/v1/patient-experience/questionnaires/self-assign',{'definition_id':'eval_phq_2_v1'}).status==403
+
+
+def test_other_registered_patient_cannot_read_saved_result(page,browser):
+    fill_guest(page,'phq_2',1);register(page,'owner-'+secrets.token_hex(5)+'@evaluation.test',secrets.token_urlsafe(24))
+    expect(page).to_have_url(__import__('re').compile(r'/patient/questionnaires/dq_[^/]+/result$'))
+    aid=page.url.split('/')[-2]
+    context=browser.new_context();other=context.new_page()
+    try:
+        register(other,'outsider-'+secrets.token_hex(5)+'@evaluation.test',secrets.token_urlsafe(24));expect(other).to_have_url(BASE+'/#/patient')
+        denied=other.request.get(BASE+'/api/v1/patient-experience/questionnaires/assignments/'+aid+'/result')
+        assert denied.status==404 and 'answers' not in denied.json()
+    finally:context.close()

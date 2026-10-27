@@ -20,3 +20,5 @@ reports/*/raw/
 reports/*/screenshots/
 test_reports/
 .DS_Store
+.codex/
+.agents/

@@ -89,10 +89,10 @@ class LocalOllamaProvider:
         wire_schema = copy.deepcopy(output_schema)
         if candidates:
             wire_schema['properties']['facts']['items']['properties']['evidence']['properties']['quote']['enum'] = candidates[:64]
-        payload = {"model": self.model_id, "stream": False, "format": wire_schema,
+        payload = {"model": self.model_id, "stream": False, "think": False, "format": wire_schema,
                    "messages": [{"role": "system", "content": load_versioned_system_prompt() + "\nДля локального wire-контракта evidence содержит только quote. Выбирай дословную цитату, которая встречается ровно один раз в исходном text. Индексы вычисляет сервер; start/end не выводи."},
                                 {"role": "user", "content": user_text}],
-                   "options": {"temperature": 0, "num_predict": 1024}}
+                   "options": {"temperature": 0, "num_ctx": 4096, "num_predict": 1024}}
         # Reject proxies to avoid sending clinical text outside loopback.
         opener = build_opener(ProxyHandler({}), _DenyRedirect())
         request = Request(self.url, data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),

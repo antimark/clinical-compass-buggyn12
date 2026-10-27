@@ -1,0 +1,103 @@
+route,role,status,controls,page_errors,unexpected_http,reason,evidence
+/,guest,READ-ONLY PASS,10,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/login,guest,READ-ONLY PASS,8,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/register,guest,READ-ONLY PASS,8,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/register/patient,guest,READ-ONLY PASS,7,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/register/specialist,guest,READ-ONLY PASS,8,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/onboarding,guest,READ-ONLY PASS,8,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/invite/:token,guest,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/notifications,guest,READ-ONLY PASS,7,0,401,Expected authentication guard; no private data shown,reports/phase0/raw/controls.jsonl
+/settings,guest,READ-ONLY PASS,7,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctors,guest,READ-ONLY PASS,7,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctors/:slug,guest,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/doctors/:slug/reviews,guest,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/doctors/:slug/share,guest,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/clinical-library,guest,READ-ONLY PASS,59,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/invite/accept,guest,READ-ONLY PASS,9,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/demo/journeys,guest,READ-ONLY PASS,33,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/demo/profile,guest,READ-ONLY PASS,33,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/api-lab.html,guest,READ-ONLY PASS,6,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/assessments,guest,READ-ONLY PASS,9,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/assessments/:code,guest,READ-ONLY PASS,7,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/assessments/:code/result,guest,READ-ONLY PASS,6,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient,patient,READ-ONLY PASS,31,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/tasks,patient,READ-ONLY PASS,22,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/questionnaires/:requestId,patient,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/questionnaires/:requestId/result,patient,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/patient/trends,patient,READ-ONLY PASS,20,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/treatment,patient,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/treatment/adherence,patient,READ-ONLY PASS,17,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/adverse-events/new,patient,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/appointments,patient,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/appointments/new,patient,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/messages,patient,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/messages/:threadId,patient,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/patient/assistant,patient,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/assistant/share/:draftId,patient,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/patient/specialists,patient,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/specialists/find,patient,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/access,patient,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/requests,patient,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/requests/new,patient,READ-ONLY PASS,20,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/requests/:requestId,patient,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/appointments/:appointmentId/visit,patient,READ-ONLY PASS,17,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/reviews/new/:appointmentId,patient,READ-ONLY PASS,17,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/requests/:requestId/chat,patient,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/access/care-team,patient,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/profile,patient,READ-ONLY PASS,23,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/patient/assistant/thread/:threadId,patient,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/patient/admin-identity,patient,READ-ONLY PASS,20,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor,doctor,READ-ONLY PASS,34,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients,doctor,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId,doctor,READ-ONLY PASS,28,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/trends,doctor,READ-ONLY PASS,28,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/history,doctor,READ-ONLY PASS,28,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/treatment,doctor,READ-ONLY PASS,28,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/psychotherapy,doctor,PARTIAL,18,0,,Explicit unavailable/preview wording; action not completed,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/visits,doctor,READ-ONLY PASS,28,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/adverse-events,doctor,READ-ONLY PASS,28,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/decisions,doctor,READ-ONLY PASS,28,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/access,doctor,READ-ONLY PASS,28,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/alerts,doctor,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/alerts/:alertId,doctor,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/doctor/messages,doctor,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/messages/:threadId,doctor,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/doctor/appointments,doctor,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/calendar,doctor,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/questionnaires,doctor,READ-ONLY PASS,21,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/questionnaires/assign,doctor,READ-ONLY PASS,21,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/invitations,doctor,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/invitations/new,doctor,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/clinical-library,doctor,READ-ONLY PASS,70,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/clinical-library/:articleId,doctor,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/doctor/import,doctor,PARTIAL,18,0,,Explicit unavailable/preview wording; action not completed,reports/phase0/raw/controls.jsonl
+/doctor/requests,doctor,READ-ONLY PASS,19,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/requests/:requestId,doctor,READ-ONLY PASS,22,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/profile/edit,doctor,READ-ONLY PASS,22,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/reviews,doctor,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/appointments/:appointmentId/visit,doctor,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/requests/:requestId/chat,doctor,READ-ONLY PASS,20,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/colleagues,doctor,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/colleagues/:doctorId/messages,doctor,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/doctor/colleagues/:doctorId/shared-patients,doctor,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/clinical-copilot,doctor,READ-ONLY PASS,22,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/nlp-lab,doctor,READ-ONLY PASS,20,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/clinical-intelligence,doctor,READ-ONLY PASS,20,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/doctor/patients/:patientId/clinical-intelligence/chat/:threadId,doctor,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/research,researcher,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/research/datasets,researcher,READ-ONLY PASS,13,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/research/cohorts,researcher,READ-ONLY PASS,13,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/research/compare,researcher,PARTIAL,15,0,404,API access/data error; inspect route-specific contract,reports/phase0/raw/controls.jsonl
+/research/signals,researcher,PARTIAL,15,0,"404,404",API access/data error; inspect route-specific contract,reports/phase0/raw/controls.jsonl
+/research/cases/:caseId,researcher,NOT RUN,0,0,,No authorized existing object for dynamic parameter; not a render proof,reports/phase0/raw/controls.jsonl
+/research/exports,researcher,READ-ONLY PASS,13,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/research/demo-v3,researcher,READ-ONLY PASS,17,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/clinic,clinic_admin,READ-ONLY PASS,18,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/clinic/appointments,clinic_admin,READ-ONLY PASS,13,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/clinic/patients,clinic_admin,READ-ONLY PASS,14,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/clinic/patients/:patientRef,clinic_admin,READ-ONLY PASS,13,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/clinic/staff,clinic_admin,READ-ONLY PASS,13,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/clinic/invitations,clinic_admin,PARTIAL,15,0,403,API access/data error; inspect route-specific contract,reports/phase0/raw/controls.jsonl
+/clinic/access-templates,clinic_admin,READ-ONLY PASS,13,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/clinic/licenses,clinic_admin,READ-ONLY PASS,13,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl
+/clinic/audit,clinic_admin,READ-ONLY PASS,13,0,,Rendered and controls inventoried; writes not inferred,reports/phase0/raw/controls.jsonl

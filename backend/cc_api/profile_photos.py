@@ -1,4 +1,4 @@
-"""Bounded macOS ImageIO decode via installed sips; retain only critical PNG chunks.
+"""Bounded native ImageIO or isolated Linux decode; retain critical PNG chunks.
 
 Original uploads never persist. No client filename/path reaches a command.
 """
@@ -6,6 +6,7 @@ import binascii
 from pathlib import Path
 import struct
 import subprocess
+import sys
 import tempfile
 
 MAX_BYTES = 2 * 1024 * 1024
@@ -71,19 +72,24 @@ def normalize(data, mime):
     if mime != actual: raise ValueError('Тип содержимого не соответствует MIME файла')
     if not 1 <= width <= MAX_DIMENSION or not 1 <= height <= MAX_DIMENSION or width*height > MAX_PIXELS:
         raise ValueError('Фото слишком велико: до 4096 по стороне и 12 Мп')
-    if not Path('/usr/bin/sips').is_file(): raise RuntimeError('ImageIO decoder unavailable')
     with tempfile.TemporaryDirectory(prefix='cc-photo-') as directory:
         source = Path(directory)/'input'; destination=Path(directory)/'output.png'
         source.write_bytes(data)
         try:
-            # Independently inspect ImageIO's actual bounds before raster decoding.
-            info=subprocess.run(['/usr/bin/sips','-g','pixelWidth','-g','pixelHeight',str(source)],
-                check=True,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=4).stdout.decode()
-            import re
-            observed=re.findall(r'pixel(?:Width|Height): (\d+)',info)
-            if observed != [str(width),str(height)]:raise ValueError('Некорректные размеры изображения')
-            subprocess.run(['/usr/bin/sips','-s','format','png','-Z','512',str(source),'--out',str(destination)],
-                check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=12)
+            if Path('/usr/bin/sips').is_file():
+                # Preserve the proven native Mac decoder and its independent bounds check.
+                info=subprocess.run(['/usr/bin/sips','-g','pixelWidth','-g','pixelHeight',str(source)],
+                    check=True,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL,timeout=4).stdout.decode()
+                import re
+                observed=re.findall(r'pixel(?:Width|Height): (\d+)',info)
+                if observed != [str(width),str(height)]:raise ValueError('Некорректные размеры изображения')
+                subprocess.run(['/usr/bin/sips','-s','format','png','-Z','512',str(source),'--out',str(destination)],
+                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=12)
+            else:
+                # A separate process contains codecs and enforces CPU/address-space
+                # limits. No client filename, path, URL or command is accepted.
+                subprocess.run([sys.executable,'-m','cc_api.photo_decode',str(source),str(destination),str(width),str(height)],
+                    check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=12)
             decoded = destination.read_bytes()
         except (subprocess.SubprocessError, OSError):
             raise ValueError('Не удалось прочитать изображение') from None

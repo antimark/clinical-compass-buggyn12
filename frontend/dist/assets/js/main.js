@@ -41,7 +41,7 @@ function menuToggle(){if(menuOpen){menuClose();return;}
  const menu=$("#floating-root .account-menu");if(menu){menu.style.left=Math.max(10,left)+"px";menu.style.top=(bounds.bottom+12)+"px";}btn.setAttribute('aria-expanded','true');const first=$('[role="menuitem"]',float);if(first)first.focus();
 }
 function closeModal(){const root=byid('overlay-root');root.replaceChildren();document.body.style.overflow='';document.removeEventListener('keydown',modalHandler);modalHandler=null;if(modalReturn?.isConnected)modalReturn.focus();modalReturn=null;}
-function modal(content,heading='Настройки'){closeModal();menuClose();modalReturn=document.activeElement;
+function modal(content,heading='Настройки'){const opener=document.activeElement;closeModal();menuClose();modalReturn=opener?.isConnected?opener:byid('avatar-button');
  const root=byid('overlay-root');root.innerHTML=`<div class="overlay" data-overlay="true"><section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><button class="btn btn-secondary btn-icon close" type="button" data-command="close-modal" aria-label="Закрыть окно">${icon('x')}</button><h2 id="dialog-title">${esc(heading)}</h2><div class="dialog-body">${content}</div></section></div>`;document.body.style.overflow='hidden';$('.dialog button',root)?.focus();
  modalHandler=(e)=>{if(e.key==='Escape'){e.preventDefault();closeModal();return;}if(e.key==='Tab'){const els=[...root.querySelectorAll('button:not([disabled]),a[href],input:not([disabled]),select:not([disabled]),textarea:not([disabled])')];if(!els.length)return;const i=els.indexOf(document.activeElement);if(e.shiftKey&&i===0){e.preventDefault();els.at(-1).focus();}else if(!e.shiftKey&&i===els.length-1){e.preventDefault();els[0].focus();}}};document.addEventListener('keydown',modalHandler);
 }
@@ -121,9 +121,15 @@ async function runCommand(cmd,node){
   if(cmd==='read-notice'){node.disabled=true;try{await api.post('/api/v1/p0/notifications/'+segment(node.dataset.id)+'/read',{});toast('Уведомление отмечено');await render();}finally{node.disabled=false;}return;}
   if(cmd==='report-plan'){const id=node.dataset.id;modal(`<p class="muted">Выберите результат выполнения. Будет создана запись на сервере.</p><div class="row">${[['completed','Выполнено'],['missed','Пропущено'],['uncertain','Не уверен(а)'],['partial','Частично']].map(([v,l])=>`<button type="button" class="btn btn-secondary" data-command="report-outcome" data-id="${attr(id)}" data-outcome="${v}">${l}</button>`).join('')}</div>`,'Отметить выполнение');return;}
   if(cmd==='report-outcome'){node.disabled=true;try{await api.post('/api/v1/p0/plan-items/'+segment(node.dataset.id)+'/report',{outcome:node.dataset.outcome});closeModal();toast('Отметка сохранена');await render();}finally{node.disabled=false;}return;}
-  const clinical=await clinicalCommand(cmd,node);
-  if(clinical){if(clinical.message)toast(clinical.message);if(clinical.destination)navTo(clinical.destination);else if(clinical.reload)await render();return;}
-  throw new Error('Действие не подключено.');
+  if(node.dataset.commandPending)return;
+  const oldContent=node.innerHTML,wasDisabled=node.disabled;
+  node.dataset.commandPending='1';node.disabled=true;node.setAttribute('aria-busy','true');
+  node.textContent=cmd==='ci-analyze'?'Анализируем локальной моделью…':'Обрабатываем…';
+  try{
+   const clinical=await clinicalCommand(cmd,node);
+   if(clinical){if(clinical.message)toast(clinical.message);if(clinical.destination)navTo(clinical.destination);else if(clinical.reload)await render();return;}
+   throw new Error('Действие не подключено.');
+  }finally{delete node.dataset.commandPending;node.disabled=wasDisabled;node.removeAttribute('aria-busy');node.innerHTML=oldContent;}
  }catch(e){toast(messageFor(e));}}
 function setupListeners(){
  document.addEventListener('click',async e=>{

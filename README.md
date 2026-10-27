@@ -59,3 +59,19 @@ For a separately planned **new-machine installation only**, the legacy Conda set
 ## Codex Plus resource budget / economical execution
 
 Follow [subagent budget protocol](docs/phase04/SUBAGENT_BUDGET_PROTOCOL.md): one coordinator, at most two simultaneous specialists, at most four delegated tasks without explicit operator approval; reuse test artifacts, write checkpoints, and resume only unfinished gates. This is a **budgeting policy**, not a guarantee of account-specific quotas. The Codex prompt embeds these constraints.
+
+## Reproducible jury rehearsal (native)
+
+The current native core has real browser evidence; see [jury demo runbook](docs/phase04/JURY_DEMO_RUNBOOK.md). With the existing cc-m1 Python and local `qwen3:4b-instruct`:
+
+```bash
+PYTHONPATH=backend:. /Users/mark/miniforge3/envs/cc-m1/bin/python scripts/jury_rehearsal.py \
+  --mode fresh --workspace /private/tmp/clinical-compass-jury-new --port 8767
+# No reset: verify retained state and replay the same workspace.
+PYTHONPATH=backend:. /Users/mark/miniforge3/envs/cc-m1/bin/python scripts/jury_rehearsal.py \
+  --mode restart --workspace /private/tmp/clinical-compass-jury-new --port 8767
+CC_PYTHON=/Users/mark/miniforge3/envs/cc-m1/bin/python bash scripts/evaluation.sh \
+  serve --workspace /private/tmp/clinical-compass-jury-new --port 8767
+```
+
+Fresh refuses existing content. Generated credentials stay in the private workspace; no passwords or runtime data are shipped. The rehearsal stops its test server; `serve` reopens durable state. Disposable `/private/tmp` paths are tested here; choose a new private persistent operator path for retention across OS cleanup. Two native 107-case rehearsals pass, but this does not yet establish complete action coverage, clinical approval or Docker readiness. Current preservation registry: [FEATURE_PARITY.csv](reports/phase2/FEATURE_PARITY.csv); original 102 UI routes and 249 actual API operations remain present.

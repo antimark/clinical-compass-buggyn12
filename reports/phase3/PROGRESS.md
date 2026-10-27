@@ -1,0 +1,25 @@
+# Phase 3 — IN_PROGRESS; Docker gate NOT_RUN
+
+Native Phase 2 core gate: two 107-case rehearsals PASS; source 618 PASS / 5 XFAIL / 0 FAIL. Full action breadth remains PARTIAL; no route/API removed. Actual source/API map 102 UI routes / 249 operations.
+
+Preflight evidence: raw/preflight.jsonl. Local context desktop-linux uses a local Unix socket; installed Docker Desktop was stopped, then started successfully. Docker engine/client 29.8.1; Compose 5.5.1. Native Ollama confirmed 100% GPU, context 4096; this does not imply container Metal acceleration.
+
+Exact Python 3.11.17, Node 22.23.4 and Ollama 0.40.11 image manifests fetched; raw manifest files retained. Implementation next: shared app/Ollama network namespace, loopback-only host publication, non-root app, private persistent workspace and model volumes, pinned Linux runtime, actual browser and durability verification.
+
+Portability issue discovered before build: profile image normalization depends on macOS sips. Docker must retain this existing function with a bounded Linux decoder, not silently disable photo upload. Native path must remain unchanged and security/metadata stripping must be retested.
+
+No Docker build, Qwen or container journey PASS has been claimed. Subagents 0/4. Raw results append per completed scenario. See .agent/CHECKPOINT.md for next exact command.
+Phase 3 current: default Compose now uses a restricted shared-loopback adapter to native Mac Ollama; actual listener remains 127.0.0.1:11434. CPU sidecar attempt retained separately in compose.cpu.yaml: 180s readiness timeout, not accepted for AI. Docker 110-case live suite and corrected Linux full source suite running; partial stdout preserved. Eleven actual bridge protocol checks PASS. Resume: inspect reports/phase3/raw/container-live.log and linux-source-current.log; never restart successful tests or reset jury_workspace volume. Next after live completion: extra photo/tenant probes, capture durable session/keys, compose down/up without -v, verify. Subagents 0/4.
+
+<!-- live-evidence-phase3:start -->
+Latest completed: `tests_e2e/test_roles_live.py::test_doctor_real_qwen_evidence_manual_note_and_referral` (FAIL).
+
+Append-only observations (includes baseline failures and reruns; not unique acceptance counts):
+
+- live Flask + SQLite + Chromium: FAIL 1
+- live Flask + SQLite + Chromium: PASS 8
+- real Flask/Ollama missing-model response + Chromium: PASS 1
+- source pytest; not live E2E: PASS 72
+
+Raw: `reports/phase3/raw/scenarios.jsonl`. This automated observation summary does not set the phase gate.
+<!-- live-evidence-phase3:end -->

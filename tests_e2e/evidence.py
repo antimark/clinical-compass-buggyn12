@@ -2,12 +2,15 @@
 import datetime as dt
 import json
 import os
+import re
 import time
 from contextlib import contextmanager
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RUN_ID = os.environ.get('CC_QA_RUN_ID', dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%SZ'))
-OUT = ROOT / 'reports/phase0/raw'
+PHASE = int(os.environ.get('CC_QA_PHASE', '0'))
+if PHASE not in (0, 1, 2, 3): raise ValueError('Invalid evidence phase')
+OUT = ROOT / f'reports/phase{PHASE}/raw'
 _completed = 0
 def snapshot():
     from collections import Counter
@@ -16,13 +19,15 @@ def snapshot():
         try: rows.append(json.loads(line))
         except ValueError: pass
     counts=Counter((r['method'],r['status']) for r in rows)
-    text='\n\n<!-- measured-progress -->\nLatest completed: `'+rows[-1]['scenario']+'` ('+rows[-1]['status']+').\n\n'
+    marker=f'live-evidence-phase{PHASE}'
+    text='\n\n<!-- '+marker+':start -->\nLatest completed: `'+rows[-1]['scenario']+'` ('+rows[-1]['status']+').\n\n'
     text+='Append-only observations (includes baseline failures and reruns; not unique acceptance counts):\n\n'
     for (method,status),n in sorted(counts.items()): text+=f'- {method}: {status} {n}\n'
-    text+='\nRaw: `reports/phase0/raw/scenarios.jsonl`. Phase 0 remains INCOMPLETE until all release gates are reviewed.\n'
-    for relative in ('reports/phase0/PROGRESS.md','.agent/CHECKPOINT.md','.agent/EXECPLAN_ACTIVE.md'):
+    text+=f'\nRaw: `reports/phase{PHASE}/raw/scenarios.jsonl`. This automated observation summary does not set the phase gate.\n<!-- '+marker+':end -->\n'
+    for relative in (f'reports/phase{PHASE}/PROGRESS.md','.agent/CHECKPOINT.md','.agent/EXECPLAN_ACTIVE.md'):
         target=ROOT/relative
-        old=target.read_text().split('<!-- measured-progress -->')[0].rstrip()
+        old=target.read_text()
+        old=re.sub(r'\n*<!-- '+marker+r':start -->.*?<!-- '+marker+r':end -->\n*','\n',old,flags=re.S).rstrip()
         temp=target.with_suffix('.tmp.'+str(os.getpid()))
         temp.write_text(old+text);temp.replace(target)
 def record(scenario, status, elapsed, *, role='operator', method='', detail='', n=1):

@@ -1,0 +1,17 @@
+{
+  "phase2_core": "PASS",
+  "full_action_coverage": "PARTIAL",
+  "phase3": "NOT_RUN",
+  "baseline_routes": 102,
+  "actual_api_operations": 249,
+  "registry_rows": 1871,
+  "removed_routes": 0,
+  "removed_api_operations": 0,
+  "source_test_counts": {
+    "tests": 623,
+    "failures": 0,
+    "errors": 0,
+    "skipped_expected": 5
+  },
+  "note": "Preservation proved by source registry + actual map; only specifically covered native workflows carry E2E status."
+}

@@ -17,6 +17,15 @@ def apis(files):
             if isinstance(node,ast.Assign) and isinstance(node.value,ast.Constant) and isinstance(node.value.value,str):
                 for target in node.targets:
                     if isinstance(target,ast.Name):constants[target.id]=node.value.value
+            if isinstance(node,ast.ImportFrom) and node.module:
+                imported=files.get('backend/cc_api/'+node.module.replace('.','/')+'.py')
+                if imported:
+                    for imported_node in ast.parse(imported).body:
+                        if isinstance(imported_node,ast.Assign) and isinstance(imported_node.value,ast.Constant) and isinstance(imported_node.value.value,str):
+                            for target in imported_node.targets:
+                                if isinstance(target,ast.Name):
+                                    for alias in node.names:
+                                        if alias.name==target.id:constants[alias.asname or alias.name]=imported_node.value.value
         def value(node):
             if isinstance(node,ast.Constant) and isinstance(node.value,str):return node.value
             if isinstance(node,ast.Name):return constants.get(node.id)
@@ -28,8 +37,12 @@ def apis(files):
             for decorator in node.decorator_list:
                 if isinstance(decorator,ast.Call) and isinstance(decorator.func,ast.Attribute) and decorator.args:
                     method=decorator.func.attr;path=value(decorator.args[0])
-                    if method in ('get','post','put','patch','delete') and path and path.startswith('/api/v1/'):
-                        result[(method.upper(),path)]=name+':'+str(node.lineno)
+                    methods=[method.upper()]
+                    if method=='route':
+                        keyword=next((k.value for k in decorator.keywords if k.arg=='methods'),None)
+                        methods=ast.literal_eval(keyword) if keyword else ['GET']
+                    if method in ('get','post','put','patch','delete','route') and path and path.startswith('/api/v1/'):
+                        for verb in methods:result[(verb.upper(),path)]=name+':'+str(node.lineno)
     return result
 
 

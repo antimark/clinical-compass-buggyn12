@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from playwright.sync_api import expect
 from tests_e2e.test_jury_live import browser,show,register,login,mutate,BASE,ROOT
-from tests_e2e.evidence import scenario,record
+from tests_e2e.evidence import scenario,record,OUT
 WS=Path(os.environ.get('CC_QA_WORKSPACE','/private/tmp/clinical-compass-jury-20261027'))
 
 @pytest.fixture(scope='module')
@@ -113,7 +113,7 @@ def test_doctor_real_qwen_evidence_manual_note_and_referral(roles):
     with doctor.expect_response(lambda r:'/snapshot?' in r.url and r.request.method=='POST',timeout=65000) as analyzed:
         doctor.locator('[data-command=ci-analyze]').click()
     result=analyzed.value.json()
-    (ROOT/'reports/phase0/raw/qwen-live-metadata.json').write_text(json.dumps({k:result.get(k) for k in ('analysis_status','mode','model_version','primary_model_version','error_code','claims_persisted')},indent=2))
+    (OUT/'qwen-live-metadata.json').write_text(json.dumps({k:result.get(k) for k in ('analysis_status','mode','model_version','primary_model_version','error_code','claims_persisted')},indent=2))
     assert analyzed.value.ok and result['mode']=='local_llm' and result['analysis_status']=='ready',result.get('error_code')
     assert result['tags'] and result['evidence']
     source='Вымышленный пациент: плохо сплю. Тревожусь из-за работы.'
@@ -201,7 +201,7 @@ def test_live_contextual_qwen_chat_and_privacy(roles,audience):
     assistant=[m for m in data['messages'] if m['role']=='assistant'][-1]
     assert assistant['mode']=='local_llm' and assistant['model']=='qwen3:4b-instruct'
     assert assistant['catalog_citations']
-    with (ROOT/'reports/phase0/raw/chat-qwen-metadata.jsonl').open('a') as f:
+    with (OUT/'chat-qwen-metadata.jsonl').open('a') as f:
         f.write(json.dumps({'audience':audience,'mode':assistant['mode'],'model':assistant['model'],'timings':job['timings'],'status':job['status']})+'\n');f.flush();os.fsync(f.fileno())
     page.get_by_role('button',name='Обновить ответы').click()
     expect(page.locator('#main')).to_contain_text('local_llm')

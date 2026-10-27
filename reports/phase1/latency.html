@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><title>Measured native endpoint latency</title><pre>| Role | Endpoint | Observed latency |
+|---|---|---|
+| guest | `/api/v1/health` | n=20, p50=2.40 ms, p95=3.41 ms; p99 omitted (n&lt;100) |
+| guest | `/api/v1/clinical-catalog/search?type=medicine` | n=20, p50=7.02 ms, p95=10.63 ms; p99 omitted (n&lt;100) |
+| guest | `/api/v1/clinical-catalog/medicine/sertraline` | n=20, p50=3.11 ms, p95=6.05 ms; p99 omitted (n&lt;100) |
+| patient | `/api/v1/patient-experience/dashboard` | n=20, p50=10.47 ms, p95=14.60 ms; p99 omitted (n&lt;100) |
+| doctor | `/api/v1/doctors/me/linked-patients` | n=20, p50=12.77 ms, p95=15.08 ms; p99 omitted (n&lt;100) |
+| researcher | `/api/v1/research/demo-datasets/synthetic_research_v3/summary` | n=20, p50=6.09 ms, p95=9.06 ms; p99 omitted (n&lt;100) |
+| clinic_admin | `/api/v1/p1/clinic/staff` | n=20, p50=6.41 ms, p95=8.90 ms; p99 omitted (n&lt;100) |
+</pre><p>Observed run 20261027T151022Z; no SLO or clinical claim.</p>

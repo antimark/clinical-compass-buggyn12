@@ -1,0 +1,37 @@
+{
+  "01_homepage_light.png": {
+    "sha256": "a34c8c2a6d2aaf02caabb8ec088479faa1ac8ee713032ec3d02b253730b9af18",
+    "dimensions": [
+      1440,
+      900
+    ]
+  },
+  "02_doctor_ci_light.png": {
+    "sha256": "d27227701612733c66da93ea8316841c3c2eefb55b46317d8e553835f1f06390",
+    "dimensions": [
+      1440,
+      1100
+    ]
+  },
+  "03_signals_dark.png": {
+    "sha256": "bb8229e41bf122984c86c1b681e9ff531d31011b564ee70869008e4c5ebf3384",
+    "dimensions": [
+      1440,
+      900
+    ]
+  },
+  "04_patient_light.png": {
+    "sha256": "1ed7fbc5a9c171eafed049fd44c539c15c6db886da0bbdea3cbcca242f828d11",
+    "dimensions": [
+      1440,
+      900
+    ]
+  },
+  "05_research_light.png": {
+    "sha256": "15551f4107a8cd505983cb6d7650e072e9b004c0dfe2b6bcc6171594be0282f8",
+    "dimensions": [
+      1440,
+      900
+    ]
+  }
+}

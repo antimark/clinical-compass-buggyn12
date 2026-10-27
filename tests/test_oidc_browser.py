@@ -80,9 +80,13 @@ def test_success_opaque_revocable_and_replay(rig):
 
 
 @pytest.mark.parametrize('changes',[{'nonce':'wrong'},{'iss':'https://evil.test'}, {'aud':'other'},
-    {'exp':1},{'iat':int(time.time())+300},{'sub':'not-provisioned'}, {'amr':['pwd'],'acr':'1'},
+    {'exp':1},{'iat':'future'},{'sub':'not-provisioned'}, {'amr':['pwd'],'acr':'1'},
     {'azp':'other'},{'aud':['browser','other']}, {'amr':'mfa'}])
 def test_token_fail_closed(rig,changes):
+    # Collection can precede this test by minutes on the Linux/container suite.
+    # Keep the negative token genuinely in the future at execution time.
+    if changes.get('iat') == 'future':
+        changes = {**changes, 'iat': int(time.time()) + 300}
     app,_,start,token,_=rig;client=app.test_client();params=start(client)
     exchange(rig,params,token(params,**changes));assert callback(client,params).status_code==401
     assert client.get('/who').json['user'] is None

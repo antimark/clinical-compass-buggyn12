@@ -14,7 +14,9 @@ import tempfile
 from sqlalchemy import and_, select
 from .models import Base
 
-ROOT = Path('/private/tmp')
+# Preserve existing managed Mac datasets; Linux uses its own system temporary
+# directory. IDs, private ownership ledger and reset guards remain unchanged.
+ROOT = Path('/private/tmp') if Path('/private/tmp').is_dir() else Path(tempfile.gettempdir())
 PREFIX = 'cc-phase01a-'
 DB_NAME = 'synthetic.sqlite'
 

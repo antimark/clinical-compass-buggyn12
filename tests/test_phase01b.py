@@ -204,7 +204,11 @@ def test_photo_pixel_bomb_and_attempt_rate(app):
 def test_photo_jpeg_and_metadata_stripping(app,tmp_path):
     import subprocess
     source=tmp_path/'source.png';target=tmp_path/'source.jpg';source.write_bytes(png())
-    subprocess.run(['/usr/bin/sips','-s','format','jpeg',str(source),'--out',str(target)],check=True,capture_output=True)
+    if Path('/usr/bin/sips').is_file():
+        subprocess.run(['/usr/bin/sips','-s','format','jpeg',str(source),'--out',str(target)],check=True,capture_output=True)
+    else:
+        from PIL import Image
+        with Image.open(source) as image:image.convert('RGB').save(target,format='JPEG')
     client=actor(app,'pat_01');uploaded=upload(client,target.read_bytes(),'synthetic.jpg','image/jpeg')
     assert uploaded.status_code==201,uploaded.json
     # Server stores only normalized raster PNG critical chunks, never upload bytes.

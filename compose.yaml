@@ -1,0 +1,60 @@
+# macOS Docker Desktop + verified native loopback Ollama/GPU.
+# compose.cpu.yaml retains the CPU-sidecar alternative and model volume.
+services:
+  ollama:
+    image: clinical-compass-jury:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/arm64
+    entrypoint:
+    - python
+    - /app/docker/host_ollama_bridge.py
+    ports:
+    - 127.0.0.1:${CC_JURY_PORT:-8766}:8766
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - /app/docker/bridge_healthcheck.py
+      interval: 15s
+      timeout: 4s
+      retries: 3
+      start_period: 5s
+    user: 10001:10001
+    security_opt:
+    - no-new-privileges:true
+    cap_drop:
+    - ALL
+    mem_limit: 512m
+    cpus: 1
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: clinical-compass-jury:local
+    platform: linux/arm64
+    network_mode: service:ollama
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      CC_WORKSPACE: /workspace
+      CC_PUBLIC_BASE_URL: http://127.0.0.1:${CC_JURY_PORT:-8766}
+      CC_CI_NLP_MODEL: qwen3:4b-instruct
+      CC_CI_NLP_PROVIDER: ollama
+      CC_CI_CHAT_PROVIDER: ollama
+      CC_NLP_V3_PROVIDER: ollama
+      CC_NLP_V3_MODEL: qwen3:4b-instruct
+    volumes:
+    - jury_workspace:/workspace
+    user: 10001:10001
+    security_opt:
+    - no-new-privileges:true
+    cap_drop:
+    - ALL
+    mem_limit: 1g
+    cpus: 2
+    stop_grace_period: 30s
+volumes:
+  jury_workspace: null

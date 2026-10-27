@@ -1,0 +1,53 @@
+services:
+  ollama:
+    image: ollama/ollama:0.40.11@sha256:47da9fc7b3d4582d8ecc772faf1b5dc5df6bf425d9af0285a298c537519567e5
+    platform: linux/arm64
+    environment:
+      OLLAMA_HOST: 127.0.0.1:11434
+      OLLAMA_CONTEXT_LENGTH: "4096"
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_MAX_LOADED_MODELS: "1"
+    volumes:
+      - ollama_models:/root/.ollama
+    # The application shares this network namespace. Ollama has NO published port.
+    ports:
+      - "127.0.0.1:${CC_JURY_PORT:-8766}:8766"
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+    mem_limit: 6g
+    cpus: 4
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: clinical-compass-jury:local
+    platform: linux/arm64
+    network_mode: "service:ollama"
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      CC_WORKSPACE: /workspace
+      CC_PUBLIC_BASE_URL: "http://127.0.0.1:${CC_JURY_PORT:-8766}"
+      CC_CI_NLP_MODEL: qwen3:4b-instruct
+      CC_CI_NLP_PROVIDER: ollama
+      CC_CI_CHAT_PROVIDER: ollama
+      CC_NLP_V3_PROVIDER: ollama
+      CC_NLP_V3_MODEL: qwen3:4b-instruct
+    volumes:
+      - jury_workspace:/workspace
+    user: "10001:10001"
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+    mem_limit: 1g
+    cpus: 2
+    stop_grace_period: 30s
+volumes:
+  jury_workspace:
+  ollama_models:
