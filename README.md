@@ -1,12 +1,7 @@
 # Clinical Compass — Evaluation MVP, Phase04
 
-Current application: Flask + SQLAlchemy/Alembic + vanilla JavaScript, design system v11, Clinical Catalog v5, local Ollama/Qwen. This is a technical evaluation environment, not a clinical pilot or validated medical device. Use generated synthetic or lawfully and properly deidentified cases only. **Do not enter identifiable realpatient medical records.** Automatic identifier rejection is not an anonymization guarantee.
+Current application: Flask + SQLAlchemy/Alembic + vanilla JavaScript, design system v11, Clinical Catalog v5, local Ollama/Qwen. This is a technical evaluation environment, not a clinical pilot or validated medical device. Use generated synthetic or lawfully and properly deidentified cases only. 
 
-For the jury-release workstream, [AGENTS.md](AGENTS.md) has been updated as the operative technical contract. [EVALUATION_POLICY_ADDENDUM.md](EVALUATION_POLICY_ADDENDUM.md) preserves evaluation privacy/clinical boundaries and historical context; neither authorizes a clinical deployment. All role/tenant/consent/source ACL, CSRF, audit, CAS and explicit physician decisions remain mandatory. Experimental status does not disable technically implemented features in the isolated evaluation profile.
-
-## Start with the existing Mac environment
-
-Open Terminal in this extracted project folder. Do not run an old archive or copy a runtime database into it. The verified setup is macOS Apple Silicon, existing Conda `cc-m1` (Python3.11/Node), installed Chromium and Ollama with `qwen3:4b-instruct`. This delivery installs/downloads nothing.
 
 ```bash
 ./scripts/evaluation.sh check --workspace "$HOME/Library/Application Support/ClinicalCompassEvaluation"
@@ -48,30 +43,3 @@ For a separately planned **new-machine installation only**, the legacy Conda set
 - **Canonical Codex task and evidence protocol**: `docs/phase04/CODEX_JURY_RELEASE_PHASE0_PHASE3_PROMPT_2026_10_27.md` (Phase 0 functionality, Phase 1 technical UX/performance, Phase 2 juror rehearsal/hardening, Phase 3 Docker). Offline/static checks from the prior assembly are not live Flask/Ollama/macOS/Playwright acceptance. This handoff archive **does not yet contain an implemented and tested Docker deployment**; Codex Phase 3 must create and verify it.
 
 
-## Jury release handoff — 2026-10-27 (scope, not verified release)
-
-**Target:** working jury prototype with replayable guest, patient, physician, researcher and clinic-administrator flows, four pilot assessment scores and persistent results, real Qwen Ollama feature demonstrations, consent-controlled FIO and full Clinical Catalog medication fields. Preserve the experiment/validation distinction. The new product's route count has previously been 102; re-enumerate from the live source and verify all visible actions. A screen that renders or a mocked API test is **not** a completed flow.
-
-**Execution specification:** [updated AGENTS](AGENTS.md), [Codex phases 0–3](docs/phase04/CODEX_JURY_RELEASE_PHASE0_PHASE3_PROMPT_2026_10_27.md) and [jury readiness gates](docs/phase04/JURY_RELEASE_ACCEPTANCE.md). Before giving judges a final ZIP, Codex must fix broken real user journeys, run real QA, measure performance, rehearse four roles and package/verify Docker while retaining the working macOS Conda startup. A report must include `READY`, `READY_WITH_DISCLOSED_LIMITATIONS` or `NOT_READY` with evidence.
-
-**Docker planning constraint:** the current Qwen adapter only allows loopback endpoints. From a normal container, `127.0.0.1:11434` is **not** macOS host Ollama. Docker Compose sidecar with a deliberate shared network namespace is one candidate; a restricted host bridge is another, but both require real end-to-end proof. Apple Silicon GPU use from native Ollama is not equivalent to Linux-container Ollama performance. Docker code/images and live results are tasks for Phase 3, **not already accomplished by this handoff**. Do not expose Ollama or the application outside the local machine by default.
-
-## Codex Plus resource budget / economical execution
-
-Follow [subagent budget protocol](docs/phase04/SUBAGENT_BUDGET_PROTOCOL.md): one coordinator, at most two simultaneous specialists, at most four delegated tasks without explicit operator approval; reuse test artifacts, write checkpoints, and resume only unfinished gates. This is a **budgeting policy**, not a guarantee of account-specific quotas. The Codex prompt embeds these constraints.
-
-## Reproducible jury rehearsal (native)
-
-The current native core has real browser evidence; see [jury demo runbook](docs/phase04/JURY_DEMO_RUNBOOK.md). With the existing cc-m1 Python and local `qwen3:4b-instruct`:
-
-```bash
-PYTHONPATH=backend:. /Users/mark/miniforge3/envs/cc-m1/bin/python scripts/jury_rehearsal.py \
-  --mode fresh --workspace /private/tmp/clinical-compass-jury-new --port 8767
-# No reset: verify retained state and replay the same workspace.
-PYTHONPATH=backend:. /Users/mark/miniforge3/envs/cc-m1/bin/python scripts/jury_rehearsal.py \
-  --mode restart --workspace /private/tmp/clinical-compass-jury-new --port 8767
-CC_PYTHON=/Users/mark/miniforge3/envs/cc-m1/bin/python bash scripts/evaluation.sh \
-  serve --workspace /private/tmp/clinical-compass-jury-new --port 8767
-```
-
-Fresh refuses existing content. Generated credentials stay in the private workspace; no passwords or runtime data are shipped. The rehearsal stops its test server; `serve` reopens durable state. Disposable `/private/tmp` paths are tested here; choose a new private persistent operator path for retention across OS cleanup. Two native 107-case rehearsals pass, but this does not yet establish complete action coverage, clinical approval or Docker readiness. Current preservation registry: [FEATURE_PARITY.csv](reports/phase2/FEATURE_PARITY.csv); original 102 UI routes and 249 actual API operations remain present.
