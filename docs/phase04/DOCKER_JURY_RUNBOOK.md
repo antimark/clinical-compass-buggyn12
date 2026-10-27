@@ -63,3 +63,5 @@ CC_QA_WORKSPACE="$QA_CLIENT" CC_E2E_BASE_URL=http://127.0.0.1:8768 \
 ```
 
 Do not repeatedly run a full suite to repair a single failed case. Raw evidence appends per case. Full traces and credentials remain private; only sanitized manifests/timelines are distributed. See the final report for commands actually executed, results and remaining limitations.
+
+Use separate browser profiles for native versus Docker as well as different roles: localhost cookies belong to the host across ports, so one profile cannot retain independent role sessions for both modes.

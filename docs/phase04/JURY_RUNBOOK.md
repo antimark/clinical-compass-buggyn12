@@ -30,3 +30,5 @@ If that server is already running, open `http://127.0.0.1:8769/#/demo/journeys` 
 9. Resume (1 min): reload results, restart same private workspace or Compose project without deleting its volume, confirm retained state.
 
 No screencast or Drive replacement is claimed. The storyboard describes real actions; record only after reviewing the final acceptance report. Never record invitation tokens, credentials, cookies or private traces in a public presentation.
+
+Use separate browser profiles for native versus Docker as well as different roles: localhost cookies belong to the host across ports, so one profile cannot retain independent role sessions for both modes.

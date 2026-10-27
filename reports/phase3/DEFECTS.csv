@@ -13,4 +13,4 @@ LIM-002,P2,LIMITATION,Genuine invited staff OIDC/MFA and legacy study grants unc
 LIM-003,P2,PARTIAL,Seven conditional routes/four guarded baseline routes and individual controls not exhaustively exercised,Preserved in source and parity; not promoted from rendering,full action breadth PARTIAL
 LIM-004,P2,NOT_IMPLEMENTED_BASELINE,Full per-dose missed-days calendar,Actual saved adherence report retained,no feature removed
 LIM-005,P2,NOT_RUN,External source-site availability,All allowed source fields/links rendered and safely escaped,third-party availability separated from local catalog acceptance
-PKG-001,TEST,FIXED_PENDING_ARCHIVE_SMOKE,Fresh ZIP has no Git metadata or phase PROGRESS file,Manifest revision fallback and automatic evidence bootstrap,Fresh extracted-source smoke next; no app code changed
+PKG-001,TEST,RESOLVED,Fresh ZIP has no Git metadata or phase PROGRESS file,Manifest revision fallback and automatic evidence bootstrap,Fresh extracted source without Git:5 real Flask/SQLite/Chromium cases PASS; revision from manifest; evidence bootstrap PASS

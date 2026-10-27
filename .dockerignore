@@ -37,3 +37,11 @@ backend/data
 **/restart-probe.json
 **/workspace-key-hashes.json
 **/traces
+
+.aws
+.ssh
+.secrets
+**/.aws
+**/.ssh
+**/.secrets
+deliverables
