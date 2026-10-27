@@ -27,3 +27,25 @@ Append-only observations (includes baseline failures and reruns; not unique acce
 - source pytest; not live E2E: SKIP 12
 
 Raw: `reports/phase0/raw/scenarios.jsonl`. Phase 0 remains INCOMPLETE until all release gates are reviewed.
+
+<!-- live-evidence-phase0:start -->
+Latest completed: `tests_e2e/test_roles_live.py::test_live_contextual_qwen_chat_and_privacy[patient]` (PASS).
+
+Append-only observations (includes baseline failures and reruns; not unique acceptance counts):
+
+- Chromium layout overflow; not full accessibility audit: PASS 30
+- actual browser multipart + macOS sips: PASS 1
+- authenticated persisted photo GET + Chromium reload: PASS 1
+- live Flask + SQLite + Chromium: FAIL 5
+- live Flask + SQLite + Chromium: PASS 298
+- live read-only route inventory: BLOCKED 31
+- live read-only route inventory: PARTIAL 15
+- live read-only route inventory: PASS 83
+- real Chromium trace; redacted timeline exported: PASS 1
+- real multipart upload to running app; old image retained: PASS 4
+- source pytest; not live E2E: FAIL 17
+- source pytest; not live E2E: PASS 1986
+- source pytest; not live E2E: SKIP 17
+
+Raw: `reports/phase0/raw/scenarios.jsonl`. This automated observation summary does not set the phase gate.
+<!-- live-evidence-phase0:end -->

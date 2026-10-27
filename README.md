@@ -40,6 +40,8 @@ For a separately planned **new-machine installation only**, the legacy Conda set
 - `/#/assessments`: four *evaluation-draft, unapproved* PHQ/GAD forms; guest can view temporary sum and choose login/registration to save on server. This is synthetic-only; no clinical interpretation.
 - `/#/patient/profile` → history of saved questionnaire results; `/patient/admin-identity`: optional, consent-controlled administrative FIO; never exposed without permission.
 - Operator opt-in for isolated evaluation privacy template/flags: `CC_CONDA_ENV=cc-m1 bash scripts/evaluation.sh privacy-setup --workspace "$HOME/Library/Application Support/ClinicalCompassEvaluation-QA"`; privacy key stays private in workspace. A separate patient opt-in remains mandatory.
-- **Canonical Codex task and evidence protocol**: `docs/phase04/CODEX_JURY_RELEASE_PHASE0_PHASE3_PROMPT_2026_10_27.md` (Phase 0 functionality, Phase 1 technical UX/performance, Phase 2 juror rehearsal/hardening, Phase 3 Docker). Offline/static checks from the prior assembly are not live Flask/Ollama/macOS/Playwright acceptance. This handoff archive **does not yet contain an implemented and tested Docker deployment**; Codex Phase 3 must create and verify it.
+- **Canonical Codex task and evidence protocol**: `docs/phase04/CODEX_JURY_RELEASE_PHASE0_PHASE3_PROMPT_2026_10_27.md` (Phase 0 functionality, Phase 1 technical UX/performance, Phase 2 juror rehearsal/hardening, Phase 3 Docker). Offline/static checks from the prior assembly are not live Flask/Ollama/macOS/Playwright acceptance. The current Docker implementation and actual acceptance scope are documented in [Docker jury runbook](docs/phase04/DOCKER_JURY_RUNBOOK.md) and [release report](reports/FINAL_JURY_READINESS.md); a successful build alone is not acceptance.
 
 
+
+Current native and Docker operator commands, synthetic role provisioning and clinical limits: [JURY_RUNBOOK.md](docs/phase04/JURY_RUNBOOK.md).

@@ -1,0 +1,15 @@
+# Stage B — native live gate PASS
+
+Final integrated code: 102 core/form/catalog browser cases PASS, all 8 original role journeys PASS, 16 new UX/security cases PASS across incremental batches (126 distinct cases). All 77 medicines and every nonempty permitted source leaf are checked in actual DOM. Photo: 1 real Mac sips UI upload, persisted read/reload and 4 invalid multipart cases PASS (6 observations).
+
+Full source gate: **618 PASS, 1 SKIP (Pillow-only Linux codec module on native Mac), 5 expected XFAIL**, zero unexpected failures, 317.28s. Linux codec is separately proven in the actual Linux image, not inferred from the Mac SKIP. Frontend source/simulated contracts PASS; those are not E2E.
+
+Actual local Qwen: physician NLP evidence/manual draft/referral PASS, patient-private and doctor-contextual chats PASS. Final four-role batch: 8 PASS /60.13s; chat journeys ~10.57s each. Exact modes, model/digest, evidence validation and job metadata are in raw records. No parallel model workload. Explicit think:false/context4096 extraction retains source span and schema validation.
+
+New live behavior: encounter create/edit/sign/publish, patient draft invisibility and published readback; manually authored synthetic treatment details, Today adherence and durable report; optional behavioral plan with all fields retained on edit; linked-pair messages; signal observation evidence/review; invite QR/trusted base/wrong recipient/revoke; invite-bound signup and explicit scopes/single-use; adverse-event review and independently confirmed decision; per-doctor scopes and fresh-session denial after revoke; separate pairwise doctor visibility enable/revoke; 320/390/768/1280/1440 viewport checks and keyboard focus; allowed auth return and blocked foreign/other-role target.
+
+A real integration gap found during review was fixed: published clinical encounter documents now supplement legacy encounter records in the anamnesis list. Legacy records are retained. Focused live history/behavioral check: 2 PASS. One QR harness expected a field from creation rather than preview; one expected404 rather than actual409 for consumed invite; original failures retained and only those cases rerun. These were not security bypasses.
+
+Raw evidence: raw/handoff-native-core-catalog.xml (102); handoff-native-four-roles.xml (8); handoff-new-native.xml + handoff-additional-native.xml + handoff-invited-signup-native.xml + handoff-history-behavioral-native.xml (16 distinct UX cases with failed attempts/retests retained); handoff-native-photo-edges.log; handoff-final-source.xml/log; append-only scenarios.jsonl. Full traces/cookies and generated credentials stay in the private workspace, not the repository.
+
+Native workspace /private/tmp/clinical-compass-jury-handoff-20261027, server127.0.0.1:8769; no personal/shared DB. This is a local synthetic jury gate, not clinical/production approval. Legacy study grants, genuine OIDC/MFA invited staff enrollment and remaining baseline previews retain their original guards/limitations. Final container equivalence and delivery remain Stage C/D.
