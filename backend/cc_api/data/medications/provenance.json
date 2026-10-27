@@ -1,0 +1,10 @@
+{
+  "source_archive": "инструкции_к_препаратам(1).zip",
+  "source_archive_sha256": "34eb80842051c30366170d0043f9bc4fc3b95768379ce38dc7462d1b5c23d397",
+  "record_count": 8,
+  "filename_aliases": {
+    "aviandr_maritupirdine_instruction(2).json": "aviandr_maritupirdine_instruction.json"
+  },
+  "review_status": "imported_unreviewed",
+  "note": "Raw files preserved byte-for-byte. No independent medical review or source licensing acceptance implied."
+}

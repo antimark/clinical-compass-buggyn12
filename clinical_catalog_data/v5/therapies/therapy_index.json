@@ -1,0 +1,655 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "therapy_index",
+  "count": 58,
+  "items": [
+    {
+      "id": "cbt",
+      "title_ru": "Когнитивно-поведенческая терапия (КПТ)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/cbt.json",
+      "diagnosis_codes": [
+        "F20",
+        "F32",
+        "F33",
+        "F34.1",
+        "F40.0",
+        "F40.1",
+        "F40.2",
+        "F41.0",
+        "F41.1",
+        "F41.2",
+        "F42",
+        "F43.2",
+        "F45.0",
+        "F45.2",
+        "F45.4",
+        "F48.0",
+        "F63.0",
+        "F90.0"
+      ]
+    },
+    {
+      "id": "cbt_i",
+      "title_ru": "КПТ бессонницы (CBT-I)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/cbt_i.json",
+      "diagnosis_codes": [
+        "F51.0",
+        "G47.0"
+      ]
+    },
+    {
+      "id": "behavioral_activation",
+      "title_ru": "Поведенческая активация",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/behavioral_activation.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F34.1"
+      ]
+    },
+    {
+      "id": "interpersonal_therapy",
+      "title_ru": "Интерперсональная психотерапия (IPT)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/interpersonal_therapy.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F34.1"
+      ]
+    },
+    {
+      "id": "problem_solving_therapy",
+      "title_ru": "Терапия решения проблем",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/problem_solving_therapy.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F43.2"
+      ]
+    },
+    {
+      "id": "short_term_psychodynamic",
+      "title_ru": "Краткосрочная психодинамическая терапия",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/short_term_psychodynamic.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33"
+      ]
+    },
+    {
+      "id": "mbct",
+      "title_ru": "Когнитивная терапия на основе осознанности (MBCT)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/mbct.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33"
+      ]
+    },
+    {
+      "id": "guided_self_help",
+      "title_ru": "Управляемая самопомощь на основе КПТ",
+      "category": "psychosocial",
+      "path": "therapies/by_id/guided_self_help.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F41.0",
+        "F41.1",
+        "F42",
+        "F43.2"
+      ]
+    },
+    {
+      "id": "applied_relaxation",
+      "title_ru": "Прикладная релаксация",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/applied_relaxation.json",
+      "diagnosis_codes": [
+        "F41.1"
+      ]
+    },
+    {
+      "id": "exposure_therapy",
+      "title_ru": "Экспозиционная терапия",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/exposure_therapy.json",
+      "diagnosis_codes": [
+        "F40.0",
+        "F40.1",
+        "F40.2",
+        "F41.0"
+      ]
+    },
+    {
+      "id": "erp",
+      "title_ru": "Экспозиция с предотвращением реакций (ERP)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/erp.json",
+      "diagnosis_codes": [
+        "F42"
+      ]
+    },
+    {
+      "id": "tf_cbt",
+      "title_ru": "Травма-фокусированная КПТ",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/tf_cbt.json",
+      "diagnosis_codes": [
+        "F43.0",
+        "F43.1"
+      ]
+    },
+    {
+      "id": "cpt",
+      "title_ru": "Терапия когнитивной переработки травмы (CPT)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/cpt.json",
+      "diagnosis_codes": [
+        "F43.1"
+      ]
+    },
+    {
+      "id": "pe",
+      "title_ru": "Пролонгированная экспозиция (PE)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/pe.json",
+      "diagnosis_codes": [
+        "F43.1"
+      ]
+    },
+    {
+      "id": "emdr",
+      "title_ru": "Десенсибилизация и переработка движениями глаз (EMDR)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/emdr.json",
+      "diagnosis_codes": [
+        "F43.1"
+      ]
+    },
+    {
+      "id": "net",
+      "title_ru": "Нарративная экспозиционная терапия (NET)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/net.json",
+      "diagnosis_codes": [
+        "F43.1"
+      ]
+    },
+    {
+      "id": "present_centered",
+      "title_ru": "Терапия, ориентированная на настоящие проблемы (PCT)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/present_centered.json",
+      "diagnosis_codes": [
+        "F43.1"
+      ]
+    },
+    {
+      "id": "dbt",
+      "title_ru": "Диалектическая поведенческая терапия (DBT)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/dbt.json",
+      "diagnosis_codes": [
+        "F60.3"
+      ]
+    },
+    {
+      "id": "mbt",
+      "title_ru": "Терапия на основе ментализации (MBT)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/mbt.json",
+      "diagnosis_codes": [
+        "F60.3"
+      ]
+    },
+    {
+      "id": "schema_therapy",
+      "title_ru": "Схема-терапия",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/schema_therapy.json",
+      "diagnosis_codes": [
+        "F60.3",
+        "F60.5",
+        "F60.6",
+        "F60.7"
+      ]
+    },
+    {
+      "id": "family_intervention_psychosis",
+      "title_ru": "Семейные вмешательства при психозе",
+      "category": "psychosocial",
+      "path": "therapies/by_id/family_intervention_psychosis.json",
+      "diagnosis_codes": [
+        "F20",
+        "F21",
+        "F22",
+        "F23",
+        "F25"
+      ]
+    },
+    {
+      "id": "cbtp",
+      "title_ru": "КПТ при психозе (CBTp)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/cbtp.json",
+      "diagnosis_codes": [
+        "F20",
+        "F21",
+        "F22",
+        "F23",
+        "F25"
+      ]
+    },
+    {
+      "id": "bipolar_psychoeducation",
+      "title_ru": "Структурированное психообразование при БАР",
+      "category": "psychosocial",
+      "path": "therapies/by_id/bipolar_psychoeducation.json",
+      "diagnosis_codes": [
+        "F31",
+        "F34.0"
+      ]
+    },
+    {
+      "id": "ipsrt",
+      "title_ru": "Интерперсональная и социально-ритмовая терапия (IPSRT)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/ipsrt.json",
+      "diagnosis_codes": [
+        "F31"
+      ]
+    },
+    {
+      "id": "family_focused_bipolar",
+      "title_ru": "Семейно-фокусированная терапия БАР",
+      "category": "psychosocial",
+      "path": "therapies/by_id/family_focused_bipolar.json",
+      "diagnosis_codes": [
+        "F31"
+      ]
+    },
+    {
+      "id": "motivational_interviewing",
+      "title_ru": "Мотивационное консультирование",
+      "category": "psychosocial",
+      "path": "therapies/by_id/motivational_interviewing.json",
+      "diagnosis_codes": [
+        "F10.1",
+        "F10.2",
+        "F11.2",
+        "F12.2",
+        "F13.2",
+        "F17.2"
+      ]
+    },
+    {
+      "id": "relapse_prevention_sud",
+      "title_ru": "КПТ и профилактика рецидивов при зависимости",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/relapse_prevention_sud.json",
+      "diagnosis_codes": [
+        "F10.1",
+        "F10.2",
+        "F11.2",
+        "F12.2",
+        "F13.2",
+        "F17.2"
+      ]
+    },
+    {
+      "id": "contingency_management",
+      "title_ru": "Контингентное подкрепление",
+      "category": "psychosocial",
+      "path": "therapies/by_id/contingency_management.json",
+      "diagnosis_codes": [
+        "F11.2",
+        "F12.2",
+        "F17.2"
+      ]
+    },
+    {
+      "id": "smoking_cessation_counsel",
+      "title_ru": "Поведенческая помощь при отказе от курения",
+      "category": "psychosocial",
+      "path": "therapies/by_id/smoking_cessation_counsel.json",
+      "diagnosis_codes": [
+        "F17.2"
+      ]
+    },
+    {
+      "id": "cbt_ed",
+      "title_ru": "КПТ при расстройствах пищевого поведения (CBT-ED)",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/cbt_ed.json",
+      "diagnosis_codes": [
+        "F50.0",
+        "F50.2"
+      ]
+    },
+    {
+      "id": "mantra",
+      "title_ru": "MANTRA для нервной анорексии",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/mantra.json",
+      "diagnosis_codes": [
+        "F50.0"
+      ]
+    },
+    {
+      "id": "sscm",
+      "title_ru": "Специализированное поддерживающее клиническое ведение (SSCM)",
+      "category": "psychosocial",
+      "path": "therapies/by_id/sscm.json",
+      "diagnosis_codes": [
+        "F50.0"
+      ]
+    },
+    {
+      "id": "family_based_ed",
+      "title_ru": "Семейно-ориентированное лечение РПП",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/family_based_ed.json",
+      "diagnosis_codes": [
+        "F50.0",
+        "F50.2"
+      ]
+    },
+    {
+      "id": "adhd_psychosocial",
+      "title_ru": "КПТ-ориентированная поддержка при СДВГ",
+      "category": "psychosocial",
+      "path": "therapies/by_id/adhd_psychosocial.json",
+      "diagnosis_codes": [
+        "F90.0"
+      ]
+    },
+    {
+      "id": "parent_training",
+      "title_ru": "Тренинг родительских навыков",
+      "category": "psychosocial",
+      "path": "therapies/by_id/parent_training.json",
+      "diagnosis_codes": [
+        "F84.0",
+        "F84.5",
+        "F90.0",
+        "F91.3"
+      ]
+    },
+    {
+      "id": "autism_social_skills",
+      "title_ru": "Социально-коммуникативный тренинг",
+      "category": "psychosocial",
+      "path": "therapies/by_id/autism_social_skills.json",
+      "diagnosis_codes": [
+        "F84.0",
+        "F84.5"
+      ]
+    },
+    {
+      "id": "autism_adaptive_skills",
+      "title_ru": "Обучение адаптивным навыкам при РАС",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/autism_adaptive_skills.json",
+      "diagnosis_codes": [
+        "F70",
+        "F84.0",
+        "F84.5"
+      ]
+    },
+    {
+      "id": "speech_language_therapy",
+      "title_ru": "Логопедическая и речевая терапия",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/speech_language_therapy.json",
+      "diagnosis_codes": [
+        "F80.1",
+        "F84.0",
+        "F84.5",
+        "I63",
+        "S06.0"
+      ]
+    },
+    {
+      "id": "educational_remediation",
+      "title_ru": "Специализированная коррекция навыков обучения",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/educational_remediation.json",
+      "diagnosis_codes": [
+        "F70",
+        "F81.0"
+      ]
+    },
+    {
+      "id": "habit_reversal",
+      "title_ru": "Тренинг обратного формирования привычки / CBIT",
+      "category": "psychotherapy",
+      "path": "therapies/by_id/habit_reversal.json",
+      "diagnosis_codes": [
+        "F95.2"
+      ]
+    },
+    {
+      "id": "cognitive_stimulation",
+      "title_ru": "Когнитивно-стимулирующая терапия при деменции",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/cognitive_stimulation.json",
+      "diagnosis_codes": [
+        "F00",
+        "F01",
+        "F02",
+        "F03",
+        "G30"
+      ]
+    },
+    {
+      "id": "reminiscence",
+      "title_ru": "Реминисцентная терапия при деменции",
+      "category": "psychosocial",
+      "path": "therapies/by_id/reminiscence.json",
+      "diagnosis_codes": [
+        "F00",
+        "F01",
+        "F02",
+        "F03",
+        "G30"
+      ]
+    },
+    {
+      "id": "cognitive_rehabilitation",
+      "title_ru": "Когнитивная реабилитация",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/cognitive_rehabilitation.json",
+      "diagnosis_codes": [
+        "F00",
+        "F01",
+        "F02",
+        "F03",
+        "F06.7",
+        "F07.2",
+        "G30",
+        "G35",
+        "I63",
+        "R41.3",
+        "S06.0"
+      ]
+    },
+    {
+      "id": "occupational_therapy",
+      "title_ru": "Эрготерапия / восстановление повседневной активности",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/occupational_therapy.json",
+      "diagnosis_codes": [
+        "F00",
+        "F01",
+        "F02",
+        "F03",
+        "G20",
+        "G30",
+        "G35",
+        "G62.9",
+        "I63",
+        "S06.0"
+      ]
+    },
+    {
+      "id": "neuro_physiotherapy",
+      "title_ru": "Неврологическая физиотерапия и двигательная реабилитация",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/neuro_physiotherapy.json",
+      "diagnosis_codes": [
+        "F07.2",
+        "G20",
+        "G21.1",
+        "G35",
+        "G62.9",
+        "I63",
+        "S06.0"
+      ]
+    },
+    {
+      "id": "vestibular_rehab",
+      "title_ru": "Вестибулярная реабилитация",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/vestibular_rehab.json",
+      "diagnosis_codes": [
+        "F07.2",
+        "G35",
+        "S06.0"
+      ]
+    },
+    {
+      "id": "exercise_therapy",
+      "title_ru": "Адаптированная аэробная и силовая активность",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/exercise_therapy.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "G20",
+        "G35"
+      ]
+    },
+    {
+      "id": "migraine_behavioral",
+      "title_ru": "Поведенческая профилактика мигрени",
+      "category": "psychosocial",
+      "path": "therapies/by_id/migraine_behavioral.json",
+      "diagnosis_codes": [
+        "G43",
+        "G43.0",
+        "G43.1",
+        "G44.2"
+      ]
+    },
+    {
+      "id": "headache_acupuncture",
+      "title_ru": "Иглорефлексотерапия при головной боли",
+      "category": "procedure",
+      "path": "therapies/by_id/headache_acupuncture.json",
+      "diagnosis_codes": [
+        "G43",
+        "G43.0",
+        "G43.1",
+        "G44.2"
+      ]
+    },
+    {
+      "id": "cpap",
+      "title_ru": "CPAP-терапия при обструктивном апноэ сна",
+      "category": "medical_support",
+      "path": "therapies/by_id/cpap.json",
+      "diagnosis_codes": [
+        "G47.3"
+      ]
+    },
+    {
+      "id": "sleep_specialist_care",
+      "title_ru": "Специализированная помощь при гиперсомнии",
+      "category": "medical_support",
+      "path": "therapies/by_id/sleep_specialist_care.json",
+      "diagnosis_codes": [
+        "F51.1",
+        "G47.1"
+      ]
+    },
+    {
+      "id": "dbs",
+      "title_ru": "Глубинная стимуляция головного мозга (DBS)",
+      "category": "procedure",
+      "path": "therapies/by_id/dbs.json",
+      "diagnosis_codes": [
+        "G20",
+        "G24.9",
+        "G25.0"
+      ]
+    },
+    {
+      "id": "ect",
+      "title_ru": "Электросудорожная терапия (ЭСТ)",
+      "category": "procedure",
+      "path": "therapies/by_id/ect.json",
+      "diagnosis_codes": [
+        "F30.1",
+        "F31",
+        "F32",
+        "F33"
+      ]
+    },
+    {
+      "id": "rtms",
+      "title_ru": "Повторная транскраниальная магнитная стимуляция (рТМС)",
+      "category": "procedure",
+      "path": "therapies/by_id/rtms.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33"
+      ]
+    },
+    {
+      "id": "stroke_secondary_prevention",
+      "title_ru": "Комплексная вторичная профилактика инсульта",
+      "category": "medical_support",
+      "path": "therapies/by_id/stroke_secondary_prevention.json",
+      "diagnosis_codes": [
+        "F01",
+        "G45.9",
+        "I63"
+      ]
+    },
+    {
+      "id": "acute_delirium_care",
+      "title_ru": "Комплексное ведение делирия",
+      "category": "medical_support",
+      "path": "therapies/by_id/acute_delirium_care.json",
+      "diagnosis_codes": [
+        "F05"
+      ]
+    },
+    {
+      "id": "epilepsy_self_management",
+      "title_ru": "Обучение и план помощи при эпилепсии",
+      "category": "medical_support",
+      "path": "therapies/by_id/epilepsy_self_management.json",
+      "diagnosis_codes": [
+        "G40"
+      ]
+    },
+    {
+      "id": "tbi_multidisciplinary",
+      "title_ru": "Мультидисциплинарная реабилитация после ЧМТ",
+      "category": "rehabilitation",
+      "path": "therapies/by_id/tbi_multidisciplinary.json",
+      "diagnosis_codes": [
+        "F07.2",
+        "S06.0"
+      ]
+    }
+  ]
+}

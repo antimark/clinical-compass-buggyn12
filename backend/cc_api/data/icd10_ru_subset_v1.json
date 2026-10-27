@@ -1,0 +1,44 @@
+{
+  "version": "ru-official-subset-20261019-v1",
+  "coverage": "limited_verified_subset",
+  "limitation": "Ограниченная проверенная выборка кодов МКБ-10; не полный национальный справочник. Лицензирование и актуальность для промышленного использования требуют отдельной проверки.",
+  "verified_on": "2026-10-19",
+  "items": [
+    {
+      "code": "F20",
+      "label": "Шизофрения",
+      "version": "ru-official-subset-20261019-v1",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F31",
+      "label": "Биполярное аффективное расстройство",
+      "version": "ru-official-subset-20261019-v1",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F32",
+      "label": "Депрессивный эпизод",
+      "version": "ru-official-subset-20261019-v1",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F33",
+      "label": "Рекуррентное депрессивное расстройство",
+      "version": "ru-official-subset-20261019-v1",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F42",
+      "label": "Обсессивно-компульсивное расстройство",
+      "version": "ru-official-subset-20261019-v1",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F41.1",
+      "label": "Генерализованное тревожное расстройство",
+      "version": "ru-official-subset-20261019-v1",
+      "source_url": "https://minzdrav.gov.ru/ministry/61/22/stranitsa-979/stranitsa-983/2-standarty-spetsializirovannoy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    }
+  ]
+}

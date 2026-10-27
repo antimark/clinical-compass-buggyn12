@@ -1,0 +1,165 @@
+{
+  "schema_version": "4.0.0",
+  "instrument_id": "PC-PTSD-5",
+  "instrument_version": "catalog-v4",
+  "priority": "P1",
+  "instrument_type": "self_report_scale",
+  "clinical_content_status": "metadata_only_not_administrable",
+  "information": {
+    "title": {
+      "ru": "Короткий скрининг ПТСР PC-PTSD-5",
+      "short": "PC-PTSD-5"
+    },
+    "authors": "A. Prins et al.",
+    "first_validation_year": 2016,
+    "purpose_clinician": "Скрининг ПТСР; предварительная оценка",
+    "purpose_patient": "Помогает структурировать обсуждение симптомов; не устанавливает диагноз.",
+    "recommended_for": {
+      "screening": true,
+      "symptom_monitoring": false,
+      "diagnostic_support": false,
+      "clinical_diagnosis": false
+    },
+    "target_population": "Взрослые, если не указано иное; применимость проверяется врачом.",
+    "icd10": {
+      "screening_targets": [
+        {
+          "code": "F43.1"
+        }
+      ],
+      "nonspecific_symptom_overlap": [],
+      "differentials_not_inferred_by_scale": [],
+      "diagnosis_from_questionnaire": false,
+      "coding_rule": "Порог скрининга, даже при выполнении алгоритма, не устанавливает диагноз и не определяет код МКБ-10."
+    },
+    "icd11_context_text": "DSM-5 инструмент; оценивать критерии МКБ-10 отдельно.",
+    "estimated_minutes": null,
+    "recall_period": "последний месяц",
+    "references": [
+      {
+        "url": "https://www.ptsd.va.gov/professional/assessment/screens/pc-ptsd.asp",
+        "role": "primary_instrument_information"
+      }
+    ],
+    "clinical_limitations": "Самооценка и алгоритмическое соответствие критериям не заменяют клинического заключения.",
+    "question_count": 5,
+    "source_note": "Сначала экспозиция к травме; при нет — прекращение. Проект перевода отдельно, клинически не выпускать."
+  },
+  "language": "ru",
+  "localization": {
+    "language": "ru",
+    "status": "draft_translation_pending_user_review",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "draft_segregated": true,
+    "release_approved": false
+  },
+  "questions": [],
+  "response_sets": [],
+  "scales": [
+    {
+      "scale_id": "ptsd_screener",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    }
+  ],
+  "scoring": {
+    "type": "not_enabled_pending_exact_text_and_protocol",
+    "auto_scoring_enabled": false,
+    "max_score": null,
+    "diagnostic_decision": "clinician_only",
+    "quality_gates": [
+      "licensed_or_open_exact_text",
+      "validated_version",
+      "permission_check",
+      "medical_review"
+    ]
+  },
+  "interpretations": {
+    "patient": {
+      "summary": "Результат требует оценки лечащим специалистом.",
+      "no_diagnostic_claim": true
+    },
+    "clinician": {
+      "summary": "Оцените клинические критерии, продолжительность и дифференциальный диагноз.",
+      "do_not_auto_diagnose": true
+    }
+  },
+  "licensing": {
+    "rights_holder": "US Department of Veterans Affairs",
+    "copyright_status": "public_domain_original",
+    "commercial_use": "original_public_domain",
+    "research_use": "original_public_domain",
+    "open_use": "original_public_domain",
+    "electronic_administration": "original_public_domain",
+    "public_distribution": "original_public_domain",
+    "translation_rights": "translation_must_verify_third_party_rights",
+    "patient_feedback_allowed": "clinician_safe_review",
+    "license_source_url": "https://www.ptsd.va.gov/professional/assessment/screens/pc-ptsd.asp",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "rights": {
+    "rights_holder": "US Department of Veterans Affairs",
+    "copyright_status": "public_domain_original",
+    "commercial_use": "original_public_domain",
+    "research_use": "original_public_domain",
+    "open_use": "original_public_domain",
+    "electronic_administration": "original_public_domain",
+    "public_distribution": "original_public_domain",
+    "translation_rights": "translation_must_verify_third_party_rights",
+    "patient_feedback_allowed": "clinician_safe_review",
+    "license_source_url": "https://www.ptsd.va.gov/professional/assessment/screens/pc-ptsd.asp",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "availability": {
+    "russian_form": "not_loaded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.ptsd.va.gov/professional/assessment/screens/pc-ptsd.asp",
+    "protected_material_embedded": false,
+    "draft_path": "translations/pending/pc_ptsd_5_ru_proposed.json"
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "risk_item_handling": "manual_clinician_protocol",
+    "automatic_diagnosis_allowed": false,
+    "suicide_risk_inference_from_score_allowed": false
+  },
+  "legacy_source_path": null,
+  "scoring_blueprint_non_executable": {
+    "response_options": "5 yes/no clinical items, first trauma gate separate",
+    "scales": {
+      "ptsd_screener": {
+        "range": [
+          0,
+          5
+        ],
+        "n_items": 5
+      }
+    },
+    "branching": "if trauma exposure denied stop with 0; otherwise administer five items",
+    "warning": "Clinician chooses cut-off using validated population; not diagnosis."
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [
+      "F43.1"
+    ],
+    "icd10_possible_overlap": [],
+    "icd10_differentials": [],
+    "icd11_context_text": "DSM-5 инструмент; оценивать критерии МКБ-10 отдельно.",
+    "clinical_assessment_targets_only": true,
+    "diagnostic_code_assignment_allowed": false
+  }
+}

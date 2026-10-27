@@ -1,0 +1,51 @@
+{
+  "schema": "cc-demo-routing-v1",
+  "synthetic": true,
+  "patient_id": "pxp_history_02",
+  "verified_clinical_rule": false,
+  "suggestions": [
+    {
+      "signal_id": "demo_route_desired_01",
+      "patient_id": "pxp_history_02",
+      "category": "desired",
+      "urgency": "planned",
+      "title": "Обсудить необходимость консультации психиатра",
+      "evidence_refs": [
+        "ci-src-01",
+        "ci-src-02"
+      ],
+      "status": "UI_MOCK_NOT_CLINICALLY_APPROVED"
+    },
+    {
+      "signal_id": "demo_route_desired_02",
+      "patient_id": "pxp_history_02",
+      "category": "desired",
+      "urgency": "planned",
+      "title": "Обсудить общесоматические причины с терапевтом",
+      "evidence_refs": [
+        "ci-src-01"
+      ],
+      "status": "UI_MOCK_NOT_CLINICALLY_APPROVED"
+    },
+    {
+      "signal_id": "demo_route_mandatory_01",
+      "patient_id": null,
+      "category": "mandatory",
+      "urgency": "planned",
+      "title": "Обязательно — учебный образец класса; не рекомендация пациенту",
+      "evidence_refs": [],
+      "status": "UI_MOCK_NOT_CLINICALLY_APPROVED",
+      "not_linked_to_patient": true
+    }
+  ],
+  "critical_fixture": {
+    "signal_id": "demo_signal_critical_01",
+    "patient_id": null,
+    "urgency": "emergency",
+    "severity": "critical",
+    "sent": false,
+    "delivered": false,
+    "source": "alternative_safety_branch",
+    "evidence": "isolated fixture; not evidence about any real patient"
+  }
+}

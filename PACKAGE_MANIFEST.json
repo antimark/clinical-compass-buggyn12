@@ -1,0 +1,3323 @@
+{
+  "product": "Clinical Compass | Jury handoff | phases 0-3 | Plus-efficient resumable checkpoints",
+  "base_archive": "Clinical_Compass_Role_Journeys_Assessments_Codex.zip",
+  "source_commit": "handoff-uncommitted",
+  "provisional": true,
+  "runtime_acceptance": "NOT_RUN: real macOS + Flask + Ollama + Docker jury release gates pending",
+  "clinical_review_status": "experimental_needs_validation",
+  "route_count": 102,
+  "files": [
+    {
+      "path": ".agent/CHECKPOINT.md",
+      "bytes": 1366,
+      "sha256": "cef00ae145b7c12a2354b2c207d5516c0c8cb149a89c070386c55d1f924ac286"
+    },
+    {
+      "path": ".agent/EXECPLAN_ACTIVE.md",
+      "bytes": 1570,
+      "sha256": "c6dea19f0c724990bb8f35ba9692139ba55c8329a86eea6f7aca4ccf54632c2f"
+    },
+    {
+      "path": ".codex/config.toml",
+      "bytes": 425,
+      "sha256": "1c6b6d02128f8aade0006c1248a52392cf0df21a628cd1cbccb105f23c20b19b"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 15637,
+      "sha256": "c4667efeaf3892523f41ed9c2d53789b49e7a0fc55e787db2fa3507548e91cda"
+    },
+    {
+      "path": "EVALUATION_POLICY_ADDENDUM.md",
+      "bytes": 2224,
+      "sha256": "86f4ed4b5d0ad5e9f1e42812c816300e732f2d6b1d355a8230ceab2d6a926945"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9704,
+      "sha256": "59884ab79862670605b629021af5239b17af4983bfc484274d271351a5d3cd6a"
+    },
+    {
+      "path": "alembic.ini",
+      "bytes": 558,
+      "sha256": "faf8384c25cc633d154b8a29bfc60fbe449b320d90eac5c98079fa0cfe900fae"
+    },
+    {
+      "path": "backend/cc_api/__init__.py",
+      "bytes": 201,
+      "sha256": "eb575c488ba02d7eb0f5cce27ebe6a5fd9b27a53ae1dbab168f52b87063b712c"
+    },
+    {
+      "path": "backend/cc_api/admin_booking_routes.py",
+      "bytes": 5695,
+      "sha256": "8c077b8ba958b501e43102851c074f66f239ecd40947f660b770d529350fbf22"
+    },
+    {
+      "path": "backend/cc_api/admin_privacy_models.py",
+      "bytes": 2854,
+      "sha256": "b69501d235bdc15602a03e97afc3a1b4418e445d3a9be8b90a6763186852e175"
+    },
+    {
+      "path": "backend/cc_api/admin_privacy_routes.py",
+      "bytes": 6970,
+      "sha256": "c9b8c7a995ff899d083c0b9e1551670db4d77a153ebfe8bd7910e6b9a9e3b76f"
+    },
+    {
+      "path": "backend/cc_api/admin_privacy_service.py",
+      "bytes": 19578,
+      "sha256": "3098cb7133c71e3d42fb3e47d0edd63701f6ce8581b7219f7b50b67572b97e66"
+    },
+    {
+      "path": "backend/cc_api/ai_adapter.py",
+      "bytes": 1838,
+      "sha256": "0d9f874ea1a50d565d13654298010790ea741e06b92c193962a121c441bfcf70"
+    },
+    {
+      "path": "backend/cc_api/app.py",
+      "bytes": 2246,
+      "sha256": "e59d0055b7928e78ace06ffe452e0cab37b487ce763590949673b56ada06b29e"
+    },
+    {
+      "path": "backend/cc_api/booking_routes.py",
+      "bytes": 6170,
+      "sha256": "a60640268dcdecd28f4bf18b63ab735cd91481ef6bd03e47aae209b19228cf22"
+    },
+    {
+      "path": "backend/cc_api/booking_services.py",
+      "bytes": 12453,
+      "sha256": "a863326f15bdf8b7f23006af6196228f05a5a3cd939ed6bd186e80a2dca6c153"
+    },
+    {
+      "path": "backend/cc_api/clinical_catalog_routes_v3.py",
+      "bytes": 2491,
+      "sha256": "053f9b3c0fa6f042f99f3188ded2cd08fc46a0e8f346dd1633dda99cc891afdb"
+    },
+    {
+      "path": "backend/cc_api/clinical_catalog_v3.py",
+      "bytes": 18469,
+      "sha256": "53643d9a3f7ff3f379a9124b078ae3ef434cc3407e71e7cee444a52d08baae62"
+    },
+    {
+      "path": "backend/cc_api/clinical_copilot_models.py",
+      "bytes": 4746,
+      "sha256": "8625b07f72f6e2756b6fbc25e2cffc240d77f83a01a64af98d74f7b63456b905"
+    },
+    {
+      "path": "backend/cc_api/clinical_copilot_routes.py",
+      "bytes": 19488,
+      "sha256": "c6c3f82a735c944ff27ef64e5bef488608a2cb89d0de40c8f57959da3e29cc23"
+    },
+    {
+      "path": "backend/cc_api/clinical_copilot_services.py",
+      "bytes": 6864,
+      "sha256": "eef1927bfb385c2f5eae42eb2de3eec4545e971ca63f91ee40c231ee8e31180e"
+    },
+    {
+      "path": "backend/cc_api/clinical_copilot_worker.py",
+      "bytes": 9735,
+      "sha256": "525a794f0ee2cb362ddaf574b3c965ab67111a6a0ec7b07aceac0bf6c29da45c"
+    },
+    {
+      "path": "backend/cc_api/clinical_engines.py",
+      "bytes": 2208,
+      "sha256": "906bcdc96c7927801f838bb46dd7d151ac092123069c988b901a5e0ab152c81d"
+    },
+    {
+      "path": "backend/cc_api/clinical_intelligence_review_models.py",
+      "bytes": 2892,
+      "sha256": "73e832ccd9cfe8e1c70c932a38cba83c1ad7b80830945d558ec5f9feded0947b"
+    },
+    {
+      "path": "backend/cc_api/clinical_intelligence_review_routes.py",
+      "bytes": 3934,
+      "sha256": "ddb6ac405c92acd02416978357c3f15a881564474b0f72d32f1565ef76e11b2c"
+    },
+    {
+      "path": "backend/cc_api/clinical_intelligence_review_services.py",
+      "bytes": 14094,
+      "sha256": "d3fa32bb5d307d59dbb73ab3820c93bafe5d631e55c3ae1f94ce982b312ea880"
+    },
+    {
+      "path": "backend/cc_api/clinical_intelligence_routes.py",
+      "bytes": 7652,
+      "sha256": "ed61d2cdd8b79a326843d425bbaf08dc67eb8acaffdc3fd47c0122e1fde9b070"
+    },
+    {
+      "path": "backend/cc_api/clinical_intelligence_runtime.py",
+      "bytes": 7092,
+      "sha256": "6efb4a20df2351aa0f363de5f9e537754523c001c178574b8892d7991516b196"
+    },
+    {
+      "path": "backend/cc_api/clinical_intelligence_sources.py",
+      "bytes": 4621,
+      "sha256": "3d149a1109894c09a0393d2c0dcc928ec1924ea08b40f381c55b29232dcbd29c"
+    },
+    {
+      "path": "backend/cc_api/clinical_proposal_fixtures.py",
+      "bytes": 2325,
+      "sha256": "81b492a08b34c2429dd62c9086d4be7bfd1933665ce0865e11032fbb904e1ee4"
+    },
+    {
+      "path": "backend/cc_api/clinical_proposals.py",
+      "bytes": 9125,
+      "sha256": "cdac57fdc463134925c38667d860a1637f7eba44f0845688b77349785186bcb5"
+    },
+    {
+      "path": "backend/cc_api/clinical_review_models.py",
+      "bytes": 3460,
+      "sha256": "847aa19e6f109c409cce1e78f14952da47835efc7c7e090ca48aeb57509bf229"
+    },
+    {
+      "path": "backend/cc_api/clinical_review_routes.py",
+      "bytes": 7958,
+      "sha256": "18215449e554f3574a1b551abac5e8a1ab77c76b2d9be5173ec7c803f107c659"
+    },
+    {
+      "path": "backend/cc_api/clinical_review_services.py",
+      "bytes": 13139,
+      "sha256": "4a7e0e16ff3de75f255f238ba125af8a0780a7358db0ab2a0ea629d2f279be09"
+    },
+    {
+      "path": "backend/cc_api/clinical_workflow_fixtures.py",
+      "bytes": 14456,
+      "sha256": "0f65ea0eb513ec830f3880e0f4ecffa00a1205b068e40eb728d278c78e002ca7"
+    },
+    {
+      "path": "backend/cc_api/clinical_workflow_models.py",
+      "bytes": 6432,
+      "sha256": "3addc7355efd0e91ffc0cdc7f62d5bb505593bf0de9140200b0678838910c15d"
+    },
+    {
+      "path": "backend/cc_api/clinical_workflow_routes.py",
+      "bytes": 12820,
+      "sha256": "db995e871ce23c77330270f24a80e83d47c50dadc9be9910e44d54153234865c"
+    },
+    {
+      "path": "backend/cc_api/clinical_workflow_services.py",
+      "bytes": 12139,
+      "sha256": "656c852144b3c097a745efc01affe0e2819634efe626e5d99d13a4a81249746c"
+    },
+    {
+      "path": "backend/cc_api/config.py",
+      "bytes": 3376,
+      "sha256": "974aa14dafba152dbafccbb980822d72afb360378bfcf168295f2712e002e1aa"
+    },
+    {
+      "path": "backend/cc_api/copilot_catalog.py",
+      "bytes": 7521,
+      "sha256": "057001beeda21373ab5b2c7d1307b52f31bd5a0f31447858bbda4464736f1afe"
+    },
+    {
+      "path": "backend/cc_api/copilot_provider.py",
+      "bytes": 8480,
+      "sha256": "b6f61c7b81ce15b6bee97323e9a8653a82f3ae920b0fe51c1f3ad42141a8b46b"
+    },
+    {
+      "path": "backend/cc_api/core_routes.py",
+      "bytes": 13898,
+      "sha256": "ff8224447982ff52ad0dd7310bf7d3c44a308b08961a916dfcb3f95e1f863df1"
+    },
+    {
+      "path": "backend/cc_api/data/icd10_ru_subset_v1.json",
+      "bytes": 2692,
+      "sha256": "e40541f99f9cea5504984ff083c86c915d7b160d3fd64c276f29e922e1630780"
+    },
+    {
+      "path": "backend/cc_api/data/icd10_ru_subset_v2.json",
+      "bytes": 13367,
+      "sha256": "f6205e648aff204126d2a9c434b7229248a4d0f535346584e27c4b7849eb9c90"
+    },
+    {
+      "path": "backend/cc_api/data/medications/atomoxetine_canon_40mg.json",
+      "bytes": 17097,
+      "sha256": "6651f9bf55dd7af2ca9371acd5b64acdfd050d24c33574ac0fe0d2963b353a16"
+    },
+    {
+      "path": "backend/cc_api/data/medications/aviandr_maritupirdine_instruction.json",
+      "bytes": 13059,
+      "sha256": "1601b02c3af055871c53aecbd26a364db8b369910076f3e2d3dcde38b9829f48"
+    },
+    {
+      "path": "backend/cc_api/data/medications/cipralex_escitalopram_10mg.json",
+      "bytes": 16457,
+      "sha256": "e3e1e5111b82c77e28befa2b5941f9014ed129aef682142cea5b3a46a5d27e61"
+    },
+    {
+      "path": "backend/cc_api/data/medications/lamictal_lamotrigine_25mg.json",
+      "bytes": 17286,
+      "sha256": "749ae3f2c4513ba50cadc99de0392aa639b5f2d65ef5ef0a5fa1fdd4406bdee3"
+    },
+    {
+      "path": "backend/cc_api/data/medications/manifest.json",
+      "bytes": 4023,
+      "sha256": "634e7b8ee1ff8f3452743a08c319f3caddbea30afb80ce7a8cab348f6cd55c38"
+    },
+    {
+      "path": "backend/cc_api/data/medications/provenance.json",
+      "bytes": 473,
+      "sha256": "709b8d7481ee9f9c38ec21090a26749ef0a15d91b6702ef88d9013447c699502"
+    },
+    {
+      "path": "backend/cc_api/data/medications/risperidone_canon_2mg.json",
+      "bytes": 20846,
+      "sha256": "839069c92b229c915729d4bed9a8f453250e4c54baf8b27fbe67a31b1e19285c"
+    },
+    {
+      "path": "backend/cc_api/data/medications/seroquel_quetiapine_ir_100mg.json",
+      "bytes": 15768,
+      "sha256": "cd5542e9eca964eb2341e013606e56ee1cb5a746d9f813addbf6121d5521f7a3"
+    },
+    {
+      "path": "backend/cc_api/data/medications/velaxin_venlafaxine_xr_75mg.json",
+      "bytes": 15666,
+      "sha256": "a61351e24387ac854dfc6f9ee61e02d1cecbc32b444d3d1578ba7a56d2453c15"
+    },
+    {
+      "path": "backend/cc_api/data/medications/zoloft_sertraline_50mg.json",
+      "bytes": 18176,
+      "sha256": "e8f2ffdd3eb8d7d4a9fff3aa3746110f32ac368a308dfc2d7157dd790a57c95a"
+    },
+    {
+      "path": "backend/cc_api/database.py",
+      "bytes": 2579,
+      "sha256": "28a94aa331a81e76d39080ee76c61a9bca91f76a506bf5ed82f7d76ba70049dc"
+    },
+    {
+      "path": "backend/cc_api/demo_accounts.py",
+      "bytes": 2941,
+      "sha256": "f10dd0c8b6de4bf19f45c3702a4213f66cb258803b7e4cc03c9a1554fa2e5185"
+    },
+    {
+      "path": "backend/cc_api/demo_fixtures.py",
+      "bytes": 6628,
+      "sha256": "e0713ee8daf48bf93a8af7dd94f1b163a75a81f73713192bd4da46593f314041"
+    },
+    {
+      "path": "backend/cc_api/demo_questionnaires.py",
+      "bytes": 6143,
+      "sha256": "f46178ef3c40c848a5dddf685287cc09bf64ffaecdf4aba7212b26b42f5ddbd5"
+    },
+    {
+      "path": "backend/cc_api/doctor_access.py",
+      "bytes": 2613,
+      "sha256": "6510af610fa270a7f04ca546a28238e0d817c4aa2680f218d78763819d73f9ed"
+    },
+    {
+      "path": "backend/cc_api/doctor_experience_fixtures.py",
+      "bytes": 3120,
+      "sha256": "57b1f0e06928932b2b23a46ba55eaaf01060f216de8e8061a2be9457b1e828d3"
+    },
+    {
+      "path": "backend/cc_api/doctor_experience_models.py",
+      "bytes": 2034,
+      "sha256": "91854a013d31617ba647d6388a95b3d519e26aa0a86e60ce593b5c8d8f13d28a"
+    },
+    {
+      "path": "backend/cc_api/doctor_experience_routes.py",
+      "bytes": 13243,
+      "sha256": "3d6a1fb21ccc95f3a40bc0bfafc63d0ab6304057343b33850d0ae5306d1b5afe"
+    },
+    {
+      "path": "backend/cc_api/doctor_signals.py",
+      "bytes": 6624,
+      "sha256": "b31b8ee03193baf427ab49d25b31cdd5ca8aded75521d8c3e79d462966da50b8"
+    },
+    {
+      "path": "backend/cc_api/evaluation_launcher.py",
+      "bytes": 7083,
+      "sha256": "9baeee72dce6a238ad1e8932488351bafd178d83c30794c19784447ff3a86b20"
+    },
+    {
+      "path": "backend/cc_api/evaluation_proposals.py",
+      "bytes": 6613,
+      "sha256": "d8450f8d21ba30bb38ef0d0faeb70c98b6e7e7c55ccd7a2e2960c31e23d4bdfd"
+    },
+    {
+      "path": "backend/cc_api/evaluation_workspace.py",
+      "bytes": 5167,
+      "sha256": "92a97507855f7f11bcb07e9be88d804c1f51cf21c9bc6a5630526886b792e889"
+    },
+    {
+      "path": "backend/cc_api/extension_models.py",
+      "bytes": 6890,
+      "sha256": "a4328e7040ca43abe381884191f9cbe4e33e13a660f76ab2da377e87480c0adf"
+    },
+    {
+      "path": "backend/cc_api/extension_routes.py",
+      "bytes": 19118,
+      "sha256": "6eb45ae444de59719f1522eeed3e0d7c57a538ba5a05236c9b737d54b543440d"
+    },
+    {
+      "path": "backend/cc_api/feature_registry.py",
+      "bytes": 4164,
+      "sha256": "55c27494f05e3cc71a4f87dc8f630d9694492172c7d764a4fd8ac3ec50d7d03a"
+    },
+    {
+      "path": "backend/cc_api/http_hooks.py",
+      "bytes": 2922,
+      "sha256": "010b52ad52c6ffb43569a8980038e584b164a469afb3bcd6d21860e27e5b511b"
+    },
+    {
+      "path": "backend/cc_api/icd10.py",
+      "bytes": 684,
+      "sha256": "235b586442a4678a30f996b71631fc975814e101c0cdea501894e97f0138ecfa"
+    },
+    {
+      "path": "backend/cc_api/identity.py",
+      "bytes": 1745,
+      "sha256": "71e2bfb1f9469574cd21a4f2e7ca830dbba1bf83ddfc752365116244eded1f2e"
+    },
+    {
+      "path": "backend/cc_api/instruments.py",
+      "bytes": 776,
+      "sha256": "208cc53d4c4264597eed48a96c69c495b4d8108ba07465db5592aabf65044545"
+    },
+    {
+      "path": "backend/cc_api/integrated_routes.py",
+      "bytes": 19675,
+      "sha256": "33552527fb6583ee88240f598c065eefeaf489db9492bc85f51a7060d6998c8f"
+    },
+    {
+      "path": "backend/cc_api/legacy_research.py",
+      "bytes": 1446,
+      "sha256": "8e940631c89c6772efcf35b63da7425a7a10df914845aab3ce00c36b22bb2861"
+    },
+    {
+      "path": "backend/cc_api/medical_references.py",
+      "bytes": 9998,
+      "sha256": "20a5dd575a903cd3157480431aea4144b1ce9229b4d04ef2d0ec59aeec62f414"
+    },
+    {
+      "path": "backend/cc_api/messaging.py",
+      "bytes": 301,
+      "sha256": "c06f286dff69998b5fb7b73ceeaa5b3afcb20dc751b9c477f44be5b1f2558c41"
+    },
+    {
+      "path": "backend/cc_api/models.py",
+      "bytes": 2789,
+      "sha256": "c752b03690a39a26c04c71c0449f21d285e8907681359f8c95e974377e42b7e0"
+    },
+    {
+      "path": "backend/cc_api/nlp_lab_routes_v3.py",
+      "bytes": 3716,
+      "sha256": "fda269004acf28e0b858ec54ca87c39f8a3138e07e8879988a703b10f44edfd3"
+    },
+    {
+      "path": "backend/cc_api/oidc_browser.py",
+      "bytes": 10625,
+      "sha256": "9463c896572fb7eb4327e25b8d14d69848b12630925bd438b18b39b347dd20bc"
+    },
+    {
+      "path": "backend/cc_api/oidc_models.py",
+      "bytes": 1585,
+      "sha256": "4a7ab894599598cb16e192c1c7f037d479ed021deb0156d69347f74de5bcdfa7"
+    },
+    {
+      "path": "backend/cc_api/onboarding_models.py",
+      "bytes": 4617,
+      "sha256": "a737b33bf939c6ca9d8e08611e43ba414ec9da761a043cf109e9a5df05290e79"
+    },
+    {
+      "path": "backend/cc_api/onboarding_routes.py",
+      "bytes": 32533,
+      "sha256": "36d17c5d118d88a47d3a54bfeca102aeb82b90415d8126c62aa1560289771669"
+    },
+    {
+      "path": "backend/cc_api/p0_models.py",
+      "bytes": 5944,
+      "sha256": "4d619ca6a0d7356c51f7763960383b3f2cb6ba45b502e4610709b1796d22872b"
+    },
+    {
+      "path": "backend/cc_api/p0_routes.py",
+      "bytes": 26275,
+      "sha256": "f26fc58675390f35b500ca88a7fcc22cbf7033be085032c6ebc94c7a3eb77d97"
+    },
+    {
+      "path": "backend/cc_api/p1_routes.py",
+      "bytes": 1068,
+      "sha256": "5bdeb475c8f713f8263b06bc3c88e61fb48e0b42b97e7b9edc2314834b95971f"
+    },
+    {
+      "path": "backend/cc_api/patient_context.py",
+      "bytes": 3139,
+      "sha256": "9b91dd085ce34cfbfd319d8ffb822e6ba11c0db83423c4cfb0d038941ba13ed1"
+    },
+    {
+      "path": "backend/cc_api/patient_experience_fixtures.py",
+      "bytes": 9577,
+      "sha256": "202d847d4f4a3e007a61a16a2c820b8b717dda95f4f1119afb76fc5a8f7e71fa"
+    },
+    {
+      "path": "backend/cc_api/patient_experience_models.py",
+      "bytes": 3595,
+      "sha256": "15d81d35f8903b7ddae85bdf5ff6bc38a826d701a7f0802b4f2f66e3664c4ba8"
+    },
+    {
+      "path": "backend/cc_api/patient_experience_routes.py",
+      "bytes": 29717,
+      "sha256": "c0606e57b870de502f12c1b876d60a8f20d5bd777a55e20cb102c5379445f557"
+    },
+    {
+      "path": "backend/cc_api/phase01a_fixtures.py",
+      "bytes": 2631,
+      "sha256": "cc88620f2c13f24874a873c6bd3168d6d31527a5b68906fc8e27b8b4d9246e1a"
+    },
+    {
+      "path": "backend/cc_api/physician_history_models.py",
+      "bytes": 1532,
+      "sha256": "e2241b67c1f2e52816ae44aa43aebb789433320932312dde8410f03049d24143"
+    },
+    {
+      "path": "backend/cc_api/pitch_models.py",
+      "bytes": 1505,
+      "sha256": "e423fbad8b502e23b197ea13dfc6705a02a19225f375a480eb4ed7bb2850e882"
+    },
+    {
+      "path": "backend/cc_api/pitch_routes.py",
+      "bytes": 12473,
+      "sha256": "85f8ae101de4f12684aa232d1b07b6eb77955ea3c239acc8a37ffa73ff0e78c7"
+    },
+    {
+      "path": "backend/cc_api/profile_photos.py",
+      "bytes": 5226,
+      "sha256": "e8fc237f74957b8ab06353d57988cbb84869a01bd6bb9d6bb2f11ad8db4e25e0"
+    },
+    {
+      "path": "backend/cc_api/profile_routes.py",
+      "bytes": 8698,
+      "sha256": "b76881dcdf4477edee4c2e72e120722b49dd5196a087caf329960f2e3396b3c9"
+    },
+    {
+      "path": "backend/cc_api/profile_services.py",
+      "bytes": 10153,
+      "sha256": "4f8afadb783ca1774122d3b1672622ce90d767973242c3ae421aa4a63b1a8fd5"
+    },
+    {
+      "path": "backend/cc_api/reference_models.py",
+      "bytes": 2438,
+      "sha256": "64e9bcda9405f9cfd92df3b2b172a90d0158938e9186c6d4e9aace83916b68f8"
+    },
+    {
+      "path": "backend/cc_api/reference_routes.py",
+      "bytes": 6303,
+      "sha256": "42de5a79c95b4169daeec85b9fc18248db010eb4ddd404b700c40ba926c182b2"
+    },
+    {
+      "path": "backend/cc_api/released_plan_access.py",
+      "bytes": 794,
+      "sha256": "4f905bd76a27152dc4ae39c80c7eccad42186d3eada8497564b9518475f7a874"
+    },
+    {
+      "path": "backend/cc_api/research.py",
+      "bytes": 927,
+      "sha256": "4d7b7b4021827416c32076e4aefe3b1864cf03c838ea7d838503e70fcce886dd"
+    },
+    {
+      "path": "backend/cc_api/research_demo_routes_v3.py",
+      "bytes": 2630,
+      "sha256": "6c3e6f588718af6742baf410fae10fd3fe420dc27d60f4ac78b05d0a23e36480"
+    },
+    {
+      "path": "backend/cc_api/research_demo_v3.py",
+      "bytes": 4159,
+      "sha256": "61b0362bcda01a6cf8b41537bca84901ec1815a63d12c4e5e90890df08195dad"
+    },
+    {
+      "path": "backend/cc_api/research_workflow_models.py",
+      "bytes": 2472,
+      "sha256": "a106adfa675b4053185975694c95d33b0d1b7bef47ccf83b30b785daa02e1cd1"
+    },
+    {
+      "path": "backend/cc_api/research_workflow_routes.py",
+      "bytes": 5124,
+      "sha256": "9800ef020bd0fb6fd98d5e412171407a99a54e6bd27d1f1efbba6478431c8bd8"
+    },
+    {
+      "path": "backend/cc_api/research_workflow_service.py",
+      "bytes": 15407,
+      "sha256": "e208de45d071c13de4973d44b2f53e47a54df4dd271393c65339c740bd60c6bb"
+    },
+    {
+      "path": "backend/cc_api/safety_models.py",
+      "bytes": 3440,
+      "sha256": "d3e71bbedaf5da826f741cfc5300e1be2c2d6d43ecdda2e0baf38e4093a7c61d"
+    },
+    {
+      "path": "backend/cc_api/safety_routes.py",
+      "bytes": 4951,
+      "sha256": "11ef360a455a320e56f69bc4689e712a8706e6cac13e6581d77822d933232cab"
+    },
+    {
+      "path": "backend/cc_api/safety_rules.py",
+      "bytes": 3547,
+      "sha256": "666dc1269cfd90887ca303649994c33ad179fe0b2cf8a94e3d9b63a874f46ec0"
+    },
+    {
+      "path": "backend/cc_api/safety_service.py",
+      "bytes": 5540,
+      "sha256": "54f16b889f5c228cf0380b2f3ba9978051480fda1dc02b7810283d81060cd545"
+    },
+    {
+      "path": "backend/cc_api/safety_worker.py",
+      "bytes": 5102,
+      "sha256": "64943f034d83375d99dbb25b91189dea32ed52b67c9c2032c6f4f57abf1b638f"
+    },
+    {
+      "path": "backend/cc_api/staff_enrollment_models.py",
+      "bytes": 978,
+      "sha256": "0ca896579a1d4d5a78ce8d94b22ad6ce2b42a2507f8d4fae668214e37640b237"
+    },
+    {
+      "path": "backend/cc_api/staff_enrollment_routes.py",
+      "bytes": 11210,
+      "sha256": "f900add151933ffbd0f42b068cffe6586a55059c2316b55eb69b5cdc58d2e94b"
+    },
+    {
+      "path": "backend/cc_api/staff_enrollment_services.py",
+      "bytes": 1312,
+      "sha256": "47ab71daec0e3b2c2cf96a255a37dca369321a44bf98c86625a12193e65d9ddc"
+    },
+    {
+      "path": "backend/cc_api/synthetic_dataset.py",
+      "bytes": 5502,
+      "sha256": "4a5539d18248f7861bf51b96c507a0c3a566bf1c1dc3f03bc14cedd0307b1c28"
+    },
+    {
+      "path": "backend/cc_api/utilities.py",
+      "bytes": 469,
+      "sha256": "26091e32bc4a8a8bcddfdda6aff974c8e2675c24b3639a45fc060daa19e7bb60"
+    },
+    {
+      "path": "backend/cc_api/verification.py",
+      "bytes": 2237,
+      "sha256": "b175628d512e428a2001cdfe54acdb7040cba768e8dea204dfc7e760bb8ef181"
+    },
+    {
+      "path": "backend/cc_nlp/__init__.py",
+      "bytes": 339,
+      "sha256": "1e61f89b2a531d733734c4ad28a33b014c45b395ae06a0ae9ad976c15c7eb724"
+    },
+    {
+      "path": "backend/cc_nlp/assets/extraction_result.schema.json",
+      "bytes": 2026,
+      "sha256": "54ae9a1783243289dad886f9536fae7c9b21ee888c27688d158baf377b2c925e"
+    },
+    {
+      "path": "backend/cc_nlp/assets/synthetic_eval.json",
+      "bytes": 4225,
+      "sha256": "ceeb359c420089cb2836b638ad9815d3fbf5e3137f5656c0e9656f58e801e824"
+    },
+    {
+      "path": "backend/cc_nlp/assets/tag_catalog.schema.json",
+      "bytes": 1138,
+      "sha256": "6410445c9785c4acc5b2c9a3e1984688ee77950ce22b6c8fd2b3003d219a1dd2"
+    },
+    {
+      "path": "backend/cc_nlp/assets/tags.v0.1.json",
+      "bytes": 21185,
+      "sha256": "dcc8b63a549af4e0f2796e0b5decf1c4414e175c6a79bad4f0ff20cea137a6a2"
+    },
+    {
+      "path": "backend/cc_nlp/batch.py",
+      "bytes": 2865,
+      "sha256": "027915b39f76fcaa7304d7be7746ea55a23d4889e3b8127837a30454619829b8"
+    },
+    {
+      "path": "backend/cc_nlp/benchmark.py",
+      "bytes": 4967,
+      "sha256": "81bd551dada485587ed91b222fb6f1bbf16597e45c786157e4321524cfe4359f"
+    },
+    {
+      "path": "backend/cc_nlp/catalog.py",
+      "bytes": 774,
+      "sha256": "0d4dd0fe9420dba039113d80e74f2f5ec178f532d83fdf71e84a13072a5924f0"
+    },
+    {
+      "path": "backend/cc_nlp/cli.py",
+      "bytes": 4467,
+      "sha256": "67419e7e6efc3014f046334699455a78fad868253397ddf14f1087fe9f43d55e"
+    },
+    {
+      "path": "backend/cc_nlp/clinician.py",
+      "bytes": 6511,
+      "sha256": "1f8729cbcecfe5303135fb2343869a2fb1aff73538d51d654f5c92a6dc024787"
+    },
+    {
+      "path": "backend/cc_nlp/errors.py",
+      "bytes": 262,
+      "sha256": "f3fbc7449bf6a446ed24a30d4fb22cd3b670c73674711dff8a4598385b2f9efa"
+    },
+    {
+      "path": "backend/cc_nlp/evaluation.py",
+      "bytes": 1805,
+      "sha256": "e348bc2712e07bc37490fe522129622393b30facb979e90c154b1cbac2ec037e"
+    },
+    {
+      "path": "backend/cc_nlp/frequency.py",
+      "bytes": 2945,
+      "sha256": "bcc60a4968b35160611d6ddbe0f3d43bd6ffef8f16f011ba1459a73e2e994abb"
+    },
+    {
+      "path": "backend/cc_nlp/models.py",
+      "bytes": 1299,
+      "sha256": "3be06b6f833344b6f0f966bc1ee1816380eb568156e2c740577c0340efa79f80"
+    },
+    {
+      "path": "backend/cc_nlp/pipeline.py",
+      "bytes": 6714,
+      "sha256": "5e7edfc6efe00ba887f21d8e0ff8a74c44fd7e945db71fa569e525d4cc4873a8"
+    },
+    {
+      "path": "backend/cc_nlp/prompt_templates/extract_v1.txt",
+      "bytes": 2121,
+      "sha256": "edd22d1966f9a856ce03291d0b9587dedf7c6a60f3a7ea150d52d3ac4aadc14c"
+    },
+    {
+      "path": "backend/cc_nlp/providers/__init__.py",
+      "bytes": 93,
+      "sha256": "c1ecee28f06b06818ec70039aa31695c3278035d09baa43ca051e8f17e9fd288"
+    },
+    {
+      "path": "backend/cc_nlp/providers/mock.py",
+      "bytes": 3612,
+      "sha256": "c49602cc7017b9778c554e7679a889d5551c3a7054365032ea1c15f1e13a6cf3"
+    },
+    {
+      "path": "backend/cc_nlp/providers/ollama.py",
+      "bytes": 6568,
+      "sha256": "2f5fce17be85c0adb8d33d06235e1ae74fb1c26fb825de355fc6a2160886ae34"
+    },
+    {
+      "path": "backend/cc_nlp/validator.py",
+      "bytes": 3901,
+      "sha256": "2bbd4c179b4a05bfb1e132823aaeea82c4a243c07dfada704effd2865a1269b0"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "bytes": 249,
+      "sha256": "640b31ec150fe722b4478f1aaebea1f433348c2ef08f85c52b3bfaf11eb9a3bb"
+    },
+    {
+      "path": "backend/run.py",
+      "bytes": 183,
+      "sha256": "feaaef07435db13d3084c54800f10deca20388afea5a636e23c506e73357e687"
+    },
+    {
+      "path": "backend/tests/test_contract.py",
+      "bytes": 2312,
+      "sha256": "3daee86d4afc9c95ea615ed9eb4b58a224445e8f7b6be4a057675e08d213b563"
+    },
+    {
+      "path": "clinical_catalog_data/v5/README.md",
+      "bytes": 4695,
+      "sha256": "787ea6d96f213eec32a45cece04ad293efb31205962b144d5beb4bf382d82a0c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/caps_5.json",
+      "bytes": 25498,
+      "sha256": "6e5200c4614cfe7988e389e8e76a50e61faba4febc636c99922441c3ad04e36b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/cc_demo_interview_01.json",
+      "bytes": 6757,
+      "sha256": "f3082884873a6ce6937da52e22d671a284972c9439f6ac7412c10d58f23a1823"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/cc_demo_multiscale_01.json",
+      "bytes": 9171,
+      "sha256": "bd6e5da2b0848fafffef4841ce9f55363c7d065e81231eee0dc188ead10a1117"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/ces_d.json",
+      "bytes": 6461,
+      "sha256": "e2807987c84e287907eb01961864b659b0d314ce454b5ab81cec15ad779cf2ce"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/cesd_r.json",
+      "bytes": 5999,
+      "sha256": "cedde58939807e2b0de251d0c77233c1accbe36b3d183cf01962b663061c165b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/dass_21.json",
+      "bytes": 7502,
+      "sha256": "93d3922426f7af93e2ade6456f4305aa7777fea4c810f4f63dbcb9aaff5609e7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/dass_42.json",
+      "bytes": 6689,
+      "sha256": "a530944a0dbe4836fc31da26830fca15ce64c45cc48f8ff628bbff9ce495d7dd"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/diva_5.json",
+      "bytes": 29772,
+      "sha256": "6e9b3e84665dc680be66e512c979b9225c533a3186b5aac6530813e487ffd308"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/gad_2.json",
+      "bytes": 17158,
+      "sha256": "9853271293cd078bd0004ba233e6fe5a0c4578060fa18c976481bfb2c6744908"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/gad_7.json",
+      "bytes": 23321,
+      "sha256": "cffd98cf69d53458ff431ff7053fa7ba81564e9e646f3beadbe8372becfef16a"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/iadq.json",
+      "bytes": 6941,
+      "sha256": "903c8f133ed15d6551495ba91f5a1eed15269f3f1ece4d27afedabe1e00ea6ce"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/iaq.json",
+      "bytes": 6610,
+      "sha256": "b63246158ce42d3af1326769c8e875760a0ff7ee7546b44c3e5d5788bc5f7758"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/idq.json",
+      "bytes": 6745,
+      "sha256": "fc6eb4d9e29c526ceeb0229f34932551320c510ec6e57bfa625738367c818e4b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/ipip.json",
+      "bytes": 5877,
+      "sha256": "1928c477d19c1b77425c03d9cfe654ce9755cd7ef1a18a98803cad0a7c2c0564"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/iti.json",
+      "bytes": 6537,
+      "sha256": "2b97732775ce43a4ced42298820dd8edaab3e9f8a01937d748a21952d93619ba"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/itq.json",
+      "bytes": 8060,
+      "sha256": "363c05c26fe68125d9c8bd895de4d51acedbcacb0075d3c21aa643a94b0c5507"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/itq_cc.json",
+      "bytes": 6681,
+      "sha256": "c61c354bdbf6721d86c5add4115bf0f5000a38c115008f468325ef9178651472"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/k10.json",
+      "bytes": 6395,
+      "sha256": "33550bc6a6971dfbb23d7e966b657a625934ac90abf3b262a1422f5d93495f51"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/k6.json",
+      "bytes": 6389,
+      "sha256": "06c7a48f9123ae2ba8d5dd1b0f360667105a0f7f73b0168f05bbc0510616c0d5"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/lec_5.json",
+      "bytes": 6349,
+      "sha256": "d56e8d9d4483a949966772b79aaa6ee8a955ec066a47feecc77966fce5148ab8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/mini_7.json",
+      "bytes": 16280,
+      "sha256": "d8fd800a22a504401a59c266e9dfd2e7cc21c0807228fcf152a55d2bf63f355e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/pai.json",
+      "bytes": 20382,
+      "sha256": "c4a49da09ea28933e3dd562b930154dc98f01b5eb0ff638c41729715d15fbf8b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/pc_ptsd_5.json",
+      "bytes": 6427,
+      "sha256": "a098fd62257a61b8ddb25cc5389501be64df69b82f21bef229190000bc929875"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/pcl_5.json",
+      "bytes": 7055,
+      "sha256": "523367597bfec140f2dac733827c18f0cc24f2ec6ee1bc216a85e3d87528a0e9"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/phq_2.json",
+      "bytes": 16184,
+      "sha256": "670e8b674e4e2152f4e350d89d0b01bb395ad592ba13d10961f200c865e2d27c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/phq_9.json",
+      "bytes": 26395,
+      "sha256": "0fd75f1966f15cd7606b151170f99af3e589a0eb859cf07ff1b9f0e8f62b1d93"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/scid_5_cv.json",
+      "bytes": 16730,
+      "sha256": "44a976014f221c051f10f8275ea2f48ec5e004bb5df19f56d6a1e0524a18a100"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/scid_5_pd.json",
+      "bytes": 11141,
+      "sha256": "421c4bf7cb59bad932fe5919e286990ce8337ad9180658ff0770ddfb220c3157"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/scid_5_rv.json",
+      "bytes": 13269,
+      "sha256": "8fcee583c8687ffdef0ca6b914cb3188242d277adda299a4802f975f4f7a0cf3"
+    },
+    {
+      "path": "clinical_catalog_data/v5/catalog/instruments/sdrs_5.json",
+      "bytes": 5923,
+      "sha256": "bc7af76d5a816827b918fe0b68a50908b98402f44e40ceb613875ed7395ad6f6"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f00.json",
+      "bytes": 6773,
+      "sha256": "a01e0ec64ce5f884ac0f3cca040db140efd9866dafcb343ac05049f5ea13bb87"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f01.json",
+      "bytes": 4911,
+      "sha256": "782c8575262e56182d37517ffbeac30134542e24c17d4b0322fbc6a98df821c2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f02.json",
+      "bytes": 4960,
+      "sha256": "bce3e8d546426705aaccd029aac7f40d55fed3308e3fbde6cfc5e1792c558e9c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f03.json",
+      "bytes": 4430,
+      "sha256": "c6352adfe99961ff4200d00a77cdd893d00ffd314c75cf675043f75c4d77a087"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f05.json",
+      "bytes": 4443,
+      "sha256": "abfa640f31c9336b3ba833e9188ac3f6c560e1b5334a598826bc5f41fbd979fa"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f06_7.json",
+      "bytes": 3681,
+      "sha256": "49d59750a5c5ae865d387216a124e22daf9ca51bd9de0f434853ff58c4cbd619"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f07_2.json",
+      "bytes": 4479,
+      "sha256": "c802e3f9b9603a54f26fe484973ada3c6d254cbeeb46bf090837a4896ee5a15a"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f10_1.json",
+      "bytes": 3761,
+      "sha256": "295c7b7219cf438757987565d94876566c46397f0f9db3d3011391a9eefac4ff"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f10_2.json",
+      "bytes": 5278,
+      "sha256": "8f3f7d144241709a8c4ec3399d01ba898d20e7d1f063c49ed74240a69023f6a2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f11_2.json",
+      "bytes": 5080,
+      "sha256": "221e9c9898a291c401824d0bb519590595735ebc5f7b9517db52a873a9f701a5"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f12_2.json",
+      "bytes": 4038,
+      "sha256": "b118f8cd0361d7737df49b2222c0506c1825e36995a4e0644705924fe86de02d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f13_2.json",
+      "bytes": 3835,
+      "sha256": "3da768b9a22494ef3f781f77803c3b547457489d78101b07e7c04d5d96abd5d4"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f17_2.json",
+      "bytes": 5639,
+      "sha256": "617bd308961a8b2fc4dafef04509c0becae0167fc487982f821235c70546ddb2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f20.json",
+      "bytes": 8338,
+      "sha256": "36fcc322fd929f6af021b55314d29cb074b9dd5ff11d7de5e9bfa801bcf59068"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f21.json",
+      "bytes": 3824,
+      "sha256": "2f5fc5a4158ddf76375585ab6927f8cf278b3b9b6fba35f751a05d109f7c68c9"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f22.json",
+      "bytes": 3828,
+      "sha256": "55f3d95655151f16236cd8b4d4505a8aecc582d09eb4ff0a50f8958d5d9820bf"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f23.json",
+      "bytes": 4818,
+      "sha256": "0e4ff8014c16ba4bd9d8843a15bb3de48efaa2e2dc0adec47ff7dba26f31cd54"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f25.json",
+      "bytes": 5629,
+      "sha256": "c16c3cd3b157b45b3b4b954996cc1fbd840a1b3e7da3cb2c5a75e163df1bdacb"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f30_1.json",
+      "bytes": 6368,
+      "sha256": "48c4404f005468e24d05b06a58a498a96c4010fdbbaa8b352b083da1bcf815a8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f31.json",
+      "bytes": 9440,
+      "sha256": "d6bf178b50c0bf2b6612ea693fa79214423eef092481e960170d62cf9745141d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f32.json",
+      "bytes": 12488,
+      "sha256": "6d14d49311744c0d367c2a5f9006a8abd50b4cc57ef6d6e1fcd63e16ac37ab73"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f33.json",
+      "bytes": 12582,
+      "sha256": "f6428b062c2cf43de39f3f442c2d256578d08b1f05b665d44922b469b903cfef"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f34_0.json",
+      "bytes": 3490,
+      "sha256": "bf86b391d544b10c5207ff98d88348f9b394c91d77519d7603590a2220ac60c9"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f34_1.json",
+      "bytes": 4235,
+      "sha256": "b88100bd695f3dc1787bbafce9459e3a86e5b58f828d9392435aaa9b1abfb0b8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f40_0.json",
+      "bytes": 3845,
+      "sha256": "923ef4f49b2fb137efd207dcb87471a8a2f87ad5149b577472a6698f41991fbd"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f40_1.json",
+      "bytes": 6189,
+      "sha256": "be68e9831c353bc20b349a505ac44962cf89a027ec51ce400d93db0bf34260dc"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f40_2.json",
+      "bytes": 3765,
+      "sha256": "863807ef21aec882f4d11c0486b5d58281bcd09a832b0f1251bf69c38ac72e00"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f41_0.json",
+      "bytes": 7211,
+      "sha256": "1ffb2a1dadb79e7016be2cf4a49588461117742a4e343030c5676cd31e7e568d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f41_1.json",
+      "bytes": 8383,
+      "sha256": "a0b225f202e3dec11a489d1c7d1387cfe417da7063528296dc3fb409949878bd"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f41_2.json",
+      "bytes": 3539,
+      "sha256": "4fadc876318f2fa32dfd15f5cf249f23e1041fe1b67352219024c38cf18079a8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f42.json",
+      "bytes": 8034,
+      "sha256": "6fb6ce8710162843d38f81650ba288bd6e9e8438bbe218b0c53c3c37c1bc122d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f43_0.json",
+      "bytes": 3433,
+      "sha256": "266c4cf6537a2a69aa94b8d901b433270712fe4ad06a67088fb0c0c6850a7541"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f43_1.json",
+      "bytes": 7592,
+      "sha256": "a8b763efcc622d1546f6f04fad215b90898cb87b7312bfeee60ad7878a0f8527"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f43_2.json",
+      "bytes": 5248,
+      "sha256": "ba1536863bae64bf36a9086e7530ad45f0072551679663b15787bef195dcae3f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f44_9.json",
+      "bytes": 3252,
+      "sha256": "7a9d6b56ab2e7dcdd4034191a1f1445efeb2b89296fc122143113d76b20bcabe"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f45_0.json",
+      "bytes": 3805,
+      "sha256": "5cd2515f12f69701eb1de295cc542fc8bd982efa8fd3fb18d41ccad1efbb37a9"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f45_2.json",
+      "bytes": 3580,
+      "sha256": "0dbee7a564c1791b4a2d59a25bc5dd91cb35493efef0bbd370e8b4683c7c9f25"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f45_4.json",
+      "bytes": 3651,
+      "sha256": "9965f914b9dc15ffb42e4a93a548330ac0522771a4bb1c9d4714f8176da41902"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f48_0.json",
+      "bytes": 3505,
+      "sha256": "fbe808e54a9f2a32e2452efcec61da8bd87ba257b1f2772fb02b3bb4267bfd0c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f50_0.json",
+      "bytes": 5238,
+      "sha256": "23fede7028ece350080ddeb4e98bfba73fe307f8873b346c6158d4a6776c8a64"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f50_2.json",
+      "bytes": 4044,
+      "sha256": "abb7944eb317a67b43352a6e279c31d07a604e93556b450e9c26d9d010698ea1"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f51_0.json",
+      "bytes": 3479,
+      "sha256": "34b8d9ce23d5026d5dec4ffd3c7e84465448906b43639e32e48f29bb49aec793"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f51_1.json",
+      "bytes": 3315,
+      "sha256": "2c2112f4ab022497759dcfb9faa2c79b911653e364f088bdff6a165dc44874c4"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f60_0.json",
+      "bytes": 3064,
+      "sha256": "98127a8af491c8f2e232b65d72d87e0d11da2d725e5e8c15f76c3d3259c78e14"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f60_2.json",
+      "bytes": 3180,
+      "sha256": "017e5aecc6158274d6926ec8f6dbfc22c14a19309a5f3ada59e81213d53ec49f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f60_3.json",
+      "bytes": 5253,
+      "sha256": "bb21becd0482cc6607791ac61484a5932ee647296176526d445121413091b26e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f60_5.json",
+      "bytes": 3378,
+      "sha256": "6f9c2274055fadd667c6b46f2df9964959040102df29db742e17220e98effd22"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f60_6.json",
+      "bytes": 3467,
+      "sha256": "628e475dbb206986e3b861979a16a8ffdffb8a161de76f021eca004c9bc4597f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f60_7.json",
+      "bytes": 3400,
+      "sha256": "161b7e3f397c0525729b51397dc18f401cb6ffec15e573409fb0b76ef3976f3d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f63_0.json",
+      "bytes": 3690,
+      "sha256": "c76588e517410ecd1e86fc3d744c75f8a6a51763c3534c12162d1159afb6503f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f70.json",
+      "bytes": 4252,
+      "sha256": "e4e93e6a3089361b4341af7405fb54de70f9fd3e3131cdb174666dc52f5ffba7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f80_1.json",
+      "bytes": 3436,
+      "sha256": "f6452a15412948888cd3be7e2fc217a7f1ae06ac1fb30033880ae69030ae3598"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f81_0.json",
+      "bytes": 3450,
+      "sha256": "4b12a225af600a77259ffc24eae4d020645bd0a5f9ef31799a0eb8b30c5d3bbe"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f84_0.json",
+      "bytes": 5173,
+      "sha256": "32e0a6e6bcb71cfa1adfb05a63370f4a476fa166505d685cafdd0fb3bf9f7058"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f84_5.json",
+      "bytes": 4810,
+      "sha256": "dc0963288bf3cf0a174c7b30d979e38ca243ac23e45011cf2d676c5d6886290e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f90_0.json",
+      "bytes": 7013,
+      "sha256": "33925af452e1a590946e3d66e9981eba8a323e3230f19426b16329ad698676ab"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f91_3.json",
+      "bytes": 3496,
+      "sha256": "3308901279d910e160b6f381d0ec07ac5a06725031d5b5e08f01995d86d57daf"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/f95_2.json",
+      "bytes": 4172,
+      "sha256": "050389b5a07ebdbcd4a029f23361f9014d62aac3e3cd12ba7d1038a5deeecffc"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g20.json",
+      "bytes": 7147,
+      "sha256": "718ae84596aeefbe6a3e11f7657dc9ccaedf0b6957728c2f0d67170c74d66e6f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g21_1.json",
+      "bytes": 3405,
+      "sha256": "6b11c9746b37626057515908f2abf2e45e4907efbcb6f36e6e7ca6164fa7ed92"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g24_9.json",
+      "bytes": 3634,
+      "sha256": "85bf8eff10d264622f7d4f6b7a44259873e46a37fb1467ede42d5cbfafb389fc"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g25_0.json",
+      "bytes": 4064,
+      "sha256": "b4dda7b21955f4d63a9c2571a26adfefab1396ae417e24ca61091ee47e4a01c8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g30.json",
+      "bytes": 6559,
+      "sha256": "d0284fb5e0cff69a2205dbe763af755c1021294b2aa71d95f07a442f9900a9d5"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g35.json",
+      "bytes": 7057,
+      "sha256": "ee17fb98299bce7b002bb592c7683431caa1e9d9198c5abf0a5dd5eba7f8ad6b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g40.json",
+      "bytes": 7736,
+      "sha256": "9afef99e1f00ce2a68d38084a33f70d0a0b06b23bca14548e8434ae22ab4e9b3"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g43.json",
+      "bytes": 6811,
+      "sha256": "d3527dc6845f28c85d2b34ff1433efea7d57ecd8ca3a1bb68500cd6e36f3b8f3"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g43_0.json",
+      "bytes": 5750,
+      "sha256": "6e031dad66c034b1c904905a2c26d64b9011ab46defcd3f3c0138827785381f7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g43_1.json",
+      "bytes": 5740,
+      "sha256": "0a821a7b4cc9880b4615193a372d4f1ea08886b0d5bfbb9ae6c1620dd24a44c0"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g44_2.json",
+      "bytes": 4769,
+      "sha256": "73950adfeddad24cac66de8ce32b06353d761723609101302bd349c2bfd7799f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g45_9.json",
+      "bytes": 5437,
+      "sha256": "36615fcbb447542eac6d831b0e9667a0d67f9cb76591bcf15753038bf3aa13ad"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g47_0.json",
+      "bytes": 3416,
+      "sha256": "7176ad378581761e616b9f6ea6c3a95e1498e7fe1f002c239a14282477f2c2c4"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g47_1.json",
+      "bytes": 3293,
+      "sha256": "3d1147253498ed1fdd621d612ce4772a2eef4c8e78c594cccf513eb3ddb3e8ce"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g47_3.json",
+      "bytes": 3783,
+      "sha256": "d6a1d3b1cff99b5d167dbbf5dfc0437936898291dfca4be1ef445cfcbbe89be3"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/g62_9.json",
+      "bytes": 3897,
+      "sha256": "be9859a63d3447821a6b1e28d2811b55772bafc214df262b1f9a00363486961b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/i63.json",
+      "bytes": 6769,
+      "sha256": "30fb74e007c764d5b3a7dc6cebf40f7c61ccc74413c9d3dac4011b5d4d1c3134"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/r41_3.json",
+      "bytes": 3471,
+      "sha256": "98e7c325e936e951a4d61ce0456ab8dae7155715669d3d3234bae6a0cfeef84b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/by_code/s06_0.json",
+      "bytes": 5134,
+      "sha256": "f5e5f88bb76e23ceb322f95b3877ad92b849695dcc5ed463614d78dd6be8cad7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/diagnoses_index.json",
+      "bytes": 18546,
+      "sha256": "f18af95cfdbeb35c79de0a8515ea64cf0af7f6f604fdf716f5c7a523f93d4851"
+    },
+    {
+      "path": "clinical_catalog_data/v5/diagnoses/specialty_index.json",
+      "bytes": 24608,
+      "sha256": "7c9820aa75d4c131cdd6f866fbd8ade0e298e182db1ab112fb0a36994358b67f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/docs/INTEGRATION.md",
+      "bytes": 4246,
+      "sha256": "61de4c14c38341dee3758008a31441b2cc340c0f6cdd16f552eb00f68138a846"
+    },
+    {
+      "path": "clinical_catalog_data/v5/docs/INTEGRATION_THERAPY_MEDICINES.md",
+      "bytes": 5273,
+      "sha256": "d134554bbd37ee048aa81d5acc64dbb7c179bd56d75cbaa743eea738cd6bd7e8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/docs/qa_treatment_link_report.json",
+      "bytes": 1202,
+      "sha256": "b700ecac5d5a3678d6e7792fb7dffde50514cf2876be0ecefcb3e38185f5c128"
+    },
+    {
+      "path": "clinical_catalog_data/v5/docs/rights_audit.json",
+      "bytes": 25131,
+      "sha256": "be2676fb0a5b178892063eeb109eb9ae5de0ed29b908f994c5c5ddfe6abc828c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/CLINICIAN_OVERVIEW.md",
+      "bytes": 3915,
+      "sha256": "121cce7ba573d23b08a82a2133f14bb86ccc0801e9cd1dcca5bcb6cf35aa515f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/ces_d_clinician.md",
+      "bytes": 2683,
+      "sha256": "0abe4262c2acfb73ea82bef5aa068ac456aaffda095076aa8c0f700ebbc336ae"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/cesd_r_clinician.md",
+      "bytes": 2593,
+      "sha256": "2f0f6d0e6be3bded7166137c8c108d9b749afe01c955a1c327ef43ece8354eb0"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/dass_21_clinician.md",
+      "bytes": 2897,
+      "sha256": "bc21da11c0b0982dcaf9275f54b725631fa8e563e85a379e735c9d07ed5c6d16"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/dass_42_clinician.md",
+      "bytes": 2756,
+      "sha256": "c0b216526b2fda800e4585a2815e1659dfa90a14ec9c9d18dc6d9ebfd8e6cf92"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/iadq_clinician.md",
+      "bytes": 2752,
+      "sha256": "d2ff5e3a046788c5c78c659ef3de5354a1b89dbe916c5f7db445f25bcaa3d779"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/iaq_clinician.md",
+      "bytes": 2688,
+      "sha256": "9972bcdeaf856d33bcbad30ebf254824d853730cd3b4224e2a8e17dfabd451a8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/idq_clinician.md",
+      "bytes": 2702,
+      "sha256": "d1fe02e07d92cfed0d072538970693160b99e0cfd0eda242a0ae7b188aac75ac"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/ipip_clinician.md",
+      "bytes": 2662,
+      "sha256": "b04e1c6c673531c47a5a59a975aaba474ae6445ba7c2a76445ecb7c57b70b600"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/iti_clinician.md",
+      "bytes": 2699,
+      "sha256": "91988d19c3273983c5a169c13c6f242918e0acf6a3d355c51706f2d0aab95770"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/itq_cc_clinician.md",
+      "bytes": 2701,
+      "sha256": "6b301599b7e61b78cb8caac20a79a64588700f8b245bcfc9e57460437c7cab08"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/itq_clinician.md",
+      "bytes": 2830,
+      "sha256": "93343545026c221477cf142f69f794b5f5cef49872f5fe9b0245f3476e1694d7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/k10_clinician.md",
+      "bytes": 2673,
+      "sha256": "9f164c9f4cac1285a5abcd2251586841a6ec73d38074ddd753af08e9c3979814"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/k6_clinician.md",
+      "bytes": 2675,
+      "sha256": "3f7a6e7df43a0d74e41dcb9f4f70e520e306afdd9e012a88884384c49ce6aa1b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/lec_5_clinician.md",
+      "bytes": 2692,
+      "sha256": "cebaa0c96f28b7c5fd9d6708b00fb608d5da826a3616df426b711ab685621305"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/mini_7_clinician.md",
+      "bytes": 7098,
+      "sha256": "cb00923fcdcadd641c967f0f599024dd0b9e2538e7bd6a5bd20c849d5a56d4ef"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/pai_clinician.md",
+      "bytes": 6220,
+      "sha256": "fa619d8b2a015ffd11070c8b72c40826228b0e65f8ba9aec357d6256cf3859c8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/pc_ptsd_5_clinician.md",
+      "bytes": 2624,
+      "sha256": "b6d03d93319c578ad0b6001716248a42bc1fd08ac9f07a654756bca9f13d1f9e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/pcl_5_clinician.md",
+      "bytes": 2700,
+      "sha256": "68d947b64d043f2ad9863bc0d23ad7242d5a3a0555974e41372882c3016eee5e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/scid_5_cv_clinician.md",
+      "bytes": 7423,
+      "sha256": "1d9d6ca631e8d04d46b9bb7906c7052b4c835bd973356daa7ed8d3f59ea8b181"
+    },
+    {
+      "path": "clinical_catalog_data/v5/guides/sdrs_5_clinician.md",
+      "bytes": 2748,
+      "sha256": "dc0d86ba4095406c5bbcf07f359132746790d965b1d637d5864ece9a8ebadb26"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/diagnostic_interviews/caps_5.json",
+      "bytes": 23789,
+      "sha256": "f75f607cd36810de2c5d1515d72e5ae474e44074374f393fcaf2b73bc1d0af5f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/diagnostic_interviews/cc_synthetic_interview_demo.json",
+      "bytes": 5369,
+      "sha256": "19e912abaf2bdb1d4c7d7c6d3c7c47e401a3281d72bee3b21581f75aa10693de"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/diagnostic_interviews/diva_5.json",
+      "bytes": 28222,
+      "sha256": "fead5dc03e02a5f0ac89baae98f00f41324d85a7250f22f5d0d74daf26615634"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/diagnostic_interviews/mini_7.json",
+      "bytes": 14684,
+      "sha256": "dcdef48c7606612cdff6912079741f0b582a4bd5e8319ead9105478c529040e7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/diagnostic_interviews/pai.json",
+      "bytes": 18880,
+      "sha256": "c4c11186333cb3a511c598ba6574d2fce687233f98f7cc9d1f3f00c1aafc6b74"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/diagnostic_interviews/scid_5_cv.json",
+      "bytes": 15143,
+      "sha256": "698dc10f7519fbce45fc3e05f0b521d9b4cd0485cbb97776eba1d31fb13a0fc8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/diagnostic_interviews/scid_5_pd.json",
+      "bytes": 9554,
+      "sha256": "ddfeeb6aab4c0d87f3a8119815acc52a08b2cc85fdc6f7af6c5f55b40f50092e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/diagnostic_interviews/scid_5_rv.json",
+      "bytes": 11682,
+      "sha256": "66d6d0c7f12a0860bc9db7c31bad1122d4b7edd84da765cb61e2e4b7cf82c66c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/multiscale/cc_demo_multiscale.json",
+      "bytes": 8032,
+      "sha256": "ccb6cf30ae3923da6fecf49ede25fc8e2a3afeb538ede7ee331a2cc89077c505"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/multiscale/pai_metadata_only.json",
+      "bytes": 6831,
+      "sha256": "a972925c44ee93f5e763d8321fc7f8e643a64974de20d03399acfe56cee012f9"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/phq_gad/gad_2.json",
+      "bytes": 14382,
+      "sha256": "41da25c75d35881b89f986688ddc15c69c0308cb61d16cee2dcbeaa178c53dc8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/phq_gad/gad_7.json",
+      "bytes": 20545,
+      "sha256": "90b3b2b171581b6c357e0644cbb2901de94a69e50f1ae58d51e8a837ff9a5d96"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/phq_gad/phq_2.json",
+      "bytes": 13423,
+      "sha256": "961b59696bbce6308262b7fb0622b44d1ed00debb1858471c4c047202b360cb8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/legacy/phq_gad/phq_9.json",
+      "bytes": 23634,
+      "sha256": "ce1355003e6ecd99be193de8b5a655924c2800c2559d217de83e0d29500780a5"
+    },
+    {
+      "path": "clinical_catalog_data/v5/manifest.json",
+      "bytes": 12797,
+      "sha256": "a9eed4f3299c71819fe8b5b67f73ca2e7ed6e77796e29d38983c0bf89a9ef511"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/acamprosate.json",
+      "bytes": 2038,
+      "sha256": "3b6e3d2108cc48a9b1690bed39a9306a4e913d7b5c7fed09270a3da8bdb7890c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/amitriptyline.json",
+      "bytes": 4010,
+      "sha256": "cad3dbe7aadfccfea03cd5957db87e1748ec1e93edb389e203c13ca783f58722"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/apixaban.json",
+      "bytes": 2499,
+      "sha256": "80615be48b4c21d05a8b3fe7df51038dbbd968078775f1a65263f5b5876625f8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/aripiprazole.json",
+      "bytes": 3288,
+      "sha256": "97d716a36b54783d42438acc9d6d633a3c94edaacff13a2169bf6ffafdab9ab2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/aspirin_low_dose.json",
+      "bytes": 2628,
+      "sha256": "8027370648c3c9cd19fd1644bdc510902443f4aa882bf14e8d1679fc406963a3"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/atomoxetine.json",
+      "bytes": 2046,
+      "sha256": "e6b04e5df1ad93c18f024a45d28d235b49cc32623a4b0754aabc401f31b9a3ee"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/buprenorphine.json",
+      "bytes": 2244,
+      "sha256": "743e37c396c65af1116f24ec9de347aeffc2b6289a06228eca26e92a99a79fa0"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/bupropion.json",
+      "bytes": 2939,
+      "sha256": "a5f2bae370f81af211f2b442ae995f63954702dfec83ed517692e5aecc786881"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/carbamazepine.json",
+      "bytes": 2590,
+      "sha256": "7bc712c03bb0235240975bb5df6eac74f37d72a1371232e7319d597026abcfad"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/citalopram.json",
+      "bytes": 2879,
+      "sha256": "5c9fcf6fa660f769f7e3ab25ad675b1dc14a1e0d4d51d7ebcfb31a2ac25ea5a5"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/cladribine.json",
+      "bytes": 2012,
+      "sha256": "a5a4c1580024a14b891a63108c44aa68bb0d90049fc4f5b290e013e90f9244e0"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/clomipramine.json",
+      "bytes": 1970,
+      "sha256": "24f45feab99dec4e134ddb89765dfe491fda88a904c18b2f8bc40a5538c09b82"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/clonidine.json",
+      "bytes": 1981,
+      "sha256": "7649bd12142881e60e4167fa70c2d1ea5ad8e9c4d3b4b4ac8d242396ae43572e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/clopidogrel.json",
+      "bytes": 2277,
+      "sha256": "a8464490fdbbbca334ecea7d32c0c89af9ba69c417f3b12025e81ddfed8299a2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/clozapine.json",
+      "bytes": 2190,
+      "sha256": "39309c268a6a9bb3772f1960127dc6e2a52544e867e98dd78aab5621da9e01f3"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/cytisinicline.json",
+      "bytes": 2029,
+      "sha256": "e90b85198fd9d8902ad78b8478e0210553225867d80c5a4fda601f1cbf161e83"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/dimethyl_fumarate.json",
+      "bytes": 2036,
+      "sha256": "9098fb8cc84972117b174e22a94caf2057c3cf715a89e57cfbecf5965412bdbb"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/disulfiram.json",
+      "bytes": 2008,
+      "sha256": "01ae52547d8410686bb444f5cd3d7777da853026423e109c8a3e17ec7d62ecf7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/donepezil.json",
+      "bytes": 2423,
+      "sha256": "ce857010328f64a3f8e2e507fe033a6f04983e4df29b392ad516882fc9feee10"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/duloxetine.json",
+      "bytes": 2890,
+      "sha256": "823981b7157f7cd600622d60c9f04c547df8d470897bfb08a07503d1a3577454"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/escitalopram.json",
+      "bytes": 4365,
+      "sha256": "e708dd9314f646a2e265d1448bd430420ed4da330fcb4041a85afabb0a9e289d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/fluoxetine.json",
+      "bytes": 3383,
+      "sha256": "aac7120ee9b5c9ee145bb2b6cc2e42c2cc83745c7204bc1f0c9ecce4d3528b2e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/fluvoxamine.json",
+      "bytes": 2883,
+      "sha256": "3923004d8aec66453067020080b9fdbff7905ff0e8183fd7c0851cfb7fdb59cc"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/galantamine.json",
+      "bytes": 2429,
+      "sha256": "7118a3d74f16bafbb05ef67da0d9eb2c015473caef7f9752cef0a0baf14bf36d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/guanfacine.json",
+      "bytes": 2506,
+      "sha256": "ef9ea7c92670eee488b448f0c37b591c68a6e944f9feef04e4068276b04198d1"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/haloperidol.json",
+      "bytes": 3286,
+      "sha256": "4145d24b872f05c149cd72b1b02ebb3d84ccd030cd4a8739dc332852bf18c8c6"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/ibuprofen.json",
+      "bytes": 3090,
+      "sha256": "35497d1c9c719172e0c7e1b9cf5ef173e134f851e5a93346c631319b54c969b8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/lacosamide.json",
+      "bytes": 2054,
+      "sha256": "b9a5b0063bc425e72b484c72222300357251869e9bb174c32b63d1e5bbf8c5fa"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/lamotrigine.json",
+      "bytes": 2864,
+      "sha256": "719b59442c42f7a2f9269fe00ae1dace116ceeb840990c2dd2b9dbd53abd39cb"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/levetiracetam.json",
+      "bytes": 2414,
+      "sha256": "aeb1ba02aaa4f1aecd75772ef4f8ecfadd8b4d778d91b27402e5de5ff2d0fe29"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/levodopa_benserazide.json",
+      "bytes": 2042,
+      "sha256": "fd2f4fc5051ec7478d57631e81048573c00d4262fa2e209594be88ecc4899c09"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/levodopa_carbidopa.json",
+      "bytes": 2036,
+      "sha256": "2a07299189c2da726d119c520a2ebee57e57eefdd46afbd0c2fd0ed804bc76a2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/lisdexamfetamine.json",
+      "bytes": 2252,
+      "sha256": "0464026fad5d12c55579577f836efc1c97e687baf0d0c5e89774f448fccb4622"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/lithium.json",
+      "bytes": 3092,
+      "sha256": "f7ba22478249aecea8efcf919cac08b2c76f4395b99ae8b7160bbea2c16fe4f1"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/maritupirdine.json",
+      "bytes": 2223,
+      "sha256": "b2656ec8b37a66a899fc5a28c2e8b2b96dbb888b97ea4515cd332072081f45fe"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/memantine.json",
+      "bytes": 2376,
+      "sha256": "0bd0d052f9dca435a83fcb50c368ceaf72e7ed36fb5eabe5c7b2b576a5021c74"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/methadone.json",
+      "bytes": 2265,
+      "sha256": "72d4686474478be957b89ce83745f8eff34dfda10aa100c879fb3e43e66430d7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/methylphenidate.json",
+      "bytes": 2242,
+      "sha256": "4be1c1acb6b56d7f68c6dc4bdef505dc0e4ec803d392376f73f6174738eff484"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/mirtazapine.json",
+      "bytes": 2385,
+      "sha256": "84f78f64b93890cb663c6ad1944f1f8a154799f1b5d522775d92043ee8a4f37e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/nalmefene.json",
+      "bytes": 2003,
+      "sha256": "0a5a2e721ad6af4b384eeca0d68990325bfca8e038cd48185f8384d0bf0abb70"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/naltrexone.json",
+      "bytes": 2769,
+      "sha256": "e455a5077e0ce199440fbe45cd2e543e7b4780dba356d8e9155f781833316475"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/natalizumab.json",
+      "bytes": 2018,
+      "sha256": "c0aefccfaed3e700a2011745d8b3bd1cef4a7f21451446cf8f3f6e8dc06e7228"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/nicotine_nrt.json",
+      "bytes": 2073,
+      "sha256": "bd13026fbd3068322d722e4bed5e6e2d3257d4d8d13c7f26975b3eaab7649a1d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/ocrelizumab.json",
+      "bytes": 2018,
+      "sha256": "cfb82ff8622706890f3df078de6f5866d51d8e8243e7f052a4ea5bdb97d81451"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/ofatumumab.json",
+      "bytes": 2014,
+      "sha256": "8ce9fdfe70f2c19ef1520568957f480c3a4deaf997320169e67b7ad6c7d6be17"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/olanzapine.json",
+      "bytes": 3280,
+      "sha256": "35d44a1a597dad99cf0868e8379a177a4bffb9563c48f1d3941a550dba975281"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/onabotulinumtoxinA.json",
+      "bytes": 2545,
+      "sha256": "ff4e264bff9ed7ee268a1f8fc059c3cfb930e3918ac647f7515a256f61aa8afb"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/oxcarbazepine.json",
+      "bytes": 2068,
+      "sha256": "ee1f28e0b8ad6ba5b9f19be4233ff3714946bfa3247fdf1c8325ccd373028d09"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/paliperidone.json",
+      "bytes": 2383,
+      "sha256": "559c81d014da3211bef73abbce1a7220aaaaf2e81da1975920cc2da781576449"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/paracetamol.json",
+      "bytes": 3110,
+      "sha256": "0fb108e86ad8d7174db9804ee703cd8e8b989a70e9b5cefbad415330e42d436d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/paroxetine.json",
+      "bytes": 4605,
+      "sha256": "31c513f533c32b9264a23bfee415df53a68f292ed33898f050aafba88463a16a"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/pramipexole.json",
+      "bytes": 2019,
+      "sha256": "1d899a57e38218dcee81df3760066a306e475e92c13974ac38200bd23ce48dea"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/pregabalin.json",
+      "bytes": 2590,
+      "sha256": "e119121f955ac51b37f8ce13809807cacb6bf5a5439dfe1bede17e0b4a0ef561"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/primidone.json",
+      "bytes": 2171,
+      "sha256": "3842363668a8d59fd62e8ba8f368382f7cdd64034d5becd286a7385f16702fbf"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/propranolol.json",
+      "bytes": 3454,
+      "sha256": "0f52617336247259be6832acbe0ba0abb4b92d261d34d1e02bc5e900b39b5698"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/quetiapine.json",
+      "bytes": 3318,
+      "sha256": "23e2b2e8c78635855f4d985eccc93f917cd4c00ea6c52ad212d582c3dfe953fc"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/rasagiline.json",
+      "bytes": 2010,
+      "sha256": "6667ecf05cc011076a091000bd1030992317b797cd2eb291650b20aca4956af6"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/risperidone.json",
+      "bytes": 4734,
+      "sha256": "f8b613139fc2bed7f365e6581f14d0a6be899bbd1447adf92bb95747d64cc2d7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/rivastigmine.json",
+      "bytes": 2753,
+      "sha256": "eaac0d903bedc653c5180a880a644092569b3a4d83e01643deecb0aac16d8cdf"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/ropinirole.json",
+      "bytes": 2013,
+      "sha256": "6ff8b2b92038ad0924442cc2bb52469687d6e4c740b826edb3dc70eb56742693"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/selegiline.json",
+      "bytes": 2010,
+      "sha256": "dbf36804ea7653004df2f712b065c645dde8b6b47438874c75e28dffe365487f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/sertraline.json",
+      "bytes": 5101,
+      "sha256": "63b501cf85a5c0e1272b6b06c3b4fe3fa2e17a117fd205c2a7d7fecb1ea42d0f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/sumatriptan.json",
+      "bytes": 2733,
+      "sha256": "69cb3fe243099f6ac6b2c3edc6c5494038fe06eb8ad5c17944093af05d0695ba"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/teriflunomide.json",
+      "bytes": 2024,
+      "sha256": "cdaa66ea70e71b245ac479071bf065ae0a6e623c2a151037574ab4e3f4cc752f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/topiramate.json",
+      "bytes": 3572,
+      "sha256": "d55673ccbe4f6d67b57a4051d3312c99b3aa00c754f0f4dc7f9a7f5852e4b0ba"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/valproate.json",
+      "bytes": 3636,
+      "sha256": "5581727a3b6f3a57e1ceae21d9683e9effe723ceaa4fc3ea778e8e9e55307cb8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/varenicline.json",
+      "bytes": 2031,
+      "sha256": "6c57bd5db958d3c70696ed51b1d79d492505e411e541e9fdb2e6e3b6dcc780ea"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/venlafaxine.json",
+      "bytes": 4367,
+      "sha256": "fb27becbb353d51608a4260698b2ff1d19c67b1f12271ed214b5f87933aad963"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/by_inn/zonisamide.json",
+      "bytes": 2054,
+      "sha256": "7ab304679aa3c0a0055434ecdc6155b38114ef9ce3cc57a11faacfb09b21268c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/medicine_index.json",
+      "bytes": 19248,
+      "sha256": "d8eed2612370520f5ce2a70fd841b8d43d463f09a89137695dec28013c77aa5b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_index.json",
+      "bytes": 3468,
+      "sha256": "92437e772abe261ab233f76d2d00f05088985bd9baf69826550208e80b1f1f24"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_instructions/atomoxetine_canon_40mg.json",
+      "bytes": 17097,
+      "sha256": "6651f9bf55dd7af2ca9371acd5b64acdfd050d24c33574ac0fe0d2963b353a16"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_instructions/aviandr_maritupirdine_instruction.json",
+      "bytes": 13059,
+      "sha256": "1601b02c3af055871c53aecbd26a364db8b369910076f3e2d3dcde38b9829f48"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_instructions/cipralex_escitalopram_10mg.json",
+      "bytes": 16457,
+      "sha256": "e3e1e5111b82c77e28befa2b5941f9014ed129aef682142cea5b3a46a5d27e61"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_instructions/lamictal_lamotrigine_25mg.json",
+      "bytes": 17286,
+      "sha256": "749ae3f2c4513ba50cadc99de0392aa639b5f2d65ef5ef0a5fa1fdd4406bdee3"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_instructions/risperidone_canon_2mg.json",
+      "bytes": 20846,
+      "sha256": "839069c92b229c915729d4bed9a8f453250e4c54baf8b27fbe67a31b1e19285c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_instructions/seroquel_quetiapine_ir_100mg.json",
+      "bytes": 15768,
+      "sha256": "cd5542e9eca964eb2341e013606e56ee1cb5a746d9f813addbf6121d5521f7a3"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_instructions/velaxin_venlafaxine_xr_75mg.json",
+      "bytes": 15666,
+      "sha256": "a61351e24387ac854dfc6f9ee61e02d1cecbc32b444d3d1578ba7a56d2453c15"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_instructions/zoloft_sertraline_50mg.json",
+      "bytes": 18176,
+      "sha256": "e8f2ffdd3eb8d7d4a9fff3aa3746110f32ac368a308dfc2d7157dd790a57c95a"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_overlays/atomoxetine_canon_40mg.json",
+      "bytes": 951,
+      "sha256": "6705e68b5059a8400403ddcd5a80033075e04556b4db870f9cc3be0034d1ea39"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_overlays/aviandr_maritupirdine_instruction.json",
+      "bytes": 967,
+      "sha256": "e5ada57b7b95b1a56a6ab40600d08b05afb5fc165f9692ff3fff78862ce33be2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_overlays/cipralex_escitalopram_10mg.json",
+      "bytes": 1067,
+      "sha256": "4c2daa8478d42bd23661ca9750cc8350239588e879493999eda14071ec59a552"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_overlays/lamictal_lamotrigine_25mg.json",
+      "bytes": 961,
+      "sha256": "e561adafd2fe8145ad5bb87b1f159417884aca99bbd1077c471c32e0ae75cf7e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_overlays/risperidone_canon_2mg.json",
+      "bytes": 1074,
+      "sha256": "f7f94eed984d88f0d9cf4e078fc63a72126b2df88225e57d1a9ce0ebed517d36"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_overlays/seroquel_quetiapine_ir_100mg.json",
+      "bytes": 1021,
+      "sha256": "ab2eefc84ef508aee707aac0c233e038339450c4ded0f6d587d609f113c4a661"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_overlays/velaxin_venlafaxine_xr_75mg.json",
+      "bytes": 1045,
+      "sha256": "33019adb71dd7d1f0391d6c25426eade9d27790f2c6ffe055d5721b367fa957c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/medicines/source_product_overlays/zoloft_sertraline_50mg.json",
+      "bytes": 1047,
+      "sha256": "213774cd30bd4761896c3af72657aa6bb3fafacdcd330dfbabd42ea13127f38e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/schemas/clinical_catalog_v4.schema.json",
+      "bytes": 1732,
+      "sha256": "cdc270440e798e0415e3f7da1b480247d7044ac28133a320508292c824717622"
+    },
+    {
+      "path": "clinical_catalog_data/v5/schemas/diagnosis_v1.schema.json",
+      "bytes": 966,
+      "sha256": "c3ff68f3735ae4de5545f5dd5a1f8814101d63443547833495d9cd4d97966bc2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/schemas/interview_v3.schema.json",
+      "bytes": 2552,
+      "sha256": "92359e4fda2c41c4b8ff315c7f6236b126d33390364f2d611c3542ce0b4021fe"
+    },
+    {
+      "path": "clinical_catalog_data/v5/schemas/multiscale_v2.schema.json",
+      "bytes": 2667,
+      "sha256": "11a0f1c76c0cea636912630ca94da5150b7e80f846d84bbb3eec537a92ed1ba2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/schemas/phq_gad_v1.schema.json",
+      "bytes": 4609,
+      "sha256": "09bc4be89874c14a46da12af54d3a1ad42b25b791796a3849bb97c7fe3819eba"
+    },
+    {
+      "path": "clinical_catalog_data/v5/sources/guideline_sources.json",
+      "bytes": 10825,
+      "sha256": "a2f5f383ebe9deb84f544101e03896f4ade3bb84d915cc38ff2f34ba0a29a02d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/acute_delirium_care.json",
+      "bytes": 2310,
+      "sha256": "fc30f3d60122a535ec9e01905140dc3e9c7c205de3e3cef6d131a25649a25531"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/adhd_psychosocial.json",
+      "bytes": 2315,
+      "sha256": "7d5045e8c3af61ab3c5fe53b8fa76d614e961b5657580e8a1509ebfc0bb72d01"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/applied_relaxation.json",
+      "bytes": 2280,
+      "sha256": "50cc9038c0a4da1ec0dc1b18fcda4f263e8ac614334d43c4fe9c606b4963e77c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/autism_adaptive_skills.json",
+      "bytes": 3173,
+      "sha256": "51143f1d6432912ba0cc9fe442ffb96e55d82415c19d619d487f491eb467441c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/autism_social_skills.json",
+      "bytes": 2768,
+      "sha256": "6c8dd561351d79941571f358c0b47544f197b6fdc8ab85fd596a7eeb7605a837"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/behavioral_activation.json",
+      "bytes": 3272,
+      "sha256": "44f1f6769e23cfa09688208a54d6386fc5ca66973e1da47eef0c4ccf7a9b7aeb"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/bipolar_psychoeducation.json",
+      "bytes": 2873,
+      "sha256": "32fb111dd3439b27117ff741a6585d822c59a2d4aea9d9073178bd20cbe8f2f9"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/cbt.json",
+      "bytes": 12327,
+      "sha256": "b1daf6462f091ab84ecb729dc7bba82979e525d7349c67a8e7c876a46858cecc"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/cbt_ed.json",
+      "bytes": 2773,
+      "sha256": "665a8c3104c2c2c075614e8d399c373c8d6102e18fe187c98183a2e9e18c2d5c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/cbt_i.json",
+      "bytes": 2828,
+      "sha256": "2ad25aea5cd4e22cedd401b0a21c76e781352ae3f952021f9cedd846a65053a0"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/cbtp.json",
+      "bytes": 4270,
+      "sha256": "a85ad868f7cd1807ab60d2e6a8d15775fbf4a5273276918bfaf5bdcb682d51d0"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/cognitive_rehabilitation.json",
+      "bytes": 7111,
+      "sha256": "2dbc95140d347287ca1dceaf4a634dca1f57ece148f85dcf230b5269be53ce0b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/cognitive_stimulation.json",
+      "bytes": 4072,
+      "sha256": "63456292b0b6eb2eba53c6e7898d91c93086ee37bc837046990749734a05b77f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/contingency_management.json",
+      "bytes": 3137,
+      "sha256": "b7af4a756e64a9f071be5d948456ae39fbae1df30f69f34e26a430d36090819c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/cpap.json",
+      "bytes": 2263,
+      "sha256": "44d29e4874271fcb8b3b605d10c9faa046b4902a6cbbfc6aed0191ffaa0f6109"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/cpt.json",
+      "bytes": 2358,
+      "sha256": "8120a65d9d4cc99cebd6ede73f1046a7f8ffabe7aa109735b063ff1ebdd619b7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/dbs.json",
+      "bytes": 3150,
+      "sha256": "0f19a69a64b7e406780a97368123826e662177e8a6af46c1b5069ce7cb5dbdf1"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/dbt.json",
+      "bytes": 2473,
+      "sha256": "8a334b3f1f1573fe3521eafc8b516aa3c6ba448ab7bf7706f4f4b1c7eacb441d"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/ect.json",
+      "bytes": 3793,
+      "sha256": "ba9deafa4566cbd179656ea2dee2e5ab51a08da58e70be508d2403a4c5bf1fc9"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/educational_remediation.json",
+      "bytes": 2747,
+      "sha256": "cf0a7a751f5187256f46957e072110883572b50a6a6ddab2ebd5d43d7ad86bd8"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/emdr.json",
+      "bytes": 2413,
+      "sha256": "d8082a56cef3d3ebf3aa816823626bd53a2fa16ffebbb4f00cf84e58b4fdfd2e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/epilepsy_self_management.json",
+      "bytes": 2373,
+      "sha256": "4864d289219c88aad2a8ba231bdf070a448a7561264cef103edf15fb0d4b9d71"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/erp.json",
+      "bytes": 2255,
+      "sha256": "310a1b2cb74e490f6f3b5263bed22079e4249f5488d6eda5a13ae7d8e7582dc0"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/exercise_therapy.json",
+      "bytes": 3677,
+      "sha256": "8af654977f8348c4902a3206f95656d73f1b4b725e92f4adac673e672ff69307"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/exposure_therapy.json",
+      "bytes": 3724,
+      "sha256": "7f34ca2554be379057a5404439228f4cde2dce2f9da5377035ddb50e6adb1c31"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/family_based_ed.json",
+      "bytes": 2739,
+      "sha256": "e2e1ff5a74201f839d14b0ab45bf1b17fc41da2c2fb77d32f205ebb3b60e06b9"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/family_focused_bipolar.json",
+      "bytes": 2262,
+      "sha256": "b386cb2a55306886f1013531b81b515c373194b97cb09e52e5229a9dcad6672f"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/family_intervention_psychosis.json",
+      "bytes": 4295,
+      "sha256": "eea074e57f42f765912a02398b099a8258f6c638ec4ceb7ff9ee5b3a9fd35a89"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/guided_self_help.json",
+      "bytes": 4869,
+      "sha256": "6f786ff2c1f5903edd3d5abbc456654bea32b2f265788256b1b3f364b482b661"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/habit_reversal.json",
+      "bytes": 2306,
+      "sha256": "2a29848c49913e77d85be23de854090903b5a53a13e2f830f3a5651e82a4bd06"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/headache_acupuncture.json",
+      "bytes": 3657,
+      "sha256": "fe318a34e3f6ae1890e0cae8c5275b304610a8359cbfaa5da035bad56aa889f2"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/interpersonal_therapy.json",
+      "bytes": 3333,
+      "sha256": "34bf5ede616fd030e5fe4b4107ec1eb4f93181af9d4321419bd3ef989e3402cf"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/ipsrt.json",
+      "bytes": 2308,
+      "sha256": "26f59561a9a3fa657feec4efe668221ee4d1017aa64c152f5959f974174216eb"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/mantra.json",
+      "bytes": 2221,
+      "sha256": "b3912c4c62211648b9c9004850a96f21159b0d774e97935173ccdad3ca0b29d9"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/mbct.json",
+      "bytes": 2797,
+      "sha256": "f83c39170a99472c4d54f944f77d432c0096537719b8acb315827926a8969aeb"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/mbt.json",
+      "bytes": 2387,
+      "sha256": "c6d4dd3fbfe90de6b2d0e1b010dad5071e2886a5f80c09c96a25532f49ff6406"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/migraine_behavioral.json",
+      "bytes": 3563,
+      "sha256": "ea0c2f41db7947a03f45d87e469c7e276318b3db60be2e03f3cd9e533887b65b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/motivational_interviewing.json",
+      "bytes": 4552,
+      "sha256": "27fd3340eb529e0e7f778b4f3d6e77ec152601ecee9f9e3091ab8e04d7ce48c4"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/net.json",
+      "bytes": 2233,
+      "sha256": "725a9ec7ca274e75b9e2bfef1381d871c3f0dfc1267c4f1d2885380a931493ca"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/neuro_physiotherapy.json",
+      "bytes": 5381,
+      "sha256": "30257acad50e1b8bf2693b9453ce5699d4dcaa46b8741e11b0b4040917842edf"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/occupational_therapy.json",
+      "bytes": 6934,
+      "sha256": "dfe870fbd362794dd8cc5302b67e8d3a0883181b16ebc379830bb8dcf373ba2e"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/parent_training.json",
+      "bytes": 3701,
+      "sha256": "e66c054ee457510792496122d29f8b913b83c276b9062d865672a37ca65bb029"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/pe.json",
+      "bytes": 2313,
+      "sha256": "08d0676ffeeed017fe61999c6e07765ec5affe9a3c48b9b016619a4869fbc2ce"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/present_centered.json",
+      "bytes": 2387,
+      "sha256": "3ed95629ff3197e69601970beabcc11f3321c3c571b38e7c05b8395dfd45bdcd"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/problem_solving_therapy.json",
+      "bytes": 3248,
+      "sha256": "c8b5944a093ab735a9e97dfbda4141e5f09bf5fa5ddc8e61c285db7eeea945ac"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/relapse_prevention_sud.json",
+      "bytes": 4562,
+      "sha256": "194797f1d34cb9ae5250b585d6f1af9774d449aa08f25e160ea9adc9b4f8e01c"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/reminiscence.json",
+      "bytes": 3954,
+      "sha256": "20dd978ced169aedc52fc6ba754743d80f75e3262caf2dfd37bb0fedb67fe378"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/rtms.json",
+      "bytes": 2717,
+      "sha256": "191bbbd6cca135ae5c1cda5f7600d2e4a3072667dd299e60a984c4c852d38c46"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/schema_therapy.json",
+      "bytes": 3559,
+      "sha256": "ee6d2cf16eb3a9acd36c556fea15c84ee6289dd9fc0a759969bd2522f5f8f9c7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/short_term_psychodynamic.json",
+      "bytes": 2791,
+      "sha256": "6d837d48f1f1c50c656365848dd2845472076f3e6372763c4924f03e02d80871"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/sleep_specialist_care.json",
+      "bytes": 2617,
+      "sha256": "25e0ca46a42559e2871e8d82bfbf105c109e6024c4cab85589cbaff9c47a6c10"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/smoking_cessation_counsel.json",
+      "bytes": 2331,
+      "sha256": "9d8cd9ee654b2d73027d37889560c9d4e4e07e798769246b413a7422e4264de6"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/speech_language_therapy.json",
+      "bytes": 4206,
+      "sha256": "9239a574397bf8607479a38a36226310d76d297dd05b1e09a925874f9a4dac41"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/sscm.json",
+      "bytes": 2322,
+      "sha256": "3f26f2ba462b556ee0d70e63b8183de10d2ab4281288666ec0cfc8388eadc067"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/stroke_secondary_prevention.json",
+      "bytes": 3301,
+      "sha256": "4284441723baabb181ededd3f278accb29ee0f53b47faffd6b17f932fdee382b"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/tbi_multidisciplinary.json",
+      "bytes": 2722,
+      "sha256": "3c0ec6abd023de01bd1944974df513561510c1b73b9cdc568ad775d366b2aa5a"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/tf_cbt.json",
+      "bytes": 2804,
+      "sha256": "8a7b57da7b20e146a0dc0edf7824c8879e7393ae2ae0615d73ec1aee302eea60"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/by_id/vestibular_rehab.json",
+      "bytes": 3150,
+      "sha256": "6c7bfbf9f647a1bc25025b132c39f77285130daf6610ecae16c2807663e691c5"
+    },
+    {
+      "path": "clinical_catalog_data/v5/therapies/therapy_index.json",
+      "bytes": 17984,
+      "sha256": "33e670c70dab5a9a651af1593bdec484e4746021849741388d68e18df64057ac"
+    },
+    {
+      "path": "clinical_catalog_data/v5/tools/validate.py",
+      "bytes": 2357,
+      "sha256": "5d96f18949a77ddfbe2df2a679c857e938c220b4b05cd7e4d5bd415ca3c8dd22"
+    },
+    {
+      "path": "clinical_catalog_data/v5/tools/validate_therapy_medicines.py",
+      "bytes": 1246,
+      "sha256": "22aa10f20d06497522eeaaaaa072a71d21ae79ad20116d9a04757304d7977eeb"
+    },
+    {
+      "path": "clinical_catalog_data/v5/translations/pending/NEEDS_APPROVAL.md",
+      "bytes": 1095,
+      "sha256": "ae097d8a8ec41a7de50fbd49699be2262c0e8b2c935d945b4ad35699e2591bea"
+    },
+    {
+      "path": "clinical_catalog_data/v5/translations/pending/pc_ptsd_5_ru_proposed.json",
+      "bytes": 3188,
+      "sha256": "b67f718119ca881db7253fe7c4046c0d72e8811563b4272bf8c91685cdc27ee7"
+    },
+    {
+      "path": "clinical_catalog_data/v5/translations/pending/pending_manifest.json",
+      "bytes": 858,
+      "sha256": "30c37b49f9d9eca123e0de3fc7ddcdc62002feff8e42cdad0a3a3072d04af47c"
+    },
+    {
+      "path": "contracts/examples/clinical_invitation_issue_v08.json",
+      "bytes": 114,
+      "sha256": "fe9f59592eefcd896e6e9a89b907b06871c7aef49756c55eb75334fed800e813"
+    },
+    {
+      "path": "contracts/examples/doctor_overview_psychotherapist.json",
+      "bytes": 697,
+      "sha256": "03ec56c45414d389b8ff5df42bd7d934a8866f9e63b2584473e35155be46f6d5"
+    },
+    {
+      "path": "contracts/examples/doctor_patient_list_psychiatrist.json",
+      "bytes": 623,
+      "sha256": "41c70ed378eb6f797ae5b6fdad2667f24f4e904f7b52e8d2fbfb33a43e83a7f0"
+    },
+    {
+      "path": "contracts/examples/doctor_patient_list_psychotherapist.json",
+      "bytes": 513,
+      "sha256": "267da8abc130baba09c83237dfacc2395a24b138dedd8a33e78880d6a5f6874d"
+    },
+    {
+      "path": "contracts/examples/instrument_result_v08.json",
+      "bytes": 38,
+      "sha256": "66b732a673adf3de0882fc7d5b1f3c9f69d3cc94dd68fbaf07fc099782b48a3c"
+    },
+    {
+      "path": "contracts/examples/patient_checkin_request.json",
+      "bytes": 126,
+      "sha256": "d42882fcb2dcbbceb0eff875796810053527988003182b3073b4159d9ff7c8bd"
+    },
+    {
+      "path": "contracts/examples/patient_checkin_response.json",
+      "bytes": 145,
+      "sha256": "2b02cd9ed1ff3a630787b0e3768ced1d974135e2332b730d3a3eb32e44fbe914"
+    },
+    {
+      "path": "contracts/examples/previsit_create_v08.json",
+      "bytes": 249,
+      "sha256": "ec50f1ff984cb775ce501ff370421f61c7cdebbdb0bdb1eb928321508bf6f998"
+    },
+    {
+      "path": "contracts/examples/research_aggregates_v08.json",
+      "bytes": 519,
+      "sha256": "76bd5ae398ce9812f6b785791378a6d3e14db4e5ddbc0179f00594bc7a0b4c4f"
+    },
+    {
+      "path": "contracts/examples/thread_message_v08.json",
+      "bytes": 251,
+      "sha256": "505c5220cffb5c519df5be7bbd251a5c40b38d6e493d1d3148c8ffcee4945572"
+    },
+    {
+      "path": "contracts/openapi.yaml",
+      "bytes": 271984,
+      "sha256": "fc3aeebbdf1a75a2b9037c1651a4d05683c8f678ef80b2af3236b5d7695ce1ed"
+    },
+    {
+      "path": "contracts/v3_additive_routes.json",
+      "bytes": 406,
+      "sha256": "e4253789dfe7534311dc036b24a389848c41fc59e3bfcd4d767fff62308e0978"
+    },
+    {
+      "path": "demo_completion/fixtures/DEMO_DATA_MANIFEST.json",
+      "bytes": 6104,
+      "sha256": "e1cb3a6f440e6eb0ad3d14b89065871b6653be720b795059f0889df4af41d941"
+    },
+    {
+      "path": "demo_completion/fixtures/research_dataset_reference.json",
+      "bytes": 322,
+      "sha256": "2ed2403b2ff4290ffcdea1662a0895d3366ac32e574923924d16d42b4b97d1a7"
+    },
+    {
+      "path": "demo_completion/fixtures/routing_and_safety.json",
+      "bytes": 1601,
+      "sha256": "57af37c1b06a7dc5322a9f954c22b974f0ad7886e51b3ad2e6d0f670c549adc3"
+    },
+    {
+      "path": "demo_completion/fixtures/synthetic_journeys.json",
+      "bytes": 1442,
+      "sha256": "53b0484cd1e82849e2ae15564b93dc82595648f9d2bd60a0d35707ccde41c484"
+    },
+    {
+      "path": "demo_completion/fixtures/synthetic_profiles.json",
+      "bytes": 2226,
+      "sha256": "2e67c32f9feb1e42fb463a44f318beb3d97d251f5aa24c43dacd582e370c5e96"
+    },
+    {
+      "path": "docs/SCREEN_IMPLEMENTATION_MATRIX.csv",
+      "bytes": 45719,
+      "sha256": "c085dbc17a740ab70efb9863ff0a16737cdd858e71b8fa2a6afe5b97946d1c3d"
+    },
+    {
+      "path": "docs/phase04/AI_DEMO_GUIDE_2026_10_27.md",
+      "bytes": 2676,
+      "sha256": "0c9659527a659addda65e4795808cb9478338010ba4c8cf84fbc393d3e3cf51e"
+    },
+    {
+      "path": "docs/phase04/CODEX_JURY_RELEASE_PHASE0_PHASE3_PROMPT_2026_10_27.md",
+      "bytes": 45807,
+      "sha256": "8ce610a070e8ccf8819276bc8bbfb9b0198701b25e95a74393978a2f74206fc2"
+    },
+    {
+      "path": "docs/phase04/CODEX_PHASE0_PHASE1_PROMPT_2026_10_27.md",
+      "bytes": 463,
+      "sha256": "323d8215fc72e12edeea09b976f178006dc60654631bdf54281df08b972ccb80"
+    },
+    {
+      "path": "docs/phase04/D01_D10_EVALUATION.md",
+      "bytes": 3287,
+      "sha256": "a0c5af3f43384f2e5640d85edafab4d0468e1a020b9ef2f18ef45de9b6828a43"
+    },
+    {
+      "path": "docs/phase04/EVALUATION_ACCEPTANCE_SUMMARY.md",
+      "bytes": 2305,
+      "sha256": "a6fdad80a0efd08fddcc063d3b7ea6bfec9e54549077849a2bc81dccdad01c95"
+    },
+    {
+      "path": "docs/phase04/EVALUATION_DEPLOYMENT.md",
+      "bytes": 2896,
+      "sha256": "56fab829f80ac30ccbf898378eeadf94098df6b4434463e6fb97e2c56315ccc6"
+    },
+    {
+      "path": "docs/phase04/EVALUATOR_QUICKSTART.md",
+      "bytes": 7252,
+      "sha256": "b50647a3b62beef8ee5e6090c76a5fa5988cfcad13cf27d7f94e7a3fe7a35269"
+    },
+    {
+      "path": "docs/phase04/JURY_RELEASE_ACCEPTANCE.md",
+      "bytes": 10638,
+      "sha256": "7c25c6f9c388f5e29eaac31a059feff0d014ee1c71ba3f41673926142314fde5"
+    },
+    {
+      "path": "docs/phase04/NEW_FRONTEND_INTEGRATION_AUDIT_2026_10_27.md",
+      "bytes": 12412,
+      "sha256": "6db8a1ac1385846b2afe092a566cc4fb60a9ba44c7868e6726cd93656934572b"
+    },
+    {
+      "path": "docs/phase04/ROLE_JOURNEYS_AND_GUEST_HANDOFF_2026_10_27.md",
+      "bytes": 6429,
+      "sha256": "fe9071f320a0726801b1497693f079d0808f662590278af1beff3427def0ce0e"
+    },
+    {
+      "path": "docs/phase04/SUBAGENT_BUDGET_PROTOCOL.md",
+      "bytes": 14268,
+      "sha256": "e78e5fd83b6a1d212327f6b519b0a06ba0a92aac4c4be161de11ed0cb966456c"
+    },
+    {
+      "path": "docs/phase04/UNRESOLVED_AND_PILOT_GATES.md",
+      "bytes": 2503,
+      "sha256": "42604eab8f77c0151185949b69b22ed8b63bf9f4d6c51b63e6e96c2bcb071d54"
+    },
+    {
+      "path": "docs/phase04/UX_REPAIR_2026_10_26.md",
+      "bytes": 5568,
+      "sha256": "e4f39e3fd9da4b66e7ade289545dde9f8336a715270784f17fe10122b8e5af0a"
+    },
+    {
+      "path": "environment.yml",
+      "bytes": 396,
+      "sha256": "7d520bde72642d83831bedc7cb1cf780ce5c1195ec73c8976606fc92dfc9156e"
+    },
+    {
+      "path": "evaluation.config.example",
+      "bytes": 427,
+      "sha256": "902b5731a03c836d95254608ddeef8b7a55245e0d139ad81c43784b2c5ecda88"
+    },
+    {
+      "path": "frontend/INTEGRATION_MATRIX.csv",
+      "bytes": 22127,
+      "sha256": "95019b0efa2e401ec63252404c9bf8130f3fa2ab0e68f4b9d9ba93f19af50a70"
+    },
+    {
+      "path": "frontend/README.md",
+      "bytes": 12326,
+      "sha256": "208c94c3cfa810e4920b91f1999c5100b1ee4c05b01cb994e876d4f49f70fa3c"
+    },
+    {
+      "path": "frontend/TEST_REPORT.md",
+      "bytes": 3932,
+      "sha256": "66908cf0a0d01f5b68ca83a689b7b6e27841e8328fa540c002982c5b119b679c"
+    },
+    {
+      "path": "frontend/dist/api-lab.html",
+      "bytes": 2118,
+      "sha256": "d2e00105fb597fa80880657c45dbc4a601a87fc4e7289563de2b6f2e953d63cf"
+    },
+    {
+      "path": "frontend/dist/assets/css/components.css",
+      "bytes": 17897,
+      "sha256": "067e45c8d1a30e2a2dd77c855ba09534f1a6a8b686ed54365850cbb6bd46a844"
+    },
+    {
+      "path": "frontend/dist/assets/css/layout.css",
+      "bytes": 8697,
+      "sha256": "adb16ec80851b040be3d5815e9c5308a9dd06e315c8dc0e8195988c11bfa11f1"
+    },
+    {
+      "path": "frontend/dist/assets/css/system.css",
+      "bytes": 7122,
+      "sha256": "c9d18ec5db161c97f80753eb2e09ee13cb7b00a6e11c59dd151edaf2a4ceb099"
+    },
+    {
+      "path": "frontend/dist/assets/data/routes.json",
+      "bytes": 23697,
+      "sha256": "e04309ed13689716ea91555da56249c517bbebb88ff3b5b2714a5f912da3e288"
+    },
+    {
+      "path": "frontend/dist/assets/images/doctors/doc_other.jpg",
+      "bytes": 124940,
+      "sha256": "21a6181b5042bac9e9431ac92d122d06bbaccecd3ae061acc8a69b6722c11986"
+    },
+    {
+      "path": "frontend/dist/assets/images/doctors/doc_psy.jpg",
+      "bytes": 124940,
+      "sha256": "21a6181b5042bac9e9431ac92d122d06bbaccecd3ae061acc8a69b6722c11986"
+    },
+    {
+      "path": "frontend/dist/assets/images/doctors/doc_ther.jpg",
+      "bytes": 124940,
+      "sha256": "21a6181b5042bac9e9431ac92d122d06bbaccecd3ae061acc8a69b6722c11986"
+    },
+    {
+      "path": "frontend/dist/assets/js/api-lab.js",
+      "bytes": 894,
+      "sha256": "8fa63f37c05dfb75018243a33c84bd1331fd4900b9ae9fa126ba4b5be49c0ad1"
+    },
+    {
+      "path": "frontend/dist/assets/js/api.js",
+      "bytes": 2818,
+      "sha256": "5b323897b8c2a8da16e671a5b3e4331352c3ea9da4123a5f2d346b1ea9854cf4"
+    },
+    {
+      "path": "frontend/dist/assets/js/clinical-demo.js",
+      "bytes": 30853,
+      "sha256": "2077db93baccaac1d8a2309e977cb3c7fc15849e775d83942def7f78ba0ca3e4"
+    },
+    {
+      "path": "frontend/dist/assets/js/guest-assessments.js",
+      "bytes": 8338,
+      "sha256": "4913f1a59d80d8971d524db212a49132d57fd231eddea13fc09beb2d5924bc32"
+    },
+    {
+      "path": "frontend/dist/assets/js/main.js",
+      "bytes": 26031,
+      "sha256": "68adc7753695911bf2718b37e2c76c8584c1577d12d8c12db97668721b53b805"
+    },
+    {
+      "path": "frontend/dist/assets/js/ui.js",
+      "bytes": 6791,
+      "sha256": "7188be85c38be5713fe48bcc8c335a22c92039ac21661b710b33e5c084f33beb"
+    },
+    {
+      "path": "frontend/dist/assets/js/views.js",
+      "bytes": 88771,
+      "sha256": "20377e60ecbc8237e93417bc6bf5c63415858d2b7d56b68b0c0bb433500bcd32"
+    },
+    {
+      "path": "frontend/dist/index.html",
+      "bytes": 1150,
+      "sha256": "15208569967f26c08f1990e6b42f30808f67ec0c691254d9e198da678720f251"
+    },
+    {
+      "path": "frontend/package.json",
+      "bytes": 362,
+      "sha256": "ea96a36ab307d54af1b9371fb81d9fe420acb6420e3f704e5d0446600540104a"
+    },
+    {
+      "path": "frontend/tests/clinical-demo.mjs",
+      "bytes": 6771,
+      "sha256": "83407b24e8e88c8dd66920b76b08d21344fe6fa4fad2579b84dc346ecaf4a029"
+    },
+    {
+      "path": "frontend/tests/design.mjs",
+      "bytes": 5615,
+      "sha256": "952240ac96b2fed446d801bc63a39ffb94f0ac4f3af236a92b21aa26963e30f7"
+    },
+    {
+      "path": "frontend/tests/guest-assessments.mjs",
+      "bytes": 2929,
+      "sha256": "486bcd1f0f833f7b525f31f1360abed2d35e7de4c4ec8869946c4112981471f6"
+    },
+    {
+      "path": "frontend/tests/smoke.mjs",
+      "bytes": 10888,
+      "sha256": "186c808d7ff3b0c311a4683b3a9b00af20a46dd5c7e82bd3c2647e2ffbeaf1e6"
+    },
+    {
+      "path": "migrations/env.py",
+      "bytes": 1682,
+      "sha256": "06fafb401da3a2885501c5e55dd0d6edce1e4ada84a204b0f2475354b0acc6de"
+    },
+    {
+      "path": "migrations/script.py.mako",
+      "bytes": 449,
+      "sha256": "960966a9a12cb6507f92f5c8bc54dc0bf6e7b2b3be587ea209b765a0b08592d7"
+    },
+    {
+      "path": "migrations/versions/0001_initial.py",
+      "bytes": 11980,
+      "sha256": "6eb808328868d31f696c33b1aa51a80521f19a512faab4003a89688ff2b509d1"
+    },
+    {
+      "path": "migrations/versions/0002_p0_synthetic.py",
+      "bytes": 3842,
+      "sha256": "efdab8f3fd7985dd2f9add4b96d984b29e541d2c0ff749dcf01076d8e35852d1"
+    },
+    {
+      "path": "migrations/versions/0003_patient_onboarding.py",
+      "bytes": 4990,
+      "sha256": "fd6278553cebafd9d2fc3cc572ebf13613ab1d1d59c25d8e8c3e3d76ffb880a0"
+    },
+    {
+      "path": "migrations/versions/0004_patient_experience.py",
+      "bytes": 4114,
+      "sha256": "0b457109f474c3432db19aa28c71421e81d682a907fbc0a32659118f5346bf37"
+    },
+    {
+      "path": "migrations/versions/0005_doctor_experience.py",
+      "bytes": 2455,
+      "sha256": "e706053836481688c7195da9afbecce82d197c862e2eaeff43c4b629dee28353"
+    },
+    {
+      "path": "migrations/versions/0006_clinical_workflow.py",
+      "bytes": 6732,
+      "sha256": "4cca44d5c2b95f9bb642096aa4388a01cd27d339c2b041a4a1c501171dc95e3a"
+    },
+    {
+      "path": "migrations/versions/0007_structured_references.py",
+      "bytes": 3129,
+      "sha256": "0e01410d22a31b4fad5efc387f0627cd7da33184ddf00d4563456bede6d95497"
+    },
+    {
+      "path": "migrations/versions/0008_physician_history.py",
+      "bytes": 1508,
+      "sha256": "d2bb56cddfec44ff04c17d278354a6bfe8f6a16e5d152df2758055714bcae03f"
+    },
+    {
+      "path": "migrations/versions/0009_guided_pitch.py",
+      "bytes": 1778,
+      "sha256": "d499f5650d83dd2de288434a21be52944637cb1186e42baa5280d7cd8ecf00c5"
+    },
+    {
+      "path": "migrations/versions/0010_admin_privacy.py",
+      "bytes": 3543,
+      "sha256": "12aa47f5b1ab2bc55901a0dba4697bb7833fcda268df77047f0867ddc0ccbc55"
+    },
+    {
+      "path": "migrations/versions/0011_oidc_browser.py",
+      "bytes": 1965,
+      "sha256": "2e33d7dd9d800b05085d2df4a92f0b7ee47ead1e462d4e07b7c8cd66e3b3c1f0"
+    },
+    {
+      "path": "migrations/versions/0012_research_workflow.py",
+      "bytes": 4308,
+      "sha256": "9ccd82c0d304bfedda71c6b6b91997961d02bee1ca8a6a99e52086f00ccda3f7"
+    },
+    {
+      "path": "migrations/versions/0013_clinical_review.py",
+      "bytes": 6913,
+      "sha256": "ecdd1e5793fac77ad8ca9f5c73c8cbe781387e27096b8c02792d04a9f9b95bf7"
+    },
+    {
+      "path": "migrations/versions/0014_staff_enrollment.py",
+      "bytes": 1135,
+      "sha256": "4974f90133a986a3e2d3c990566f2d994aa03191eb678e972ddf41bc951d058b"
+    },
+    {
+      "path": "migrations/versions/0015_persistent_profiles.py",
+      "bytes": 1244,
+      "sha256": "4410d64d7556d4e729caa087635a48ecef391c3a428dad701585c57279947d9c"
+    },
+    {
+      "path": "migrations/versions/0016_ci_physician_review.py",
+      "bytes": 2076,
+      "sha256": "33908addb0726acb34aa8ff5e507e29858dd3c09c0cab943528c671456154cb7"
+    },
+    {
+      "path": "migrations/versions/0017_referrals_copilot.py",
+      "bytes": 2061,
+      "sha256": "9f6b655e4050da4ef973640822db23b3d45779e96b391aef980d1d1786a65193"
+    },
+    {
+      "path": "migrations/versions/0018_safety_patient_chat.py",
+      "bytes": 3333,
+      "sha256": "3cec1941dc3f2f6338fe43f7cb6a088c7938de53b4f3c4b2a0060e3bd8fb5d9f"
+    },
+    {
+      "path": "pytest.ini",
+      "bytes": 68,
+      "sha256": "c94bd3b079085e77e0d87b725da902f28cb54ddac8b4763f785cf36b5eff330c"
+    },
+    {
+      "path": "reference/admin_pii_module/README.md",
+      "bytes": 17505,
+      "sha256": "1a4143a0674796bdccd0854ff9c58d67ba5e6b86c528eb4be20bca2ef08201d4"
+    },
+    {
+      "path": "reference/admin_pii_module/VERIFICATION.md",
+      "bytes": 2288,
+      "sha256": "5845f96a498afbfd61faed11ef034f321da7afd83972eaf6fe7dd165d74818bb"
+    },
+    {
+      "path": "reference/admin_pii_module/alembic.ini",
+      "bytes": 544,
+      "sha256": "c6c405d12e95b93a7c56cfcae9f8545cd5cc47b29e5d306fea886079d696225e"
+    },
+    {
+      "path": "reference/admin_pii_module/clinical_compass/__init__.py",
+      "bytes": 82,
+      "sha256": "21f53330a6a17dec6ccff128beb2280ced7fcaa4168b30f45d3f29418190b5b4"
+    },
+    {
+      "path": "reference/admin_pii_module/clinical_compass/api.py",
+      "bytes": 12662,
+      "sha256": "80ba5d5e2e8b1ea2cf6c54cdc7d9795a244912fa904cb4cc4972520ac571d146"
+    },
+    {
+      "path": "reference/admin_pii_module/clinical_compass/models.py",
+      "bytes": 10641,
+      "sha256": "3d7999e9396b65f6a80e6bcafc1767db24538ec24724db71d65c58041a7b60ab"
+    },
+    {
+      "path": "reference/admin_pii_module/clinical_compass/security.py",
+      "bytes": 1453,
+      "sha256": "858857fdeb973cb32b17a04c5c140b92c5ff15921e8714ef8754901b110ae976"
+    },
+    {
+      "path": "reference/admin_pii_module/clinical_compass/service.py",
+      "bytes": 21420,
+      "sha256": "dab8f8fa49b8aa3219fabd810cc4e247468b1bea0a7cccc319f8a1ead838309f"
+    },
+    {
+      "path": "reference/admin_pii_module/migrations/env.py",
+      "bytes": 1315,
+      "sha256": "5ca9e10490b0618920d7e961cdc3c704b17a283edaec4d5de0f531f1a20be79b"
+    },
+    {
+      "path": "reference/admin_pii_module/migrations/script.py.mako",
+      "bytes": 592,
+      "sha256": "f19a902ea43cb1ea85523b9c27c5319039af6e724dcee8e23df34870a0e924d3"
+    },
+    {
+      "path": "reference/admin_pii_module/migrations/versions/c031d92c9077_initial_core_and_optional_admin_pii_.py",
+      "bytes": 11209,
+      "sha256": "94837dcb918eaf186c103107a37dc46df5fb2d81453c1a5768b13eafd2dca3b8"
+    },
+    {
+      "path": "reference/admin_pii_module/openapi.yaml",
+      "bytes": 16235,
+      "sha256": "09762d223e679b9c44e33db74dd888b1acdcec525d52885610b8e73efbd73537"
+    },
+    {
+      "path": "reference/admin_pii_module/requirements.txt",
+      "bytes": 105,
+      "sha256": "20db51289af5e7a1f8050a24f2250c9558ad848a6b9e6e1e3c7373912fa26a3f"
+    },
+    {
+      "path": "reference/admin_pii_module/run.py",
+      "bytes": 270,
+      "sha256": "566bf746b5f921d27df7adc37c575094e253d0603156a7f19507cdd42c62e5ba"
+    },
+    {
+      "path": "reference/admin_pii_module/scripts/demo_seed.py",
+      "bytes": 3485,
+      "sha256": "9e54b968f55c65c2f10ac26872c9f3523efc995b3ddcdbc6b73feb013be30bf5"
+    },
+    {
+      "path": "reference/admin_pii_module/tests/conftest.py",
+      "bytes": 4328,
+      "sha256": "f74308977210fe571a9c95784436dd5ecac507d1acb4cbe6ee13480847288063"
+    },
+    {
+      "path": "reference/admin_pii_module/tests/test_api.py",
+      "bytes": 2105,
+      "sha256": "332aca8497c9b9d41606de1161cbf44be65a20514ccc502017a003a6bd76c41a"
+    },
+    {
+      "path": "reference/admin_pii_module/tests/test_service.py",
+      "bytes": 11646,
+      "sha256": "d34153b5d5b39d45e50e8051e862b7b4b49c48b9e7e9b75a2c124daed07c045e"
+    },
+    {
+      "path": "reference/api_v03/openapi_original_v03.yaml",
+      "bytes": 16490,
+      "sha256": "0010cc097602a525b161a870d044c7a81ab740c848740c6ee99029fb04b1642d"
+    },
+    {
+      "path": "reference/buggy_js/access.js",
+      "bytes": 2147,
+      "sha256": "8a2215a2c1fd49eb5f6acdfef80685a92ee0425eba2aa6787970ae6aa5d2ef4c"
+    },
+    {
+      "path": "reference/buggy_js/patient.js",
+      "bytes": 13632,
+      "sha256": "a54d15d00d5d9ac0b9e89b59f6a57b18f22bee1fff7a3c9ebb51bc135d4df293"
+    },
+    {
+      "path": "reference/buggy_js/register.js",
+      "bytes": 10051,
+      "sha256": "ba6f597830ac8f77a706695fff8cd3e4b834c73c377f21b89957559fbb9855da"
+    },
+    {
+      "path": "reference/buggy_js/specialist.js",
+      "bytes": 15316,
+      "sha256": "341fb3614e167e6a20308b11419cff6fe678b33e90951a38ba855a0f4e297233"
+    },
+    {
+      "path": "reference/buggy_js/theme-init.js",
+      "bytes": 474,
+      "sha256": "c6b853b9a9a5f4a3bd4c88b8fb610891e71f68d6d7c3710fb9d784ccf32b4bb8"
+    },
+    {
+      "path": "reference/buggy_js/theme.js",
+      "bytes": 485,
+      "sha256": "ec45b033b979d3fe0b68c101cdf70da8e2ca1006b4cac88c104902138a5dee5c"
+    },
+    {
+      "path": "reference/buggy_templates/base.html",
+      "bytes": 4770,
+      "sha256": "4f04c2e1c3ef2aaab07c13b4a3775c04119fdcfdce251dc2b22633e83d7207ae"
+    },
+    {
+      "path": "reference/buggy_templates/index.html",
+      "bytes": 15592,
+      "sha256": "1581b1fe977e5d1423bfaf0e57d47f32ed50710a29035acb716bbf494986e044"
+    },
+    {
+      "path": "reference/buggy_templates/login.html",
+      "bytes": 2842,
+      "sha256": "96e2b493e4616f8f55a01bc73c6aa026bd894ff18d32a7d21e5c86e6788b0efc"
+    },
+    {
+      "path": "reference/buggy_templates/patient.html",
+      "bytes": 11131,
+      "sha256": "fa9bc16ded81421646be08dbf6f3481fe960468fb5a1734d7f32a60b3239b0dc"
+    },
+    {
+      "path": "reference/buggy_templates/register.html",
+      "bytes": 21406,
+      "sha256": "f6abe4f32c3b7bcc5b8d0f8a738b5c31d63cec96ce3b0e014e76f51a0f56c995"
+    },
+    {
+      "path": "reference/buggy_templates/register_choice.html",
+      "bytes": 2065,
+      "sha256": "61a5cc70ae80b6ffa4e364e2fe73394b3984e1bac6bfcec59fa2819ffb70373d"
+    },
+    {
+      "path": "reference/buggy_templates/specialist.html",
+      "bytes": 8133,
+      "sha256": "57eb3952067ff138738c46d46283958d246b06853ce7ae58d5cd4fa182eb9d04"
+    },
+    {
+      "path": "reference/design_v07_original.md",
+      "bytes": 5088,
+      "sha256": "ce51439ebdf5ed4213c078c3569458176e22b05b10826c6a5ebdda336bef323c"
+    },
+    {
+      "path": "reference/product_docs_v02/00_README.md",
+      "bytes": 6106,
+      "sha256": "239a28f7e7edd7151d93153a00e0f6cb0b472782186ab21a3e66d7217972f129"
+    },
+    {
+      "path": "reference/product_docs_v02/01_╨Ü╨ò╨ÿ╠å╨í.md",
+      "bytes": 8851,
+      "sha256": "7276b71afc01de01e932c0af9ecac28340a463027eed5fb1e47dbd04a3846f16"
+    },
+    {
+      "path": "reference/product_docs_v02/02_╨Ü╨₧╨¥╨ª╨ò╨ƒ╨ª╨ÿ╨».md",
+      "bytes": 10569,
+      "sha256": "d268dcda5cdf033538327a8a1c68ccf079d386d2cc817248a1cef461a540fd41"
+    },
+    {
+      "path": "reference/product_docs_v02/03_╨æ╨¡╨Ü╨ò╨¥╨ö_╨É╨á╨Ñ╨ÿ╨ó╨ò╨Ü╨ó╨ú╨á╨É.md",
+      "bytes": 10533,
+      "sha256": "de89bec89a492fd622a321b289e070edeca6e3a4a7a0cfac190d7a180fc90f0b"
+    },
+    {
+      "path": "reference/product_docs_v02/04_╨á╨₧╨¢╨ÿ_╨ö╨₧╨í╨ó╨ú╨ƒ_╨í╨₧╨ô╨¢╨É╨í╨ÿ╨».md",
+      "bytes": 11209,
+      "sha256": "4a3b95c1a275f4fd338acc19b01c7cad1f3eedafb5aca0f72dfd8f7612e3d7bc"
+    },
+    {
+      "path": "reference/product_docs_v02/05_╨£╨₧╨ö╨ò╨¢╨¼_╨ö╨É╨¥╨¥╨½╨Ñ.md",
+      "bytes": 11838,
+      "sha256": "75452e516d8c587b576811283ba5e7f5a043437adb879893fc4ec6faaffcc37f"
+    },
+    {
+      "path": "reference/product_docs_v02/06_╨«╨ù╨Ü╨ò╨ÿ╠å╨í╨½.md",
+      "bytes": 13660,
+      "sha256": "25cd8af0f9bbc2ca8a3f4927de32ce2a129fd3dc43434530892474b7ba15b10c"
+    },
+    {
+      "path": "reference/product_docs_v02/07_API_╨Ü╨₧╨¥╨ó╨á╨É╨Ü╨ó.md",
+      "bytes": 8156,
+      "sha256": "af69e49bace6d142a275e620713f512908cceea63adc8708ea60f506c1b45816"
+    },
+    {
+      "path": "reference/product_docs_v02/08_╨ÿ╨í╨í╨¢╨ò╨ö╨₧╨Æ╨É╨¥╨ÿ╨»_╨ÿ_╨ù╨É╨⌐╨ÿ╨ó╨É.md",
+      "bytes": 9156,
+      "sha256": "f416430e76643e559fd420c57f0e81fb788373d073fcc8dddd244ed137f2e774"
+    },
+    {
+      "path": "reference/product_docs_v02/09_ROADMAP.md",
+      "bytes": 6297,
+      "sha256": "74f272b4f1b14cef86908ce8d0ed0bbb78fab45dad488ccd6a9c6d82155d80a3"
+    },
+    {
+      "path": "reference/product_docs_v02/10_╨ó╨ò╨í╨ó╨½_╨ƒ╨á╨ÿ╨ò╠ê╨£╨Ü╨É.md",
+      "bytes": 8447,
+      "sha256": "c1c087094ecad39955b4d68355e21f7d838822d385ce198d12fb9794e3913fe2"
+    },
+    {
+      "path": "reference/product_docs_v02/11_╨ó╨á╨ò╨æ╨₧╨Æ╨É╨¥╨ÿ╨»_╨ó╨á╨É╨í╨í╨ÿ╨á╨₧╨Æ╨Ü╨É.md",
+      "bytes": 5538,
+      "sha256": "2864839124796014a96d9b977602cbb8976be95f4591b3377cf93e58af61ee95"
+    },
+    {
+      "path": "reference/product_docs_v02/12_╨á╨ò╨¿╨ò╨¥╨ÿ╨»_╨ÿ_╨₧╨ó╨Ü╨á╨½╨ó╨½╨ò_╨Æ╨₧╨ƒ╨á╨₧╨í╨½.md",
+      "bytes": 7831,
+      "sha256": "6644a0a47fe0d1ab20699a678d5d0d37287c29c07a84dc274a88c81d02f14b85"
+    },
+    {
+      "path": "reference/product_docs_v02/13_╨Ü╨₧╨¥╨ó╨ò╨Ü╨í╨ó_╨ö╨¢╨»_╨¥╨₧╨Æ╨₧╨ô╨₧_╨º╨É╨ó╨É.md",
+      "bytes": 8438,
+      "sha256": "d3f4c06174258e455bcd6edff865b1bd00811eaaee09305c08ffe07fc2a0a863"
+    },
+    {
+      "path": "reference/product_docs_v02/14_╨ô╨¢╨₧╨í╨í╨É╨á╨ÿ╨ÿ╠å.md",
+      "bytes": 4691,
+      "sha256": "2e823e91bbe0691afad0759d7123a54763eb611b7acbf1f5964a3790d98ac5d5"
+    },
+    {
+      "path": "reference/product_docs_v02/15_╨ÿ╨í╨ó╨₧╨º╨¥╨ÿ╨Ü╨ÿ.md",
+      "bytes": 5588,
+      "sha256": "1eebd32c21a5530eaa8f0d025c22a3f24894fef2084b6055da951d02ff8ed327"
+    },
+    {
+      "path": "reference/product_docs_v02/16_FRONTEND_╨ÿ╨¥╨ó╨ò╨ô╨á╨É╨ª╨ÿ╨».md",
+      "bytes": 5300,
+      "sha256": "9406066061c6f05ee21d3a0775af39e79897680caea1f82391b90aa9d4f1b9ed"
+    },
+    {
+      "path": "reference/product_docs_v02/17_╨Ü╨₧╨¥╨Ü╨ú╨á╨ò╨¥╨ó╨¥╨½╨ÿ╠å_╨É╨¥╨É╨¢╨ÿ╨ù.md",
+      "bytes": 22524,
+      "sha256": "728a688c6c21cd80c526cace6bafb8dac959613f089c1c6a4eebda417e5f3dd2"
+    },
+    {
+      "path": "reference/product_docs_v02/18_╨£╨É╨ó╨á╨ÿ╨ª╨É_╨ñ╨ú╨¥╨Ü╨ª╨ÿ╨ÿ╠å_╨Ü╨₧╨¥╨Ü╨ú╨á╨ò╨¥╨ó╨₧╨Æ.md",
+      "bytes": 51686,
+      "sha256": "91e3bea30b6014289a3e13726aaceca30b1eda60f690032d1449f158ca7da659"
+    },
+    {
+      "path": "reference/product_docs_v02/19_UX_╨á╨₧╨¢╨ÿ_╨ƒ╨¢╨É╨¥_╨ñ╨ú╨¥╨Ü╨ª╨ÿ╨ÿ╠å.md",
+      "bytes": 18987,
+      "sha256": "10505ff88f1a0c69b0e77ddba691295077421eee7d360102f778e5daba0f7e05"
+    },
+    {
+      "path": "reference/product_docs_v02/20_╨ƒ╨á╨ò╨ö╨Æ╨É╨á╨ÿ╨ó╨ò╨¢╨¼╨¥╨₧╨ò_╨ó╨ù.md",
+      "bytes": 7117,
+      "sha256": "a497a104b244778dc92804378fb137d6423046acb8dbe4117f938343b2be4d33"
+    },
+    {
+      "path": "reference/product_docs_v02/21_╨ƒ╨á╨₧╨ö╨ú╨Ü╨ó╨₧╨Æ╨½╨ò_╨á╨ò╨¿╨ò╨¥╨ÿ╨»_V02.md",
+      "bytes": 14916,
+      "sha256": "70ee8ddf4d6f0bf176f558a48bb9101039169874f0214ed814c4c6b00bd5b5d5"
+    },
+    {
+      "path": "reference/product_docs_v02/22_╨ñ╨ú╨¥╨Ü╨ª╨ÿ╨₧╨¥╨É╨¢╨¼╨¥╨½╨ÿ╠å_╨æ╨¡╨Ü╨¢╨₧╨ô_V02.md",
+      "bytes": 18883,
+      "sha256": "df4656d7a0484b947d8a99ab769687e2f5dce4c4345ca9c4117e710410b2af95"
+    },
+    {
+      "path": "reference/product_docs_v02/23_AI_╨ÿ╨¥╨ñ╨á╨É╨í╨ó╨á╨ú╨Ü╨ó╨ú╨á╨É_╨ÿ_╨Æ╨É╨¢╨ÿ╨ö╨É╨ª╨ÿ╨».md",
+      "bytes": 14570,
+      "sha256": "629128412f360aed8a6ac767219d9fdc5394652189e5a44ca1d6fcdd47ac8d53"
+    },
+    {
+      "path": "reference/product_docs_v02/24_╨ó╨ò╨Ñ╨¥╨ÿ╨º╨ò╨í╨Ü╨₧╨ò_╨ù╨É╨ö╨É╨¥╨ÿ╨ò_V02.md",
+      "bytes": 16365,
+      "sha256": "892247f635a2f29ad4bcd01a9c7597ea094adff2518949e964ea881da85fe6db"
+    },
+    {
+      "path": "reference/product_docs_v02/25_UX_╨í╨ª╨ò╨¥╨É╨á╨ÿ╨ÿ_╨ÿ_╨£╨₧╨Ü╨É╨ƒ╨½.md",
+      "bytes": 10176,
+      "sha256": "73958a92b6713204fe1cb09aa7f54c97bb859f1be449b43a570fa49bd94afb56"
+    },
+    {
+      "path": "reference/product_docs_v02/26_╨ƒ╨¢╨É╨¥_10_╨ö╨¥╨ò╨ÿ╠å_╨ÿ_╨ƒ╨á╨ÿ╨ò╨£╨Ü╨É.md",
+      "bytes": 9144,
+      "sha256": "8e5874d90a8cfdcd20348ebb2355dc9407a50a30a69b62b13f24dc7b2358bdf4"
+    },
+    {
+      "path": "reference/product_docs_v02/27_╨ƒ╨ÿ╨ó╨º_AI_ROADMAP_╨ÿ_╨ö╨ò╨£╨₧╨¥╨í╨ó╨á╨É╨ª╨ÿ╨».md",
+      "bytes": 6723,
+      "sha256": "263780f96f7686ab43ab804ce810e54ab2d1e2318d98beb660954ad9592e4ec7"
+    },
+    {
+      "path": "reference/technical_architecture_v07_original.md",
+      "bytes": 6759,
+      "sha256": "1c43c34983bd089581e6de3cb781ef59177a3712626cafaf4039dc231f77cd11"
+    },
+    {
+      "path": "reference/test_report_v07_original.md",
+      "bytes": 2470,
+      "sha256": "c58e86abfe7403d0fb240bba9e27f8497114433c2d5bc45f83d47378676e5538"
+    },
+    {
+      "path": "reports/phase0/PROGRESS.md",
+      "bytes": 462,
+      "sha256": "bf15cc41bb3e7c7c0c3aa176ec2281ce45719e05ebf231fe63f1760af6318fd9"
+    },
+    {
+      "path": "reports/phase1/PROGRESS.md",
+      "bytes": 462,
+      "sha256": "a0afa34e24307da26f20bcb48f4668e3881b45d222efb13f1c272b2cd7c3f52a"
+    },
+    {
+      "path": "reports/phase2/PROGRESS.md",
+      "bytes": 462,
+      "sha256": "f3d7ed61fdd6b2c0146e6f5702fc239736530798a236cd25f53060520991c101"
+    },
+    {
+      "path": "reports/phase3/PROGRESS.md",
+      "bytes": 462,
+      "sha256": "4bea8df7c4bf9ad11d286b592b44976033445b529bbdf2c7371626e19414ba6c"
+    },
+    {
+      "path": "scripts/build_fixtures.py",
+      "bytes": 1802,
+      "sha256": "96c5c3ddffac3dbb6f2f6a2dce7e976a6dd859b087c71af2d040b800606e50d9"
+    },
+    {
+      "path": "scripts/build_organizer.py",
+      "bytes": 6280,
+      "sha256": "a4c7b153e69a5e75d81b79437755addb2daf7d5fa1757500d5f236707c0103d9"
+    },
+    {
+      "path": "scripts/capture_screenshots.py",
+      "bytes": 1345,
+      "sha256": "8a3693c2182be816aefb20e00ae5016423ee33b32e41e8d6a1e437f47015f332"
+    },
+    {
+      "path": "scripts/check_doctor_experience_restart.py",
+      "bytes": 10160,
+      "sha256": "64635547484ac20ecf6065e3dde35122b4b59b09cb5d9ae441b8b3077699b4e2"
+    },
+    {
+      "path": "scripts/check_keycloak_browser.py",
+      "bytes": 27763,
+      "sha256": "2e3afe1d60598edcae9632cef634527abe80ab755099f9db630c546bc0e3bc44"
+    },
+    {
+      "path": "scripts/check_organizer.py",
+      "bytes": 9423,
+      "sha256": "be87496f5b233ff2405c12363ed3f88c4947d6f82073bbcdb4578bf2a67bf352"
+    },
+    {
+      "path": "scripts/check_patient_experience_restart.py",
+      "bytes": 4432,
+      "sha256": "eb0bb7c5fdb4d12c49b6b9f00e61173b2de022aeceb147eeb4c9c02ed6dc5554"
+    },
+    {
+      "path": "scripts/check_phase4_migrations.py",
+      "bytes": 2277,
+      "sha256": "63f618d4c8aab9f659a1075282b436d2c5bca34b55869740f69b50a898472bc8"
+    },
+    {
+      "path": "scripts/check_phase5_case_restart.py",
+      "bytes": 12512,
+      "sha256": "a0fc73f7bebcef148372126894dc793f7a613988d09dda4c4e975f0ca9a80f4e"
+    },
+    {
+      "path": "scripts/check_phase5_migrations.py",
+      "bytes": 2276,
+      "sha256": "60d4fa33ba6aa58f5309dc76460b13fab405ec930ddb5666840f46589161b552"
+    },
+    {
+      "path": "scripts/check_phase5_postgres.py",
+      "bytes": 11587,
+      "sha256": "b68544782259c8f2f91b7479acde87fd8698abb61364d4f0f6ec0547aafb8648"
+    },
+    {
+      "path": "scripts/check_postgres_profile.py",
+      "bytes": 3852,
+      "sha256": "b65ccc8e1603afc7b67b3ae71f61a197d30534b7bac133d6a6dafc9c30db87e0"
+    },
+    {
+      "path": "scripts/evaluation.sh",
+      "bytes": 571,
+      "sha256": "23de1cbb9279f62e8558ec9399a4587693f84407fa2fe4f5dc4b45853f2fa19c"
+    },
+    {
+      "path": "scripts/export_dependency_lock.sh",
+      "bytes": 663,
+      "sha256": "cb24b8676fef7734bdf64694fb544cf5710b23465ec36e8de76458d2feba162d"
+    },
+    {
+      "path": "scripts/extend_openapi.py",
+      "bytes": 11260,
+      "sha256": "933429747bc42e0ebc84ef1904af949b0a3792b48c2549c0a7cba8ad8258682f"
+    },
+    {
+      "path": "scripts/start.sh",
+      "bytes": 1656,
+      "sha256": "b0ac12fb9c9b09c1b7f39f2b5713e556be2a305466c2f27bed31682b3e75c40f"
+    },
+    {
+      "path": "scripts/start_windows.cmd",
+      "bytes": 1682,
+      "sha256": "b74a72ff383e855704cc3855c57bf0362e35e9f3c4a4d9bbb6ca103bb54c2790"
+    },
+    {
+      "path": "scripts/test.sh",
+      "bytes": 813,
+      "sha256": "cbe56055a86436cb48bf337368f470de6f7943cd5cb10017d18c1406f195760a"
+    },
+    {
+      "path": "scripts/test_windows.cmd",
+      "bytes": 978,
+      "sha256": "255694a11fc2ead4fb9277e5fc27377721bc6ffd9e6d65d0905954ff5839b52f"
+    },
+    {
+      "path": "scripts/validate_full.py",
+      "bytes": 12318,
+      "sha256": "a56248a6ab0de0c178362ce1b2635a1631fb4ad473b8ca1c2a89b2289c9fd5a3"
+    },
+    {
+      "path": "scripts/validate_full.sh",
+      "bytes": 264,
+      "sha256": "7d949589da79aaec8665b8aa856780d7387db8e8b92084e48c07b130e10488b9"
+    },
+    {
+      "path": "scripts/validate_full_windows.cmd",
+      "bytes": 206,
+      "sha256": "660d269c3fdb7dde667c1a453ef1503951adc894b3631cc549cd61beb3ad41dd"
+    },
+    {
+      "path": "tests/auth_support.py",
+      "bytes": 2468,
+      "sha256": "ccfa2e6cabca358f67d665c2e82301a5235ad737605f2c14f234c9fb7c056c30"
+    },
+    {
+      "path": "tests/browser_mock_acceptance.py",
+      "bytes": 8291,
+      "sha256": "d020329d39670c0e4fb3d441ccd22b3c2c45ceae74e9eb7145d4b32beb0af5d2"
+    },
+    {
+      "path": "tests/test_booking.py",
+      "bytes": 11088,
+      "sha256": "26fb2ffc4c7b9252683401f3408c6b7e27feb3d0eca45fece32cbe3920cd279d"
+    },
+    {
+      "path": "tests/test_browser_e2e.py",
+      "bytes": 69566,
+      "sha256": "adf8dd5c7672c054629f0ed5d4d4b00f23e1aa0d63c4148391aade67e529120c"
+    },
+    {
+      "path": "tests/test_clinical_workflow.py",
+      "bytes": 20246,
+      "sha256": "747ebd571bdbcf68bbe031bed97f83d49d100b8fd4c37c9ac8d6009659b7e1d7"
+    },
+    {
+      "path": "tests/test_conda_launchers.py",
+      "bytes": 4602,
+      "sha256": "fe6289be7a5645ecf79289bea80d0fe9d0c198bba976f1cc2930fc87ac11d070"
+    },
+    {
+      "path": "tests/test_doctor_experience.py",
+      "bytes": 16102,
+      "sha256": "e4c2254e35cad552e4f3c89dcf83169b3027657d87f4e698b7d911f76df83ac2"
+    },
+    {
+      "path": "tests/test_evaluation_package.py",
+      "bytes": 2906,
+      "sha256": "4189e52072f56ffd409cb8c89b23641830f7c4b5c282a94ba81cf9dfd1b0fa61"
+    },
+    {
+      "path": "tests/test_evaluator_catalog_content.py",
+      "bytes": 1857,
+      "sha256": "80c2a08d01b00167296611a26b8ac5ee59a7a734c5a39bb52f49b07bb169ff79"
+    },
+    {
+      "path": "tests/test_guided_pitch.py",
+      "bytes": 10306,
+      "sha256": "39b763e0aeaae791a41264f8ab3e27c0e52449f8d745ccf9b0986bbd99197798"
+    },
+    {
+      "path": "tests/test_integrated_security.py",
+      "bytes": 12876,
+      "sha256": "bd1300e2502838e70dc14eb20a85a70efdbdf4bd7d34455de2520a71a51d99c7"
+    },
+    {
+      "path": "tests/test_medical_references.py",
+      "bytes": 15247,
+      "sha256": "621037de64080e22dddb02bd7b110147132f37bb1a589d0c71acee41dc2e36bc"
+    },
+    {
+      "path": "tests/test_modular_topology.py",
+      "bytes": 1009,
+      "sha256": "e582e072fa62ef7c7f896f3ff1732e8a5b351e90a652df11b20c702c3fd01923"
+    },
+    {
+      "path": "tests/test_oidc_browser.py",
+      "bytes": 10182,
+      "sha256": "8df55b759425ce61e1d75b72df89fdd214045f697b3ba5ce735e90d78022004c"
+    },
+    {
+      "path": "tests/test_onboarding.py",
+      "bytes": 32471,
+      "sha256": "0ba8f462a7370fd63bbdc66097a4a4e26c41c3770ecca3ec341ff098a21fcf22"
+    },
+    {
+      "path": "tests/test_p0_browser_live.py",
+      "bytes": 5605,
+      "sha256": "e8982df16bfa4f0cdcff33f595fdea947b6bd0e759413b5b61df3ed280784b46"
+    },
+    {
+      "path": "tests/test_p0_engines.py",
+      "bytes": 1413,
+      "sha256": "8cabfd0fdbf70a541a457410b1d6b6432cc2a80d62323c2004e1d9b5aaede4f1"
+    },
+    {
+      "path": "tests/test_p0_known_blockers.py",
+      "bytes": 5721,
+      "sha256": "ee6cb45d4e302be24cac32097a4332885cefc74569c4aadec25921bae5b93a9d"
+    },
+    {
+      "path": "tests/test_p0_live_acceptance.py",
+      "bytes": 15112,
+      "sha256": "b2bbbc8805007ad068b70da22ff148c01d5e4c94dd723b70b3f2e7497180514a"
+    },
+    {
+      "path": "tests/test_p0_offline.py",
+      "bytes": 8950,
+      "sha256": "f05de07b968d207d0e4da5b879da5f913315cc53b94ab3c00f873faf14743931"
+    },
+    {
+      "path": "tests/test_patient_experience.py",
+      "bytes": 23119,
+      "sha256": "627851c201738d12473c1befa7d5d4aa9aabfdaea1b7540b7df1aead28fdaf39"
+    },
+    {
+      "path": "tests/test_phase01a.py",
+      "bytes": 7611,
+      "sha256": "f1aa129d487d8a3c56579e033f335e6d37e5952d7a2aa43eefae32451f3d6c46"
+    },
+    {
+      "path": "tests/test_phase01b.py",
+      "bytes": 16088,
+      "sha256": "f6e759ca623ca7b354029db2e6fdc27f648a83fa00773067da84d3aa3bb76195"
+    },
+    {
+      "path": "tests/test_phase02a.py",
+      "bytes": 14323,
+      "sha256": "8300f0ef329720f7a2ea489ffcad0aff8f2daf477ee99823360bf2254529ace8"
+    },
+    {
+      "path": "tests/test_phase02b.py",
+      "bytes": 24618,
+      "sha256": "2a56e57adee5c9626cfc4a61647a5775de8801cb7a69d6e0433ebd162e14200c"
+    },
+    {
+      "path": "tests/test_phase02b_contracts.py",
+      "bytes": 5517,
+      "sha256": "bf58cdd233b18ad0713f5069c2f53cb272096a4d44d190605789a163d5eb162a"
+    },
+    {
+      "path": "tests/test_phase03a.py",
+      "bytes": 9945,
+      "sha256": "89d54a75f89f7908dd3a9dbda061c6655d761d3ef3b2216fa87ff9dba67da920"
+    },
+    {
+      "path": "tests/test_phase03b.py",
+      "bytes": 14257,
+      "sha256": "c4e7586dab5217d72b2da3d7c6b92dba2b0102fa751e28e8c561609a03165037"
+    },
+    {
+      "path": "tests/test_phase03b_security.py",
+      "bytes": 12864,
+      "sha256": "fb4de5272582a5cfbb8ee5ae27c71fc94684eb80bda394a53ab8f686639fe3e8"
+    },
+    {
+      "path": "tests/test_phase03c_patient.py",
+      "bytes": 9296,
+      "sha256": "13f6838090df9b8f3f260477f5e8dcf72a4e18b989e98968b6797d110905936a"
+    },
+    {
+      "path": "tests/test_phase03c_safety.py",
+      "bytes": 9926,
+      "sha256": "26abfdf5a8c112ac9f3f67a6f6565a21d58d9016efe5eea5476d6c025b92c0e1"
+    },
+    {
+      "path": "tests/test_phase04_evaluation.py",
+      "bytes": 2683,
+      "sha256": "7fd38c76f7dc45d8788ea4d99038cfdde635483df6b60284de8ca84dbd6e9de8"
+    },
+    {
+      "path": "tests/test_phase4_integration.py",
+      "bytes": 10975,
+      "sha256": "1f1e5e8c5cea6feb844b3ef28f557d26f8f37da060012655f705e7ab4a21aa0e"
+    },
+    {
+      "path": "tests/test_phase5_acceptance.py",
+      "bytes": 25561,
+      "sha256": "58437fba31784513188a15450a08f17b10c341fce5eeb38a09b41acb651f60f3"
+    },
+    {
+      "path": "tests/test_phase5_browser.py",
+      "bytes": 21282,
+      "sha256": "0859d30f6f0917cb562380dd13a4daf88cafa4510ab2b84c48358bbeb956c80e"
+    },
+    {
+      "path": "tests/test_phase5_security.py",
+      "bytes": 9901,
+      "sha256": "127695256d7d0fb125a3af04526851fc8ffb1a9ce4f5b9e9c31922cd5c47c33a"
+    },
+    {
+      "path": "tests/test_qwen_pipeline.py",
+      "bytes": 6896,
+      "sha256": "76f7f8333c085412dc106269c9ec2224d754e3fe84769abc8256dd897a18b8fe"
+    },
+    {
+      "path": "tests/test_rebuild_catalog_and_questionnaire_offline.py",
+      "bytes": 4120,
+      "sha256": "7ba329c0167bd17a466e8ca660a5baa3f0a9c19add1ce551d00f7b75daffc7e7"
+    },
+    {
+      "path": "tests/test_staff_enrollment.py",
+      "bytes": 9161,
+      "sha256": "e8cbe5dcd16abc4deff1cea2bbb6690741809f577801ce1288743e534d0f831a"
+    },
+    {
+      "path": "tests/test_static_contract.py",
+      "bytes": 13125,
+      "sha256": "98d2e560ccbbe0cd1da44789a77c5599e2cf66c2f9d14a9f6b36e70fdaa7e6b1"
+    },
+    {
+      "path": "tests/test_workflows.py",
+      "bytes": 4069,
+      "sha256": "398eb5fde2d96a4379cc2c91f547e28ab6ef8361152db75341bf41fe23f327ce"
+    },
+    {
+      "path": "tests_ui/browser_component_render.py",
+      "bytes": 3255,
+      "sha256": "8234fa8e3896bcffa5a5f6c303f8af5edab48faf8ab9d9b3dfb4d54fb3e12129"
+    },
+    {
+      "path": "tests_ui/browser_demo_completion_isolated.py",
+      "bytes": 2468,
+      "sha256": "d4858f01227b608859425ec7561438b410413cc40cda5c9afce7e5e243b305ae"
+    },
+    {
+      "path": "tests_ui/browser_ui_smoke.py",
+      "bytes": 3221,
+      "sha256": "3f1d8c33776c2cfa21e08b7977b1a692dbf3a876de01e6e395b5cd79e0a79c62"
+    },
+    {
+      "path": "tests_ui/clinical_intelligence_contracts.cjs",
+      "bytes": 5073,
+      "sha256": "9810403c6303dd667bece4097f47b8c143bbd96a5338e192465cd26df3e54786"
+    },
+    {
+      "path": "tests_ui/clinical_intelligence_live_contracts.cjs",
+      "bytes": 4083,
+      "sha256": "8b1640416e1bc08890eb26c10578ace8ad419851fa092e152062754383f5e0fe"
+    },
+    {
+      "path": "tests_ui/clinical_intelligence_review_contracts.cjs",
+      "bytes": 10582,
+      "sha256": "4aa960301788c3eca6aca92053348809370cb95a135e1c341f74c9d5613b0fe9"
+    },
+    {
+      "path": "tests_ui/demo_completion_contracts.cjs",
+      "bytes": 4181,
+      "sha256": "72e9c83a2934c941b5afc7675973bfa07d5eebd231fa982b10da379552387ec0"
+    }
+  ],
+  "source_tree_sha256": "59a93b8f897e29f54617fcd9197154a457c4b19769aaaafe3f32418bb8eb3c2b",
+  "resumption_evidence": "Raw metrics saved incrementally per scenario/bounded batch; progress updated every 5 cases or 10 minutes; no target-Mac tests run in this handoff"
+}

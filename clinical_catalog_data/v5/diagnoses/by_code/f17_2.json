@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "F17.2",
+  "title_ru": "Синдром зависимости от табака",
+  "synonyms_ru": [],
+  "specialties": [
+    "psychiatry",
+    "psychology"
+  ],
+  "description_clinician": "Устойчивая потребность и нарушение контроля употребления табака",
+  "description_patient": "Зависимость от табака",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Устойчивая потребность и нарушение контроля употребления табака"
+    ],
+    "course_and_duration": "Динамика зависимости в течение последнего года",
+    "functional_impact": "Клинические последствия и затруднения прекращения",
+    "exclude_and_check": "Употребление без признаков зависимости",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры."
+  },
+  "differential_diagnosis_icd10": [
+    "F10.2"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "",
+  "red_flags": [],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "motivational_interviewing",
+        "target_path": "therapies/by_id/motivational_interviewing.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_aud",
+          "nice_tobacco"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "relapse_prevention_sud",
+        "target_path": "therapies/by_id/relapse_prevention_sud.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_aud"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "contingency_management",
+        "target_path": "therapies/by_id/contingency_management.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_aud"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "smoking_cessation_counsel",
+        "target_path": "therapies/by_id/smoking_cessation_counsel.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_tobacco"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [
+      {
+        "substance_id": "bupropion",
+        "target_path": "medicines/by_inn/bupropion.json",
+        "relationship": "nicotine_dependence_context",
+        "evidence_source_ids": [
+          "nice_tobacco"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "varenicline",
+        "target_path": "medicines/by_inn/varenicline.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_tobacco"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "cytisinicline",
+        "target_path": "medicines/by_inn/cytisinicline.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_tobacco"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "nicotine_nrt",
+        "target_path": "medicines/by_inn/nicotine_nrt.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_tobacco"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      }
+    ],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

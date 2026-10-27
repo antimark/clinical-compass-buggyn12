@@ -1,0 +1,72 @@
+{
+  "id": "problem_solving_therapy",
+  "schema_version": "1.0.0",
+  "record_type": "therapeutic_method",
+  "title_ru": "Терапия решения проблем",
+  "title_en": "",
+  "category": "psychotherapy",
+  "is_psychotherapy": true,
+  "description_patient": "Навыки последовательного решения жизненных задач.",
+  "description_clinician": "Уточнение проблемы, поиск вариантов, проверка и пересмотр решений.",
+  "implementation": {
+    "delivery_modes": [
+      "by_qualified_professional"
+    ],
+    "workflow_hint": "Комплексная клиническая оценка → согласование целей и метода → проведение обученным специалистом → мониторинг исходов",
+    "technical_content_not_a_therapy_manual": true
+  },
+  "diagnosis_links": [
+    {
+      "code": "F32",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "who_depression",
+        "nice_depression"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F33",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "who_depression",
+        "nice_depression"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F43.2",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "who_depression",
+        "nice_depression"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    }
+  ],
+  "clinical_evidence": {
+    "tier": "guideline_supported_for_selected_context",
+    "guideline_source_ids": [
+      "who_depression",
+      "nice_depression"
+    ],
+    "evidence_strength_ungraded": true
+  },
+  "safety": {
+    "requires_professional": true,
+    "notes": "Выбор метода после оценки рисков, предпочтений пациента, коморбидности и подготовки специалиста."
+  },
+  "rights": {
+    "summary_text": "original_editorial_summary",
+    "therapy_protocols_or_branded_manuals": "not_included; may be copyrighted",
+    "use_in_commercial_software": "metadata_only; protocol/material license separate"
+  },
+  "review": {
+    "status": "needs_specialist_review",
+    "scope": "adult-oriented unless otherwise specified; paediatric indications require separate review",
+    "verified_at": "2026-10-25"
+  }
+}

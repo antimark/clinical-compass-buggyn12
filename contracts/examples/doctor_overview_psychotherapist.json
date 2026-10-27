@@ -1,0 +1,32 @@
+{
+  "patient": {
+    "id": "pat_a",
+    "display_name": "Алексей Демонстрационный",
+    "attention_level": "routine",
+    "attention_reason": null,
+    "trend": "worse",
+    "last_activity_at": "2026-10-17T10:00:00Z",
+    "allowed_actions": [
+      "view_overview"
+    ],
+    "diagnosis_label": "Синтетический случай A"
+  },
+  "sections": [
+    {
+      "key": "trends",
+      "label": "Динамика",
+      "data": {
+        "moods": [
+          {
+            "score": 3,
+            "recorded_at": "2026-10-17T10:00:00Z"
+          }
+        ]
+      }
+    }
+  ],
+  "capabilities": [
+    "read_overview"
+  ],
+  "generated_at": "2026-10-17T12:00:00Z"
+}

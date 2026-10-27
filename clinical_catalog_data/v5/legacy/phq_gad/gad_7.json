@@ -1,0 +1,514 @@
+{
+  "$schema": "../questionnaire.schema.json",
+  "schema_version": "1.0.0",
+  "instrument_id": "GAD-7",
+  "instrument_version": "ru-1.0.0-draft",
+  "language": "ru-RU",
+  "clinical_content_status": "draft_pending_clinical_review",
+  "information": {
+    "title": {
+      "ru": "Шкала генерализованной тревоги — 7",
+      "en": "Generalized Anxiety Disorder scale-7",
+      "short": "GAD-7"
+    },
+    "authors": [
+      "Robert L. Spitzer",
+      "Kurt Kroenke",
+      "Janet B. W. Williams",
+      "Bernd Löwe"
+    ],
+    "first_validation_year": 2006,
+    "origin": "самооценка на основе критериев DSM-IV с последующей валидацией",
+    "purpose_patient": "Помогает оценить, как часто за последнее время возникали симптомы тревоги.",
+    "purpose_clinician": "Стандартизированный скрининг генерализованной тревоги и наблюдение динамики симптомов; не диагностическое интервью.",
+    "target_population": "Прежде всего взрослые в общей практике и клиническом наблюдении. Для детей, подростков и специальных групп нужны отдельные возрастные/популяционные обоснования.",
+    "recall_period": {
+      "value": 2,
+      "unit": "weeks",
+      "label": "Последние 2 недели"
+    },
+    "estimated_minutes": 3,
+    "recommended_for": {
+      "screening": {
+        "recommended": true,
+        "strength": "yes"
+      },
+      "symptom_monitoring": {
+        "recommended": true,
+        "strength": "preferred",
+        "note": "Подходит для отслеживания динамики при одинаковой версии и интервале наблюдения."
+      },
+      "clinical_diagnosis": {
+        "recommended": false,
+        "note": "Не позволяет поставить или исключить диагноз; требуется клиническая оценка."
+      }
+    },
+    "icd10": {
+      "classification": "ICD-10",
+      "diagnosis_from_questionnaire": false,
+      "screening_targets": [
+        {
+          "code": "F41.1",
+          "name": "Генерализованное тревожное расстройство",
+          "role": "целевая диагностическая категория для дальнейшей клинической проверки"
+        }
+      ],
+      "nonspecific_symptom_overlap": [
+        {
+          "code": "F41.2",
+          "name": "Смешанное тревожное и депрессивное расстройство",
+          "caveat": "Сочетание тревоги и депрессии проверяется отдельно, включая PHQ и клиническое интервью."
+        },
+        {
+          "code": "F41.0",
+          "name": "Паническое расстройство",
+          "caveat": "GAD может отражать общую тревожную нагрузку, но не подтверждает панические приступы."
+        },
+        {
+          "code": "F40.1",
+          "name": "Социальные фобии",
+          "caveat": "Нужна оценка ситуационно обусловленного страха и избегания."
+        }
+      ],
+      "differentials_not_inferred_by_scale": [
+        {
+          "code": "F43.1",
+          "name": "Посттравматическое стрессовое расстройство",
+          "caveat": "Необходимо подтверждение травматического события и специфических симптомов."
+        },
+        {
+          "code": "F43.2",
+          "name": "Расстройства адаптации",
+          "caveat": "Нужна клиническая оценка стрессора и динамики симптомов."
+        }
+      ],
+      "coding_rule": "GAD не позволяет подтвердить F41.1 и не дифференцирует перечисленные диагнозы по одной сумме баллов."
+    },
+    "references": [
+      {
+        "id": "spitzer2006",
+        "authors": "Spitzer R. L.; Kroenke K.; Williams J. B. W.; Löwe B.",
+        "year": 2006,
+        "title": "A brief measure for assessing generalized anxiety disorder: the GAD-7",
+        "journal": "Archives of Internal Medicine",
+        "doi": "10.1001/archinte.166.10.1092",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16717171/",
+        "role": "original_validation",
+        "finding": "Оценены надёжность и диагностическая точность GAD-7; исходный широко применяемый порог для дополнительной оценки ≥10."
+      },
+      {
+        "id": "plummer2016",
+        "authors": "Plummer F.; Manea L.; Trepel D.; McMillan D.",
+        "year": 2016,
+        "title": "Screening for anxiety disorders with the GAD-7 and GAD-2: a systematic review and diagnostic metaanalysis",
+        "journal": "General Hospital Psychiatry",
+        "doi": "10.1016/j.genhosppsych.2015.11.005",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26719105/",
+        "role": "systematic_review",
+        "finding": "Для GAD-7 исследованы пороги 7–10, для GAD-2 — ≥3; показатели варьируют между популяциями."
+      },
+      {
+        "id": "vrublevska2022",
+        "authors": "Vrublevska J.; Renemane L.; Kivite-Urtane A.; Rancans E.",
+        "year": 2022,
+        "title": "Validation of the generalized anxiety disorder scales (GAD-7 and GAD-2) in primary care settings in Latvia",
+        "journal": "Frontiers in Psychiatry",
+        "doi": "10.3389/fpsyt.2022.972628",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36276320/",
+        "role": "russian_language_criterion_validation_in_latvia",
+        "finding": "В русскоязычной латвийской клинической выборке оптимизированные пороги: GAD-7 ≥7, GAD-2 ≥2; не переносить автоматически на все русскоязычные популяции."
+      },
+      {
+        "id": "zolotareva2023",
+        "authors": "Золотарева А. А.",
+        "year": 2023,
+        "title": "Адаптация русскоязычной версии шкалы генерализованного тревожного расстройства (GAD-7)",
+        "journal": "Консультативная психология и психотерапия",
+        "doi": "10.17759/cpp.2023310402",
+        "url": "https://psyjournals.ru/journals/cpp/archive/2023_n4/Zolotareva",
+        "role": "russian_population_psychometric_validation",
+        "finding": "Популяционная выборка N=1130, внутренняя согласованность α=0.93; клиническую чувствительность/специфичность эта работа не установила. Формулировки данной редакции отличаются от представленных в этом исследовании."
+      }
+    ],
+    "text_source": {
+      "title": "Русская форма GAD-7 (распространяемая версия опросника)",
+      "url": "https://castcentre.org/wp-content/uploads/2022/10/gad7_russian-for-ukraine.pdf",
+      "publisher": "GAD-7, русскоязычный бланк",
+      "verification": "Формулировки конкретной редакции требуют клинического утверждения перед внедрением; адаптация Золотаревой (2023) — иная русскоязычная редакция.",
+      "secondary_url": "https://base.garant.ru/410406853/a848c3c97f7876ad27da1cba2304a90b/"
+    },
+    "licensing": {
+      "instrument": "Оригинальные PHQ/GAD допускают воспроизведение, перевод и распространение без отдельного разрешения (с атрибуцией).",
+      "translation": "Конкретная русская редакция и право её цифровой дистрибуции должны быть подтверждены владельцем продукта.",
+      "notice": "Не удалять указания первоисточника и авторов."
+    },
+    "clinical_limitations": [
+      "Баллы не являются самостоятельным диагнозом и не определяют подтип/тяжесть расстройства по МКБ-10.",
+      "Порог скрининга и границы выраженности симптомов — разные сущности.",
+      "Языковые версии и пороги не всегда эквивалентны между популяциями."
+    ]
+  },
+  "ui": {
+    "audience": [
+      "patient",
+      "clinician"
+    ],
+    "display_title": "GAD-7",
+    "instruction": "Как часто за последние 2 недели Вас беспокоили следующие проблемы?",
+    "layout": {
+      "page_size": 7
+    },
+    "allow_draft": true,
+    "require_all_scored_answers": true
+  },
+  "questions": [
+    {
+      "id": "gad_q1",
+      "order": 1,
+      "text": "Вы нервничали, тревожились или были очень напряжены",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "gad_q2",
+      "order": 2,
+      "text": "Вы были неспособны успокоить или контролировать свои волнения",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "gad_q3",
+      "order": 3,
+      "text": "Вы слишком сильно волновались по различным поводам",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "gad_q4",
+      "order": 4,
+      "text": "Вам было трудно расслабиться",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "gad_q5",
+      "order": 5,
+      "text": "Вы были настолько взбудоражены, что Вам было тяжело сидеть спокойно",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "gad_q6",
+      "order": 6,
+      "text": "Вы легко сердились или раздражались",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "gad_q7",
+      "order": 7,
+      "text": "Вы испытывали страх, словно должно произойти нечто ужасное",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    }
+  ],
+  "supplementary_questions": [
+    {
+      "id": "gad_functioning",
+      "type": "single_choice",
+      "scored": false,
+      "required": false,
+      "display_condition": {
+        "type": "any_scored_answer_at_least",
+        "value": 1
+      },
+      "text": "Если какие-либо проблемы отмечены, насколько они затрудняли Вашу работу, домашние дела или общение с другими людьми?",
+      "options": [
+        {
+          "id": "0",
+          "label": "Совсем не трудно",
+          "score": null
+        },
+        {
+          "id": "1",
+          "label": "Немного трудно",
+          "score": null
+        },
+        {
+          "id": "2",
+          "label": "Очень трудно",
+          "score": null
+        },
+        {
+          "id": "3",
+          "label": "Чрезвычайно трудно",
+          "score": null
+        }
+      ],
+      "notes": "Отдельная оценка влияния на функционирование; НЕ включается в сумму баллов."
+    }
+  ],
+  "scoring": {
+    "type": "sum",
+    "item_ids": [
+      "gad_q1",
+      "gad_q2",
+      "gad_q3",
+      "gad_q4",
+      "gad_q5",
+      "gad_q6",
+      "gad_q7"
+    ],
+    "min_score": 0,
+    "max_score": 21,
+    "missing_answer_policy": "incomplete_no_total",
+    "score_direction": "higher_is_more_symptomatic",
+    "positive_screen_cutoff": 10,
+    "positive_screen_semantics": "clinical_further_assessment_not_diagnosis",
+    "alternative_cutoffs": [
+      {
+        "min_score": 7,
+        "source_ref": "vrublevska2022",
+        "population": "русскоязычные пациенты первичного звена Латвии",
+        "use": "reference_only_do_not_apply_by_default"
+      },
+      {
+        "min_score": 8,
+        "source_ref": "plummer2016",
+        "population": "выборки метаанализа",
+        "use": "reference_only_do_not_apply_by_default"
+      }
+    ],
+    "supplementary_in_total": false
+  },
+  "score_scale": {
+    "type": "symptom_severity",
+    "bands": [
+      {
+        "min": 0,
+        "max": 4,
+        "severity_code": "Минимальная выраженность",
+        "patient": {
+          "heading": "Минимальная выраженность",
+          "text": "За последние две недели тревожные симптомы отмечались редко или не отмечались."
+        },
+        "clinician": {
+          "summary": "Минимальная выраженность по GAD-7.",
+          "recommended_next_step": "Сопоставить с жалобами и анамнезом."
+        }
+      },
+      {
+        "min": 5,
+        "max": 9,
+        "severity_code": "Лёгкая выраженность",
+        "patient": {
+          "heading": "Лёгкая выраженность",
+          "text": "Есть некоторые признаки тревоги. Если они мешают, можно обсудить их со специалистом."
+        },
+        "clinician": {
+          "summary": "Лёгкая выраженность тревожных симптомов.",
+          "recommended_next_step": "Оценить функционирование, триггеры и динамику."
+        }
+      },
+      {
+        "min": 10,
+        "max": 14,
+        "severity_code": "Умеренная выраженность",
+        "patient": {
+          "heading": "Умеренная выраженность",
+          "text": "Тревога может заметно влиять на повседневную жизнь. Стоит обсудить её с врачом."
+        },
+        "clinician": {
+          "summary": "Умеренная тревожная симптоматика; ≥10 — распространённый порог скрининга ГТР.",
+          "recommended_next_step": "Проверить длительность, характер тревоги, дифференциальные критерии и коморбидность."
+        }
+      },
+      {
+        "min": 15,
+        "max": 21,
+        "severity_code": "Выраженные симптомы",
+        "patient": {
+          "heading": "Выраженные симптомы",
+          "text": "Тревожные симптомы выражены. Рекомендуется обратиться к специалисту для оценки состояния."
+        },
+        "clinician": {
+          "summary": "Высокая выраженность тревоги; не свидетельствует автоматически о F41.1.",
+          "recommended_next_step": "Приоритетное клиническое обследование с оценкой ограничений функционирования."
+        }
+      }
+    ],
+    "patient_disclaimer": "Опросник не ставит диагноз и не заменяет медицинскую консультацию.",
+    "clinician_disclaimer": "Ни диапазон баллов, ни позитивный скрининг не дают основания автоматически выставить код МКБ-10."
+  },
+  "monitoring": {
+    "main_purpose": "symptom_tracking",
+    "trend_compatible_with": [
+      "same_instrument_id",
+      "same_instrument_version",
+      "same_recall_period",
+      "same_scoring"
+    ],
+    "repeat_interval": "По назначению врача; в демонстрационном приложении может настраиваться индивидуально.",
+    "automatic_clinical_improvement_claim": false
+  },
+  "safety": {
+    "requires_clinician_review_before_production": true,
+    "never_auto_diagnose": true,
+    "never_auto_treat": true,
+    "do_not_equate_negative_screen_with_no_disorder": true
+  }
+}

@@ -1,0 +1,103 @@
+﻿Маршрут,Роль,Экран,Состояние UI,Фактический API / функция,Ограничения
+/,shared,Лендинг,UI,—,Публичная главная; только реальные ссылки
+/login,shared,Вход,запись,POST /api/v1/onboarding/login; GET /api/v1/auth/oidc/capabilities,Локальный вход только при разрешённом bootstrap; OIDC server redirect
+/register,shared,Выбор роли,UI,GET /api/v1/onboarding/bootstrap,Выбор роли
+/register/patient,shared,Регистрация пациента,запись,POST /api/v1/onboarding/register,Синтетический режим; .test/.example и пароль 12+
+/register/specialist,shared,Регистрация врача,недоступно,GET /api/v1/staff-enrollment/capabilities,Саморегистрация специалиста не выдаёт роль
+/onboarding,shared,Первоначальная настройка,частично,GET/PUT /api/v1/onboarding/state,В UI есть переход к профилю; мастер не воспроизведён полностью
+/invite/:token,shared,Принятие приглашения,запись,POST /api/v1/onboarding/invitations/preview; POST /api/v1/onboarding/invitations/accept,Принятие только по явному согласию и после входа
+/notifications,shared,Центр уведомлений,запись,GET /api/v1/p0/notifications; POST /api/v1/p0/notifications/:id/read,Только собственные уведомления
+/settings,shared,Профиль и настройки,локально,localStorage cc.theme,Тема в модальном окне; серверные настройки здесь не изменяются
+/doctors,shared,Каталог врачей,чтение,GET /api/v1/public/doctors,Поиск по возвращённому списку
+/doctors/:slug,shared,Публичный и авторизованный профиль врача; вкладка общих пациентов при ACL,чтение,GET /api/v1/public/doctors/:slug,Публичные опубликованные сведения; без вымышленных рейтингов
+/doctors/:slug/reviews,shared,Публичные отзывы,частично,GET /api/v1/public/doctors/:slug,Отдельный API отзывов не подтверждён; пустые данные
+/patient,patient,Сегодня,запись,GET /api/v1/patient-experience/dashboard; POST /api/v1/patients/me/check-ins,"Отметка 1–5, задачи и динамика"
+/patient/tasks,patient,Задания и опросники,запись,GET definitions/assignments; POST /api/v1/patient-experience/questionnaires/self-assign,"4 пилотных шкалы PHQ/GAD запускаются в synthetic/evaluation sandbox; только вымышленные данные, нет клинического допуска"
+/patient/questionnaires/:requestId,patient,Прохождение опросника,запись,GET/PUT /api/v1/patient-experience/questionnaires/assignments/:id[/draft]; POST .../:id/submit,"Технические формы 1–4 и 4 пилотных PHQ/GAD 0–3; версия формы, сохранение черновика и завершение; на синтетических данных"
+/patient/questionnaires/:requestId/result,patient,Результат формы,чтение,GET /api/v1/patient-experience/questionnaires/assignments/:id/result,"Серверный итог (сумма), отдельные ответы и предупреждение; диагноз/клинические пороги не выдаются"
+/patient/trends,patient,Моя динамика,чтение,GET /api/v1/patient-experience/chart,Точки берутся из ответа API
+/patient/treatment,patient,Моё лечение,чтение,GET /api/v1/p0/care-plans,Только опубликованные планы
+/patient/treatment/adherence,patient,Дневник приёма,запись,GET /api/v1/p0/care-plans; POST /api/v1/p0/plan-items/:id/report,Статусы completed/missed/uncertain/partial
+/patient/adverse-events/new,patient,Сообщение о возможном нежелательном явлении,запись,POST /api/v1/p0/adverse-events,Самоотчёт без предположения о причинности
+/patient/appointments,patient,Мои приёмы,запись,GET /api/v1/appointments; POST /api/v1/appointments/:id/confirm,Подтверждение предложения времени
+/patient/appointments/new,patient,Запросить приём,частично,POST /api/v1/previsit-cases,Переход в мастер первичного обращения
+/patient/messages,patient,Сообщения врачам,чтение,GET /api/v1/previsit-cases,В UI доступны чаты обращений
+/patient/messages/:threadId,patient,Чат пациент—врач: одно сообщение до ответа врача,недоступно,—,Не установлена связь непрозрачного threadId с другим пользователем
+/patient/assistant,patient,AI-помощник,недоступно,/api/v1/clinical-copilot/patient-chat/...,Требует точного контекста и включённой функции; не имитируется
+/patient/assistant/share/:draftId,patient,Проверка и отправка сводки,недоступно,—,Нет подтверждённого безопасного workflow этой страницы
+/patient/specialists,patient,Мои специалисты,чтение,GET /api/v1/patients/me/links,Только подтверждённые связи
+/patient/specialists/find,patient,Найти врача,переход,GET /api/v1/public/doctors,Ссылка в каталог
+/patient/access,patient,Разрешения на данные и видимость состава команды врачей,частично,GET /api/v1/patient/care-team-visibility,Изменение consent/grant требуется доработать
+/patient/requests,patient,Мои обращения к врачам,чтение,GET /api/v1/previsit-cases,Собственные обращения
+/patient/requests/new,patient,Первичное обращение,запись,POST /api/v1/previsit-cases,"Отдельная анкета, case_consent"
+/patient/requests/:requestId,patient,Карточка обращения,чтение,GET /api/v1/previsit-cases/:id,Только переданная анкета
+/patient/appointments/:appointmentId/visit,patient,Аудио/видео-комната пациента,недоступно,—,Реальный видео/аудио канал не подтверждён
+/patient/reviews/new/:appointmentId,patient,Отзыв после визита,недоступно,—,Создание отзыва не подтверждено
+/doctor,doctor,Рабочий стол,чтение,GET /api/v1/doctor-experience/dashboard,Сигналы и очереди под ACL
+/doctor/patients,doctor,Пациенты,чтение,GET /api/v1/doctors/me/patients,Серверная фильтрация/ACL; клиентский поиск по текущей странице
+/doctor/patients/:patientId,doctor,Обзор пациента,чтение,GET /api/v1/doctors/me/patients/:id/overview,Только разрешённые поля
+/doctor/patients/:patientId/trends,doctor,Динамика пациента,чтение,GET /api/v1/patient-experience/physician/patients/:id/chart,Только при scope symptoms
+/doctor/patients/:patientId/history,doctor,Анамнез,чтение,GET /api/v1/p0/history/:id,При разрешении backend
+/doctor/patients/:patientId/treatment,doctor,Лечение пациента,частично,GET /api/v1/doctors/me/patients/:id/clinical,Назначение/изменение не реализовано в новом UI
+/doctor/patients/:patientId/psychotherapy,doctor,Поведенческая терапия,недоступно,—,Подтверждённый учебный мастер не интегрирован
+/doctor/patients/:patientId/visits,doctor,История визитов,чтение,GET /api/v1/p0/encounters/:id,Создание записи не интегрировано
+/doctor/patients/:patientId/adverse-events,doctor,Возможные нежелательные явления,частично,GET /api/v1/p0/adverse-events?patient_id=:id,Оценка причинности не интегрирована
+/doctor/patients/:patientId/decisions,doctor,Клинические решения/маршрутизация,чтение,GET /api/v1/p0/decisions/:id,Клиническое решение через UI не записывается
+/doctor/patients/:patientId/access,doctor,Доступные разделы/связи,чтение,GET /api/v1/doctors/me/patients/:id/overview,"Просмотр только видимых данных, без полного редактора grants"
+/doctor/alerts,doctor,Алерты,чтение,GET /api/v1/doctor-experience/signals,Серверные сигналы
+/doctor/alerts/:alertId,doctor,Оценка сигнала,частично,GET /api/v1/doctor-experience/signals/:id,Оценка сигнала не записывается
+/doctor/messages,doctor,Сообщения пациентов,чтение,GET /api/v1/previsit-cases,Первичные чаты
+/doctor/messages/:threadId,doctor,Двусторонний чат при открытом диалоге,недоступно,—,Не установлена связь opaque threadId
+/doctor/appointments,doctor,Запросы и записи,чтение,GET /api/v1/appointments,Подтверждённые сервером записи
+/doctor/calendar,doctor,Расписание,чтение,GET /api/v1/appointments,"Список, без интерактивной сетки календаря"
+/doctor/questionnaires,doctor,Каталог и назначения,запись,"GET /api/v1/patient-experience/questionnaires/definitions,/assignments; POST /assignments",Назначение 2 технических и 4 пилотных форм; просмотр результата при действующем врачебном доступе
+/doctor/questionnaires/assign,doctor,Назначить опросник,запись,GET /api/v1/patient-experience/questionnaires/definitions; POST /assignments,Проверка прав на сервере
+/doctor/invitations,doctor,Приглашения пациентам,запись,GET/POST /api/v1/onboarding/invitations,"Категории доступа, получатель"
+/doctor/invitations/new,doctor,Создать приглашение,запись,POST /api/v1/onboarding/invitations,Отдельное согласие пациента
+/doctor/clinical-library,doctor,Клиническая база,чтение,GET /api/v1/clinical-catalog/search,"242 записи, серверный постраничный поиск; полный состав полей всех 77 лекарственных записей; ссылки на связанные карточки и первоисточники; внешние ссылки онлайн не проверялись"
+/doctor/clinical-library/:articleId,doctor,Клинический материал,частично,GET /api/v1/p0/reference-articles/:id,В зависимости от зарегистрированного источника
+/doctor/import,doctor,Импорт синтетической выписки,недоступно,—,Безопасный импорт/загрузка синтетической выписки не подключены
+/doctor/requests,doctor,Очередь первичных обращений,чтение,GET /api/v1/previsit-cases,Первичная очередь
+/doctor/requests/:requestId,doctor,Анкета предварительного обращения (отдельно от чата),запись,GET /api/v1/previsit-cases/:id; POST /:id/review; POST /:id/offers,Врач видит только shared intake
+/doctor/profile/edit,doctor,Публичная страница врача: редактирование,запись,GET/PUT /api/v1/profiles/me; POST /me/photo,Публикация требует серверного согласования
+/doctor/reviews,doctor,Отзывы о враче,недоступно,—,Нет подтверждённого обработчика персональных отзывов
+/doctor/appointments/:appointmentId/visit,doctor,Первичный приём и комната врача,недоступно,—,Нет видеосвязи
+/clinic,clinic,Обзор клиники,переход,—,Административный рабочий стол
+/clinic/appointments,clinic,Очередь записи,чтение,GET /api/v1/p0/clinic/appointments,Только административный scope
+/clinic/patients,clinic,Пациенты клиники,чтение,GET /api/v1/p0/clinic/patients,ФИО только из полей с активным разрешением пациента; иначе скрыто
+/clinic/patients/:patientRef,clinic,Административная карточка пациента,чтение,GET /api/v1/p0/clinic/patients/:ref,"ФИО по согласию, без медицинской карты"
+/clinic/staff,clinic,Сотрудники,чтение,GET /api/v1/p1/clinic/staff,Возвращает отображаемые имена сотрудников своей организации; профессиональная аккредитация не подтверждена
+/clinic/invitations,clinic,Организационные приглашения,частично,GET /api/v1/staff-enrollment/invitations,Создание и отзыв требуют выделенной формы
+/clinic/access-templates,clinic,Шаблоны административного доступа,чтение,GET /api/v1/admin-privacy/templates,Редактор шаблонов не подключён
+/clinic/licenses,clinic,Лицензии и места,частично,GET /api/v1/staff-enrollment/capabilities,Не является точным показателем лицензий
+/clinic/audit,clinic,Журнал административных операций,частично,GET /api/v1/audit/me,Не полный организационный audit
+/research,research,Рабочий стол аналитики,переход,—,Обзор синтетической аналитики
+/research/datasets,research,Каталог разрешённых датасетов,чтение,GET /api/v1/research-workflow/sources,Только доступные наборы
+/research/cohorts,research,Конструктор когорты,частично,GET /api/v1/research-workflow/definitions,Конструктор не подключён
+/research/compare,research,Сравнение групп A/B,частично,GET /api/v1/research/cohorts,Не выдаётся за проверенный статистический результат
+/research/signals,research,Гипотезы/сигналы,частично,GET /api/v1/research/synthetic-summary,Наблюдательные данные
+/research/cases/:caseId,research,Синтетический мини-кейс,недоступно,—,Нет подтверждённого чтения кейса по id
+/research/exports,research,Экспорт агрегатов,частично,GET /api/v1/research-workflow/definitions,Экспорт CSV не реализован через UI
+/doctors/:slug/share,shared,Поделиться ссылкой на врача,локально,GET /api/v1/public/doctors/:slug,Копирование канонического публичного URL
+/patient/requests/:requestId/chat,patient,Чат по первичному обращению,запись,GET/POST /api/v1/previsit-cases/:id/messages,Одно первое сообщение пациента обеспечивается сервером
+/patient/access/care-team,patient,Согласие на видимость общих пациентов,частично,GET /api/v1/patient/care-team-visibility,Только чтение согласий
+/doctor/requests/:requestId/chat,doctor,Первичное сообщение и приём диалога врачом,запись,GET/POST /api/v1/previsit-cases/:id/messages,Ответ врача открывает следующий этап
+/doctor/colleagues,doctor,Коллеги и профессиональная переписка,чтение,GET /api/v1/public/doctors,Публично видимые коллеги
+/doctor/colleagues/:doctorId/messages,doctor,Личный диалог двух врачей,запись,GET/POST /api/v1/threads/doctor_peer/:id/messages,Переписка без доступа к карте пациента
+/doctor/colleagues/:doctorId/shared-patients,doctor,Общие пациенты с персональным разрешением,чтение,GET /api/v1/doctors/:id/shared-patients,Только по персональному consent
+/clinical-library,shared,Клинический справочник,чтение,GET /api/v1/clinical-catalog/search; GET /api/v1/clinical-catalog/:kind/:id,"242 записи, серверный постраничный поиск; полный состав полей всех 77 лекарственных записей; ссылки на связанные карточки и первоисточники; внешние ссылки онлайн не проверялись"
+/patient/profile,patient,Мой профиль,запись,GET/PUT /api/v1/profiles/me; GET /api/v1/patient-experience/questionnaires/assignments,Ссылка на сохранённые сервером результаты опросников и управление согласием на ФИО
+/invite/accept,shared,Принять приглашение,запись,POST /api/v1/onboarding/invitations/preview; POST /api/v1/onboarding/invitations/accept,Код или ссылка
+/doctor/clinical-copilot,doctor,Клинический помощник,недоступно,/api/v1/clinical-copilot/...,Нужен подтверждённый контекст пациента и явный аудит
+/doctor/nlp-lab,doctor,Лаборатория NLP,запись,POST /api/v1/nlp-v3/synthetic-extract,Только synthetic=true
+/research/demo-v3,research,Синтетические исследования,чтение,GET /api/v1/research/demo-datasets,Только синтетические наборы
+/demo/journeys,shared,Сценарии оценки,переход,Локальная навигация четырёх ролей,Показывает и работающие маршруты и явно названные частичные/демо возможности
+/demo/profile,shared,Демонстрационный профиль,переход,Демонстрационная карта ролей,Ссылка на карты ролей; не полноценный демонстрационный профиль
+/api-lab.html,shared,API-лаборатория,чтение,"GET /api/v1/health,/onboarding/bootstrap,/p0/auth/capabilities,/public/doctors,/clinical-catalog/search",Изолированный диагностический экран read only
+/assessments,shared,Гостевой каталог PHQ/GAD,UI,GET /api/v1/evaluation/questionnaires/public-definitions,"Только synthetic/evaluation, 4 пилотные русские версии без клинического допуска"
+/assessments/:code,shared,Гостевое заполнение пилотной формы,локально,Проверка определения на стороне клиента; без POST до входа,Ответы временно в sessionStorage; только вымышленные данные
+/assessments/:code/result,shared,Предварительный результат + регистрация/вход + перенос,запись,После входа POST /questionnaires/self-assign; PUT /draft; POST /submit,До подтверждения сервера результат не считается сохранённым
+/patient/admin-identity,patient,ФИО и разрешения для администрации,запись,GET/PUT /api/v1/admin-privacy/me/values; GET /me/clinics; PUT/DELETE /me/policies,"Нужны организация, связь, шаблон, флаги и явное согласие пациента"
+/doctor/patients/:patientId/clinical-intelligence,doctor,Разбор обращения Clinical Intelligence,запись,GET /api/v1/clinical-intelligence/patients/:id/snapshot; POST .../analyze,Реальная модель Qwen через Ollama при наличии разрешений и подготовленного обращения; подтверждение врача
+/doctor/patients/:patientId/clinical-intelligence/chat/:threadId,doctor,Clinical Copilot чат врача,запись,/api/v1/clinical-intelligence/threads/:id,"Требует разрешённого контекста, точной привязки и включенного локального Qwen"
+/patient/assistant/thread/:threadId,patient,AI-чат пациента с историей,запись,/api/v1/clinical-intelligence/threads/:id,"Открывается только собственная история, Ollama/Qwen, отдельное согласие на передачу врачу"

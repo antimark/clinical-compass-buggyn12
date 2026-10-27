@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "F11.2",
+  "title_ru": "Синдром зависимости от опиоидов",
+  "synonyms_ru": [],
+  "specialties": [
+    "psychiatry",
+    "psychology"
+  ],
+  "description_clinician": "Признаки зависимости с нарушением контроля употребления опиоидов",
+  "description_patient": "Зависимость от опиоидных веществ требует специализированной помощи",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Признаки зависимости с нарушением контроля употребления опиоидов"
+    ],
+    "course_and_duration": "Оценка комплекса признаков за последний год",
+    "functional_impact": "Последствия для здоровья и функционирования",
+    "exclude_and_check": "Терапевтическое применение по назначению без зависимости",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры."
+  },
+  "differential_diagnosis_icd10": [
+    "F10.2"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "",
+  "red_flags": [],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "motivational_interviewing",
+        "target_path": "therapies/by_id/motivational_interviewing.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_aud",
+          "nice_tobacco"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "relapse_prevention_sud",
+        "target_path": "therapies/by_id/relapse_prevention_sud.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_aud"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "contingency_management",
+        "target_path": "therapies/by_id/contingency_management.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_aud"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [
+      {
+        "substance_id": "naltrexone",
+        "target_path": "medicines/by_inn/naltrexone.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_naltrexone_opioids"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "buprenorphine",
+        "target_path": "medicines/by_inn/buprenorphine.json",
+        "relationship": "foreign_guideline_only_ru_legality_not_supported",
+        "evidence_source_ids": [],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "methadone",
+        "target_path": "medicines/by_inn/methadone.json",
+        "relationship": "foreign_guideline_only_ru_legality_not_supported",
+        "evidence_source_ids": [
+          "nice_opioids"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      }
+    ],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

@@ -1,0 +1,371 @@
+{
+  "schema_version": "3.0.0",
+  "instrument_id": "SCID-5-CV",
+  "instrument_version": "official_version_required",
+  "language": "ru-RU",
+  "clinical_content_status": "metadata_only_license_required",
+  "information": {
+    "title": "Structured Clinical Interview for DSM-5 — Clinician Version",
+    "type": "clinician_semistructured_interview",
+    "authors": [
+      "Michael B. First",
+      "Janet B. W. Williams",
+      "Robert L. Spitzer",
+      "Miriam Gibbon"
+    ],
+    "first_publication_or_revision_year": 2015,
+    "purpose_patient": "Информация о назначении инструмента; самостоятельно проходить это интервью без специалиста не следует.",
+    "purpose_clinician": "Структурированная оценка DSM-5 диагнозов в клинической практике; позволяет уточнять течение и исключающие условия.",
+    "estimated_minutes": "30–120",
+    "target_population": "Взрослые клинические и неклинические выборки (по версии руководства)",
+    "recommended_for": {
+      "structured_diagnostic_interview": true,
+      "diagnostic_support": true,
+      "symptom_monitoring": false,
+      "independent_diagnosis": false
+    },
+    "icd10": {
+      "mapping_status": "reference_only_not_dsm_equivalence",
+      "codes": [
+        {
+          "code": "F32",
+          "label": "Депрессивный эпизод"
+        },
+        {
+          "code": "F33",
+          "label": "Рекуррентное депрессивное расстройство"
+        },
+        {
+          "code": "F31",
+          "label": "Биполярное аффективное расстройство"
+        },
+        {
+          "code": "F41.1",
+          "label": "Генерализованное тревожное расстройство"
+        },
+        {
+          "code": "F41.0",
+          "label": "Паническое расстройство"
+        },
+        {
+          "code": "F40.1",
+          "label": "Социальные фобии"
+        },
+        {
+          "code": "F42",
+          "label": "Обсессивно-компульсивное расстройство"
+        },
+        {
+          "code": "F43.1",
+          "label": "Посттравматическое стрессовое расстройство"
+        },
+        {
+          "code": "F20",
+          "label": "Шизофрения"
+        },
+        {
+          "code": "F25",
+          "label": "Шизоаффективные расстройства"
+        },
+        {
+          "code": "F10",
+          "label": "Психические и поведенческие расстройства вследствие употребления алкоголя"
+        },
+        {
+          "code": "F11–F19",
+          "label": "Нарушения вследствие других психоактивных веществ; диапазон рубрик"
+        }
+      ]
+    },
+    "validation": [
+      {
+        "citation": "Osório et al., 2019, Psychiatry and Clinical Neurosciences; N=180, клиническая валидность, межэкспертная и тест-ретест надёжность SCID-5-CV",
+        "url": "https://doi.org/10.1111/pcn.12931"
+      }
+    ],
+    "limitations": [
+      "Только специалист; структурированное интервью не заменяет полного обследования, клинического решения и оценки безопасности.",
+      "DSM-5/МКБ-10 соответствия требуют экспертной проверки.",
+      "Качество конкретного русскоязычного перевода не подтверждается самим JSON."
+    ],
+    "source_urls": [
+      "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-12",
+      "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-15"
+    ],
+    "versions": [
+      "SCID-5-CV",
+      "SCID-5-RV",
+      "SCID-5-CT",
+      "SCID-5-PD",
+      "SCID-5-AMPD"
+    ],
+    "duration_note": "Официальный FAQ указывает диапазон 30–120 минут для CV",
+    "reference_guide_id": "SCID-5-CV"
+  },
+  "ui": {
+    "audience": [
+      "clinician"
+    ],
+    "show_in_clinical_reference": true,
+    "patient_assignable": false,
+    "clinical_admin_enabled": false,
+    "licensed_content_loaded": false,
+    "assignment_guard": "deny_unless_licensed_and_clinically_approved"
+  },
+  "response_sets": {},
+  "questions": [],
+  "modules": [
+    {
+      "id": "initial",
+      "title": "Вводная и анамнестическая часть",
+      "covered_domains": [
+        "главная жалоба",
+        "текущие симптомы",
+        "прошлые эпизоды",
+        "лечение"
+      ],
+      "clinician_notes": "Не заменяет официальные обязательные вопросы.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "mood",
+      "title": "Расстройства настроения",
+      "covered_domains": [
+        "депрессивный синдром",
+        "маниакальные или гипоманиакальные эпизоды",
+        "возможность смешанной симптоматики"
+      ],
+      "clinician_notes": "Разграничить депрессию при БАР и униполярную депрессию.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "psychosis",
+      "title": "Психотические расстройства",
+      "covered_domains": [
+        "галлюцинации и бред",
+        "дезорганизация",
+        "хронология и связи с настроением"
+      ],
+      "clinician_notes": "Проверить связь с веществами и соматическими состояниями.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "anxiety",
+      "title": "Тревожные расстройства",
+      "covered_domains": [
+        "ГТР",
+        "паническое расстройство",
+        "социальная тревога",
+        "специфические фобии"
+      ],
+      "clinician_notes": "Проверить длительность, избегание, нарушение функционирования.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "ocd_ptsd",
+      "title": "ОКР и связанные со стрессом расстройства",
+      "covered_domains": [
+        "навязчивости",
+        "компульсии",
+        "травматические события",
+        "симптомы ПТСР"
+      ],
+      "clinician_notes": "Не приписывать неспецифичные симптомы одному диагнозу.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "substances",
+      "title": "Расстройства в связи с употреблением веществ",
+      "covered_domains": [
+        "алкоголь",
+        "другие вещества",
+        "время употребления относительно симптомов"
+      ],
+      "clinician_notes": "Оценка недавнего приёма, отмены и вызванных симптомов.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    }
+  ],
+  "scoring": {
+    "type": "not_computable_without_licensed_protocol",
+    "auto_scoring_enabled": false,
+    "score_scale": null,
+    "missing_answer_policy": "cannot_finalize_incomplete",
+    "diagnostic_decision": "clinician_only"
+  },
+  "interpretations": {
+    "patient": {
+      "title": "Результат обсудите с врачом",
+      "text": "Интервью помогает врачу структурировать обследование; автоматическое заключение не формируется."
+    },
+    "clinician": {
+      "title": "Клиническая интерпретация",
+      "text": "Интерпретировать по официальному руководству, совокупности критериев, исключений и клинических данных; необоснованное присвоение диагноза запрещено."
+    },
+    "auto_diagnosis": false
+  },
+  "licensing": {
+    "rights_holder": "American Psychiatric Association Publishing (APA Publishing)",
+    "commercial": "Клинические бумажные формы покупаются официально. Для помещения вопросов в собственную цифровую систему требуется отдельное письменное разрешение; права на SaaS не следуют из покупки бумажного бланка.",
+    "research": "SCID-5-CV допустим для подходящих исследований при приобретении оригинальных материалов; при оцифровке/массовом тиражировании согласовывать дополнительные права.",
+    "open": "Нельзя свободно выкладывать полный текст, бланки, ключи или цифровую копию.",
+    "contact_url": "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-15",
+    "permission_needed_for_app": true,
+    "free_public_republication": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "suicidality_assessment": "separate_assessment_when_indicated",
+    "no_autonomous_triage": true,
+    "clinician_signoff_required": true
+  },
+  "clinician_guide": {
+    "steps": [
+      {
+        "id": "before",
+        "title": "Подготовка и рамки",
+        "clinician_instructions": "Уточните цель обследования, версии инструмента, временной период, язык, информированное согласие и условия конфиденциальности.",
+        "checks": []
+      },
+      {
+        "id": "safety",
+        "title": "Безопасность",
+        "clinician_instructions": "При клинических сигналах риска отдельно оцените непосредственную безопасность и действуйте по протоколу организации, не дожидаясь окончания интервью.",
+        "checks": []
+      },
+      {
+        "id": "context",
+        "title": "Клинический контекст",
+        "clinician_instructions": "Установите хронологию эпизодов, функциональные нарушения, предшествующее лечение, влияние веществ/лекарств, возможные соматические причины и коморбидность.",
+        "checks": []
+      },
+      {
+        "id": "routing",
+        "title": "Ветвления",
+        "clinician_instructions": "Следуйте переходам в лицензированном руководстве. Не пропускайте модули по эвристике, созданной разработчиками платформы.",
+        "checks": []
+      },
+      {
+        "id": "diagnosis",
+        "title": "Критерии",
+        "clinician_instructions": "Отдельно оценивайте текущие и анамнестические критерии, исключающие условия и достоверность сведений.",
+        "checks": []
+      },
+      {
+        "id": "finish",
+        "title": "Завершение",
+        "clinician_instructions": "Документируйте подтверждённые, исключённые и неопределённые критерии; решение по диагностическому коду и тактике принимает врач.",
+        "checks": []
+      }
+    ],
+    "common_errors": [
+      "Считать SCID суммой баллов",
+      "Переносить нормативы DSM-5 непосредственно в МКБ-10",
+      "Принимать результат положительного скрининга PHQ-9 как готовый диагноз"
+    ]
+  },
+  "priority": "P2",
+  "instrument_type": "clinician_structured_interview",
+  "catalog_schema_version": "4.0.0",
+  "localization": {
+    "language": "ru",
+    "status": "clinical_guide_russian_not_licensed_interview_translation",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "release_approved": false,
+    "draft_segregated": false
+  },
+  "rights": {
+    "rights_holder": "American Psychiatric Association Publishing",
+    "copyright_status": "copyrighted",
+    "commercial_use": "separate_digital_license_required",
+    "research_use": "license_or_purchase_and_check_digital_rights",
+    "open_use": "not_allowed_without_permission",
+    "electronic_administration": "written_permission_required",
+    "public_distribution": "prohibited_without_permission",
+    "translation_rights": "written_permission_required",
+    "patient_feedback_allowed": "subject_to_license_and_clinical_review",
+    "license_source_url": "https://www.ptsd.va.gov/professional/assessment/adult-int/scid-ptsd-module.asp",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "availability": {
+    "russian_form": "licensed_questions_not_embedded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.appi.org/Products/Structured-Clinical-Interview-for-DSM-5-(SCID-5)",
+    "protected_material_embedded": false
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [],
+    "code_assignment_from_scale": false,
+    "icd11_context_text": ""
+  }
+}

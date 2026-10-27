@@ -1,0 +1,410 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "medicinal_product_instruction",
+  "language": "ru",
+  "product": {
+    "name": "Золофт",
+    "international_nonproprietary_name": "сертралин",
+    "international_nonproprietary_name_latin": "sertraline",
+    "type": "антидепрессант (СИОЗС)",
+    "pharmacotherapeutic_group": "Психоаналептики; антидепрессанты; селективные ингибиторы обратного захвата серотонина",
+    "atc": {
+      "code": "N06AB06",
+      "description": "Сертралин"
+    },
+    "prescription_required": true,
+    "registration_number": "ЛП-№(002851)-(РГ-RU)",
+    "country_of_registration": "Россия",
+    "dosage_form": "таблетки, покрытые пленочной оболочкой",
+    "strength_per_tablet": {
+      "amount": 50,
+      "unit": "мг",
+      "substance": "сертралин (в форме гидрохлорида)"
+    },
+    "route": "перорально",
+    "active_substances": [
+      {
+        "name": "сертралин",
+        "salt_form": "гидрохлорид",
+        "amount_per_tablet_mg": 50
+      }
+    ],
+    "excipients": {
+      "tablet_core": [
+        "кальция гидрофосфата дигидрат",
+        "целлюлоза микрокристаллическая",
+        "гипролоза",
+        "карбоксиметилкрахмал натрия",
+        "магния стеарат"
+      ],
+      "film_coating": {
+        "name": "Опадрай белый и прозрачный",
+        "components": [
+          "гипромеллоза",
+          "титана диоксид (E171)",
+          "макрогол",
+          "полисорбат 80"
+        ]
+      }
+    }
+  },
+  "indications_and_dosing": [
+    {
+      "diagnosis_or_condition": "Большой депрессивный эпизод и профилактика рецидивов депрессии",
+      "icd10_codes": [
+        "F32",
+        "F33"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 50,
+      "tablets_per_administration": 1,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 50,
+      "administration_times": [
+        "утро или вечер"
+      ],
+      "duration": "После достижения ремиссии терапию продолжают по решению врача; периодически пересматривают необходимость",
+      "indication_status": "зарегистрированное показание",
+      "initial_daily_dose_mg": 50,
+      "max_daily_dose_mg": 200,
+      "dose_adjustment": "Повышение на 50 мг не чаще 1 раза в неделю"
+    },
+    {
+      "diagnosis_or_condition": "Обсессивно-компульсивное расстройство, взрослые",
+      "icd10_codes": [
+        "F42"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 50,
+      "tablets_per_administration": 1,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 50,
+      "administration_times": [
+        "утро или вечер"
+      ],
+      "duration": "Индивидуально, часто длительно",
+      "indication_status": "зарегистрированное показание",
+      "max_daily_dose_mg": 200,
+      "dose_adjustment": "Повышение на 50 мг с интервалами не менее недели"
+    },
+    {
+      "diagnosis_or_condition": "Паническое расстройство",
+      "icd10_codes": [
+        "F41.0"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 25,
+      "tablets_per_administration": null,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 25,
+      "administration_times": [
+        "утро или вечер"
+      ],
+      "duration": "Определяется врачом",
+      "indication_status": "зарегистрированное показание",
+      "dose_titration": "Первая неделя 25 мг/сут; далее 50 мг/сут; при необходимости до 200 мг/сут, повышение не чаще раза в неделю",
+      "strength_note": "Начальная доза 25 мг требует подходящей дозировки/разделяемой по действующей инструкции таблетки"
+    },
+    {
+      "diagnosis_or_condition": "Посттравматическое стрессовое расстройство",
+      "icd10_codes": [
+        "F43.1"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 25,
+      "tablets_per_administration": null,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 25,
+      "administration_times": [
+        "утро или вечер"
+      ],
+      "duration": "Определяется врачом",
+      "indication_status": "зарегистрированное показание",
+      "dose_titration": "Первую неделю 25 мг/сут, далее 50 мг/сут; максимум 200 мг/сут"
+    },
+    {
+      "diagnosis_or_condition": "Социальное тревожное расстройство",
+      "icd10_codes": [
+        "F40.1"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 25,
+      "tablets_per_administration": null,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 25,
+      "administration_times": [
+        "утро или вечер"
+      ],
+      "duration": "Определяется врачом",
+      "indication_status": "зарегистрированное показание",
+      "dose_titration": "Первую неделю 25 мг/сут, далее 50 мг/сут; максимум 200 мг/сут"
+    },
+    {
+      "diagnosis_or_condition": "Обсессивно-компульсивное расстройство, дети 6–12 лет",
+      "icd10_codes": [
+        "F42"
+      ],
+      "age_min_years": 6,
+      "dose_per_administration_mg": 25,
+      "tablets_per_administration": null,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 25,
+      "administration_times": [
+        "утро или вечер"
+      ],
+      "duration": "Индивидуально, только под наблюдением специалиста",
+      "indication_status": "зарегистрированное показание",
+      "dose_titration": "Старт 25 мг/сут, через неделю возможно 50 мг/сут, затем по переносимости с интервалом не менее недели; максимум 200 мг/сут",
+      "strength_note": "Доза 25 мг не выражается целой таблеткой 50 мг"
+    },
+    {
+      "diagnosis_or_condition": "Обсессивно-компульсивное расстройство, подростки 13–17 лет",
+      "icd10_codes": [
+        "F42"
+      ],
+      "age_min_years": 13,
+      "dose_per_administration_mg": 50,
+      "tablets_per_administration": 1,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 50,
+      "administration_times": [
+        "утро или вечер"
+      ],
+      "duration": "Индивидуально",
+      "indication_status": "зарегистрированное показание",
+      "max_daily_dose_mg": 200
+    }
+  ],
+  "administration_instructions": {
+    "before_meal_minutes": null,
+    "swallow_whole": true,
+    "do_not_chew": true,
+    "missed_dose": "Пропущенную дозу не удваивать; следующую принять по графику",
+    "discontinuation": "Не прекращать резко; постепенно снижать дозировку на протяжении нескольких недель или месяцев по состоянию пациента"
+  },
+  "adverse_event_frequency_definitions": {
+    "очень часто": ">=1/10 (10% и более)",
+    "часто": ">=1/100 и <1/10 (от 1% до менее 10%)",
+    "нечасто": ">=1/1000 и <1/100 (от 0,1% до менее 1%)",
+    "редко": ">=1/10000 и <1/1000 (от 0,01% до менее 0,1%)",
+    "очень редко": "<1/10000 (менее 0,01%)",
+    "частота неизвестна": "невозможно оценить частоту на основании имеющихся данных"
+  },
+  "adverse_effects": [
+    {
+      "effect": "бессонница",
+      "frequency": "очень часто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "головная боль",
+      "frequency": "очень часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "головокружение",
+      "frequency": "очень часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "сонливость",
+      "frequency": "очень часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "тошнота",
+      "frequency": "очень часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "диарея",
+      "frequency": "очень часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "сухость во рту",
+      "frequency": "очень часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "нарушение эякуляции",
+      "frequency": "очень часто",
+      "system": "половая система"
+    },
+    {
+      "effect": "утомляемость",
+      "frequency": "очень часто",
+      "system": "общие нарушения"
+    },
+    {
+      "effect": "тревога",
+      "frequency": "часто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "ажитация",
+      "frequency": "часто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "снижение либидо",
+      "frequency": "часто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "тремор",
+      "frequency": "часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "нарушение внимания",
+      "frequency": "часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "диспепсия",
+      "frequency": "часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "запор",
+      "frequency": "часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "рвота",
+      "frequency": "часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "усиленная потливость",
+      "frequency": "часто",
+      "system": "кожа и подкожные ткани"
+    },
+    {
+      "effect": "судороги",
+      "frequency": "нечасто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "серотониновый синдром",
+      "frequency": "частота неизвестна",
+      "system": "нервная система"
+    },
+    {
+      "effect": "гипонатриемия",
+      "frequency": "частота неизвестна",
+      "system": "обмен веществ"
+    }
+  ],
+  "contraindications": [
+    "Гиперчувствительность к сертралину либо любому компоненту",
+    "Сочетание с ингибиторами моноаминоксидазы и несоблюдение периодов отмены",
+    "Одновременное применение пимозида"
+  ],
+  "excipient_warnings": [],
+  "precautions": [
+    "Суицидальные мысли, особенно в начале лечения и у молодых людей",
+    "Мания/гипомания при биполярном расстройстве",
+    "Серотониновый синдром при сочетании с серотонинергическими препаратами",
+    "Риск кровотечений и гипонатриемии",
+    "Судороги, глаукома, нарушения функции печени"
+  ],
+  "drug_interactions": [
+    {
+      "agents": [
+        "ингибиторы МАО",
+        "линезолид",
+        "метиленовый синий"
+      ],
+      "classification": "противопоказано",
+      "risk": "Риск серотонинового синдрома; учитывать обязательные интервалы отмены"
+    },
+    {
+      "agents": [
+        "пимозид"
+      ],
+      "classification": "противопоказано",
+      "risk": "Повышение концентрации и кардиориска"
+    },
+    {
+      "agents": [
+        "трамадол",
+        "триптаны",
+        "литий",
+        "зверобой",
+        "другие серотонинергические средства"
+      ],
+      "classification": "осторожность",
+      "risk": "Серотониновый синдром"
+    },
+    {
+      "agents": [
+        "НПВС",
+        "антикоагулянты",
+        "антиагреганты"
+      ],
+      "classification": "осторожность",
+      "risk": "Кровотечения"
+    },
+    {
+      "agents": [
+        "алкоголь"
+      ],
+      "classification": "избегать",
+      "risk": "Ухудшение переносимости и когнитивных функций"
+    }
+  ],
+  "special_populations": {
+    "under_18": "ОКР от 6 лет; для остальных перечисленных показаний в детском возрасте не применять без соответствующего зарегистрированного показания",
+    "pregnancy": "только после индивидуальной оценки пользы и риска, не считать автоматически абсолютным противопоказанием",
+    "breastfeeding": "решение врача на основании пользы/риска; сверить действующую инструкцию",
+    "age_over_65": "обычно специальная коррекция не требуется, контроль гипонатриемии и лекарственных взаимодействий",
+    "renal_impairment": "специальная коррекция дозы обычно не требуется",
+    "hepatic_impairment": "при нарушении функции печени требуется уменьшение дозы или увеличение интервала; тяжелое нарушение требует отдельной оценки"
+  },
+  "storage": {
+    "temperature_max_celsius": 30,
+    "protect_from_light": null,
+    "keep_in_original_packaging": true,
+    "shelf_life_years": null
+  },
+  "clinical_decision_support": {
+    "automatic_prescription_allowed": false,
+    "indication_requires_clinician_confirmation": true,
+    "screening_scale_result_sufficient_for_prescription": false,
+    "adverse_effect_reports_prove_causality": false,
+    "recommended_review": [
+      "подтвержденный клинический диагноз и зарегистрированное показание",
+      "возраст и соматические заболевания",
+      "беременность и лактация",
+      "лекарственные взаимодействия",
+      "побочные реакции и мониторинг безопасности",
+      "соответствие дозы, лекарственной формы и титрации актуальной инструкции"
+    ],
+    "note": "Справочная запись для медицинской информационной системы, а не назначение. Результаты шкал и скрининга не подтверждают диагноз самостоятельно. Показания и дозы оценивает врач, сверяя с актуальной официальной инструкцией.",
+    "related_screening_scales": [
+      "PHQ-9",
+      "PCL-5",
+      "GAD-7 (оценка симптомов, не отдельное показание ГТР)",
+      "Y-BOCS"
+    ]
+  },
+  "sources": [
+    {
+      "type": "official_instruction_republication",
+      "url": "https://medi.ru/instrukciya/zoloft_8003/",
+      "description": "Листок-вкладыш Золофта, дозы, состав, ограничения"
+    },
+    {
+      "type": "drug_reference",
+      "url": "https://www.vidal.ru/drugs/zoloft-1",
+      "description": "Регистрационный статус, дозировка, ATX"
+    }
+  ],
+  "verification": {
+    "prepared_date": "2026-10-18",
+    "source_instruction_date": null,
+    "limitations": "Частоты перечислены только для выбранных важных нежелательных реакций; полный перечень см. в первоисточнике. Не использовать сертралин для ГТР лишь на основании GAD-7: в этой инструкции ГТР не является самостоятельным зарегистрированным показанием. Регистрационные сведения и даты могут измениться; требуется сверка с актуальным ГРЛС и одобренной ОХЛП."
+  }
+}

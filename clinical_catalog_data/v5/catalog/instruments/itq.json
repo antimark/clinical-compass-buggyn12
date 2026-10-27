@@ -1,0 +1,202 @@
+{
+  "schema_version": "4.0.0",
+  "instrument_id": "ITQ",
+  "instrument_version": "catalog-v4",
+  "priority": "P1",
+  "instrument_type": "self_report_scale",
+  "clinical_content_status": "metadata_only_not_administrable",
+  "information": {
+    "title": {
+      "ru": "Международный опросник травмы ITQ",
+      "short": "ITQ"
+    },
+    "authors": "M. Cloitre et al.",
+    "first_validation_year": 2018,
+    "purpose_clinician": "Скрининг симптомов ПТСР и комплексного ПТСР по МКБ-11; мониторинг",
+    "purpose_patient": "Помогает структурировать обсуждение симптомов; не устанавливает диагноз.",
+    "recommended_for": {
+      "screening": true,
+      "symptom_monitoring": true,
+      "diagnostic_support": false,
+      "clinical_diagnosis": false
+    },
+    "target_population": "Взрослые, если не указано иное; применимость проверяется врачом.",
+    "icd10": {
+      "screening_targets": [
+        {
+          "code": "F43.1"
+        }
+      ],
+      "nonspecific_symptom_overlap": [],
+      "differentials_not_inferred_by_scale": [],
+      "diagnosis_from_questionnaire": false,
+      "coding_rule": "Порог скрининга, даже при выполнении алгоритма, не устанавливает диагноз и не определяет код МКБ-10."
+    },
+    "icd11_context_text": "МКБ-11: комплексное ПТСР 6B41 — отдельный диагноз; в МКБ-10 нет полного прямого эквивалента, нельзя автоматически присваивать F43.1.",
+    "estimated_minutes": null,
+    "recall_period": "последний месяц",
+    "references": [
+      {
+        "url": "https://www.traumameasuresglobal.com/itq",
+        "role": "primary_instrument_information"
+      },
+      {
+        "url": "https://psyjournals.ru/journals/cpp/archive/2022_n3/Padun_et_al",
+        "role": "russian_validation_2022_nonclinical_sample_429"
+      },
+      {
+        "role": "study_or_validation_resource",
+        "citation": "Cloitre et al., 2018",
+        "url": "https://doi.org/10.1111/acps.12956"
+      }
+    ],
+    "clinical_limitations": "Самооценка и алгоритмическое соответствие критериям не заменяют клинического заключения.",
+    "question_count": 18,
+    "source_note": "12 пунктов симптомов + 6 о функциональном нарушении; алгоритмы ПТСР/КПТСР несовместимы с прямым кодированием МКБ-10."
+  },
+  "language": "ru",
+  "localization": {
+    "language": "ru",
+    "status": "validated_ru_available_but_translation_rights_for_commercial_use_unconfirmed",
+    "russian_validation_source": "https://psyjournals.ru/journals/cpp/archive/2022_n3/Padun_et_al",
+    "text_rights_confirmed": false,
+    "draft_segregated": false,
+    "release_approved": false
+  },
+  "questions": [],
+  "response_sets": [],
+  "scales": [
+    {
+      "scale_id": "reexperiencing",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "avoidance",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "threat",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "affect_dysregulation",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "negative_self_concept",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "relationships",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "functional_impairment",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    }
+  ],
+  "scoring": {
+    "type": "not_enabled_pending_exact_text_and_protocol",
+    "auto_scoring_enabled": false,
+    "max_score": null,
+    "diagnostic_decision": "clinician_only",
+    "quality_gates": [
+      "licensed_or_open_exact_text",
+      "validated_version",
+      "permission_check",
+      "medical_review"
+    ]
+  },
+  "interpretations": {
+    "patient": {
+      "summary": "Результат требует оценки лечащим специалистом.",
+      "no_diagnostic_claim": true
+    },
+    "clinician": {
+      "summary": "Оцените клинические критерии, продолжительность и дифференциальный диагноз.",
+      "do_not_auto_diagnose": true
+    }
+  },
+  "licensing": {
+    "rights_holder": "International Trauma Consortium",
+    "copyright_status": "original_public_domain",
+    "commercial_use": "original_public_domain_translation_separately",
+    "research_use": "original_public_domain_translation_separately",
+    "open_use": "original_public_domain_translation_separately",
+    "electronic_administration": "original_public_domain_translation_separately",
+    "public_distribution": "original_public_domain_translation_separately",
+    "translation_rights": "validated_RU_article_CC_BY_NC_4_0_license_of_article_does_not_automatically_grant_commercial_form_reuse",
+    "patient_feedback_allowed": "clinician_safe_review",
+    "license_source_url": "https://www.traumameasuresglobal.com/itq",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "rights": {
+    "rights_holder": "International Trauma Consortium",
+    "copyright_status": "original_public_domain",
+    "commercial_use": "original_public_domain_translation_separately",
+    "research_use": "original_public_domain_translation_separately",
+    "open_use": "original_public_domain_translation_separately",
+    "electronic_administration": "original_public_domain_translation_separately",
+    "public_distribution": "original_public_domain_translation_separately",
+    "translation_rights": "validated_RU_article_CC_BY_NC_4_0_license_of_article_does_not_automatically_grant_commercial_form_reuse",
+    "patient_feedback_allowed": "clinician_safe_review",
+    "license_source_url": "https://www.traumameasuresglobal.com/itq",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "availability": {
+    "russian_form": "not_loaded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.traumameasuresglobal.com/itq",
+    "protected_material_embedded": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "risk_item_handling": "manual_clinician_protocol",
+    "automatic_diagnosis_allowed": false,
+    "suicide_risk_inference_from_score_allowed": false
+  },
+  "legacy_source_path": null,
+  "scoring_blueprint_non_executable": {
+    "response_options": "5-point 0-4",
+    "scales": {
+      "symptom_subscales": {
+        "n_items": 12
+      },
+      "functional_impairment": {
+        "n_items": 6
+      }
+    },
+    "algorithm": "PTSD and CPTSD ICD-11 group threshold logic, mutually exclusive classifications; licensed/verified official rules required before use",
+    "warning": "CPTSD ICD-11 6B41 is not an ICD-10-coded diagnosis."
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [
+      "F43.1"
+    ],
+    "icd10_possible_overlap": [],
+    "icd10_differentials": [],
+    "icd11_context_text": "МКБ-11: комплексное ПТСР 6B41 — отдельный диагноз; в МКБ-10 нет полного прямого эквивалента, нельзя автоматически присваивать F43.1.",
+    "clinical_assessment_targets_only": true,
+    "diagnostic_code_assignment_allowed": false
+  }
+}

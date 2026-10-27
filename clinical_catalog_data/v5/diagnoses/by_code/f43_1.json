@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "F43.1",
+  "title_ru": "Посттравматическое стрессовое расстройство",
+  "synonyms_ru": [],
+  "specialties": [
+    "psychiatry",
+    "psychology"
+  ],
+  "description_clinician": "Повторное переживание травмы, избегание и повышенная возбудимость после чрезвычайного события",
+  "description_patient": "Устойчивые симптомы после травмирующего события",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Повторное переживание травмы, избегание и повышенная возбудимость после чрезвычайного события"
+    ],
+    "course_and_duration": "Чаще отсроченное возникновение; оценить длительность и устойчивость",
+    "functional_impact": "Дистресс и нарушение повседневной жизни",
+    "exclude_and_check": "Острая реакция на стресс, расстройство адаптации, другие причины",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры.",
+    "assessment_checklist_original_summary": [
+      "Подтверждение воздействия чрезвычайно угрожающего или катастрофического события",
+      "Нежелательное повторное переживание события",
+      "Избегание напоминаний о травме",
+      "Изменения настороженности, возбуждения или сна",
+      "Оценка длительности и функционального нарушения"
+    ],
+    "uses_official_thresholds": false
+  },
+  "differential_diagnosis_icd10": [
+    "F43.0",
+    "F43.2",
+    "F32"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [
+    "PCL-5",
+    "PC-PTSD-5",
+    "LEC-5",
+    "ITQ",
+    "ITQ-CC",
+    "ITI"
+  ],
+  "icd11_context_text": "МКБ-11 отдельно выделяет комплексное ПТСР (6B41), в МКБ-10 отдельной эквивалентной рубрики нет; нельзя автоматически считать F43.1 тождественным 6B41.",
+  "red_flags": [
+    "Оценку суицидального риска и безопасности проводить отдельным клиническим протоколом; ни одна шкала не заменяет оценки врача."
+  ],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true,
+    "priority": "P0"
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "tf_cbt",
+        "target_path": "therapies/by_id/tf_cbt.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_ptsd",
+          "va_ptsd"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "cpt",
+        "target_path": "therapies/by_id/cpt.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_ptsd",
+          "va_ptsd"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "pe",
+        "target_path": "therapies/by_id/pe.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_ptsd",
+          "va_ptsd"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "emdr",
+        "target_path": "therapies/by_id/emdr.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_ptsd",
+          "va_ptsd"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "net",
+        "target_path": "therapies/by_id/net.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_ptsd"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "present_centered",
+        "target_path": "therapies/by_id/present_centered.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "va_ptsd"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [
+      {
+        "substance_id": "sertraline",
+        "target_path": "medicines/by_inn/sertraline.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_ptsd"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "venlafaxine",
+        "target_path": "medicines/by_inn/venlafaxine.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_ptsd"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "paroxetine",
+        "target_path": "medicines/by_inn/paroxetine.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "va_ptsd"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      }
+    ],
+    "supplied_products": [
+      {
+        "product_id": "zoloft_sertraline_50mg",
+        "active_substance_id": "sertraline",
+        "target_path": "medicines/source_product_overlays/zoloft_sertraline_50mg.json",
+        "link_basis": "diagnosis_code_explicitly_listed_in_user_supplied_instruction",
+        "indication_needs_current_ru_verification": true
+      }
+    ],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

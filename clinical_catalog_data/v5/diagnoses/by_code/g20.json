@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "G20",
+  "title_ru": "Болезнь Паркинсона",
+  "synonyms_ru": [],
+  "specialties": [
+    "neurology",
+    "psychiatry"
+  ],
+  "description_clinician": "Брадикинезия и характерные двигательные признаки паркинсонизма, возможные немоторные симптомы",
+  "description_patient": "Неврологическое заболевание с замедленностью движений и другими симптомами",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Брадикинезия и характерные двигательные признаки паркинсонизма, возможные немоторные симптомы"
+    ],
+    "course_and_duration": "Обычно постепенное прогрессирование",
+    "functional_impact": "Влияние на движение и повседневную самостоятельность",
+    "exclude_and_check": "Лекарственный/атипичный паркинсонизм и другие причины",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры.",
+    "assessment_checklist_original_summary": [
+      "Брадикинезия с характерным тремором покоя или ригидностью",
+      "Асимметрия симптомов и динамика",
+      "Немоторные симптомы и влияние лекарств",
+      "Поиск признаков атипичного или вторичного паркинсонизма"
+    ],
+    "uses_official_thresholds": false
+  },
+  "differential_diagnosis_icd10": [
+    "G21.1",
+    "G25.0"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "",
+  "red_flags": [],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "occupational_therapy",
+        "target_path": "therapies/by_id/occupational_therapy.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_alzheimer",
+          "nice_parkinson",
+          "nice_ms",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "neuro_physiotherapy",
+        "target_path": "therapies/by_id/neuro_physiotherapy.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_parkinson",
+          "nice_ms",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "exercise_therapy",
+        "target_path": "therapies/by_id/exercise_therapy.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_ms",
+          "nice_depression"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "dbs",
+        "target_path": "therapies/by_id/dbs.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_parkinson"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [
+      {
+        "substance_id": "levodopa_carbidopa",
+        "target_path": "medicines/by_inn/levodopa_carbidopa.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_parkinson"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "levodopa_benserazide",
+        "target_path": "medicines/by_inn/levodopa_benserazide.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_parkinson"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "pramipexole",
+        "target_path": "medicines/by_inn/pramipexole.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_parkinson"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "ropinirole",
+        "target_path": "medicines/by_inn/ropinirole.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_parkinson"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "rasagiline",
+        "target_path": "medicines/by_inn/rasagiline.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_parkinson"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "selegiline",
+        "target_path": "medicines/by_inn/selegiline.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_parkinson"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      }
+    ],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

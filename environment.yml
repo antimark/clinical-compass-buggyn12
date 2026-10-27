@@ -1,0 +1,13 @@
+# Synthetic Clinical Compass prototype. Create/update from the repository root:
+#   conda env create -f environment.yml
+#   conda env update -f environment.yml --prune
+# Pip requirements are kept in backend/requirements.txt (single source of truth).
+name: clinical-compass
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - nodejs=22
+  - pip:
+      - -r backend/requirements.txt

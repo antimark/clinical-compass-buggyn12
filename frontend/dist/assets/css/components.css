@@ -1,0 +1,379 @@
+/* Reusable surfaces use the SAME Frost recipe as the header and floating layers. */
+.glass, .card, .action-tile, .glass-panel {
+  border: 1px solid transparent;
+  background: var(--glass-fill);
+  -webkit-backdrop-filter: var(--frost);
+  backdrop-filter: var(--frost);
+  box-shadow: var(--shadow);
+}
+.card, .action-tile, .glass-panel {
+  position: relative;
+  min-width: 0;
+  isolation: isolate;
+}
+/* No painted highlight strips across card tops: the light follows the rim only. */
+.card {
+  border-radius: var(--r-xl);
+  padding: var(--card-padding);
+  overflow: hidden;
+}
+.card.inset, .card .card.inset {
+  border-radius: var(--nested-radius);
+  background: var(--glass-fill-inset);
+  --glass-edge: var(--glass-rim-inset);
+  box-shadow: var(--shadow-inset);
+  -webkit-backdrop-filter: var(--frost);
+  backdrop-filter: var(--frost);
+}
+.card.slim { padding: var(--s5); border-radius: var(--r-lg); }
+.card > *:last-child { margin-bottom: 0; }
+.card h3 { margin-bottom: 10px; }
+.card p { color: var(--ink-2); }
+
+.action-tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s5);
+  border-radius: var(--r-xl);
+  padding: clamp(26px,3vw,38px);
+  min-height: 240px;
+  overflow: hidden;
+}
+.action-tile h3 { font-size: clamp(22px,2.5vw,30px); margin: 0 0 12px; }
+.action-tile p { max-width: 420px; margin: 0; color: var(--ink-2); }
+.action-tile .tile-action { margin-top: auto; align-self: flex-start; }
+/* Role explanations on the public landing page are informational, not links. */
+.role-tile { min-height: 212px; }
+
+/* Every button is a capsule, including compact and icon-only buttons. */
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: var(--r-pill);
+  min-height: var(--control-height);
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 19px;
+  font-size: 14px;
+  font-weight: 670;
+  line-height: 1.25;
+  white-space: normal;
+  text-align: center;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+  transition: background .17s, transform .17s, border-color .17s, color .17s, box-shadow .17s;
+}
+.btn:active:not(:disabled) { transform: translateY(1px); }
+.btn-primary {
+  color: var(--graphite-text);
+  background: var(--graphite);
+  border: 0;
+  box-shadow: var(--control-shadow);
+}
+.btn-primary:hover { background: var(--graphite-hover); color: var(--graphite-text); }
+.btn-secondary {
+  background: var(--glass-fill-raised);
+  --glass-edge: var(--glass-rim-inset);
+  color: var(--ink);
+  box-shadow: 0 3px 9px rgba(71,52,37,.045);
+  -webkit-backdrop-filter: var(--frost);
+  backdrop-filter: var(--frost);
+}
+.btn-secondary:hover { background: var(--glass-hover-raised); color: var(--ink); }
+.btn-quiet { background: transparent; color: var(--ink-2); }
+.btn-quiet:hover { background: var(--surface-strong); color: var(--ink); }
+.btn-danger { background: rgba(180,66,70,.105); color: var(--danger); border-color: rgba(180,66,70,.19); }
+.btn-sm { min-height: 36px; padding: 7px 13px; font-size: 12px; border-radius: var(--r-pill); }
+.btn-icon { width: var(--control-height); min-width: var(--control-height); padding: 0; border-radius: 50%; flex-shrink: 0; }
+.btn svg, .menu-item svg, .section-nav svg, .tile-icon svg { flex-shrink: 0; width: 19px; height: 19px; stroke-width: 1.85; }
+.btn:disabled { box-shadow: none; }
+
+.pill, .chip {
+  border-radius: var(--r-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 690;
+  line-height: 1.25;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  color: var(--ink-2);
+}
+.pill.success { color: var(--success); }
+.pill.warning { color: var(--warn); }
+.pill.danger { color: var(--danger); }
+.chip { background: transparent; }
+.chip.selected { background: var(--accent); border-color: var(--accent); color: #20150d; }
+.tile-icon { width: 45px; height: 45px; display: grid; place-items: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent-strong); }
+.tile-icon svg { width: 22px; height: 22px; }
+
+.field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.field label { font-size: 13px; color: var(--ink-2); font-weight: 640; }
+.field input, .field select, .field textarea, .search-field {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  min-height: 48px;
+  padding: 12px 18px;
+  color: var(--ink);
+  background: var(--surface-strong);
+  outline: none;
+  box-shadow: inset 0 1px 3px rgba(54,43,34,.045);
+}
+.field select { padding-right: 32px; }
+.field textarea { min-height: 128px; border-radius: var(--r-md); resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: var(--ink-3); }
+.field input:focus, .field textarea:focus, .field select:focus, .search-field:focus { border-color: var(--accent); box-shadow: var(--focus); }
+.field input:disabled, .field textarea:disabled { opacity: .6; }
+.field-help, .field-error { font-size: 12px; }
+.field-help { color: var(--ink-3); }
+.field-error { color: var(--danger); }
+.checkline { display: flex; align-items: flex-start; gap: var(--s3); font-size: 13px; color: var(--ink-2); cursor: pointer; }
+.checkline input { margin-top: 3px; accent-color: var(--accent); }
+
+.auth-wrap { max-width: 530px; margin: 24px auto 0; }
+.auth-card { padding: clamp(28px,4vw,44px); }
+.auth-card h1 { font-size: 35px; }
+.form-stack { display: flex; flex-direction: column; gap: var(--s4); }
+.divider-text { display: flex; align-items: center; gap: 14px; color: var(--ink-3); font-size: 12px; }
+.divider-text::before, .divider-text::after { content: ""; height: 1px; flex: 1; background: var(--divider); }
+
+.state {
+  border: 1px dashed var(--border);
+  border-radius: var(--nested-radius);
+  padding: 36px 22px;
+  text-align: center;
+  background: var(--surface-subtle);
+}
+.state .state-icon { margin: 0 auto 15px; display: grid; place-items: center; width: 47px; height: 47px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-strong); }
+.state h3 { margin: 0 0 8px; font-size: 18px; }
+.state p { max-width: 410px; margin: 0 auto 16px; color: var(--ink-2); }
+.state.danger .state-icon { color: var(--danger); }
+.state .btn { margin-top: 5px; }
+.error-inline { color: var(--danger); font-size: 13px; min-height: 20px; }
+
+.list-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; border-bottom: 1px solid var(--divider); padding: 17px 0; min-width: 0; }
+.list-row:last-child { border-bottom: none; padding-bottom: 0; }
+.list-row:first-child { padding-top: 0; }
+.list-row .row-main { flex: 1; min-width: 0; }
+.list-row h4 { margin: 0 0 3px; font-size: 15px; font-weight: 680; overflow-wrap: anywhere; }
+.list-row .sub { color: var(--ink-2); font-size: 13px; overflow-wrap: anywhere; }
+.list-row .btn { flex-shrink: 0; }
+.grid-line { height: 1px; background: var(--divider); margin: 15px 0; }
+.search-tools { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.search-tools .search-field { max-width: 440px; }
+
+.doctor-photo, .doctor-avatar { width: 64px; height: 64px; border-radius: var(--r-md); }
+.doctor-photo { object-fit: cover; border: 1px solid var(--border); background: var(--surface-subtle); }
+.doctor-photo.large, .doctor-avatar.large { width: 118px; height: 118px; border-radius: var(--r-lg); }
+.doctor-avatar { display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-strong); font-weight: 780; font-size: 24px; }
+.doctor-avatar.large { font-size: 40px; }
+.doctor-head { display: flex; align-items: center; gap: 16px; }
+.doctor-head > * { min-width: 0; }
+
+/* Inset blocks always subtract visual radius from their outer card. */
+.metric {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: var(--nested-radius);
+  background: var(--surface-subtle);
+  box-shadow: none;
+  min-width: 0;
+}
+.metric .value { font-size: 33px; font-weight: 760; letter-spacing: -.06em; line-height: 1.15; margin: 8px 0; }
+.metric .label { color: var(--ink-2); font-size: 13px; }
+.segmented { display: inline-flex; gap: 5px; border: 1px solid var(--border); background: var(--surface-subtle); padding: 4px; border-radius: var(--r-pill); max-width: 100%; }
+.segmented button { border: 0; background: transparent; color: var(--ink-2); padding: 8px 14px; border-radius: var(--r-pill); font-size: 12px; font-weight: 700; }
+.segmented button.active { background: var(--graphite); color: var(--graphite-text); box-shadow: var(--control-shadow); }
+.chart { width: 100%; height: 240px; overflow: visible; }
+.chart-line { fill: none; stroke: var(--accent); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.chart-dot { fill: var(--surface-solid); stroke: var(--accent); stroke-width: 3; }
+.chart-grid { stroke: var(--divider); stroke-width: 1; }
+.chart-label { fill: var(--ink-3); font: 11px var(--font); }
+.steps { display: flex; gap: 7px; margin: 20px 0 28px; }
+.steps span { flex: 1; height: 5px; border-radius: var(--r-pill); background: var(--border); }
+.steps span.done { background: var(--accent); }
+
+/* Overlay exists in its own root and blurs ALL underlying UI. The dialog
+   has a separate, more intense backdrop-filter. Never filter overlay's parent. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: grid;
+  place-items: center;
+  padding: clamp(10px,3vw,32px);
+  background: var(--overlay-shade);
+  -webkit-backdrop-filter: var(--overlay-blur);
+  backdrop-filter: var(--overlay-blur);
+  overflow: auto;
+}
+.dialog {
+  position: relative;
+  max-width: 690px;
+  width: 100%;
+  max-height: min(94vh,920px);
+  overflow: auto;
+  padding: clamp(25px,4vw,38px);
+  border: 1px solid transparent;
+  border-radius: var(--r-xl);
+  background: var(--glass-fill-raised);
+  -webkit-backdrop-filter: var(--frost-dense);
+  backdrop-filter: var(--frost-dense);
+  box-shadow: var(--shadow-float);
+  isolation: isolate;
+}
+.dialog.wide { max-width: 845px; }
+.dialog h2 { margin: 0 42px 11px 0; font-size: clamp(25px,3vw,35px); }
+.dialog .close { position: absolute; top: 20px; right: 20px; }
+.dialog-body { margin-top: 22px; }
+.dialog-footer { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; margin-top: 25px; }
+.toggle { display: inline-flex; align-items: center; position: relative; gap: 13px; }
+.toggle input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.toggle .track { width: 51px; height: 29px; display: inline-block; border-radius: var(--r-pill); background: var(--border); border: 1px solid var(--border); position: relative; transition: background .2s; }
+.toggle .track::before { content: ""; position: absolute; top: 3px; left: 3px; width: 21px; height: 21px; border-radius: 50%; background: var(--surface-solid); box-shadow: 0 1px 4px rgba(0,0,0,.17); transition: transform .2s; }
+.toggle input:checked + .track { background: var(--accent); }
+.toggle input:checked + .track::before { transform: translateX(22px); }
+.toggle input:focus-visible + .track { outline: 3px solid var(--accent); outline-offset: 2px; }
+.message-list { display: flex; flex-direction: column; gap: 12px; max-height: 420px; overflow: auto; padding: 12px 3px; }
+.bubble { align-self: flex-start; max-width: 80%; background: var(--surface-subtle); padding: 13px 16px; border-radius: var(--r-md) var(--r-md) var(--r-md) 7px; border: 1px solid var(--border); }
+.bubble.own { align-self: flex-end; border-radius: var(--r-md) var(--r-md) 7px var(--r-md); background: var(--accent-soft); }
+.bubble .meta { font-size: 11px; color: var(--ink-3); margin-top: 7px; }
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 800;
+  max-width: min(360px,calc(100vw - 40px));
+  padding: 14px 20px;
+  border-radius: var(--r-lg);
+  background: var(--glass-fill-raised);
+  color: var(--ink);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-float);
+  -webkit-backdrop-filter: var(--frost-dense);
+  backdrop-filter: var(--frost-dense);
+  font-size: 14px;
+}
+.notice { border-radius: var(--nested-radius); background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 14px 17px; color: var(--ink-2); font-size: 13px; }
+.notice.warning { background: rgba(189,122,49,.09); border-color: rgba(189,122,49,.24); }
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.data-table th { text-align: left; font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); padding: 12px 14px; border-bottom: 1px solid var(--divider); }
+.data-table td { padding: 16px 14px; border-bottom: 1px solid var(--divider); overflow-wrap: anywhere; }
+.data-table tr:last-child td { border-bottom: 0; }
+.table-scroll { width: 100%; overflow: auto; }
+.skeleton { border-radius: var(--r-pill); background: var(--surface-subtle); animation: skeleton-pulse 1.4s ease-in-out infinite; min-height: 19px; margin-bottom: 15px; }
+.skeleton.long { width: 93%; } .skeleton.short { width: 60%; }
+@keyframes skeleton-pulse { 50% { opacity: .45; } }
+
+/* Graphite informational card on the landing page, inspired by the reference. */
+.graphite-feature {
+  --ink: #fffaf4;
+  --ink-2: #d3c9c0;
+  --ink-3: #b7a99c;
+  background: var(--graphite-panel);
+  border: 0;
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+.graphite-feature p { color: var(--ink-2); }
+.graphite-feature .eyebrow { color: #ffab69; }
+.graphite-feature .btn-primary { background: #fffaf6; color: #262321; }
+.graphite-feature .btn-primary:hover { background: #ffeadb; color: #262321; }
+
+@media (max-width:650px) {
+  :root { --card-padding: 22px; --r-xl: 26px; --nested-radius: 18px; }
+  .action-tile { min-height: 215px; padding: 25px; }
+  .list-row { align-items: flex-start; }
+  .list-row .btn { max-width: 150px; }
+  .doctor-photo.large, .doctor-avatar.large { width: 80px; height: 80px; border-radius: var(--r-md); }
+  .table-scroll { margin-inline: -10px; width: calc(100% + 20px); }
+}
+
+/* Shared layout helpers, no presentation-specific inline styles. */
+.space-top-20 { margin-top: 20px; }
+.space-top-18 { margin-top: 18px; }
+.space-top-16 { margin-top: 16px; }
+.space-top-12 { margin-top: 12px; }
+.space-bottom-20 { margin-bottom: 20px; }
+.space-bottom-18 { margin-bottom: 18px; }
+.space-bottom-12 { margin-bottom: 12px; }
+.space-block-24 { margin-block: 24px; }
+.space-block-17 { margin-block: 17px; }
+.max-width-600 { max-width: 600px; }
+.row-align-top { align-items: flex-start; gap: 25px; }
+.question-legend { font-weight: 670; margin-bottom: 8px; }
+.bare-fieldset { border: 0; padding: 0; margin: 0; }
+.full-width { width: 100%; }
+.break-anywhere { overflow-wrap: anywhere; }
+.json-result { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
+.align-self-end { align-self: flex-end; }
+[hidden] { display: none !important; }
+
+/* Portal is independent of the header's backdrop root: the two blur layers
+   can coexist without the menu turning into a flat, opaque rectangle. */
+#floating-root { position: relative; z-index: 350; }
+#floating-root .account-menu { position: fixed; width: var(--account-menu-width); max-width: calc(100vw - 20px); }
+
+/* One gradient rim exactly at the host's OUTER edge.
+   When CSS masking is supported, remove the host's 1px fallback border:
+   absolutely positioned descendants are otherwise anchored 1px inward.
+   Drawing inset: -1px fails on overflow:hidden/auto cards because the rim
+   gets clipped. With border-width: 0 and inset: 0, the full rim stays visible
+   on capsules, nested cards, dropdowns and scrollable dialogs alike.
+   Fallback browsers retain a plain 1px border. */
+.glass-material, .glass, .card, .action-tile, .glass-panel,
+.topbar, .account-menu, .section-nav, .dialog, .toast, .btn-secondary {
+  border-color: var(--border);
+}
+.glass-material, .glass, .glass-panel, .btn-secondary { position: relative; }
+@supports ((-webkit-mask-composite: xor) or (mask-composite: exclude)) {
+  .glass-material, .glass, .card, .action-tile, .glass-panel,
+  .topbar, .account-menu, .section-nav, .dialog, .toast, .btn-secondary {
+    border-width: 0;
+  }
+  .glass-material::after, .glass::after, .card::after, .action-tile::after,
+  .glass-panel::after, .topbar::after, .account-menu::after,
+  .section-nav::after, .dialog::after, .toast::after, .btn-secondary::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: var(--glass-edge, var(--glass-rim));
+    pointer-events: none;
+    z-index: 2;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+}
+
+/* Cards are static on hover. Interactive buttons inside them retain their own hover behavior. */
+
+/* Opaque graphite surfaces must not inherit the glass gradient rim.
+   Keep the shared glass rim for ordinary Frost cards and secondary buttons. */
+.section-nav::after,
+.graphite-feature::after { content: none; }
+
+/* Direct action links must be separated from the preceding content.
+   Covers empty-state panels, lists, notices and other cards without
+   adding one-off margins to each rendering function. Nested form buttons
+   already receive gap from their .form-stack parent. */
+.card > :not(.btn) + .btn,
+.card + .btn { margin-block-start: var(--s5); }
+
+/* Reference details: retain hierarchy and legible spacing on long instructions. */
+.reference-section{padding:22px 0 12px;border-top:1px solid var(--glass-rim,rgba(20,20,20,.12));overflow-wrap:anywhere}
+.reference-section h3{margin:0 0 12px;line-height:1.35}
+.reference-line{line-height:1.65;margin:0 0 10px;white-space:pre-wrap;overflow-wrap:anywhere}
+.reference-url{word-break:break-all;text-decoration:underline;text-underline-offset:3px}
+.reference-url:focus-visible{outline:2px solid currentColor;outline-offset:3px}

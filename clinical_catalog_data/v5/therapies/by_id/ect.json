@@ -1,0 +1,82 @@
+{
+  "id": "ect",
+  "schema_version": "1.0.0",
+  "record_type": "therapeutic_method",
+  "title_ru": "Электросудорожная терапия (ЭСТ)",
+  "title_en": "",
+  "category": "procedure",
+  "is_psychotherapy": false,
+  "description_patient": "Специализированное лечение отдельных тяжёлых психических состояний.",
+  "description_clinician": "Неотложная или терапевтически резистентная депрессия/мания по клиническим критериям; анестезиологическое сопровождение.",
+  "implementation": {
+    "delivery_modes": [
+      "by_qualified_professional"
+    ],
+    "workflow_hint": "Комплексная клиническая оценка → согласование целей и метода → проведение обученным специалистом → мониторинг исходов",
+    "technical_content_not_a_therapy_manual": true
+  },
+  "diagnosis_links": [
+    {
+      "code": "F30.1",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "nice_depression",
+        "nice_bipolar"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F31",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "nice_depression",
+        "nice_bipolar"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F32",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "nice_depression",
+        "nice_bipolar"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F33",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "nice_depression",
+        "nice_bipolar"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    }
+  ],
+  "clinical_evidence": {
+    "tier": "guideline_supported_for_selected_context",
+    "guideline_source_ids": [
+      "nice_depression",
+      "nice_bipolar"
+    ],
+    "evidence_strength_ungraded": true
+  },
+  "safety": {
+    "requires_professional": true,
+    "notes": "Только специализированная клиника; не способ самостоятельного лечения."
+  },
+  "rights": {
+    "summary_text": "original_editorial_summary",
+    "therapy_protocols_or_branded_manuals": "not_included; may be copyrighted",
+    "use_in_commercial_software": "metadata_only; protocol/material license separate"
+  },
+  "review": {
+    "status": "needs_specialist_review",
+    "scope": "adult-oriented unless otherwise specified; paediatric indications require separate review",
+    "verified_at": "2026-10-25"
+  }
+}

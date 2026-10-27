@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/patient.css') }}">
+{% endblock %}
+
+{% block header_right %}
+<nav class="patient-top-links" aria-label="Навигация пациента">
+  <span class="patient-top-current" aria-current="page">Мой кабинет</span>
+  <a class="patient-top-exit" href="/login?role=patient">Выйти из демо</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+<main class="patient-dashboard" id="patientDashboard">
+  <div class="patient-heading">
+    <div>
+      <p class="patient-eyebrow">Личный кабинет пациента</p>
+      <h1>Ваше пространство</h1>
+      <p class="patient-subtitle">Небольшие ежедневные шаги помогают замечать изменения и готовиться к встречам с врачом.</p>
+    </div>
+    <div class="patient-heading-date">
+      <span class="patient-today-pill">Сегодня</span>
+      <time id="patientToday" aria-live="polite"></time>
+    </div>
+  </div>
+
+  <div class="patient-demo-note" role="note">
+    <span class="patient-demo-dot" aria-hidden="true"></span>
+    Демонстрационный интерфейс: все показатели, препараты и записи ниже — примеры. Данные не отправляются на сервер.
+  </div>
+
+  <div class="patient-grid">
+    <div class="patient-main-col">
+      <section class="patient-card patient-survey" aria-labelledby="surveyTitle">
+        <div class="patient-card-head">
+          <div>
+            <div class="patient-kicker">ЕЖЕДНЕВНОЕ НАБЛЮДЕНИЕ</div>
+            <h2 id="surveyTitle">Опрос на сегодня</h2>
+            <p class="patient-card-description">Несколько вопросов о том, как прошёл ваш день.</p>
+          </div>
+          <span class="patient-tag" id="surveyTimeTag">~ 2 минуты</span>
+        </div>
+        <div class="patient-survey-content" id="surveyContent" aria-live="polite">
+          <div class="patient-survey-progress">
+            <div class="patient-survey-progress-top">
+              <span id="surveyProgressLabel">Вопрос 1 из 3</span>
+              <span id="surveyProgressPercent">33%</span>
+            </div>
+            <div class="patient-progress-rail"><div id="surveyProgressFill" class="patient-progress-fill"></div></div>
+          </div>
+          <div class="patient-question">
+            <p class="patient-question-prompt" id="surveyQuestionLabel">Как вы оцениваете своё самочувствие сегодня?</p>
+            <p class="patient-question-hint" id="surveyQuestionHint">Выберите вариант, который ближе всего к вашим ощущениям.</p>
+            <div class="patient-response-options" id="surveyOptions" role="group" aria-label="Варианты ответа"></div>
+          </div>
+          <div class="patient-survey-actions">
+            <span class="patient-survey-note">Отвечайте так, как чувствуете. Здесь нет правильных ответов.</span>
+            <div class="patient-survey-controls">
+              <button class="patient-button patient-button-quiet" type="button" id="surveyBack" hidden>Назад</button>
+              <button class="patient-button patient-button-primary" type="button" id="surveyNext" disabled>Продолжить <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="patient-survey-complete" id="surveyComplete" hidden>
+          <div class="patient-complete-mark" aria-hidden="true">✓</div>
+          <h3>Спасибо! Опрос завершён</h3>
+          <p>Вы ответили на сегодняшние вопросы. Завтра на этой карточке появится новый опрос.</p>
+          <button class="patient-button patient-button-outline" type="button" id="surveyRestart">Пройти ещё раз</button>
+        </div>
+      </section>
+
+      <section class="patient-card patient-trends" aria-labelledby="trendsTitle">
+        <div class="patient-card-head patient-trends-head">
+          <div>
+            <div class="patient-kicker">САМОЧУВСТВИЕ</div>
+            <h2 id="trendsTitle">Динамика состояния</h2>
+            <p class="patient-card-description">Пример того, как могут отображаться ответы на ежедневные опросы.</p>
+          </div>
+          <div class="patient-range-toggle" role="group" aria-label="Период графика">
+            <button type="button" data-range="7" class="is-active" aria-pressed="true">7 дней</button>
+            <button type="button" data-range="30" aria-pressed="false">30 дней</button>
+          </div>
+        </div>
+        <div class="patient-trend-summary">
+          <div><span class="patient-mini-label">Самочувствие</span><strong>6,8 <small>/ 10</small></strong></div>
+          <span class="patient-sample-label">Пример данных</span>
+        </div>
+        <div class="patient-chart-wrap">
+          <div class="patient-chart-ylabels" aria-hidden="true"><span>10</span><span>5</span><span>0</span></div>
+          <svg id="patientTrendChart" class="patient-line-chart" viewBox="0 0 650 190" preserveAspectRatio="none" role="img" aria-label="Демонстрационный график динамики самочувствия">
+            <defs><linearGradient id="patientChartArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--color-accent)" stop-opacity=".19"/><stop offset="1" stop-color="var(--color-accent)" stop-opacity="0"/></linearGradient></defs>
+            <path class="patient-chart-grid" d="M0 10H650 M0 95H650 M0 180H650" />
+            <path id="patientChartFill" class="patient-chart-fill" d="" />
+            <path id="patientChartLine" class="patient-chart-line" d="" />
+            <g id="patientChartPoints"></g>
+          </svg>
+        </div>
+        <div class="patient-chart-dates" id="patientChartDates" aria-hidden="true"></div>
+        <div class="patient-trend-footer"><span class="patient-legend-dot" aria-hidden="true"></span> Самочувствие по шкале 0–10 <span class="patient-trend-disclaimer">Не клиническая оценка</span></div>
+      </section>
+    </div>
+
+    <div class="patient-side-col">
+      <section class="patient-card patient-appointments" aria-labelledby="appointmentsTitle">
+        <div class="patient-card-head patient-right-head">
+          <div>
+            <div class="patient-kicker">ВАША КОМАНДА</div>
+            <h2 id="appointmentsTitle">Записи к врачу</h2>
+          </div>
+          <span class="patient-count" id="patientAppointmentsCount">2</span>
+        </div>
+        <div id="patientAppointmentsList" class="patient-appointments-list" aria-live="polite"></div>
+        <button type="button" class="patient-button patient-button-primary patient-new-appointment" id="patientAddAppointment"><span aria-hidden="true">+</span> Записаться на приём</button>
+        <p class="patient-quiet-caption">Запись пока работает только как демонстрация.</p>
+      </section>
+
+      <section class="patient-card patient-medication" aria-labelledby="medicationTitle">
+        <div class="patient-card-head patient-right-head">
+          <div>
+            <div class="patient-kicker">ПЛАН ЛЕЧЕНИЯ</div>
+            <h2 id="medicationTitle">Приём препаратов</h2>
+          </div>
+          <span class="patient-med-icon" aria-hidden="true">✳</span>
+        </div>
+        <div class="patient-cal-header">
+          <strong id="patientCalendarMonth"></strong>
+          <div class="patient-calendar-arrows">
+            <button type="button" id="patientCalPrev" aria-label="Предыдущий месяц">‹</button>
+            <button type="button" id="patientCalNext" aria-label="Следующий месяц">›</button>
+          </div>
+        </div>
+        <div class="patient-calendar-days" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div>
+        <div id="patientCalendarGrid" class="patient-calendar-grid" aria-label="Календарь приёма препаратов"></div>
+        <div class="patient-calendar-legend"><span><i class="patient-legend-done"></i> Отмечено</span><span><i class="patient-legend-planned"></i> Запланировано</span></div>
+        <div class="patient-med-divider"></div>
+        <div class="patient-med-today-title"><h3 id="patientMedDayTitle">Приём сегодня</h3><span id="patientMedProgress">0 из 2</span></div>
+        <div id="patientMedicationList" class="patient-med-list"></div>
+        <p class="patient-quiet-caption">Названия и график приёма условные. Отметки не сохраняются после обновления страницы.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<dialog id="patientAppointmentDialog" class="patient-appointment-dialog" aria-labelledby="appointmentDialogTitle">
+  <form id="patientAppointmentForm" class="patient-modal-form">
+    <div class="patient-modal-header">
+      <div><div class="patient-kicker">ДЕМОНСТРАЦИЯ</div><h2 id="appointmentDialogTitle">Новая запись к врачу</h2></div>
+      <button type="button" class="patient-modal-close" id="patientModalClose" aria-label="Закрыть окно">×</button>
+    </div>
+    <p class="patient-card-description">Выберите пример даты и времени. Настоящая запись не создаётся.</p>
+    <label>Тип приёма<select name="appointmentType" required><option value="Повторная консультация">Повторная консультация</option><option value="Первичная консультация">Первичная консультация</option><option value="Онлайн-консультация">Онлайн-консультация</option></select></label>
+    <div class="patient-modal-row">
+      <label>Дата<input type="date" name="appointmentDate" required></label>
+      <label>Время<select name="appointmentTime" required><option>09:00</option><option>10:30</option><option>12:00</option><option>15:00</option><option>17:30</option></select></label>
+    </div>
+    <div class="patient-modal-actions"><button type="button" class="patient-button patient-button-outline" id="patientModalCancel">Отмена</button><button type="submit" class="patient-button patient-button-primary">Добавить в демо</button></div>
+  </form>
+</dialog>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/patient.js') }}" defer></script>
+{% endblock %}

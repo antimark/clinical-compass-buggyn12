@@ -1,0 +1,504 @@
+{
+  "schema_version": "3.0.0",
+  "instrument_id": "CAPS-5",
+  "instrument_version": "official_version_required",
+  "language": "ru-RU",
+  "clinical_content_status": "metadata_only_license_required",
+  "information": {
+    "title": "Clinician-Administered PTSD Scale for DSM-5",
+    "type": "clinician_structured_interview",
+    "authors": [
+      "Frank W. Weathers",
+      "Michelle J. Bovin",
+      "Paula P. Schnurr",
+      "Danny G. Kaloupek",
+      "соавторы"
+    ],
+    "first_publication_or_revision_year": 2013,
+    "purpose_patient": "Информация о назначении инструмента; самостоятельно проходить это интервью без специалиста не следует.",
+    "purpose_clinician": "Структурированная диагностика ПТСР и оценка выраженности симптомов. Версия past-week используется для тяжести, не для текущего диагноза.",
+    "estimated_minutes": "45–60",
+    "target_population": "Специалисты, обученные психодиагностической оценке травмы",
+    "recommended_for": {
+      "structured_diagnostic_interview": true,
+      "diagnostic_support": true,
+      "symptom_monitoring": true,
+      "independent_diagnosis": false
+    },
+    "icd10": {
+      "mapping_status": "reference_only_not_dsm_equivalence",
+      "codes": [
+        {
+          "code": "F43.1",
+          "label": "Посттравматическое стрессовое расстройство"
+        }
+      ]
+    },
+    "validation": [
+      {
+        "citation": "Weathers et al., 2018, Psychological Assessment: первичная психометрическая оценка CAPS-5 среди ветеранов",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28493729/"
+      }
+    ],
+    "limitations": [
+      "Только специалист; структурированное интервью не заменяет полного обследования, клинического решения и оценки безопасности.",
+      "DSM-5/МКБ-10 соответствия требуют экспертной проверки.",
+      "Качество конкретного русскоязычного перевода не подтверждается самим JSON."
+    ],
+    "source_urls": [
+      "https://www.ptsd.va.gov/professional/assessment/adult-int/caps.asp"
+    ],
+    "recall_periods": [
+      "past_month_current_diagnosis",
+      "worst_month_lifetime_diagnosis",
+      "past_week_severity_only"
+    ],
+    "symptom_count": 20,
+    "total_severity_range": [
+      0,
+      80
+    ]
+  },
+  "ui": {
+    "audience": [
+      "clinician"
+    ],
+    "show_in_clinical_reference": true,
+    "patient_assignable": false,
+    "clinical_admin_enabled": false,
+    "licensed_content_loaded": false,
+    "assignment_guard": "deny_unless_licensed_and_clinically_approved"
+  },
+  "response_sets": {
+    "caps_severity_0_4": {
+      "is_official_wording": false,
+      "type": "ordinal",
+      "levels": [
+        {
+          "value": 0,
+          "label": "Отсутствует"
+        },
+        {
+          "value": 1,
+          "label": "Низкая / ниже порога"
+        },
+        {
+          "value": 2,
+          "label": "Клинически значимая"
+        },
+        {
+          "value": 3,
+          "label": "Выраженная"
+        },
+        {
+          "value": 4,
+          "label": "Крайне выраженная"
+        }
+      ],
+      "note": "Это краткие описания уровней, НЕ заменяют официальные правила на основе частоты и интенсивности."
+    }
+  },
+  "questions": [],
+  "modules": [
+    {
+      "id": "criterion_A",
+      "title": "Потенциально травматическое событие",
+      "covered_domains": [
+        "идентификация индексного события",
+        "проверка критерия A"
+      ],
+      "clinician_notes": "Перед оценкой симптомов требуется идентифицировать индексное событие.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "B",
+      "title": "Кластер B: повторное переживание",
+      "covered_domains": [
+        "5 позиций симптомов DSM-5"
+      ],
+      "clinician_notes": "5 клинических оценок тяжести; официальный текст и probes не приложены.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [
+        {
+          "id": "caps5_b_01",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера B, позиция 1 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_b_02",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера B, позиция 2 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_b_03",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера B, позиция 3 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_b_04",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера B, позиция 4 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_b_05",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера B, позиция 5 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        }
+      ],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "C",
+      "title": "Кластер C: избегание",
+      "covered_domains": [
+        "2 позиции симптомов DSM-5"
+      ],
+      "clinician_notes": "2 клинические оценки тяжести.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [
+        {
+          "id": "caps5_c_01",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера C, позиция 1 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_c_02",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера C, позиция 2 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        }
+      ],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "D",
+      "title": "Кластер D: негативные изменения познания и настроения",
+      "covered_domains": [
+        "7 позиций симптомов DSM-5"
+      ],
+      "clinician_notes": "7 клинических оценок тяжести.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [
+        {
+          "id": "caps5_d_01",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера D, позиция 1 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_d_02",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера D, позиция 2 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_d_03",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера D, позиция 3 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_d_04",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера D, позиция 4 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_d_05",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера D, позиция 5 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_d_06",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера D, позиция 6 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_d_07",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера D, позиция 7 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        }
+      ],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "E",
+      "title": "Кластер E: возбуждение и реактивность",
+      "covered_domains": [
+        "6 позиций симптомов DSM-5"
+      ],
+      "clinician_notes": "6 клинических оценок тяжести.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [
+        {
+          "id": "caps5_e_01",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера E, позиция 1 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_e_02",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера E, позиция 2 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_e_03",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера E, позиция 3 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_e_04",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера E, позиция 4 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_e_05",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера E, позиция 5 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        },
+        {
+          "id": "caps5_e_06",
+          "official_text": null,
+          "placeholder": "Официальный пункт кластера E, позиция 6 — загрузить из разрешённого материала",
+          "type": "clinician_severity_rating",
+          "response_set_id": "caps_severity_0_4",
+          "content_status": "licensed_or_authorized_source_required"
+        }
+      ],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "other",
+      "title": "Другие критерии и спецификаторы",
+      "covered_domains": [
+        "длительность",
+        "влияние на жизнь",
+        "исключающие факторы",
+        "диссоциативные признаки"
+      ],
+      "clinician_notes": "Диагностические правила — по официальной форме; не только сумма баллов.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    }
+  ],
+  "scoring": {
+    "type": "clinician_rating_plus_dsm5_criterion_algorithm",
+    "auto_scoring_enabled": false,
+    "score_scale": {
+      "id": "caps5_total_symptom_severity",
+      "min": 0,
+      "max": 80,
+      "items": 20,
+      "interpretation_bands": null,
+      "warning": "Нельзя интерпретировать порог диагноза по сумме; диагностика зависит от сочетания кластеров и других критериев."
+    },
+    "criteria_checklist": {
+      "B_min_symptoms": 1,
+      "C_min_symptoms": 1,
+      "D_min_symptoms": 2,
+      "E_min_symptoms": 2,
+      "clinically_significant_item_min_rating": 2,
+      "other": "A, F, G, H и спецификаторы — по официальному руководству"
+    },
+    "missing_answer_policy": "no_diagnosis_if_incomplete",
+    "diagnostic_decision": "clinician_only",
+    "required_manual": "official_CAPS5_administration_and_scoring_guide"
+  },
+  "interpretations": {
+    "patient": {
+      "title": "Результат обсудите с врачом",
+      "text": "Интервью помогает врачу структурировать обследование; автоматическое заключение не формируется."
+    },
+    "clinician": {
+      "title": "Клиническая интерпретация",
+      "text": "Интерпретировать по официальному руководству, совокупности критериев, исключений и клинических данных; необоснованное присвоение диагноза запрещено."
+    },
+    "auto_diagnosis": false
+  },
+  "licensing": {
+    "rights_holder": "U.S. Department of Veterans Affairs National Center for PTSD (разработчики инструмента)",
+    "commercial": "Материал создан VA, однако получение формы и право на коммерческий цифровой продукт — разные вопросы. До публикации оригинала/перевода запросить у VA подтверждение условий, корректной формы и допустимой адаптации.",
+    "research": "Официальная версия выдаётся по запросу квалифицированным специалистам и исследователям; обучение настоятельно рекомендовано.",
+    "open": "Не считать полученную по запросу форму или чей-либо перевод автоматически открытым для распространения; публичные справочные сведения размещать можно.",
+    "contact_url": "https://www.ptsd.va.gov/professional/assessment/adult-int/caps.asp",
+    "permission_needed_for_app": "clarify",
+    "free_public_republication": "unconfirmed"
+  },
+  "publication": {
+    "is_patient_assignable": false,
+    "is_clinically_approved": false,
+    "in_public_demo": false,
+    "licensing_review": "pending",
+    "requires_manual_and_training": true
+  },
+  "safety": {
+    "suicidality_assessment": "separate_assessment_when_indicated",
+    "no_autonomous_triage": true,
+    "clinician_signoff_required": true
+  },
+  "clinician_guide": {
+    "steps": [
+      {
+        "id": "before",
+        "title": "Подготовка и рамки",
+        "clinician_instructions": "Уточните цель обследования, версии инструмента, временной период, язык, информированное согласие и условия конфиденциальности.",
+        "checks": []
+      },
+      {
+        "id": "safety",
+        "title": "Безопасность",
+        "clinician_instructions": "При клинических сигналах риска отдельно оцените непосредственную безопасность и действуйте по протоколу организации, не дожидаясь окончания интервью.",
+        "checks": []
+      },
+      {
+        "id": "context",
+        "title": "Клинический контекст",
+        "clinician_instructions": "Установите хронологию эпизодов, функциональные нарушения, предшествующее лечение, влияние веществ/лекарств, возможные соматические причины и коморбидность.",
+        "checks": []
+      },
+      {
+        "id": "index",
+        "title": "Индексное событие",
+        "clinician_instructions": "Установить событие, отвечающее критерию A; симптомы должны относиться к нему, а не к любой жизненной трудности.",
+        "checks": []
+      },
+      {
+        "id": "recall",
+        "title": "Окно времени",
+        "clinician_instructions": "Выбрать past month для текущего диагноза, worst month для lifetime, past week — только оценка выраженности.",
+        "checks": []
+      },
+      {
+        "id": "probes",
+        "title": "Уточняющие вопросы",
+        "clinician_instructions": "Для каждого из 20 симптомов оценить частоту и интенсивность, ориентируясь на официальные стандартизированные probes.",
+        "checks": []
+      },
+      {
+        "id": "cluster",
+        "title": "Кластеры и критерии",
+        "clinician_instructions": "После оценки 0–4 проверить паттерн B/C/D/E, длительность, функциональное влияние и исключения.",
+        "checks": []
+      },
+      {
+        "id": "distress",
+        "title": "Поддержка",
+        "clinician_instructions": "При сильном дистрессе допустимы пауза и клиническая поддержка по протоколу.",
+        "checks": []
+      },
+      {
+        "id": "finish",
+        "title": "Завершение",
+        "clinician_instructions": "Документируйте подтверждённые, исключённые и неопределённые критерии; решение по диагностическому коду и тактике принимает врач.",
+        "checks": []
+      }
+    ],
+    "common_errors": [
+      "Считать порог общего балла диагностическим",
+      "Смешивать past week и past month в одном тренде",
+      "Заменять official probes невалидированными формулировками"
+    ]
+  }
+}

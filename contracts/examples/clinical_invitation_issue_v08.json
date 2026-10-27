@@ -1,0 +1,6 @@
+{
+  "target_role": "patient",
+  "recipient_id": "pat_03",
+  "patient_id": "pat_c",
+  "categories": ["symptoms"]
+}

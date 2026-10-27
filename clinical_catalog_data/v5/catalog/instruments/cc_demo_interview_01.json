@@ -1,0 +1,230 @@
+{
+  "schema_version": "3.0.0",
+  "instrument_id": "CC-DEMO-INTERVIEW-01",
+  "instrument_version": "1.0.0-synthetic",
+  "language": "ru-RU",
+  "clinical_content_status": "synthetic_nonvalidated_ux_only",
+  "information": {
+    "title": "Демонстрационное интервью (не клинический инструмент)",
+    "purpose_clinician": "Проверка формы, логики показа вопросов и записи результатов; не использовать для диагностики.",
+    "purpose_patient": "Технический пример, не медицинское обследование.",
+    "recommended_for": {
+      "structured_diagnostic_interview": false,
+      "diagnostic_support": false,
+      "symptom_monitoring": false,
+      "independent_diagnosis": false
+    },
+    "icd10": {
+      "mapping_status": "none_nonclinical",
+      "codes": []
+    },
+    "validation": [],
+    "limitations": [
+      "Ни один балл не имеет медицинской интерпретации."
+    ]
+  },
+  "ui": {
+    "audience": [
+      "demo_clinician"
+    ],
+    "show_in_clinical_reference": false,
+    "patient_assignable": false,
+    "clinical_admin_enabled": false,
+    "licensed_content_loaded": true,
+    "assignment_guard": "synthetic_only"
+  },
+  "response_sets": {
+    "yes_no_unsure": {
+      "type": "single_choice",
+      "options": [
+        {
+          "id": "yes",
+          "label": "Да",
+          "score": null
+        },
+        {
+          "id": "no",
+          "label": "Нет",
+          "score": null
+        },
+        {
+          "id": "unsure",
+          "label": "Трудно сказать",
+          "score": null
+        }
+      ]
+    },
+    "impact": {
+      "type": "single_choice",
+      "options": [
+        {
+          "id": "none",
+          "label": "Не мешает",
+          "score": 0
+        },
+        {
+          "id": "some",
+          "label": "Иногда мешает",
+          "score": 1
+        },
+        {
+          "id": "much",
+          "label": "Сильно мешает",
+          "score": 2
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "x1",
+      "text": "Какая тема сейчас наиболее важна для обсуждения?",
+      "type": "single_choice",
+      "options": [
+        {
+          "id": "feel",
+          "label": "Самочувствие",
+          "score": null
+        },
+        {
+          "id": "daily",
+          "label": "Повседневные дела",
+          "score": null
+        },
+        {
+          "id": "other",
+          "label": "Другое",
+          "score": null
+        }
+      ],
+      "required": true
+    },
+    {
+      "id": "x2",
+      "text": "Хотели бы вы подробнее рассказать об этой теме?",
+      "response_set_id": "yes_no_unsure",
+      "type": "single_choice",
+      "required": true
+    },
+    {
+      "id": "x3",
+      "text": "Что вам хотелось бы, чтобы врач обязательно понял?",
+      "type": "short_text",
+      "required": false
+    },
+    {
+      "id": "x4",
+      "text": "Как сильно это влияет на повседневные планы?",
+      "type": "single_choice",
+      "response_set_id": "impact",
+      "required": true
+    },
+    {
+      "id": "x5",
+      "text": "Есть ли другая тема, которую вы хотели бы обсудить?",
+      "response_set_id": "yes_no_unsure",
+      "type": "single_choice",
+      "required": true
+    },
+    {
+      "id": "x6",
+      "text": "Какая именно?",
+      "type": "short_text",
+      "required": false,
+      "visibility": {
+        "when": {
+          "question_id": "x5",
+          "equals": "yes"
+        }
+      }
+    }
+  ],
+  "modules": [
+    {
+      "id": "demo",
+      "title": "Демонстрация ветвления",
+      "question_ids": [
+        "x1",
+        "x2",
+        "x3",
+        "x4",
+        "x5",
+        "x6"
+      ],
+      "routing_rules": {
+        "x6_visible_when": {
+          "question_id": "x5",
+          "equals": "yes"
+        }
+      }
+    }
+  ],
+  "scoring": {
+    "type": "none",
+    "auto_scoring_enabled": false,
+    "score_scale": null,
+    "diagnostic_decision": "disabled"
+  },
+  "interpretations": {
+    "patient": {
+      "text": "Это пример интерфейса, не клинический результат."
+    },
+    "clinician": {
+      "text": "Нельзя использовать для медицинских заключений."
+    }
+  },
+  "licensing": {
+    "rights_holder": "Clinical Compass demo authors",
+    "commercial": "Можно использовать только как программную демо-заготовку, не медицинский тест.",
+    "research": "Не предназначен для исследовательских выводов.",
+    "open": "Разрешено использовать оригинальные синтетические тексты демо в проекте.",
+    "permission_needed_for_app": false,
+    "free_public_republication": true
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "priority": "P0",
+  "instrument_type": "clinician_structured_interview",
+  "catalog_schema_version": "4.0.0",
+  "localization": {
+    "language": "ru",
+    "status": "synthetic_test_only",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "release_approved": false,
+    "draft_segregated": false
+  },
+  "rights": {
+    "rights_holder": "Clinical Compass (synthetic original)",
+    "copyright_status": "original_synthetic_fixture",
+    "commercial_use": "allowed",
+    "research_use": "allowed",
+    "open_use": "allowed",
+    "electronic_administration": "allowed",
+    "public_distribution": "allowed",
+    "translation_rights": "allowed_but_validate",
+    "patient_feedback_allowed": "no_diagnostic_claims",
+    "license_source_url": "",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "availability": {
+    "russian_form": "synthetic_fixture",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.appi.org/Products/Structured-Clinical-Interview-for-DSM-5-(SCID-5)",
+    "protected_material_embedded": false
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [],
+    "code_assignment_from_scale": false,
+    "icd11_context_text": ""
+  }
+}

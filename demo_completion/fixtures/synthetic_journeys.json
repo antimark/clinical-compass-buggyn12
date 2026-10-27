@@ -1,0 +1,51 @@
+{
+  "schema": "cc-demo-scenario-context-v1",
+  "synthetic": true,
+  "state": "NOT_SEEDED",
+  "cases": [
+    {
+      "id": "dx_fixture_incoming_case",
+      "patient_id": "pxp_history_02",
+      "doctor_id": "doc_psy",
+      "appointment_id": "dx_fixture_offer",
+      "thread_id": "demo_thread_case_01",
+      "journal": [
+        {
+          "date": "2026-10-18",
+          "mood": 3,
+          "visibility": "care_team",
+          "source_ref": "ci-src-01"
+        },
+        {
+          "date": "2026-10-21",
+          "mood": 2,
+          "visibility": "private",
+          "source_ref": null
+        },
+        {
+          "date": "2026-10-24",
+          "mood": 3,
+          "visibility": "care_team",
+          "source_ref": "ci-src-03"
+        }
+      ],
+      "messages": [
+        {
+          "id": "msg_demo_01",
+          "thread_id": "demo_thread_case_01",
+          "actor": "patient",
+          "text": "Хочу обсудить сон на приёме.",
+          "transport": "NOT_SENT"
+        },
+        {
+          "id": "msg_demo_02",
+          "thread_id": "demo_thread_case_01",
+          "actor": "doctor",
+          "text": "Запишите, пожалуйста, даты наблюдений к консультации.",
+          "transport": "NOT_SENT"
+        }
+      ]
+    }
+  ],
+  "warning": "No shared cases, journal, or chat records are inserted into ORM by this package; use actual API/UI for E2E."
+}

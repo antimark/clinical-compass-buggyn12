@@ -1,0 +1,102 @@
+{
+  "id": "motivational_interviewing",
+  "schema_version": "1.0.0",
+  "record_type": "therapeutic_method",
+  "title_ru": "Мотивационное консультирование",
+  "title_en": "",
+  "category": "psychosocial",
+  "is_psychotherapy": false,
+  "description_patient": "Совместное исследование готовности к изменению поведения.",
+  "description_clinician": "Безоценочная работа с амбивалентностью в изменении привычек и лечении зависимостей.",
+  "implementation": {
+    "delivery_modes": [
+      "by_qualified_professional"
+    ],
+    "workflow_hint": "Комплексная клиническая оценка → согласование целей и метода → проведение обученным специалистом → мониторинг исходов",
+    "technical_content_not_a_therapy_manual": true
+  },
+  "diagnosis_links": [
+    {
+      "code": "F10.1",
+      "relation": "conditional_or_adjunct",
+      "source_ids": [
+        "nice_aud",
+        "nice_tobacco"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F10.2",
+      "relation": "conditional_or_adjunct",
+      "source_ids": [
+        "nice_aud",
+        "nice_tobacco"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F11.2",
+      "relation": "conditional_or_adjunct",
+      "source_ids": [
+        "nice_aud",
+        "nice_tobacco"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F12.2",
+      "relation": "conditional_or_adjunct",
+      "source_ids": [
+        "nice_aud",
+        "nice_tobacco"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F13.2",
+      "relation": "conditional_or_adjunct",
+      "source_ids": [
+        "nice_aud",
+        "nice_tobacco"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F17.2",
+      "relation": "conditional_or_adjunct",
+      "source_ids": [
+        "nice_aud",
+        "nice_tobacco"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    }
+  ],
+  "clinical_evidence": {
+    "tier": "option_or_adjunct",
+    "guideline_source_ids": [
+      "nice_aud",
+      "nice_tobacco"
+    ],
+    "evidence_strength_ungraded": true
+  },
+  "safety": {
+    "requires_professional": true,
+    "notes": "Выбор метода после оценки рисков, предпочтений пациента, коморбидности и подготовки специалиста."
+  },
+  "rights": {
+    "summary_text": "original_editorial_summary",
+    "therapy_protocols_or_branded_manuals": "not_included; may be copyrighted",
+    "use_in_commercial_software": "metadata_only; protocol/material license separate"
+  },
+  "review": {
+    "status": "needs_specialist_review",
+    "scope": "adult-oriented unless otherwise specified; paediatric indications require separate review",
+    "verified_at": "2026-10-25"
+  }
+}

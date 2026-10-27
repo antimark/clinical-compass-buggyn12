@@ -1,0 +1,66 @@
+{
+  "id": "lamotrigine",
+  "schema_version": "1.0.0",
+  "record_type": "active_substance_summary",
+  "international_nonproprietary_name": "lamotrigine",
+  "name_ru": "ламотриджин",
+  "therapeutic_class": "anticonvulsant_mood_stabilizer",
+  "description_patient": "Действующее вещество из группы «anticonvulsant_mood_stabilizer». Возможность лечения зависит от уточнённого диагноза, формы препарата и решения врача.",
+  "description_clinician": "Справочная карточка МНН/группы anticonvulsant_mood_stabilizer. Не является инструкцией конкретной лекарственной формы, схемой назначения или доказательством регистрации в РФ.",
+  "diagnosis_links": [
+    {
+      "code": "F31",
+      "relationship": "guideline_mentioned_for_selected_population",
+      "evidence_source_ids": [
+        "nice_bipolar"
+      ],
+      "ru_product_label_status": "not_verified_for_this_active_substance_in_this_catalog",
+      "approval_country": "not_inferred_from_international_guideline",
+      "requires_clinician_review": true
+    },
+    {
+      "code": "G40",
+      "relationship": "guideline_mentioned_for_selected_population",
+      "evidence_source_ids": [
+        "nice_epilepsy"
+      ],
+      "ru_product_label_status": "not_verified_for_this_active_substance_in_this_catalog",
+      "approval_country": "not_inferred_from_international_guideline",
+      "requires_clinician_review": true
+    }
+  ],
+  "safety": {
+    "special_notes": [
+      "Риск серьёзной кожной реакции; индивидуальная титрация и взаимодействия, включая вальпроаты."
+    ],
+    "contraindications": "Refer to current official SmPC and patient-specific medical history",
+    "dosing": "not_included_by_design"
+  },
+  "regulatory": {
+    "target_market": "RU",
+    "ru_current_registration_verified": false,
+    "ru_indication_approved_verified": false,
+    "ru_legal_availability": "not_checked",
+    "product_instructions_are_not_interchangeable": true,
+    "individualized_prescribing_required": true
+  },
+  "sources": [
+    {
+      "source_id": "nice_bipolar",
+      "url": "https://www.nice.org.uk/guidance/cg185/chapter/Recommendations",
+      "role": "international_guideline"
+    },
+    {
+      "source_id": "nice_epilepsy",
+      "url": "https://www.nice.org.uk/guidance/ng217/chapter/treating-epileptic-seizures-in-children-young-people-and-adults",
+      "role": "international_guideline"
+    }
+  ],
+  "source_product_ids": [
+    "lamictal_lamotrigine_25mg"
+  ],
+  "review": {
+    "editorial_status": "needs_pharmacist_and_physician_review",
+    "last_updated": "2026-10-25"
+  }
+}

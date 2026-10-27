@@ -1,0 +1,53 @@
+{
+  "id": "levetiracetam",
+  "schema_version": "1.0.0",
+  "record_type": "active_substance_summary",
+  "international_nonproprietary_name": "levetiracetam",
+  "name_ru": "леветирацетам",
+  "therapeutic_class": "anticonvulsant",
+  "description_patient": "Действующее вещество из группы «anticonvulsant». Возможность лечения зависит от уточнённого диагноза, формы препарата и решения врача.",
+  "description_clinician": "Справочная карточка МНН/группы anticonvulsant. Не является инструкцией конкретной лекарственной формы, схемой назначения или доказательством регистрации в РФ.",
+  "diagnosis_links": [
+    {
+      "code": "G40",
+      "relationship": "guideline_mentioned_for_selected_population",
+      "evidence_source_ids": [
+        "nice_epilepsy",
+        "who_epilepsy"
+      ],
+      "ru_product_label_status": "not_verified_for_this_active_substance_in_this_catalog",
+      "approval_country": "not_inferred_from_international_guideline",
+      "requires_clinician_review": true
+    }
+  ],
+  "safety": {
+    "special_notes": [],
+    "contraindications": "Refer to current official SmPC and patient-specific medical history",
+    "dosing": "not_included_by_design"
+  },
+  "regulatory": {
+    "target_market": "RU",
+    "ru_current_registration_verified": false,
+    "ru_indication_approved_verified": false,
+    "ru_legal_availability": "not_checked",
+    "product_instructions_are_not_interchangeable": true,
+    "individualized_prescribing_required": true
+  },
+  "sources": [
+    {
+      "source_id": "nice_epilepsy",
+      "url": "https://www.nice.org.uk/guidance/ng217/chapter/treating-epileptic-seizures-in-children-young-people-and-adults",
+      "role": "international_guideline"
+    },
+    {
+      "source_id": "who_epilepsy",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/epilepsy-and-seizures/antiseizure-medicines-for-management-of-epilepsy-in-adults-and-children",
+      "role": "international_guideline"
+    }
+  ],
+  "source_product_ids": [],
+  "review": {
+    "editorial_status": "needs_pharmacist_and_physician_review",
+    "last_updated": "2026-10-25"
+  }
+}

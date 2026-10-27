@@ -1,0 +1,7 @@
+{
+  "doctor_id": "doc_ther",
+  "text": "Synthetic intake: I would like to discuss poor sleep.",
+  "symptoms": ["synthetic_sleep_problem", "synthetic_worry"],
+  "conditions": ["reported_condition_A", "reported_condition_B"],
+  "case_consent": true
+}

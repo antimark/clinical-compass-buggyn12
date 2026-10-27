@@ -1,0 +1,191 @@
+{
+  "schema_version": "3.0.0",
+  "instrument_id": "SCID-5-PD",
+  "instrument_version": "official_version_required",
+  "language": "ru-RU",
+  "clinical_content_status": "metadata_only_license_required",
+  "information": {
+    "title": "Structured Clinical Interview for DSM-5 Personality Disorders",
+    "type": "clinician_semistructured_interview",
+    "authors": [
+      "Michael B. First",
+      "Janet B. W. Williams",
+      "Lorna Smith Benjamin",
+      "Robert L. Spitzer"
+    ],
+    "first_publication_or_revision_year": 2016,
+    "purpose_patient": "Информация о назначении инструмента; самостоятельно проходить это интервью без специалиста не следует.",
+    "purpose_clinician": "Оценка устойчивых личностных паттернов с разграничением от эпизодических состояний.",
+    "estimated_minutes": "30–120",
+    "target_population": "Взрослые",
+    "recommended_for": {
+      "structured_diagnostic_interview": true,
+      "diagnostic_support": true,
+      "symptom_monitoring": false,
+      "independent_diagnosis": false
+    },
+    "icd10": {
+      "mapping_status": "reference_only_not_dsm_equivalence",
+      "codes": [
+        {
+          "code": "F60",
+          "label": "Специфические расстройства личности; выбирается уточняющий код после диагностики"
+        }
+      ]
+    },
+    "validation": [
+      {
+        "citation": "Исследование персидской версии SCID-5-PD, 2022/2023, N=250; неодинаковая точность для разных расстройств личности",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36578184/"
+      }
+    ],
+    "limitations": [
+      "Только специалист; структурированное интервью не заменяет полного обследования, клинического решения и оценки безопасности.",
+      "DSM-5/МКБ-10 соответствия требуют экспертной проверки.",
+      "Качество конкретного русскоязычного перевода не подтверждается самим JSON."
+    ],
+    "source_urls": [
+      "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-12",
+      "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-15"
+    ]
+  },
+  "ui": {
+    "audience": [
+      "clinician"
+    ],
+    "show_in_clinical_reference": true,
+    "patient_assignable": false,
+    "clinical_admin_enabled": false,
+    "licensed_content_loaded": false,
+    "assignment_guard": "deny_unless_licensed_and_clinically_approved"
+  },
+  "response_sets": {},
+  "questions": [],
+  "modules": [
+    {
+      "id": "optional_screen",
+      "title": "Опциональная самооценка SCID-5-SPQ",
+      "covered_domains": [
+        "первичный отбор тем"
+      ],
+      "clinician_notes": "SPQ — отдельный защищённый инструмент, не заменяет интервью.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "trait_review",
+      "title": "Устойчивые личностные особенности",
+      "covered_domains": [
+        "долговременный паттерн",
+        "контекст",
+        "выраженность",
+        "негибкость",
+        "сфера нарушений"
+      ],
+      "clinician_notes": "Не делать вывод по одному наблюдаемому поведению.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    }
+  ],
+  "scoring": {
+    "type": "not_computable_without_licensed_protocol",
+    "auto_scoring_enabled": false,
+    "score_scale": null,
+    "missing_answer_policy": "cannot_finalize_incomplete",
+    "diagnostic_decision": "clinician_only"
+  },
+  "interpretations": {
+    "patient": {
+      "title": "Результат обсудите с врачом",
+      "text": "Интервью помогает врачу структурировать обследование; автоматическое заключение не формируется."
+    },
+    "clinician": {
+      "title": "Клиническая интерпретация",
+      "text": "Интерпретировать по официальному руководству, совокупности критериев, исключений и клинических данных; необоснованное присвоение диагноза запрещено."
+    },
+    "auto_diagnosis": false
+  },
+  "licensing": {
+    "rights_holder": "American Psychiatric Association Publishing (APA Publishing)",
+    "commercial": "Приобретение и отдельное согласование самостоятельной электронной реализации, SPQ и логики ветвления.",
+    "research": "Приобретение инструмента и проверка разрешений на используемый формат и количество экземпляров.",
+    "open": "Не разрешено без соответствующей лицензии.",
+    "contact_url": "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-15",
+    "permission_needed_for_app": true,
+    "free_public_republication": false
+  },
+  "publication": {
+    "is_patient_assignable": false,
+    "is_clinically_approved": false,
+    "in_public_demo": false,
+    "licensing_review": "pending",
+    "requires_manual_and_training": true
+  },
+  "safety": {
+    "suicidality_assessment": "separate_assessment_when_indicated",
+    "no_autonomous_triage": true,
+    "clinician_signoff_required": true
+  },
+  "clinician_guide": {
+    "steps": [
+      {
+        "id": "before",
+        "title": "Подготовка и рамки",
+        "clinician_instructions": "Уточните цель обследования, версии инструмента, временной период, язык, информированное согласие и условия конфиденциальности.",
+        "checks": []
+      },
+      {
+        "id": "safety",
+        "title": "Безопасность",
+        "clinician_instructions": "При клинических сигналах риска отдельно оцените непосредственную безопасность и действуйте по протоколу организации, не дожидаясь окончания интервью.",
+        "checks": []
+      },
+      {
+        "id": "context",
+        "title": "Клинический контекст",
+        "clinician_instructions": "Установите хронологию эпизодов, функциональные нарушения, предшествующее лечение, влияние веществ/лекарств, возможные соматические причины и коморбидность.",
+        "checks": []
+      },
+      {
+        "id": "trait_vs_state",
+        "title": "Паттерны и эпизоды",
+        "clinician_instructions": "Проверяйте давность, стабильность и проявление в разных контекстах; дифференцируйте с текущим эпизодом депрессии, мании, психоза и употреблением веществ.",
+        "checks": []
+      },
+      {
+        "id": "collateral",
+        "title": "Дополнительные источники",
+        "clinician_instructions": "При согласии пациента можно уточнять динамику и функционирование по сведениям других специалистов и близких.",
+        "checks": []
+      },
+      {
+        "id": "finish",
+        "title": "Завершение",
+        "clinician_instructions": "Документируйте подтверждённые, исключённые и неопределённые критерии; решение по диагностическому коду и тактике принимает врач.",
+        "checks": []
+      }
+    ],
+    "common_errors": [
+      "Вывод о расстройстве личности по краткосрочной симптоматике",
+      "Перенос диагностических кодов DSM-5 без сверки с МКБ-10"
+    ]
+  }
+}

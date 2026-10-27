@@ -1,0 +1,253 @@
+{
+  "schema_version": "2.0.0",
+  "instrument_id": "PAI",
+  "instrument_version": "publisher_licensed_version_required",
+  "language": "und",
+  "clinical_content_status": "metadata_only_license_required",
+  "information": {
+    "title": "Personality Assessment Inventory",
+    "authors": [
+      "Leslie C. Morey"
+    ],
+    "first_publication_year": 1991,
+    "publisher": "PAR / Psychological Assessment Resources",
+    "purpose_patient": "Комплексная оценка эмоциональных и поведенческих особенностей по назначению специалиста",
+    "purpose_clinician": "Широкопрофильная вспомогательная оценка психопатологии с проверкой качества ответов",
+    "recommended_for": {
+      "diagnosis": false,
+      "diagnostic_support": true,
+      "screening": true,
+      "monitoring": false,
+      "ui_qa": false
+    },
+    "items_count": 344,
+    "age_min_years": 18,
+    "estimated_minutes": [
+      25,
+      55
+    ],
+    "icd10": {
+      "direct": [],
+      "associated": [
+        "F32",
+        "F33",
+        "F31",
+        "F41.1",
+        "F42",
+        "F20-F29",
+        "F60"
+      ],
+      "differential": [
+        "Расстройства с перекрывающейся симптоматикой; соответствие шкалы коду МКБ не является диагностическим алгоритмом"
+      ]
+    },
+    "validations": [
+      {
+        "source": "Morey PAI manual; PAR technical information",
+        "study_type": "normative_and_clinical_samples",
+        "population": "1000 community adults; 1265 patients from 69 sites; 1051 students",
+        "url": "https://www.parinc.com/products/pai"
+      },
+      {
+        "source": "Psychometric properties of Portuguese PAI (2024)",
+        "study_type": "regional_norming_and_reliability",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11169847/"
+      }
+    ],
+    "licensing": {
+      "status": "restricted_publisher_license",
+      "question_text_included": false,
+      "scoring_key_included": false,
+      "norm_tables_included": false,
+      "commercial_digitization_requires_permission": true,
+      "url": "https://www.parinc.com/products/pai"
+    },
+    "clinical_limitations": [
+      "PAI не заменяет клиническое интервью",
+      "Индексы достоверности не устанавливают факт намеренного обмана",
+      "Соотнесение шкал и диагнозов требует специалиста и норм"
+    ]
+  },
+  "ui": {
+    "audience": [
+      "clinician"
+    ],
+    "show_only_in_reference_catalog": true,
+    "patient_assignable": false
+  },
+  "response_sets": {},
+  "questions": [],
+  "scales": [
+    {
+      "id": "ICN",
+      "kind": "validity",
+      "label": "Inconsistency",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "INF",
+      "kind": "validity",
+      "label": "Infrequency",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "NIM",
+      "kind": "validity",
+      "label": "Negative Impression Management",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "PIM",
+      "kind": "validity",
+      "label": "Positive Impression Management",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "SOM",
+      "kind": "clinical",
+      "label": "Somatic Complaints",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "ANX",
+      "kind": "clinical",
+      "label": "Anxiety",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "ARD",
+      "kind": "clinical",
+      "label": "Anxiety-Related Disorders",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "DEP",
+      "kind": "clinical",
+      "label": "Depression",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "MAN",
+      "kind": "clinical",
+      "label": "Mania",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "PAR",
+      "kind": "clinical",
+      "label": "Paranoia",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "SCZ",
+      "kind": "clinical",
+      "label": "Schizophrenia",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "BOR",
+      "kind": "clinical",
+      "label": "Borderline Features",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "ANT",
+      "kind": "clinical",
+      "label": "Antisocial Features",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "ALC",
+      "kind": "clinical",
+      "label": "Alcohol Problems",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    },
+    {
+      "id": "DRG",
+      "kind": "clinical",
+      "label": "Drug Problems",
+      "algorithm": {
+        "type": "license_required"
+      },
+      "item_ids": null,
+      "norms": null
+    }
+  ],
+  "scoring_policy": {
+    "calculation_status": "blocked_pending_license",
+    "required_validity_review_before_clinical_interpretation": true,
+    "no_arbitrary_cutoffs": true
+  },
+  "interpretations": {
+    "patient": {
+      "message": "Описание PAI доступно в клиническом справочнике. Опросник пока недоступен для самостоятельного прохождения."
+    },
+    "clinician": {
+      "message": "Клиническая интерпретация возможна только с лицензированными вопросами, ключами, нормами и подготовкой специалиста."
+    },
+    "invalidity_handling": {
+      "automatically_accuse_of_lying": false
+    }
+  },
+  "publication": {
+    "is_patient_assignable": false,
+    "is_clinically_approved": false,
+    "use_only_in_synthetic_demo": false
+  }
+}

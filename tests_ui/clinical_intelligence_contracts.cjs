@@ -1,0 +1,52 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..');
+const data=JSON.parse(fs.readFileSync(path.join(root,'frontend/dist/assets/fixtures/clinical_intelligence_synthetic_v1.json'),'utf8'));
+const js=n=>fs.readFileSync(path.join(root,'frontend/dist/assets/js',n),'utf8');
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let enabled=true,allowed=true,requests=[],lookups=0;
+const dash=()=>({patients:allowed?[{id:'pxp_history_02',scope:['symptoms']},{id:'pat_a',scope:['symptoms','medications']}]:[],cases:[{id:'dx_fixture_incoming_case'}],appointments:[{id:'dx_fixture_offer'}]});
+const ctx={window:{CC:{escape:esc},CCAPI:{async get(p){requests.push(p);if(p.endsWith('/capabilities'))return {enabled};if(p.endsWith('/dashboard'))return dash();throw Error('unexpected API '+p);}}},fetch:async()=>{lookups++;return {ok:true,async json(){return JSON.parse(JSON.stringify(data));}}},console,encodeURIComponent,Array,Date,Error,Event:class Event{constructor(t,o){this.type=t;this.bubbles=o.bubbles;}},document:{},};vm.createContext(ctx);
+vm.runInContext(js('clinical_intelligence_adapter_v1.js'),ctx);
+vm.runInContext(js('clinical_intelligence_v1.js'),ctx);
+const ap=ctx.window.CCClinicalIntelligenceAdapter,ci=ctx.window.CCClinicalIntelligence;
+const me={context:{role:'doctor'},user:{id:'doc_psy'}};
+const patient='/doctor/patients/pxp_history_02/visits';
+(async()=>{
+ let returned=await ci.enhance('/patient','ORIGINAL',{context:{role:'patient'},user:{id:'pat_01'}});
+ assert.equal(returned,'ORIGINAL');assert.equal(lookups,0,'patients never receive fixtures');
+ returned=await ci.enhance('/doctor/patients/pat_a','ORIGINAL',me);
+ assert.equal(returned,'ORIGINAL','unrelated record must not show CI notes');
+ returned=await ci.enhance(patient,'BASE',me);
+ for(const s of ['Clinical Copilot','Метки и динамика','Заполнить карту','Маршрутизация','Безопасность','Гипотезы','Авиандр','2 / 3','СИНТЕТИЧЕСКИЙ','role="tablist"'])assert.ok(returned.includes(s),'UI must contain '+s);
+ assert.ok(returned.includes('ci-insert'),'insertion control must exist');
+ assert.ok(returned.includes('данные из')===false||returned.includes('Учеб'));
+ assert.ok(!returned.includes('data-form="cw-save"'),'never duplicate legacy form');
+ const cases=await ci.enhance('/doctor/requests/dx_fixture_incoming_case','CASE',me);
+ assert.ok(cases.includes('ci-panel'));
+ const appts=await ci.enhance('/doctor/appointments/dx_fixture_offer/visit','ROOM',me);
+ assert.ok(appts.includes('ci-panel'));
+ returned=await ci.enhance('/doctor/requests/not-allowed','ORIGINAL',me);assert.equal(returned,'ORIGINAL');
+ enabled=false;returned=await ci.enhance(patient,'ORIGINAL',me);assert.equal(returned,'ORIGINAL');
+ enabled=true;allowed=false;returned=await ci.enhance(patient,'ORIGINAL',me);assert.equal(returned,'ORIGINAL');
+ allowed=true;
+ const src=new Map(data.sources.map(x=>[x.id,x]));
+ for(const tag of data.tags){assert.equal(tag.frequency.denominator,data.sources.filter(x=>x.scope==='symptoms').length);assert.equal(tag.frequency.numerator,tag.source_ids.length);for(let i=0;i<tag.source_ids.length;i++)assert.ok(src.get(tag.source_ids[i]).text.includes(tag.quotes[i]));}
+ assert.equal(data.synthetic,true);assert.equal(data.verified_clinical_rule,false);
+ assert.equal(data.alternative_safety_branch.delivery_status,'not_attempted');
+ assert.ok(data.hypotheses.find(h=>h.id==='hyp-aviandr').missing.some(x=>x.includes('не подтверждены')));
+ await assert.rejects(ap.submitClinicalReview(),/не подключены/);
+ assert.equal(ap.matchRoute('/doctor/patients/pat_a/trends').id,'pat_a');
+ assert.equal(ap.matchRoute('/patient'),null);
+ assert.ok(ap.catalogRoute(data.hypotheses.find(h=>h.id==='hyp-aviandr')).includes('product%3Aaviandr'));
+ // XSS defense in evidence and draft render; field content never serialized into API.
+ const dangerous=JSON.parse(JSON.stringify(data));dangerous.tags[0].label='<img src=x onerror=alert(1)>';dangerous.draft_fields[0].proposed_text='<script>alert(1)</script>';
+ ap.reset();ctx.fetch=async()=>({ok:true,json:async()=>dangerous});
+ returned=await ci.enhance(patient,'BASE',{context:{role:'doctor'},user:{id:'doc_other'}});
+ assert.ok(returned.includes('&lt;img'));assert.ok(!returned.includes('<img src=x'));
+ assert.ok(returned.includes('&lt;script'));assert.ok(!returned.includes('<script>alert'));
+ // Only GET requests during UI render. No save nor alert-ack in CI code.
+ assert.ok(requests.every(r=>r.includes('/doctor-experience/')));
+ assert.ok(!/localStorage|sessionStorage|navigator\.sendBeacon/.test(js('clinical_intelligence_v1.js')+js('clinical_intelligence_adapter_v1.js')));
+ console.log('PASS: clinical intelligence role, ACL, scope, fixtures, evidence, XSS, routes, default-deny (20 checks)');
+})().catch(err=>{console.error(err);process.exitCode=1;});

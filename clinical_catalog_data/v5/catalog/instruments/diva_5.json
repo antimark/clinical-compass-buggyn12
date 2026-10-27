@@ -1,0 +1,572 @@
+{
+  "schema_version": "3.0.0",
+  "instrument_id": "DIVA-5",
+  "instrument_version": "official_version_required",
+  "language": "ru-RU",
+  "clinical_content_status": "metadata_only_license_required",
+  "information": {
+    "title": "Diagnostic Interview for ADHD in Adults, 5th edition",
+    "type": "clinician_semistructured_interview",
+    "authors": [
+      "J. J. Sandra Kooij",
+      "DIVA Foundation и соавторы"
+    ],
+    "first_publication_or_revision_year": 2016,
+    "purpose_patient": "Информация о назначении инструмента; самостоятельно проходить это интервью без специалиста не следует.",
+    "purpose_clinician": "Врачебная оценка симптомов СДВГ сейчас и в детстве, влияния на жизнь, возраста начала и альтернативных причин.",
+    "estimated_minutes": "обычно 60–90, зависит от обстоятельств",
+    "target_population": "Взрослые",
+    "recommended_for": {
+      "structured_diagnostic_interview": true,
+      "diagnostic_support": true,
+      "symptom_monitoring": false,
+      "independent_diagnosis": false
+    },
+    "icd10": {
+      "mapping_status": "reference_only_not_dsm_equivalence",
+      "codes": [
+        {
+          "code": "F90.0",
+          "label": "Нарушение активности и внимания в МКБ-10",
+          "note": "Не эквивалентно автоматически всем подтипам/презентациям DSM-5 ADHD; требуется клиническое кодирование"
+        }
+      ]
+    },
+    "validation": [
+      {
+        "citation": "Hong et al., 2020, Neuropsychiatric Disease and Treatment; клиническая валидация корейской версии DIVA-5 на N=279",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33116536/"
+      }
+    ],
+    "limitations": [
+      "Только специалист; структурированное интервью не заменяет полного обследования, клинического решения и оценки безопасности.",
+      "DSM-5/МКБ-10 соответствия требуют экспертной проверки.",
+      "Качество конкретного русскоязычного перевода не подтверждается самим JSON."
+    ],
+    "source_urls": [
+      "https://www.divacenter.eu/"
+    ],
+    "domains": [
+      "inattention",
+      "hyperactivity_impulsivity"
+    ],
+    "criteria_count": 18,
+    "implementation_restriction": "Исключительно точная заполняемая цифровая форма для клинициста; AI/чатбот-интервью и адаптация запрещены без разрешения."
+  },
+  "ui": {
+    "audience": [
+      "clinician"
+    ],
+    "show_in_clinical_reference": true,
+    "patient_assignable": false,
+    "clinical_admin_enabled": false,
+    "licensed_content_loaded": false,
+    "assignment_guard": "deny_unless_licensed_and_clinically_approved"
+  },
+  "response_sets": {},
+  "questions": [],
+  "modules": [
+    {
+      "id": "current",
+      "title": "Текущие симптомы",
+      "covered_domains": [
+        "9 критериев невнимательности",
+        "9 критериев гиперактивности/импульсивности"
+      ],
+      "clinician_notes": "Собирать конкретные примеры из повседневной жизни.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [
+        {
+          "id": "diva5_current_inattention_1",
+          "official_text": null,
+          "placeholder": "Критерий inattention №1 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_inattention_2",
+          "official_text": null,
+          "placeholder": "Критерий inattention №2 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_inattention_3",
+          "official_text": null,
+          "placeholder": "Критерий inattention №3 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_inattention_4",
+          "official_text": null,
+          "placeholder": "Критерий inattention №4 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_inattention_5",
+          "official_text": null,
+          "placeholder": "Критерий inattention №5 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_inattention_6",
+          "official_text": null,
+          "placeholder": "Критерий inattention №6 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_inattention_7",
+          "official_text": null,
+          "placeholder": "Критерий inattention №7 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_inattention_8",
+          "official_text": null,
+          "placeholder": "Критерий inattention №8 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_inattention_9",
+          "official_text": null,
+          "placeholder": "Критерий inattention №9 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_hyperactivity_impulsivity_1",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №1 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_hyperactivity_impulsivity_2",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №2 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_hyperactivity_impulsivity_3",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №3 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_hyperactivity_impulsivity_4",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №4 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_hyperactivity_impulsivity_5",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №5 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_hyperactivity_impulsivity_6",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №6 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_hyperactivity_impulsivity_7",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №7 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_hyperactivity_impulsivity_8",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №8 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_current_hyperactivity_impulsivity_9",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №9 (current): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        }
+      ],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "childhood",
+      "title": "Симптомы в детстве",
+      "covered_domains": [
+        "9 критериев невнимательности",
+        "9 критериев гиперактивности/импульсивности"
+      ],
+      "clinician_notes": "Не полагаться только на ретроспективную память, когда доступны информанты.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [
+        {
+          "id": "diva5_childhood_inattention_1",
+          "official_text": null,
+          "placeholder": "Критерий inattention №1 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_inattention_2",
+          "official_text": null,
+          "placeholder": "Критерий inattention №2 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_inattention_3",
+          "official_text": null,
+          "placeholder": "Критерий inattention №3 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_inattention_4",
+          "official_text": null,
+          "placeholder": "Критерий inattention №4 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_inattention_5",
+          "official_text": null,
+          "placeholder": "Критерий inattention №5 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_inattention_6",
+          "official_text": null,
+          "placeholder": "Критерий inattention №6 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_inattention_7",
+          "official_text": null,
+          "placeholder": "Критерий inattention №7 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_inattention_8",
+          "official_text": null,
+          "placeholder": "Критерий inattention №8 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_inattention_9",
+          "official_text": null,
+          "placeholder": "Критерий inattention №9 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_hyperactivity_impulsivity_1",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №1 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_hyperactivity_impulsivity_2",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №2 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_hyperactivity_impulsivity_3",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №3 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_hyperactivity_impulsivity_4",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №4 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_hyperactivity_impulsivity_5",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №5 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_hyperactivity_impulsivity_6",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №6 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_hyperactivity_impulsivity_7",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №7 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_hyperactivity_impulsivity_8",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №8 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        },
+        {
+          "id": "diva5_childhood_hyperactivity_impulsivity_9",
+          "official_text": null,
+          "placeholder": "Критерий hyperactivity_impulsivity №9 (childhood): официальная формулировка отсутствует",
+          "type": "clinician_criterion",
+          "response_set_id": "official_licensed_binary_or_undetermined",
+          "content_status": "not_included_due_to_copyright"
+        }
+      ],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "criteria",
+      "title": "Возраст начала, нарушения и исключения",
+      "covered_domains": [
+        "возраст начала",
+        "несколько контекстов",
+        "значимый ущерб",
+        "сопутствующие или альтернативные расстройства"
+      ],
+      "clinician_notes": "Установить временную и функциональную валидность.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    }
+  ],
+  "scoring": {
+    "type": "criterion_based",
+    "auto_scoring_enabled": false,
+    "score_scale": null,
+    "required_components": [
+      "current_symptoms",
+      "childhood_symptoms",
+      "age_at_onset",
+      "multi_setting",
+      "functional_impairment",
+      "differential_diagnosis"
+    ],
+    "diagnostic_decision": "clinician_only",
+    "automatic_threshold_evaluation": "disabled_until_licensed_protocol_approved",
+    "missing_answer_policy": "do_not_finalize"
+  },
+  "interpretations": {
+    "patient": {
+      "title": "Результат обсудите с врачом",
+      "text": "Интервью помогает врачу структурировать обследование; автоматическое заключение не формируется."
+    },
+    "clinician": {
+      "title": "Клиническая интерпретация",
+      "text": "Интерпретировать по официальному руководству, совокупности критериев, исключений и клинических данных; необоснованное присвоение диагноза запрещено."
+    },
+    "auto_diagnosis": false
+  },
+  "licensing": {
+    "rights_holder": "DIVA Foundation / требования APA к содержанию DSM-5",
+    "commercial": "Официальный сайт: €650 рассмотрение алгоритма платформы + €4,95 за загрузку после одобрения; €10 за PDF для отдельного врача. Допустима только точная fillable цифровая форма под управлением клинициста; AI-чат/переформулирование запрещены.",
+    "research": "Для клинической работы доступен платный PDF (€10 на специалиста); исследовательское и многопользовательское использование и электронную реализацию согласовывать с фондом отдельно.",
+    "open": "Платный PDF нельзя свободно копировать, распространять или перерабатывать.",
+    "contact_url": "https://www.divacenter.eu/",
+    "permission_needed_for_app": true,
+    "free_public_republication": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "suicidality_assessment": "separate_assessment_when_indicated",
+    "no_autonomous_triage": true,
+    "clinician_signoff_required": true
+  },
+  "clinician_guide": {
+    "steps": [
+      {
+        "id": "before",
+        "title": "Подготовка и рамки",
+        "clinician_instructions": "Уточните цель обследования, версии инструмента, временной период, язык, информированное согласие и условия конфиденциальности.",
+        "checks": []
+      },
+      {
+        "id": "safety",
+        "title": "Безопасность",
+        "clinician_instructions": "При клинических сигналах риска отдельно оцените непосредственную безопасность и действуйте по протоколу организации, не дожидаясь окончания интервью.",
+        "checks": []
+      },
+      {
+        "id": "context",
+        "title": "Клинический контекст",
+        "clinician_instructions": "Установите хронологию эпизодов, функциональные нарушения, предшествующее лечение, влияние веществ/лекарств, возможные соматические причины и коморбидность.",
+        "checks": []
+      },
+      {
+        "id": "symptoms",
+        "title": "Два жизненных периода",
+        "clinician_instructions": "Пройдите симптомы невнимательности и гиперактивности/импульсивности отдельно в текущем состоянии и в детстве.",
+        "checks": []
+      },
+      {
+        "id": "examples",
+        "title": "Примеры",
+        "clinician_instructions": "Выясняйте проявления и документируйте реальные примеры по официальному руководству; не заменяйте официальную формулировку.",
+        "checks": []
+      },
+      {
+        "id": "onset",
+        "title": "Развитие",
+        "clinician_instructions": "Зафиксируйте возраст начала и устойчивость проявлений, по возможности подтвердив данными родственников, школьными сведениями или другими источниками.",
+        "checks": []
+      },
+      {
+        "id": "differential",
+        "title": "Дифференциальная диагностика",
+        "clinician_instructions": "Учитывайте тревогу, аффективные расстройства, сон, ПАВ, соматические причины и другие объяснения.",
+        "checks": []
+      },
+      {
+        "id": "licensing",
+        "title": "Ограничения цифровой формы",
+        "clinician_instructions": "Нельзя делать AI-чат, автоматическое интервью, адаптивное переформулирование вопросов либо автоматический диагноз.",
+        "checks": []
+      },
+      {
+        "id": "finish",
+        "title": "Завершение",
+        "clinician_instructions": "Документируйте подтверждённые, исключённые и неопределённые критерии; решение по диагностическому коду и тактике принимает врач.",
+        "checks": []
+      }
+    ],
+    "common_errors": [
+      "Использовать DIVA-5 как опросник самостоятельного заполнения",
+      "Переходить к диагнозу без данных о детстве и нарушении функционирования",
+      "Встраивать свободный пересказ официальных пунктов"
+    ]
+  },
+  "priority": "P2",
+  "instrument_type": "clinician_structured_interview",
+  "catalog_schema_version": "4.0.0",
+  "localization": {
+    "language": "ru",
+    "status": "clinical_guide_russian_not_licensed_interview_translation",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "release_approved": false,
+    "draft_segregated": false
+  },
+  "rights": {
+    "rights_holder": "DIVA Foundation",
+    "copyright_status": "copyrighted",
+    "commercial_use": "commercial_digitization_requires_DIVA_Foundation_authorization_and_agreement",
+    "research_use": "license_or_purchase_and_check_digital_rights",
+    "open_use": "not_allowed_without_permission",
+    "electronic_administration": "written_permission_required",
+    "public_distribution": "prohibited_without_permission",
+    "translation_rights": "written_permission_required",
+    "patient_feedback_allowed": "subject_to_license_and_clinical_review",
+    "license_source_url": "https://www.divacenter.eu/",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "availability": {
+    "russian_form": "licensed_questions_not_embedded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.appi.org/Products/Structured-Clinical-Interview-for-DSM-5-(SCID-5)",
+    "protected_material_embedded": false
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [],
+    "code_assignment_from_scale": false,
+    "icd11_context_text": ""
+  }
+}

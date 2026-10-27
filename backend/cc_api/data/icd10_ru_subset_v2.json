@@ -1,0 +1,201 @@
+{
+  "version": "ru-official-subset-20261020-v2",
+  "coverage": "limited_verified_subset",
+  "limitation": "Ограниченная проверенная выборка кодов МКБ-10; не полный национальный справочник. Лицензирование и актуальность для промышленного использования требуют отдельной проверки.",
+  "verified_on": "2026-10-20",
+  "items": [
+    {
+      "code": "F00",
+      "label": "Деменция при болезни Альцгеймера (G30.-+)",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F01",
+      "label": "Сосудистая деменция",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F02",
+      "label": "Деменция при других болезнях, классифицированных в других рубриках",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F03",
+      "label": "Деменция неуточненная",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F04",
+      "label": "Органический амнестический синдром, не вызванный алкоголем или другими психоактивными веществами",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F05",
+      "label": "Делирий, не вызванный алкоголем или другими психоактивными веществами",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F06",
+      "label": "Другие психические расстройства, обусловленные повреждением и дисфункцией головного мозга или соматической болезнью",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F07",
+      "label": "Расстройства личности и поведения, обусловленные болезнью, повреждением или дисфункцией головного мозга",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F09",
+      "label": "Органическое или симптоматическое психическое расстройство неуточненное",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F20",
+      "label": "Шизофрения",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F21",
+      "label": "Шизотипическое расстройство",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F22",
+      "label": "Хронические бредовые расстройства",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F23",
+      "label": "Острые и преходящие психотические расстройства",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F24",
+      "label": "Индуцированное бредовое расстройство",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F25",
+      "label": "Шизоаффективные расстройства",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F28",
+      "label": "Другие неорганические психотические расстройства",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F29",
+      "label": "Неорганический психоз неуточненный",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F30",
+      "label": "Маниакальный эпизод",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F31",
+      "label": "Биполярное аффективное расстройство",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F32",
+      "label": "Депрессивный эпизод",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F33",
+      "label": "Рекуррентное депрессивное расстройство",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F34",
+      "label": "Устойчивые расстройства настроения [аффективные расстройства]",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F38",
+      "label": "Другие расстройства настроения [аффективные]",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F39",
+      "label": "Расстройство настроения [аффективное] неуточненное",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F40",
+      "label": "Фобические тревожные расстройства",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F41",
+      "label": "Другие тревожные расстройства",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F41.1",
+      "label": "Генерализованное тревожное расстройство",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/ministry/61/22/stranitsa-979/stranitsa-983/2-standarty-spetsializirovannoy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F42",
+      "label": "Обсессивно-компульсивное расстройство",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F43",
+      "label": "Реакция на тяжелый стресс и нарушения адаптации",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F44",
+      "label": "Диссоциативные [конверсионные] расстройства",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F45",
+      "label": "Соматоформные расстройства",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    },
+    {
+      "code": "F48",
+      "label": "Другие невротические расстройства",
+      "version": "ru-official-subset-20261020-v2",
+      "source_url": "https://minzdrav.gov.ru/special/ministry/61/22/stranitsa-979/stranitsa-983/3-standarty-skoroy-meditsinskoy-pomoschi/klass-v-psihicheskie-rasstroystva-i-rasstroystva-povedeniya-f00-f99"
+    }
+  ],
+  "source_context": "Официальная историческая страница Минздрава со стандартами, 2015. Выборка не подтверждает актуальность полного классификатора."
+}

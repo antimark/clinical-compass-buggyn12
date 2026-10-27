@@ -1,0 +1,9 @@
+{
+  "id": "synthetic_msg_001",
+  "thread_type": "previsit",
+  "context_id": "synthetic_case_001",
+  "sender_id": "pat_03",
+  "recipient_id": "doc_ther",
+  "text": "Hello, can we arrange a first meeting?",
+  "created_at": "2026-10-18T12:00:00+00:00"
+}

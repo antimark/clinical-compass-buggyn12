@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Clinical Compass ICD-10 clinical reference diagnosis",
+  "type": "object",
+  "required": [
+    "code",
+    "coding_system",
+    "title_ru",
+    "description_clinician",
+    "description_patient",
+    "criteria",
+    "review",
+    "sources"
+  ],
+  "properties": {
+    "code": {
+      "type": "string",
+      "pattern": "^[A-Z][0-9]{2}(\\.[0-9A-Za-z]+)?$"
+    },
+    "coding_system": {
+      "type": "string"
+    },
+    "title_ru": {
+      "type": "string",
+      "minLength": 3
+    },
+    "description_clinician": {
+      "type": "string"
+    },
+    "description_patient": {
+      "type": "string"
+    },
+    "criteria": {
+      "type": "object",
+      "required": [
+        "main_features",
+        "course_and_duration",
+        "functional_impact",
+        "exclude_and_check"
+      ]
+    },
+    "review": {
+      "type": "object"
+    },
+    "sources": {
+      "type": "array"
+    }
+  }
+}

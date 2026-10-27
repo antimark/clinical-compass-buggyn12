@@ -1,0 +1,25 @@
+{
+  "id": "aviandr_maritupirdine_instruction",
+  "record_type": "source_product_instruction_pointer",
+  "title_ru": "Авиандр",
+  "active_substance_id": "maritupirdine",
+  "original_instruction_path": "medicines/source_product_instructions/aviandr_maritupirdine_instruction.json",
+  "listed_icd10_codes_in_supplied_instruction": [
+    "F41.1"
+  ],
+  "linked_diagnosis_codes_in_catalog": [
+    "F41.1"
+  ],
+  "provenance": {
+    "origin": "user_supplied_zip_2026_10_18",
+    "original_source_filename": "инструкции_к_препаратам/aviandr_maritupirdine_instruction.json",
+    "sha256": "1601b02c3af055871c53aecbd26a364db8b369910076f3e2d3dcde38b9829f48",
+    "not_current_grls_verification": true
+  },
+  "label_claim_provenance": "as_listed_in_user_supplied_source_instruction_not_independently_revalidated",
+  "formulation_sensitive": true,
+  "review": {
+    "registration_and_smpc_recheck_needed": true,
+    "last_updated": "2026-10-25"
+  }
+}

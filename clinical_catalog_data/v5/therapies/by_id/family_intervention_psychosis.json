@@ -1,0 +1,92 @@
+{
+  "id": "family_intervention_psychosis",
+  "schema_version": "1.0.0",
+  "record_type": "therapeutic_method",
+  "title_ru": "Семейные вмешательства при психозе",
+  "title_en": "",
+  "category": "psychosocial",
+  "is_psychotherapy": false,
+  "description_patient": "Поддержка пациента и семьи с обучением коммуникации и предотвращению рецидивов.",
+  "description_clinician": "Семейные встречи, совместный план помощи, психообразование и профилактика рецидивов.",
+  "implementation": {
+    "delivery_modes": [
+      "by_qualified_professional"
+    ],
+    "workflow_hint": "Комплексная клиническая оценка → согласование целей и метода → проведение обученным специалистом → мониторинг исходов",
+    "technical_content_not_a_therapy_manual": true
+  },
+  "diagnosis_links": [
+    {
+      "code": "F20",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "nice_psychosis",
+        "who_psychosis"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F21",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "nice_psychosis",
+        "who_psychosis"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F22",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "nice_psychosis",
+        "who_psychosis"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F23",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "nice_psychosis",
+        "who_psychosis"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    },
+    {
+      "code": "F25",
+      "relation": "guideline_supported_in_selected_context",
+      "source_ids": [
+        "nice_psychosis",
+        "who_psychosis"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    }
+  ],
+  "clinical_evidence": {
+    "tier": "guideline_supported_for_selected_context",
+    "guideline_source_ids": [
+      "nice_psychosis",
+      "who_psychosis"
+    ],
+    "evidence_strength_ungraded": true
+  },
+  "safety": {
+    "requires_professional": true,
+    "notes": "Выбор метода после оценки рисков, предпочтений пациента, коморбидности и подготовки специалиста."
+  },
+  "rights": {
+    "summary_text": "original_editorial_summary",
+    "therapy_protocols_or_branded_manuals": "not_included; may be copyrighted",
+    "use_in_commercial_software": "metadata_only; protocol/material license separate"
+  },
+  "review": {
+    "status": "needs_specialist_review",
+    "scope": "adult-oriented unless otherwise specified; paediatric indications require separate review",
+    "verified_at": "2026-10-25"
+  }
+}

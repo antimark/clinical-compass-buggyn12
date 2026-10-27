@@ -1,0 +1,180 @@
+/* Clinical Compass • Shared appearance and geometry tokens.
+   Light = white canvas, warm amber accents, graphite controls.
+   One Frost/Clear material; all visual variants inherit the same tokens. */
+:root {
+  color-scheme: light;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Inter, Arial, sans-serif;
+
+  /* Colour system */
+  --ink: #292624;
+  --ink-2: #67615c;
+  --ink-3: #8b847e;
+  --accent: #f88c45;
+  --accent-strong: #e6681f;
+  --accent-soft: rgba(237, 129, 55, .115);
+  --accent-border: rgba(237, 129, 55, .32);
+  --graphite: #252422;
+  --graphite-panel: #292826;
+  --graphite-hover: #3c3936;
+  --graphite-text: #fffaf6;
+  /* Graphite navigation keeps readable contrast in both appearance modes. */
+  --nav-text: #fffaf6;
+  --nav-muted: rgba(255, 250, 246, .78);
+  --nav-caption: rgba(255, 250, 246, .58);
+  --nav-hover: rgba(255, 255, 255, .09);
+  --nav-active: rgba(255, 255, 255, .16);
+  --danger: #ac4246;
+  --warn: #ab671f;
+  --success: #277b5c;
+  --bg: #ffffff;
+  --bg-soft: #ffffff;
+  --border: rgba(115, 99, 86, .22);
+  --divider: rgba(115, 99, 86, .16);
+
+  /* Frost material: uniform translucent fills; gradient only on masked border rims. */
+  --surface: rgba(247, 240, 234, .34);
+  --surface-strong: rgba(250, 245, 240, .66);
+  --surface-solid: #ffffff;
+  --surface-subtle: rgba(244, 237, 229, .50);
+  --menu: rgba(249, 244, 239, .56);
+  --glass-fill: rgba(248,243,238,.44);
+  --glass-fill-raised: rgba(250,245,240,.57);
+  --glass-fill-inset: rgba(246,239,231,.43);
+  /* Hover affects only the translucent fill; it never changes the rim. */
+  --glass-hover-fill: rgba(222,212,203,.57);
+  --glass-hover-raised: rgba(229,219,209,.68);
+  --glass-hover-inset: rgba(220,207,195,.58);
+  --glass-rim: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(210,191,173,.57) 23%, rgba(182,161,144,.30) 72%, rgba(174,156,139,.22) 100%);
+  --glass-rim-inset: linear-gradient(180deg, rgba(255,255,255,.95), rgba(193,174,157,.39) 43%, rgba(175,158,143,.24));
+  --frost: blur(14px) saturate(155%);
+  --frost-dense: blur(36px) saturate(165%);
+  --glass-shadow: 0 16px 48px rgba(72,53,39,.105), 0 3px 12px rgba(72,53,39,.045);
+  --shadow: var(--glass-shadow);
+  --shadow-float: 0 28px 75px rgba(57,42,33,.20), 0 5px 18px rgba(57,42,33,.075);
+  --shadow-inset: 0 5px 16px rgba(76,57,42,.035);
+
+  /* Uniform nesting geometry. Any interactive button is a full capsule. */
+  --r-xl: 34px;
+  --r-lg: 26px;
+  --r-md: 20px;
+  --r-sm: 14px;
+  --r-pill: 999px;
+  --card-padding: clamp(23px, 3vw, 32px);
+  --nested-radius: clamp(18px, 2vw, 24px);
+  --control-height: 44px;
+  --account-menu-width: 320px;
+  --content: 1248px;
+  --page-pad: clamp(18px, 4.2vw, 52px);
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
+  --s5: 20px; --s6: 24px; --s8: 32px; --s10: 40px; --s12: 48px;
+  --focus: 0 0 0 3px rgba(237,129,55,.25);
+  --overlay-shade: rgba(39,34,29,.27);
+  --overlay-blur: blur(14px) saturate(110%);
+  --control-shadow: 0 7px 18px rgba(26,24,23,.15);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #f5f0ea;
+  --ink-2: #c9bdb1;
+  --ink-3: #a29384;
+  --accent: #ffa65e;
+  --accent-strong: #ffbe86;
+  --accent-soft: rgba(255,166,94,.15);
+  --accent-border: rgba(255,166,94,.35);
+  --graphite: #e9dfd4;
+  --graphite-panel: #292826;
+  --graphite-hover: #fff4e7;
+  --graphite-text: #282321;
+  --danger: #ff9e9e;
+  --warn: #ffcd84;
+  --success: #83d6ab;
+  --bg: #181716;
+  --bg-soft: #181716;
+  --border: rgba(232,208,185,.22);
+  --divider: rgba(232,208,185,.17);
+  --surface: rgba(68,59,50,.37);
+  --surface-strong: rgba(86,73,62,.67);
+  --surface-solid: #38312b;
+  --surface-subtle: rgba(97,78,63,.36);
+  --menu: rgba(57,49,43,.65);
+  --glass-fill: rgba(60,51,44,.56);
+  --glass-fill-raised: rgba(66,55,46,.72);
+  --glass-fill-inset: rgba(54,45,39,.59);
+  --glass-hover-fill: rgba(42,35,31,.70);
+  --glass-hover-raised: rgba(47,40,35,.82);
+  --glass-hover-inset: rgba(39,33,29,.73);
+  --glass-rim: linear-gradient(180deg, rgba(255,237,220,.74), rgba(230,207,186,.35) 28%, rgba(220,193,169,.16) 100%);
+  --glass-rim-inset: linear-gradient(180deg, rgba(255,237,220,.61), rgba(220,193,169,.21) 100%);
+  --glass-shadow: 0 17px 52px rgba(0,0,0,.28), 0 3px 13px rgba(0,0,0,.15);
+  --shadow: var(--glass-shadow);
+  --shadow-float: 0 30px 80px rgba(0,0,0,.52), 0 6px 20px rgba(0,0,0,.21);
+  --shadow-inset: 0 5px 16px rgba(0,0,0,.14);
+  --focus: 0 0 0 3px rgba(255,166,94,.3);
+  --overlay-shade: rgba(9,8,7,.57);
+  --control-shadow: 0 6px 17px rgba(0,0,0,.23);
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; scroll-behavior: smooth; }
+body { margin: 0; min-height: 100vh; color: var(--ink); background: var(--bg); font: 400 15px/1.55 var(--font); -webkit-font-smoothing: antialiased; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .47; }
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--accent-strong); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+::selection { background: var(--accent-soft); }
+h1,h2,h3,h4,p { margin-top: 0; }
+h1,h2,h3,h4 { line-height: 1.18; letter-spacing: -.035em; }
+h1 { font-size: clamp(38px, 5.6vw, 72px); font-weight: 760; }
+h2 { font-size: clamp(24px, 2.9vw, 36px); font-weight: 720; }
+h3 { font-size: 20px; font-weight: 690; }
+p { margin-bottom: 1em; }
+.muted { color: var(--ink-2); } .quiet { color: var(--ink-3); }
+.small { font-size: 13px; } .micro { font-size: 11px; }
+.eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .16em; font-weight: 750; color: var(--accent-strong); margin: 0 0 16px; }
+.reading { max-width: 68ch; }
+
+/* Unconditionally white canvas: do not reintroduce violet/pastel page glows. */
+.ambient { display: none; }
+.skip-link { position: fixed; left: 14px; top: -80px; background: var(--surface-solid); padding: 12px; z-index: 9999; }
+.skip-link:focus { top: 12px; }
+
+/* Shared flat glass fill; gradient rims are drawn separately in components.css. */
+.glass-material {
+  border: 1px solid transparent;
+  background: var(--glass-fill);
+  -webkit-backdrop-filter: var(--frost);
+  backdrop-filter: var(--frost);
+  box-shadow: var(--shadow);
+}
+
+/* Solid colours are intentional when backdrop-filter is unsupported. */
+@supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
+  :root {
+    --glass-fill: #faf6f2;
+    --glass-fill-raised: #faf6f2;
+    --glass-fill-inset: #f6eee6;
+    --glass-hover-fill: #e9e0d8;
+    --glass-hover-raised: #e8dfd7;
+    --glass-hover-inset: #e5d9cc;
+    --surface: #f8f3ee;
+    --surface-strong: #faf6f2;
+    --menu: #faf6f2;
+  }
+  :root[data-theme="dark"] {
+    --glass-fill: #39312b;
+    --glass-fill-raised: #42372e;
+    --glass-fill-inset: #362e28;
+    --glass-hover-fill: #2c2521;
+    --glass-hover-raised: #302823;
+    --glass-hover-inset: #29221e;
+    --surface: #39312b;
+    --surface-strong: #493d33;
+    --menu: #39312b;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "cc-synthetic-profiles-v1",
+  "synthetic": true,
+  "mode": "importable_not_seeded",
+  "records": [
+    {
+      "user_id": "demo_patient_new_01",
+      "role": "patient",
+      "display_name": "Тестовый пациент «Первый визит»",
+      "about": "Первичное обращение. Истории наблюдения ещё нет.",
+      "photo": {
+        "mode": "silhouette_placeholder",
+        "server_upload": false
+      },
+      "visible_to": "self_only"
+    },
+    {
+      "user_id": "demo_doctor_invited_01",
+      "role": "doctor",
+      "display_name": "Дарья Лесная (вымышленный персонаж)",
+      "specialty": "psychiatry",
+      "public_visibility": false,
+      "clinic_id": "clinic_01",
+      "photo": {
+        "mode": "illustration_placeholder",
+        "server_upload": false
+      },
+      "education": [
+        {
+          "id": "edu_demo_01",
+          "type": "specialist",
+          "institution": "Учебный медицинский институт «Горизонт» (вымышленный)",
+          "year_from": 2012,
+          "year_to": 2018,
+          "status": "completed"
+        },
+        {
+          "id": "edu_demo_02",
+          "type": "residency",
+          "institution": "Учебный центр клинических практик (вымышленный)",
+          "year_from": 2018,
+          "year_to": 2020,
+          "status": "completed"
+        }
+      ],
+      "certificates": [
+        {
+          "id": "cert_demo_01",
+          "title": "Учебный курс клинического интервьюирования",
+          "issuer": "Вымышленная образовательная площадка",
+          "year": 2024,
+          "verified": false
+        }
+      ],
+      "publications": [
+        {
+          "id": "pub_demo_01",
+          "title": "Учебный обзор организации наблюдений между визитами",
+          "journal": "Демонстрационные материалы проекта",
+          "published_at": "2025-04",
+          "doi": null,
+          "verified": false
+        }
+      ]
+    }
+  ]
+}

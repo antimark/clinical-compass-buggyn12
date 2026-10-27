@@ -1,0 +1,459 @@
+openapi: 3.1.0
+info:
+  title: Clinical Compass — Optional Clinic Admin PII Access
+  version: 0.1.0
+  description: >
+    Tenant-specific, versioned and patient-approved identity/contact read permissions.
+    Personal fields are never automatically visible to CLINIC_ADMIN. This document
+    describes the isolated module, not the entire Clinical Compass clinical API.
+servers:
+  - url: http://127.0.0.1:5000
+security:
+  - sessionCookie: []
+tags:
+  - name: Authentication
+  - name: Platform configuration
+  - name: Patient permissions
+  - name: Clinic operations
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: session
+  parameters:
+    csrf:
+      in: header
+      name: X-CSRF-Token
+      required: true
+      schema: { type: string }
+      description: Issued from /auth/csrf or returned after login
+    org:
+      in: path
+      name: org_id
+      required: true
+      schema: { type: integer, minimum: 1 }
+    link:
+      in: path
+      name: link_id
+      required: true
+      schema: { type: integer, minimum: 1 }
+    patientRef:
+      in: path
+      name: patient_ref
+      required: true
+      schema: { type: string, format: uuid }
+    fieldKey:
+      in: path
+      name: field_key
+      required: true
+      schema: { type: string, pattern: '^[A-Za-z_][A-Za-z0-9_]*$' }
+    offset:
+      in: query
+      name: offset
+      schema: { type: integer, minimum: 0, default: 0 }
+    limit:
+      in: query
+      name: limit
+      schema: { type: integer, minimum: 1, maximum: 500, default: 50 }
+  schemas:
+    Error:
+      type: object
+      required: [error, message]
+      properties:
+        error: { type: string, enum: [FORBIDDEN, NOT_FOUND, BAD_REQUEST, UNAUTHORIZED, METHOD_NOT_ALLOWED] }
+        message: { type: string }
+    Ok:
+      type: object
+      properties:
+        ok: { type: boolean, const: true }
+    PatientView:
+      type: object
+      required: [patient_ref, fields]
+      additionalProperties: false
+      properties:
+        patient_ref: { type: string, description: Pseudonymous tenant-local patient reference }
+        fields:
+          type: object
+          additionalProperties: { type: string }
+          description: Only currently permitted readable identity/contact fields
+    PatientList:
+      type: object
+      required: [items, total, offset, limit]
+      properties:
+        items:
+          type: array
+          items: { $ref: '#/components/schemas/PatientView' }
+        total: { type: integer }
+        offset: { type: integer }
+        limit: { type: integer }
+    Template:
+      type: object
+      required: [id, key, version, read_fields]
+      properties:
+        id: { type: integer }
+        key: { type: string }
+        version: { type: integer }
+        read_fields:
+          type: array
+          items: { type: string }
+    Appointment:
+      type: object
+      properties:
+        id: { type: integer }
+        doctor_user_id: { type: integer }
+        start_at: { type: string, format: date-time }
+        status: { type: string, enum: [REQUESTED, CONFIRMED, CANCELLED] }
+        patient: { $ref: '#/components/schemas/PatientView' }
+  responses:
+    Forbidden:
+      description: Unauthorized tenant, patient or field operation
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    Unauthorized:
+      description: Bad credentials
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    BadRequest:
+      description: Invalid payload or field
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+paths:
+  /api/v1/auth/csrf:
+    get:
+      tags: [Authentication]
+      summary: Obtain CSRF token and session cookie
+      security: []
+      responses:
+        '200':
+          description: CSRF token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: { csrf_token: { type: string } }
+  /api/v1/auth/login:
+    post:
+      tags: [Authentication]
+      summary: Authenticate user (issues new CSRF token)
+      security: []
+      parameters:
+        - { $ref: '#/components/parameters/csrf' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password]
+              additionalProperties: false
+              properties:
+                username: { type: string }
+                password: { type: string, format: password }
+      responses:
+        '200':
+          description: Signed cookie and new CSRF token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean }
+                  csrf_token: { type: string }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /api/v1/auth/logout:
+    post:
+      tags: [Authentication]
+      summary: End current session
+      parameters: [{ $ref: '#/components/parameters/csrf' }]
+      responses:
+        '200': { description: Session ended }
+  /api/v1/auth/me:
+    get:
+      tags: [Authentication]
+      summary: Return authenticated user ID only
+      responses:
+        '200':
+          description: Identity
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: { user_id: { type: integer } }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/admin/fields:
+    post:
+      tags: [Platform configuration]
+      summary: Register new dynamic field and whether it is admin PII eligible
+      parameters: [{ $ref: '#/components/parameters/csrf' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [field_key, category, admin_pii_eligible]
+              properties:
+                field_key: { type: string }
+                category: { type: string, enum: [IDENTITY, CONTACT, CLINICAL, OTHER] }
+                admin_pii_eligible: { type: boolean }
+      responses:
+        '201': { description: Registered }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/admin/features/clinic-admin-pii:
+    patch:
+      tags: [Platform configuration]
+      summary: Enable or disable global or organization-level feature flag
+      description: Omit organization_id to modify the GLOBAL flag. Missing flag means disabled.
+      parameters: [{ $ref: '#/components/parameters/csrf' }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [enabled]
+              properties:
+                enabled: { type: boolean }
+                organization_id: { type: [integer, 'null'], minimum: 1 }
+      responses:
+        '200': { description: Flag committed }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/admin/clinics/{org_id}/pii-templates:
+    post:
+      tags: [Platform configuration]
+      summary: Publish immutable template version for clinic
+      parameters:
+        - { $ref: '#/components/parameters/org' }
+        - { $ref: '#/components/parameters/csrf' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [template_key, version, read_fields]
+              properties:
+                template_key: { type: string }
+                version: { type: integer, minimum: 1 }
+                read_fields:
+                  type: array
+                  uniqueItems: true
+                  items: { type: string }
+      responses:
+        '201':
+          description: Template ID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: { template_id: { type: integer } }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/me/clinic-links:
+    get:
+      tags: [Patient permissions]
+      summary: List own active tenant relationships and local pseudonyms
+      responses:
+        '200': { description: Array of link_id, clinic_id and patient_ref }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/me/clinic-links/{link_id}/pii-templates:
+    get:
+      tags: [Patient permissions]
+      summary: Templates proposed for patient's own clinic relationship
+      parameters: [{ $ref: '#/components/parameters/link' }]
+      responses:
+        '200':
+          description: Available versions and explicitly allowed fields
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/Template' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/me/clinic-links/{link_id}/pii-policy:
+    put:
+      tags: [Patient permissions]
+      summary: Patient explicitly accepts a specific immutable template version
+      parameters:
+        - { $ref: '#/components/parameters/link' }
+        - { $ref: '#/components/parameters/csrf' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [template_id, confirmed]
+              properties:
+                template_id: { type: integer }
+                confirmed: { type: boolean, const: true }
+      responses:
+        '200': { description: Consent recorded, existing overrides cleared }
+        '403': { $ref: '#/components/responses/Forbidden' }
+    delete:
+      tags: [Patient permissions]
+      summary: Revoke PII policy for own clinic relationship
+      parameters:
+        - { $ref: '#/components/parameters/link' }
+        - { $ref: '#/components/parameters/csrf' }
+      responses:
+        '200': { description: Policy deactivated }
+  /api/v1/me/clinic-links/{link_id}/pii-overrides/{field_key}:
+    put:
+      tags: [Patient permissions]
+      summary: Patient allows, denies or removes one field-level permission
+      parameters:
+        - { $ref: '#/components/parameters/link' }
+        - { $ref: '#/components/parameters/fieldKey' }
+        - { $ref: '#/components/parameters/csrf' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [effect]
+              properties:
+                effect: { type: string, enum: [ALLOW, DENY, REMOVE] }
+                expires_at: { type: [string, 'null'], format: date-time }
+      responses:
+        '200': { description: Override updated }
+        '400': { $ref: '#/components/responses/BadRequest' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/me/profile-fields/{field_key}:
+    patch:
+      tags: [Patient permissions]
+      summary: Patient edits own encrypted identity/contact field
+      parameters:
+        - { $ref: '#/components/parameters/fieldKey' }
+        - { $ref: '#/components/parameters/csrf' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [value]
+              properties: { value: { type: string, maxLength: 500 } }
+      responses:
+        '200': { description: Saved }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/clinics/{org_id}/patients:
+    get:
+      tags: [Clinic operations]
+      summary: List clinic patient refs and per-row permitted identity/contact fields
+      parameters:
+        - { $ref: '#/components/parameters/org' }
+        - { $ref: '#/components/parameters/offset' }
+        - { $ref: '#/components/parameters/limit' }
+        - { in: query, name: filter_field, schema: { type: string } }
+        - { in: query, name: filter_value, schema: { type: string } }
+        - { in: query, name: sort_field, schema: { type: string } }
+      responses:
+        '200':
+          description: Safe per-patient projection, no unauthorized filters or sorting
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/PatientList' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/clinics/{org_id}/patients/export:
+    get:
+      tags: [Clinic operations]
+      summary: Paginated JSON export filtered by effective field rights
+      parameters:
+        - { $ref: '#/components/parameters/org' }
+        - { $ref: '#/components/parameters/offset' }
+        - { $ref: '#/components/parameters/limit' }
+        - { in: query, name: fields, schema: { type: string }, description: 'Comma-separated fields, e.g. first_name,phone' }
+      responses:
+        '200':
+          description: Authorization-filtered patient rows (max 500)
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/PatientList' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/clinics/{org_id}/patients/{patient_ref}:
+    get:
+      tags: [Clinic operations]
+      summary: Read only permitted identity/contact fields for a tenant-local reference
+      parameters:
+        - { $ref: '#/components/parameters/org' }
+        - { $ref: '#/components/parameters/patientRef' }
+      responses:
+        '200':
+          description: Safe projection
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/PatientView' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '404': { description: No matching patient in this clinic }
+  /api/v1/clinics/{org_id}/appointments:
+    get:
+      tags: [Clinic operations]
+      summary: List appointments with patient-level PII projection
+      parameters:
+        - { $ref: '#/components/parameters/org' }
+        - { $ref: '#/components/parameters/offset' }
+        - { $ref: '#/components/parameters/limit' }
+      responses:
+        '200':
+          description: Paginated appointment items
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: '#/components/schemas/Appointment' }
+                  total: { type: integer }
+                  limit: { type: integer }
+                  offset: { type: integer }
+        '403': { $ref: '#/components/responses/Forbidden' }
+    post:
+      tags: [Clinic operations]
+      summary: Request appointment without revealing medical reasons
+      parameters:
+        - { $ref: '#/components/parameters/org' }
+        - { $ref: '#/components/parameters/csrf' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [patient_ref, doctor_user_id, start_at]
+              additionalProperties: false
+              properties:
+                patient_ref: { type: string }
+                doctor_user_id: { type: integer }
+                start_at: { type: string, format: date-time }
+      responses:
+        '201':
+          description: Appointment requested and notification recorded
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: { appointment_id: { type: integer } }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /api/v1/clinics/{org_id}/notifications:
+    get:
+      tags: [Clinic operations]
+      summary: List administrative scheduling notifications only
+      parameters:
+        - { $ref: '#/components/parameters/org' }
+        - { $ref: '#/components/parameters/offset' }
+        - { $ref: '#/components/parameters/limit' }
+      responses:
+        '200':
+          description: Paginated allowed administrative event types and safe patient projection
+        '403': { $ref: '#/components/responses/Forbidden' }

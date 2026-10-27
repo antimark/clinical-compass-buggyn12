@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Выбор роли · Клинический Компас{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/access.css') }}">{% endblock %}
+{% block header_right %}<a class="header-back" href="{{ url_for('index') }}"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg><span>На главную</span></a>{% endblock %}
+{% block content %}
+<!-- Выбор роли ведёт на отдельную страницу регистрации. -->
+<main class="access-page" id="main-content">
+  <section class="access-card access-choice" aria-labelledby="choose-title">
+    <span class="access-kicker">Создание учётной записи</span>
+    <h1 id="choose-title">Выберите свою роль.</h1>
+    <p class="access-lead">Для регистрации нужен персональный ключ: пациент получает его от врача, а специалист — от администратора. Логин и пароль вы создаёте сами.</p>
+    <div class="choice-grid">
+      <a class="choice-card" href="{{ url_for('register', role='patient') }}"><span class="choice-icon"><svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg></span><strong>Я пациент</strong><span>Для сопровождения своего лечения</span><svg class="icon choice-arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+      <a class="choice-card" href="{{ url_for('register', role='specialist') }}"><span class="choice-icon"><svg class="icon" aria-hidden="true"><use href="#i-medical"></use></svg></span><strong>Я специалист</strong><span>Для работы с пациентами</span><svg class="icon choice-arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+    </div>
+    <p class="access-bottom">Уже есть аккаунт? <a href="{{ url_for('login') }}">Войти</a></p>
+  </section>
+</main>
+{% endblock %}

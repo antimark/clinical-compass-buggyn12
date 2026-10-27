@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://clinical-compass.example/schemas/diagnostic-instrument-v3.json",
+  "title": "Clinical Compass Diagnostic Instrument Catalog v3",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "instrument_id",
+    "instrument_version",
+    "language",
+    "clinical_content_status",
+    "information",
+    "ui",
+    "questions",
+    "modules",
+    "scoring",
+    "licensing",
+    "publication"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "3.0.0"
+    },
+    "instrument_id": {
+      "type": "string",
+      "minLength": 2
+    },
+    "instrument_version": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "clinical_content_status": {
+      "enum": [
+        "metadata_only_license_required",
+        "synthetic_nonvalidated_ux_only",
+        "licensed_clinically_approved"
+      ]
+    },
+    "information": {
+      "type": "object",
+      "required": [
+        "title",
+        "purpose_clinician",
+        "recommended_for",
+        "icd10",
+        "validation"
+      ]
+    },
+    "ui": {
+      "type": "object",
+      "required": [
+        "audience",
+        "patient_assignable",
+        "licensed_content_loaded",
+        "assignment_guard"
+      ],
+      "properties": {
+        "patient_assignable": {
+          "type": "boolean"
+        },
+        "licensed_content_loaded": {
+          "type": "boolean"
+        },
+        "audience": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ]
+      }
+    },
+    "response_sets": {
+      "type": "object"
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title"
+        ]
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "required": [
+        "type",
+        "auto_scoring_enabled",
+        "diagnostic_decision"
+      ]
+    },
+    "licensing": {
+      "type": "object",
+      "required": [
+        "rights_holder",
+        "commercial",
+        "research",
+        "open",
+        "permission_needed_for_app",
+        "free_public_republication"
+      ]
+    },
+    "publication": {
+      "type": "object",
+      "required": [
+        "is_patient_assignable",
+        "is_clinically_approved",
+        "in_public_demo"
+      ]
+    }
+  }
+}

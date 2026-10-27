@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block title %}Кабинет врача · Клинический Компас{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/specialist.css') }}">{% endblock %}
+{% block header_right %}
+  <nav class="doctor-header-nav" aria-label="Навигация врача">
+    <span class="doctor-current" aria-current="page">Рабочее пространство</span>
+    <a href="{{ url_for('login') }}?role=specialist">Выйти из демо</a>
+  </nav>
+{% endblock %}
+{% block content %}
+<main class="doctor-dashboard" id="doctorDashboard">
+  <div class="doctor-page-head">
+    <div class="doctor-heading-text">
+      <p class="doctor-kicker">РАБОЧЕЕ ПРОСТРАНСТВО ВРАЧА</p>
+      <h1>Ваши пациенты</h1>
+      <p class="doctor-intro" id="doctorIntro">Начните с событий, требующих внимания. Приоритет не равен тяжести диагноза.</p>
+    </div>
+    <label class="doctor-config">
+      <span>Конфигурация специалиста</span>
+      <select id="doctorSpecialty" aria-label="Конфигурация специалиста">
+        <option value="psychiatrist">Психиатр</option>
+        <option value="therapist">Терапевт</option>
+        <option value="neurologist">Невролог</option>
+      </select>
+    </label>
+  </div>
+
+  <section class="doctor-alert" id="doctorAlert" aria-labelledby="doctorAlertTitle">
+    <div class="doctor-alert-copy">
+      <span class="doctor-alert-label" id="doctorAlertLabel">КРИТИЧЕСКИЙ СИГНАЛ · SYNTHETIC</span>
+      <h2 id="doctorAlertTitle">Синтетический пациент А — требуется оценка сигнала</h2>
+      <p id="doctorAlertCaption">Сигнал по заранее заданному демонстрационному правилу. Не является автоматическим клиническим решением.</p>
+    </div>
+    <button class="doctor-action doctor-action-danger" id="doctorAlertOpen" type="button" data-open="signal-001">Открыть и оценить <span aria-hidden="true">→</span></button>
+  </section>
+
+  <section class="doctor-metrics" aria-label="Сводка по работе" id="doctorMetrics">
+    <button class="doctor-metric" type="button" data-view="signals" data-status="new" aria-label="Показать критические сигналы">
+      <span class="doctor-metric-label">Критические сигналы</span>
+      <strong class="doctor-metric-number is-danger" id="doctorCriticalCount">1</strong>
+      <span class="doctor-metric-note">Требуется подтверждение врача</span>
+    </button>
+    <button class="doctor-metric" type="button" data-view="requests" aria-label="Показать запросы на приём">
+      <span class="doctor-metric-label">Запросы на визит</span>
+      <strong class="doctor-metric-number is-amber" id="doctorRequestsCount">3</strong>
+      <span class="doctor-metric-note">Отдельная рабочая очередь</span>
+    </button>
+    <button class="doctor-metric" type="button" data-view="patients" aria-label="Перейти к списку пациентов">
+      <span class="doctor-metric-label">Мониторинг</span>
+      <strong class="doctor-metric-number">12</strong>
+      <span class="doctor-metric-note">Синтетические профили</span>
+    </button>
+    <button class="doctor-metric" type="button" data-view="tasks" aria-label="Посмотреть задания пациентам">
+      <span class="doctor-metric-label">Задания пациентам</span>
+      <strong class="doctor-metric-number is-teal">7</strong>
+      <span class="doctor-metric-note">Ожидают выполнения</span>
+    </button>
+  </section>
+
+  <section class="doctor-module" aria-label="Список и события пациентов">
+    <div class="doctor-tabs" role="tablist" aria-label="Разделы рабочего пространства">
+      <button id="doctorTabPatients" class="doctor-tab is-active" data-view="patients" type="button" role="tab" aria-selected="true" aria-controls="doctorPanel">Пациенты</button>
+      <button id="doctorTabRequests" class="doctor-tab" data-view="requests" type="button" role="tab" aria-selected="false" aria-controls="doctorPanel">Запросы на приём · <span id="doctorTabRequestsCount">3</span></button>
+      <button id="doctorTabSignals" class="doctor-tab" data-view="signals" type="button" role="tab" aria-selected="false" aria-controls="doctorPanel">Журнал сигналов</button>
+    </div>
+
+    <div class="doctor-toolbar">
+      <label class="sr-only" for="doctorSearch">Поиск по разрешённым полям</label>
+      <input id="doctorSearch" class="doctor-search" type="search" placeholder="Поиск по разрешённым полям" autocomplete="off">
+      <label class="sr-only" for="doctorFilter">Приоритет</label>
+      <select id="doctorFilter" class="doctor-filter">
+        <option value="all">Все приоритеты</option>
+        <option value="urgent">Срочно</option>
+        <option value="elevated">Повышенный</option>
+        <option value="routine">Плановый</option>
+      </select>
+      <p class="doctor-table-note" id="doctorSortDescription">По умолчанию: необходимость внимания ↓</p>
+    </div>
+
+    <div id="doctorPanel" role="tabpanel" aria-labelledby="doctorTabPatients" tabindex="0">
+      <div class="doctor-table-scroll">
+        <table class="doctor-table" id="doctorTable">
+          <thead id="doctorTableHead">
+            <tr><th scope="col">ПРИОРИТЕТ</th><th scope="col">ПАЦИЕНТ</th><th scope="col">СОСТОЯНИЕ</th><th scope="col">ДИНАМИКА</th><th scope="col">ПОСЛЕДНЕЕ НАБЛЮДЕНИЕ</th><th scope="col">ЧТО СДЕЛАТЬ</th></tr>
+          </thead>
+          <tbody id="doctorTableBody"></tbody>
+        </table>
+      </div>
+      <div id="doctorEmpty" class="doctor-empty" hidden>По заданным параметрам ничего не найдено. Попробуйте другой запрос или фильтр.</div>
+    </div>
+  </section>
+  <p class="doctor-disclaimer">Клинический Компас / макет · только синтетические демонстрационные данные · не медицинское изделие и не рабочий клинический сервис. Действия на странице не отправляются на сервер и не сохраняются.</p>
+</main>
+
+<dialog class="doctor-dialog" id="doctorDialog" aria-labelledby="doctorDialogTitle">
+  <div class="doctor-dialog-shell">
+    <div class="doctor-dialog-head">
+      <span class="doctor-kicker">ДЕМОНСТРАЦИОННАЯ КАРТОЧКА</span>
+      <button type="button" id="doctorDialogClose" class="doctor-dialog-close" aria-label="Закрыть">×</button>
+    </div>
+    <h2 id="doctorDialogTitle"></h2>
+    <p class="doctor-dialog-lead" id="doctorDialogDescription"></p>
+    <div class="doctor-dialog-info" id="doctorDialogInfo"></div>
+    <p class="doctor-dialog-caution">Это синтетический пример. Кнопки не формируют медицинские рекомендации, назначения или реальные записи в системе.</p>
+    <div class="doctor-dialog-actions">
+      <button class="doctor-action doctor-action-outline" id="doctorDialogCancel" type="button">Закрыть</button>
+      <button class="doctor-action doctor-action-primary" id="doctorDialogConfirm" type="button" hidden>Отметить просмотренным</button>
+    </div>
+  </div>
+</dialog>
+{% endblock %}
+{% block scripts %}<script defer src="{{ url_for('static', filename='js/specialist.js') }}"></script>{% endblock %}

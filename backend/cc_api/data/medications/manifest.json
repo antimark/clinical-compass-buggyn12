@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "created_date": "2026-10-18",
+  "reference_schema": "aviandr_maritupirdine_instruction(2).json",
+  "record_count": 8,
+  "records": [
+    {
+      "filename": "zoloft_sertraline_50mg.json",
+      "name": "Золофт",
+      "inn": "сертралин",
+      "registration_number": "ЛП-№(002851)-(РГ-RU)",
+      "atc": "N06AB06",
+      "adverse_effect_count": 21,
+      "registered_indication_count": 7,
+      "sha256": "e8f2ffdd3eb8d7d4a9fff3aa3746110f32ac368a308dfc2d7157dd790a57c95a"
+    },
+    {
+      "filename": "cipralex_escitalopram_10mg.json",
+      "name": "Ципралекс",
+      "inn": "эсциталопрам",
+      "registration_number": "ЛП-№(011897)-(РГ-RU)",
+      "atc": "N06AB10",
+      "adverse_effect_count": 26,
+      "registered_indication_count": 5,
+      "sha256": "e3e1e5111b82c77e28befa2b5941f9014ed129aef682142cea5b3a46a5d27e61"
+    },
+    {
+      "filename": "velaxin_venlafaxine_xr_75mg.json",
+      "name": "Велаксин",
+      "inn": "венлафаксин",
+      "registration_number": "ЛП-№(002093)-(РГ-RU)",
+      "atc": "N06AX16",
+      "adverse_effect_count": 21,
+      "registered_indication_count": 4,
+      "sha256": "a61351e24387ac854dfc6f9ee61e02d1cecbc32b444d3d1578ba7a56d2453c15"
+    },
+    {
+      "filename": "seroquel_quetiapine_ir_100mg.json",
+      "name": "Сероквель",
+      "inn": "кветиапин",
+      "registration_number": "ЛП-№(005709)-(РГ-RU)",
+      "atc": "N05AH04",
+      "adverse_effect_count": 20,
+      "registered_indication_count": 3,
+      "sha256": "cd5542e9eca964eb2341e013606e56ee1cb5a746d9f813addbf6121d5521f7a3"
+    },
+    {
+      "filename": "lamictal_lamotrigine_25mg.json",
+      "name": "Ламиктал",
+      "inn": "ламотриджин",
+      "registration_number": "ЛП-№(000722)-(РГ-RU)",
+      "atc": "N03AX09",
+      "adverse_effect_count": 16,
+      "registered_indication_count": 2,
+      "sha256": "749ae3f2c4513ba50cadc99de0392aa639b5f2d65ef5ef0a5fa1fdd4406bdee3"
+    },
+    {
+      "filename": "risperidone_canon_2mg.json",
+      "name": "Рисперидон Канон",
+      "inn": "рисперидон",
+      "registration_number": "ЛП-№(010580)-(РГ-RU)",
+      "atc": "N05AX08",
+      "adverse_effect_count": 33,
+      "registered_indication_count": 6,
+      "sha256": "839069c92b229c915729d4bed9a8f453250e4c54baf8b27fbe67a31b1e19285c"
+    },
+    {
+      "filename": "atomoxetine_canon_40mg.json",
+      "name": "Атомоксетин Канон",
+      "inn": "атомоксетин",
+      "registration_number": "ЛП-№(004835)-(РГ-RU)",
+      "atc": "N06BA09",
+      "adverse_effect_count": 23,
+      "registered_indication_count": 3,
+      "sha256": "6651f9bf55dd7af2ca9371acd5b64acdfd050d24c33574ac0fe0d2963b353a16"
+    },
+    {
+      "filename": "aviandr_maritupirdine_instruction(2).json",
+      "name": "Авиандр",
+      "inn": "маритупирдин",
+      "registration_number": "ЛП-№(002445)-(РГ-RU)",
+      "atc": "N05BX",
+      "adverse_effect_count": 21,
+      "registered_indication_count": 2,
+      "sha256": "1601b02c3af055871c53aecbd26a364db8b369910076f3e2d3dcde38b9829f48"
+    }
+  ],
+  "selection_basis": "Приоритетные психометрические шкалы каталога тестов (депрессия, тревога, БАР, психоз, СДВГ) и соответствующие зарегистрированные показания. Тесты не являются основаниями для автоматического назначения.",
+  "safety_notice": "Справочная тестовая база. Требует проверки полноты, регистрационного статуса и актуальных утвержденных инструкций ГРЛС перед клиническим применением; не для автоматического назначения.",
+  "updated_date": "2026-10-19"
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://clinical-compass.example/schemas/phase6/extraction-result-1.0.0.json",
+  "title": "Clinical Intelligence Extraction Result",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "tag_catalog_version", "source_id", "source_revision", "source_type", "provider", "analysis_status", "facts", "missing_information", "requires_human_review"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "tag_catalog_version": {"type":"string", "minLength":1},
+    "source_id": {"type":"string", "minLength":1},
+    "source_revision": {"type":"integer", "minimum":1},
+    "source_type": {"enum":["journal_entry","clinician_note","message","previsit_case","transcript_segment"]},
+    "provider": {"enum":["deterministic_mock","local_llm"]},
+    "analysis_status": {"enum":["completed","requires_review"]},
+    "facts": {"type":"array", "maxItems":64, "items":{"$ref":"#/$defs/fact"}},
+    "missing_information": {"type":"array", "maxItems":30, "uniqueItems":true, "items":{"type":"string", "maxLength":80}},
+    "requires_human_review": {"const":true}
+  },
+  "$defs": {
+    "fact": {
+      "type":"object", "additionalProperties":false,
+      "required":["tag_code","assertion","temporality","evidence","speaker","review_status"],
+      "properties": {
+        "tag_code":{"type":"string","pattern":"^[a-z][a-z0-9_]{1,79}$"},
+        "assertion":{"enum":["asserted","negated","uncertain"]},
+        "temporality":{"enum":["current","past","future","unknown"]},
+        "evidence":{"$ref":"#/$defs/evidence"},
+        "speaker":{"enum":["patient","clinician","other","unknown"]},
+        "review_status":{"const":"proposed"}
+      }
+    },
+    "evidence": {
+      "type":"object", "additionalProperties":false,
+      "required":["start","end","quote"],
+      "properties":{"start":{"type":"integer","minimum":0},"end":{"type":"integer","minimum":1},"quote":{"type":"string","minLength":1,"maxLength":2000}}
+    }
+  }
+}

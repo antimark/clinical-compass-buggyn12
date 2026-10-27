@@ -1,0 +1,13 @@
+Flask>=3.1,<4
+SQLAlchemy>=2.0,<3
+alembic>=1.16,<2
+PyJWT[crypto]>=2.9,<3
+pytest>=8,<10
+PyYAML>=6,<7
+jsonschema>=4.20,<5
+psycopg[binary]>=3.2,<4
+
+playwright>=1.56,<2
+
+# Local QR rendering: SVG only, no image service or Pillow required.
+qrcode>=8.2,<9

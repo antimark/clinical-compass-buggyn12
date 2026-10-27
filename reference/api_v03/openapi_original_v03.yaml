@@ -1,0 +1,375 @@
+openapi: 3.1.0
+info:
+  title: Clinical Compass API
+  version: 0.3.0
+  description: >-
+    Proposed contract for 10-day synthetic-data hackathon. Only endpoints with
+    x-implementation: starter are implemented in the sample; all others planned.
+servers:
+  - url: /api/v1
+security:
+  - sessionCookie: []
+tags:
+  - name: Auth
+  - name: Doctor
+  - name: Patient
+  - name: Clinical workflow
+  - name: AI
+  - name: Research
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      security: []
+      x-implementation: starter
+      tags: [Auth]
+      responses:
+        '200': { description: Service alive, content: { application/json: { schema: { $ref: '#/components/schemas/Health' } } } }
+  /auth/me:
+    get:
+      operationId: getSession
+      x-implementation: starter
+      tags: [Auth]
+      responses:
+        '200': { description: Current session and CSRF, content: { application/json: { schema: { $ref: '#/components/schemas/AuthContext' } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+  /dev/switch-user:
+    post:
+      operationId: devSwitchUser
+      x-implementation: starter
+      description: Demo-only, never enabled on public or real-patient environments.
+      security: []
+      tags: [Auth]
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [user_id], properties: { user_id: { type: string, enum: [doc_psy, doc_ther, pat_01, researcher_01, clinic_01] } } } } }
+      responses:
+        '200': { description: Demo identity selected, content: { application/json: { schema: { $ref: '#/components/schemas/AuthContext' } } } }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /doctors/me/patients:
+    get:
+      operationId: getDoctorPatients
+      x-implementation: starter
+      tags: [Doctor]
+      parameters:
+        - { name: q, in: query, schema: { type: string, maxLength: 100 } }
+        - { name: sort, in: query, schema: { type: string, enum: [attention_desc, name_asc, last_activity_desc], default: attention_desc } }
+        - { name: page, in: query, schema: { type: integer, minimum: 1, default: 1 } }
+        - { name: per_page, in: query, schema: { type: integer, minimum: 1, maximum: 100, default: 20 } }
+      responses:
+        '200': { description: ACL-filtered patients, content: { application/json: { schema: { $ref: '#/components/schemas/DoctorPatientList' } } } }
+        '401': { $ref: '#/components/responses/Unauthorized' }
+        '403': { $ref: '#/components/responses/Forbidden' }
+  /doctors/me/patients/{patient_id}/overview:
+    get:
+      operationId: getDoctorPatientOverview
+      x-implementation: starter
+      tags: [Doctor]
+      parameters:
+        - { $ref: '#/components/parameters/PatientId' }
+      responses:
+        '200': { description: Filtered DTO, no fields without READ grant, content: { application/json: { schema: { $ref: '#/components/schemas/PatientOverview' } } } }
+        '404': { $ref: '#/components/responses/NotFound' }
+  /doctors/me/alerts:
+    get:
+      operationId: getDoctorAlerts
+      x-implementation: starter
+      tags: [Doctor]
+      parameters:
+        - { name: status, in: query, schema: { type: string, enum: [open, acknowledged, assessed] } }
+      responses:
+        '200': { description: Alert inbox, content: { application/json: { schema: { type: object, required: [items], properties: { items: { type: array, items: { $ref: '#/components/schemas/Alert' } } } } } } }
+  /alerts/{alert_id}/acknowledge:
+    post:
+      operationId: acknowledgeAlert
+      x-implementation: starter
+      tags: [Clinical workflow]
+      parameters:
+        - { name: alert_id, in: path, required: true, schema: { type: string } }
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        content: { application/json: { schema: { type: object, properties: {} } } }
+      responses:
+        '200': { description: Acknowledged by clinician, content: { application/json: { schema: { $ref: '#/components/schemas/Alert' } } } }
+        '403': { $ref: '#/components/responses/Forbidden' }
+        '409': { $ref: '#/components/responses/Conflict' }
+  /alerts/{alert_id}/assessment:
+    post:
+      operationId: assessAlert
+      x-implementation: planned
+      tags: [Clinical workflow]
+      parameters:
+        - { name: alert_id, in: path, required: true, schema: { type: string } }
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [decision, note], properties: { decision: { type: string, enum: [contact_requested, urgent_evaluation, monitor, escalate] }, note: { type: string, maxLength: 5000 } } } } }
+      responses:
+        '200': { description: Recorded physician assessment }
+  /patients/me:
+    get:
+      operationId: getPatientSelf
+      x-implementation: planned
+      tags: [Patient]
+      responses:
+        '200': { description: Self profile }
+  /patients/me/check-ins:
+    post:
+      operationId: createPatientCheckin
+      x-implementation: starter
+      tags: [Patient]
+      parameters:
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/CheckinCreate' } } }
+      responses:
+        '201': { description: Stored observation, content: { application/json: { schema: { $ref: '#/components/schemas/CheckinResult' } } } }
+        '422': { $ref: '#/components/responses/Validation' }
+  /patients/me/questionnaires/{request_id}/responses:
+    post:
+      operationId: submitQuestionnaire
+      x-implementation: planned
+      tags: [Patient]
+      parameters:
+        - { name: request_id, in: path, required: true, schema: { type: string } }
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [answers], properties: { answers: { type: object, additionalProperties: { type: integer } }, questionnaire_version: { type: string } } } } }
+      responses:
+        '201': { description: Stored and clinically validated scoring }
+  /patients/me/medication-reports:
+    post:
+      operationId: createMedicationReport
+      x-implementation: planned
+      tags: [Patient]
+      parameters:
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { $ref: '#/components/schemas/MedicationReportCreate' } } }
+      responses:
+        '201': { description: Self-reported adherence, approximation preserved }
+  /appointments/requests:
+    post:
+      operationId: requestAppointment
+      x-implementation: planned
+      tags: [Clinical workflow]
+      parameters:
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [clinician_id], properties: { clinician_id: { type: string }, reason: { type: string, maxLength: 2000 } } } } }
+      responses:
+        '201': { description: Appointment requested, not confirmed }
+  /questionnaire-requests:
+    post:
+      operationId: assignQuestionnaire
+      x-implementation: planned
+      tags: [Clinical workflow]
+      parameters:
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [patient_id, questionnaire_key], properties: { patient_id: { type: string }, questionnaire_key: { type: string }, due_at: { type: string, format: date-time } } } } }
+      responses:
+        '201': { description: Assigned to patient inbox }
+  /messages:
+    post:
+      operationId: postMessage
+      x-implementation: planned
+      tags: [Clinical workflow]
+      parameters:
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [thread_id, text], properties: { thread_id: { type: string }, text: { type: string, maxLength: 3000 } } } } }
+      responses:
+        '201': { description: Message in authorized thread }
+  /ai/chat:
+    post:
+      operationId: aiChat
+      x-implementation: planned
+      tags: [AI]
+      parameters:
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [message], properties: { message: { type: string, minLength: 1, maxLength: 2000 } } } } }
+      responses:
+        '200': { description: Scoped response with provider/mode label and safety fallback }
+  /ai/summaries:
+    post:
+      operationId: aiCreateSummary
+      x-implementation: planned
+      tags: [AI]
+      parameters:
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [patient_id, source_ids], properties: { patient_id: { type: string }, source_ids: { type: array, items: { type: string } } } } } }
+      responses:
+        '201': { description: Draft only, not a clinical decision }
+  /ai/summaries/{summary_id}/confirm:
+    post:
+      operationId: aiConfirmSummary
+      x-implementation: planned
+      tags: [AI]
+      parameters:
+        - { name: summary_id, in: path, required: true, schema: { type: string } }
+        - { $ref: '#/components/parameters/CsrfHeader' }
+      requestBody:
+        required: true
+        content: { application/json: { schema: { type: object, required: [edited_text, version], properties: { edited_text: { type: string }, version: { type: integer, minimum: 1 } } } } }
+      responses:
+        '200': { description: Confirmed human-authored record }
+  /research/datasets:
+    get:
+      operationId: listResearchDatasets
+      x-implementation: planned
+      tags: [Research]
+      responses:
+        '200': { description: Synthetic research datasets }
+  /research/datasets/{dataset_id}/cohort:
+    get:
+      operationId: getResearchCohort
+      x-implementation: planned
+      tags: [Research]
+      parameters:
+        - { name: dataset_id, in: path, required: true, schema: { type: string } }
+        - { name: medication_key, in: query, schema: { type: string } }
+        - { name: dose_band, in: query, schema: { type: string } }
+      responses:
+        '200': { description: Safe aggregate, counts below privacy minimum suppressed }
+components:
+  securitySchemes:
+    sessionCookie: { type: apiKey, in: cookie, name: session }
+  parameters:
+    PatientId: { name: patient_id, in: path, required: true, schema: { type: string } }
+    CsrfHeader: { name: X-CSRF-Token, in: header, required: true, schema: { type: string } }
+  responses:
+    Unauthorized: { description: Session required, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+    Forbidden: { description: Insufficient permissions, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+    NotFound: { description: Not found or access indistinguishable, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+    Validation: { description: Invalid request, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+    Conflict: { description: Invalid transition or optimistic conflict, content: { application/json: { schema: { $ref: '#/components/schemas/ErrorResponse' } } } }
+  schemas:
+    Health:
+      type: object
+      required: [status, service]
+      properties:
+        status: { type: string, const: ok }
+        service: { type: string, const: clinical-compass-api }
+    AuthContext:
+      type: object
+      required: [user, context, csrf_token, features]
+      properties:
+        user: { $ref: '#/components/schemas/User' }
+        context: { $ref: '#/components/schemas/Context' }
+        csrf_token: { type: string }
+        features: { type: object, additionalProperties: { type: boolean } }
+    User:
+      type: object
+      required: [id, display_name]
+      properties:
+        id: { type: string }
+        display_name: { type: string }
+    Context:
+      type: object
+      required: [role, organization_id]
+      properties:
+        role: { type: string, enum: [doctor, patient, clinic_admin, researcher] }
+        specialty: { type: [string, 'null'] }
+        organization_id: { type: string }
+    DoctorPatientList:
+      type: object
+      required: [items, page, per_page, total, sort, generated_at]
+      properties:
+        items: { type: array, items: { $ref: '#/components/schemas/PatientRow' } }
+        page: { type: integer, minimum: 1 }
+        per_page: { type: integer, minimum: 1 }
+        total: { type: integer, minimum: 0 }
+        sort: { type: string }
+        generated_at: { type: string, format: date-time }
+    PatientRow:
+      type: object
+      required: [id, display_name, attention_level, allowed_actions]
+      properties:
+        id: { type: string }
+        display_name: { type: string }
+        attention_level: { type: string, enum: [critical, high, routine, unknown] }
+        attention_reason: { type: [string, 'null'] }
+        diagnosis_label: { type: string, description: Optional; omitted without permission }
+        medication_label: { type: string, description: Optional; omitted without permission }
+        severity_label: { type: string, description: Optional; omitted without permission }
+        trend: { type: string, enum: [better, worse, stable, insufficient_data] }
+        last_activity_at: { type: [string, 'null'], format: date-time }
+        allowed_actions: { type: array, items: { type: string } }
+    PatientOverview:
+      type: object
+      required: [patient, sections, capabilities, generated_at]
+      properties:
+        patient: { $ref: '#/components/schemas/PatientRow' }
+        sections:
+          type: array
+          items:
+            type: object
+            required: [key, label]
+            properties:
+              key: { type: string }
+              label: { type: string }
+              data: { type: object, additionalProperties: true }
+        capabilities: { type: array, items: { type: string } }
+        generated_at: { type: string, format: date-time }
+    Alert:
+      type: object
+      required: [id, patient_id, severity, status, created_at]
+      properties:
+        id: { type: string }
+        patient_id: { type: string }
+        severity: { type: string, enum: [critical, high, routine] }
+        status: { type: string, enum: [open, acknowledged, assessed] }
+        created_at: { type: string, format: date-time }
+        acknowledged_at: { type: [string, 'null'], format: date-time }
+        reason_code: { type: string }
+    CheckinCreate:
+      type: object
+      additionalProperties: false
+      required: [mood_score, comparison]
+      properties:
+        mood_score: { type: integer, minimum: 1, maximum: 5 }
+        comparison: { type: string, enum: [better, same, worse, unsure] }
+        note: { type: string, maxLength: 2000 }
+        observed_at: { type: string, format: date-time, description: Optional time of event, preserve source precision }
+    CheckinResult:
+      type: object
+      required: [id, mood_score, comparison, recorded_at, source_type]
+      properties:
+        id: { type: string }
+        mood_score: { type: integer }
+        comparison: { type: string }
+        recorded_at: { type: string, format: date-time }
+        source_type: { type: string, const: patient_self_report }
+    MedicationReportCreate:
+      type: object
+      required: [prescription_id, mode, period_start, period_end]
+      properties:
+        prescription_id: { type: string }
+        mode: { type: string, enum: [daily, retrospective_approximate] }
+        period_start: { type: string, format: date }
+        period_end: { type: string, format: date }
+        took_doses: { type: [integer, 'null'], minimum: 0 }
+        missed_doses_estimate: { type: [number, 'null'], minimum: 0 }
+        note: { type: string }
+    ErrorResponse:
+      type: object
+      required: [error, request_id]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code: { type: string }
+            message: { type: string }
+        request_id: { type: string }

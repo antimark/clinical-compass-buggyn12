@@ -1,0 +1,355 @@
+{
+  "$schema": "../questionnaire.schema.json",
+  "schema_version": "1.0.0",
+  "instrument_id": "PHQ-2",
+  "instrument_version": "ru-1.0.0-draft",
+  "language": "ru-RU",
+  "clinical_content_status": "draft_pending_clinical_review",
+  "information": {
+    "title": {
+      "ru": "Опросник здоровья пациента — 2",
+      "en": "Patient Health Questionnaire-2",
+      "short": "PHQ-2"
+    },
+    "authors": [
+      "Kurt Kroenke",
+      "Robert L. Spitzer",
+      "Janet B. W. Williams"
+    ],
+    "first_validation_year": 2003,
+    "origin": "краткая версия PHQ-9",
+    "purpose_patient": "Помогает заметить признаки сниженного настроения и понять, стоит ли обсудить их со специалистом.",
+    "purpose_clinician": "Стандартизированный скрининг симптомов депрессии и наблюдение динамики, без самостоятельной постановки диагноза.",
+    "target_population": "Прежде всего взрослые в общей практике и клиническом наблюдении. Для детей, подростков и специальных групп нужны отдельные возрастные/популяционные обоснования.",
+    "recall_period": {
+      "value": 2,
+      "unit": "weeks",
+      "label": "Последние 2 недели"
+    },
+    "estimated_minutes": 1,
+    "recommended_for": {
+      "screening": {
+        "recommended": true,
+        "strength": "primary"
+      },
+      "symptom_monitoring": {
+        "recommended": false,
+        "strength": "not_preferred",
+        "note": "Рекомендуется преимущественно для быстрого скрининга; для мониторинга предпочтительнее полная версия."
+      },
+      "clinical_diagnosis": {
+        "recommended": false,
+        "note": "Не позволяет поставить или исключить диагноз; требуется клиническая оценка."
+      }
+    },
+    "icd10": {
+      "classification": "ICD-10",
+      "diagnosis_from_questionnaire": false,
+      "screening_targets": [
+        {
+          "code": "F32",
+          "name": "Депрессивный эпизод",
+          "role": "проверить клинические критерии при положительном скрининге"
+        },
+        {
+          "code": "F33",
+          "name": "Рекуррентное депрессивное расстройство",
+          "role": "рассматривать только с учётом анамнеза повторных эпизодов"
+        }
+      ],
+      "nonspecific_symptom_overlap": [
+        {
+          "code": "F41.2",
+          "name": "Смешанное тревожное и депрессивное расстройство",
+          "caveat": "Требует критериев сочетания симптомов; один PHQ не отделяет его от депрессии."
+        }
+      ],
+      "differentials_not_inferred_by_scale": [
+        {
+          "code": "F31",
+          "name": "Биполярное аффективное расстройство",
+          "caveat": "При наличии мании/гипомании в анамнезе депрессивные симптомы возможны в рамках БАР."
+        },
+        {
+          "code": "F43.2",
+          "name": "Расстройства адаптации",
+          "caveat": "Нужна оценка связи со стрессором и критериев МКБ-10."
+        }
+      ],
+      "coding_rule": "Баллы PHQ не определяют код F32.x/F33.x, текущий эпизод, наличие психотических симптомов или подтверждённый диагноз. Кодирование выполняет врач."
+    },
+    "references": [
+      {
+        "id": "kroenke2003",
+        "authors": "Kroenke K.; Spitzer R. L.; Williams J. B. W.",
+        "year": 2003,
+        "title": "The Patient Health Questionnaire-2: validity of a two-item depression screener",
+        "journal": "Medical Care",
+        "doi": "10.1097/01.MLR.0000093487.78664.3C",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14583691/",
+        "role": "original_short_form_validation",
+        "finding": "Порог ≥3 в исходной клинической выборке показал чувствительность 83% и специфичность 92% для большой депрессии."
+      },
+      {
+        "id": "kroenke2001",
+        "authors": "Kroenke K.; Spitzer R. L.; Williams J. B. W.",
+        "year": 2001,
+        "title": "The PHQ-9: validity of a brief depression severity measure",
+        "journal": "Journal of General Internal Medicine",
+        "doi": "10.1046/j.1525-1497.2001.016009606.x",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11556941/",
+        "role": "original_validation",
+        "finding": "Подтверждены свойства PHQ-9 как инструмента оценки тяжести симптомов и скрининга в первичной помощи; пороги тяжести 5/10/15/20."
+      },
+      {
+        "id": "pogosova2014",
+        "authors": "Погосова Н. В.; Довженко Т. В.; Бабин А. Г.; Курсаков А. А.; Выгодин В. А.",
+        "year": 2014,
+        "title": "Русскоязычная версия опросников PHQ-2 и 9: чувствительность и специфичность при выявлении депрессии у пациентов общемедицинской амбулаторной практики",
+        "journal": "Кардиоваскулярная терапия и профилактика",
+        "doi": "10.15829/1728-8800-2014-3-18-24",
+        "url": "https://doi.org/10.15829/1728-8800-2014-3-18-24",
+        "role": "russian_clinical_validation",
+        "finding": "Сравнение русских PHQ-2 и PHQ-9 с психиатрической оценкой по МКБ-10; оптимальные пороги в изученной выборке ≥3 и ≥10 соответственно."
+      }
+    ],
+    "text_source": {
+      "title": "Русская форма PHQ-9 (распространяемая версия опросника)",
+      "url": "https://m.steps2wellbeing.co.uk/_document/content/page_section/phq9_russian_for_russia_969.pdf",
+      "publisher": "Patient Health Questionnaire, русскоязычный бланк",
+      "verification": "Сопоставлена с русскоязычным примером Российского общества психиатров, но формальная экспертиза версии в Clinical Compass ещё не проведена.",
+      "secondary_url": "https://psychiatr.ru/education/slide/107"
+    },
+    "licensing": {
+      "instrument": "Оригинальные PHQ/GAD допускают воспроизведение, перевод и распространение без отдельного разрешения (с атрибуцией).",
+      "translation": "Конкретная русская редакция и право её цифровой дистрибуции должны быть подтверждены владельцем продукта.",
+      "notice": "Не удалять указания первоисточника и авторов."
+    },
+    "clinical_limitations": [
+      "Баллы не являются самостоятельным диагнозом и не определяют подтип/тяжесть расстройства по МКБ-10.",
+      "Порог скрининга и границы выраженности симптомов — разные сущности.",
+      "Языковые версии и пороги не всегда эквивалентны между популяциями."
+    ],
+    "licensing_v4": {
+      "rights_holder": "Original developers / Pfizer PHQ group",
+      "copyright_status": "original_public_domain",
+      "commercial_use": "original_allowed_translation_verify",
+      "research_use": "original_allowed_translation_verify",
+      "open_use": "original_allowed_translation_verify",
+      "electronic_administration": "original_allowed_translation_verify",
+      "public_distribution": "original_allowed_translation_verify",
+      "translation_rights": "russian_text_specific_rights_verify",
+      "patient_feedback_allowed": "clinical_safety_review",
+      "license_source_url": "https://www.phqscreeners.com/",
+      "last_verified_at": "2026-10-25",
+      "review_required": true,
+      "commercial_clearance": true,
+      "digital_clearance": true
+    },
+    "russian_release_status": "draft_pending_exact_adaptation_review"
+  },
+  "ui": {
+    "audience": [
+      "patient",
+      "clinician"
+    ],
+    "display_title": "PHQ-2",
+    "instruction": "Как часто за последние 2 недели Вас беспокоили следующие проблемы?",
+    "layout": {
+      "page_size": 2
+    },
+    "allow_draft": true,
+    "require_all_scored_answers": true
+  },
+  "questions": [
+    {
+      "id": "phq_q1",
+      "order": 1,
+      "text": "Вам не хотелось ничего делать",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "phq_q2",
+      "order": 2,
+      "text": "У Вас было плохое настроение, Вы были подавлены или испытывали чувство безысходности",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    }
+  ],
+  "supplementary_questions": [],
+  "scoring": {
+    "type": "sum",
+    "item_ids": [
+      "phq_q1",
+      "phq_q2"
+    ],
+    "min_score": 0,
+    "max_score": 6,
+    "missing_answer_policy": "incomplete_no_total",
+    "score_direction": "higher_is_more_symptomatic",
+    "positive_screen_cutoff": 3,
+    "positive_screen_semantics": "clinical_further_assessment_not_diagnosis",
+    "alternative_cutoffs": [],
+    "supplementary_in_total": false
+  },
+  "score_scale": {
+    "type": "screen_positive_binary",
+    "bands": [
+      {
+        "min": 0,
+        "max": 2,
+        "severity_code": "Ниже скринингового порога",
+        "patient": {
+          "heading": "Ниже скринингового порога",
+          "text": "По этому короткому опроснику выраженных признаков снижения настроения не выявлено. Он не исключает депрессию."
+        },
+        "clinician": {
+          "summary": "Ниже выбранного порога ≥3; отрицательный скрининг не исключает расстройства.",
+          "recommended_next_step": "При клинических жалобах всё равно рассмотреть PHQ-9 и интервью."
+        }
+      },
+      {
+        "min": 3,
+        "max": 6,
+        "severity_code": "Положительный скрининг",
+        "patient": {
+          "heading": "Положительный скрининг",
+          "text": "Отмечены признаки, которые стоит уточнить с помощью более подробных вопросов. Это не диагноз."
+        },
+        "clinician": {
+          "summary": "PHQ-2 ≥3 — положительный скрининг возможной депрессии.",
+          "recommended_next_step": "Назначить PHQ-9 и при необходимости диагностическое интервью."
+        }
+      }
+    ],
+    "patient_disclaimer": "Опросник не ставит диагноз и не заменяет медицинскую консультацию.",
+    "clinician_disclaimer": "Ни диапазон баллов, ни позитивный скрининг не дают основания автоматически выставить код МКБ-10."
+  },
+  "monitoring": {
+    "main_purpose": "screening",
+    "trend_compatible_with": [
+      "same_instrument_id",
+      "same_instrument_version",
+      "same_recall_period",
+      "same_scoring"
+    ],
+    "repeat_interval": "По назначению врача; в демонстрационном приложении может настраиваться индивидуально.",
+    "automatic_clinical_improvement_claim": false
+  },
+  "safety": {
+    "requires_clinician_review_before_production": true,
+    "never_auto_diagnose": true,
+    "never_auto_treat": true,
+    "do_not_equate_negative_screen_with_no_disorder": true
+  },
+  "derived_from": {
+    "instrument_id": "PHQ-9",
+    "question_ids": [
+      "phq_q1",
+      "phq_q2"
+    ],
+    "reuse_answers_when_recall_period_and_version_match": true,
+    "do_not_sum_with_full_instrument": "Не суммировать короткий и полный тест как два независимых измерения."
+  },
+  "priority": "P0",
+  "instrument_type": "self_report_scale",
+  "catalog_schema_version": "4.0.0",
+  "localization": {
+    "language": "ru",
+    "status": "russian_validated_in_literature_exact_local_wording_needs_medical_collation",
+    "russian_validation_source": "https://doi.org/10.15829/1728-8800-2014-3-18-24",
+    "text_rights_confirmed": false,
+    "release_approved": false,
+    "draft_segregated": false
+  },
+  "rights": {
+    "rights_holder": "Original developers / Pfizer PHQ group",
+    "copyright_status": "original_public_domain",
+    "commercial_use": "original_allowed_translation_verify",
+    "research_use": "original_allowed_translation_verify",
+    "open_use": "original_allowed_translation_verify",
+    "electronic_administration": "original_allowed_translation_verify",
+    "public_distribution": "original_allowed_translation_verify",
+    "translation_rights": "russian_text_specific_rights_verify",
+    "patient_feedback_allowed": "clinical_safety_review",
+    "license_source_url": "https://www.phqscreeners.com/",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "availability": {
+    "russian_form": "inherited_draft_review_pending",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.phqscreeners.com/",
+    "protected_material_embedded": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [
+      "F32",
+      "F33"
+    ],
+    "icd10_possible_overlap": [
+      "F41.2"
+    ],
+    "icd10_differentials": [
+      "F31",
+      "F43.2"
+    ],
+    "code_assignment_from_scale": false,
+    "icd11_context_text": ""
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "4.0.0",
+  "instrument_id": "ITI",
+  "instrument_version": "catalog-v4",
+  "priority": "P2",
+  "instrument_type": "clinician_structured_interview",
+  "clinical_content_status": "metadata_only_not_administrable",
+  "information": {
+    "title": {
+      "ru": "Международное интервью травмы ITI",
+      "short": "ITI"
+    },
+    "authors": "N.P. Roberts et al.",
+    "first_validation_year": 2025,
+    "purpose_clinician": "Диагностическое интервью для ПТСР и комплексного ПТСР по МКБ-11",
+    "purpose_patient": "Помогает структурировать обсуждение симптомов; не устанавливает диагноз.",
+    "recommended_for": {
+      "screening": false,
+      "symptom_monitoring": false,
+      "diagnostic_support": true,
+      "clinical_diagnosis": false
+    },
+    "target_population": "Взрослые, если не указано иное; применимость проверяется врачом.",
+    "icd10": {
+      "screening_targets": [
+        {
+          "code": "F43.1"
+        }
+      ],
+      "nonspecific_symptom_overlap": [],
+      "differentials_not_inferred_by_scale": [],
+      "diagnosis_from_questionnaire": false,
+      "coding_rule": "Порог скрининга, даже при выполнении алгоритма, не устанавливает диагноз и не определяет код МКБ-10."
+    },
+    "icd11_context_text": "МКБ-11: КПТСР 6B41, в МКБ-10 нет прямого отдельного эквивалента.",
+    "estimated_minutes": null,
+    "recall_period": "интервью",
+    "references": [
+      {
+        "url": "https://www.ptsd.va.gov/professional/assessment/adult-int/iti.asp",
+        "role": "primary_instrument_information"
+      }
+    ],
+    "clinical_limitations": "Самооценка и алгоритмическое соответствие критериям не заменяют клинического заключения.",
+    "question_count": null,
+    "source_note": "Форма по запросу обученного специалиста; нельзя изображать как свободно скачиваемый цифровой опросник."
+  },
+  "language": "ru",
+  "localization": {
+    "language": "ru",
+    "status": "ru_version_not_confirmed",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "draft_segregated": false,
+    "release_approved": false
+  },
+  "questions": [],
+  "response_sets": [],
+  "scales": [
+    {
+      "scale_id": "ptsd_diagnostic_modules",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "dso_diagnostic_modules",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    }
+  ],
+  "scoring": {
+    "type": "not_enabled_pending_exact_text_and_protocol",
+    "auto_scoring_enabled": false,
+    "max_score": null,
+    "diagnostic_decision": "clinician_only",
+    "quality_gates": [
+      "licensed_or_open_exact_text",
+      "validated_version",
+      "permission_check",
+      "medical_review"
+    ]
+  },
+  "interpretations": {
+    "patient": {
+      "summary": "Результат требует оценки лечащим специалистом.",
+      "no_diagnostic_claim": true
+    },
+    "clinician": {
+      "summary": "Оцените клинические критерии, продолжительность и дифференциальный диагноз.",
+      "do_not_auto_diagnose": true
+    }
+  },
+  "licensing": {
+    "rights_holder": "ITI authors / distribution via VA",
+    "copyright_status": "public_domain_claim_verify_specific_form",
+    "commercial_use": "specific_form_on_request_and_trained_admin",
+    "research_use": "trained_admin_form_request",
+    "open_use": "not_automatically_public_because_request_gate",
+    "electronic_administration": "request_permission_for_exact_form",
+    "public_distribution": "not_automatically_permitted",
+    "translation_rights": "translation_specific",
+    "patient_feedback_allowed": "clinician_interview_only",
+    "license_source_url": "https://www.ptsd.va.gov/professional/assessment/adult-int/iti.asp",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "rights": {
+    "rights_holder": "ITI authors / distribution via VA",
+    "copyright_status": "public_domain_claim_verify_specific_form",
+    "commercial_use": "specific_form_on_request_and_trained_admin",
+    "research_use": "trained_admin_form_request",
+    "open_use": "not_automatically_public_because_request_gate",
+    "electronic_administration": "request_permission_for_exact_form",
+    "public_distribution": "not_automatically_permitted",
+    "translation_rights": "translation_specific",
+    "patient_feedback_allowed": "clinician_interview_only",
+    "license_source_url": "https://www.ptsd.va.gov/professional/assessment/adult-int/iti.asp",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "availability": {
+    "russian_form": "not_loaded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.ptsd.va.gov/professional/assessment/adult-int/iti.asp",
+    "protected_material_embedded": false,
+    "request_trained_interviewer": true
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "risk_item_handling": "manual_clinician_protocol",
+    "automatic_diagnosis_allowed": false,
+    "suicide_risk_inference_from_score_allowed": false
+  },
+  "legacy_source_path": null,
+  "scoring_blueprint_non_executable": {
+    "response_options": "Clinician-rated interview",
+    "scales": {
+      "diagnostic_modules": {
+        "range": null
+      }
+    },
+    "warning": "Trained interviewer, official interview via request."
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [
+      "F43.1"
+    ],
+    "icd10_possible_overlap": [],
+    "icd10_differentials": [],
+    "icd11_context_text": "МКБ-11: КПТСР 6B41, в МКБ-10 нет прямого отдельного эквивалента.",
+    "clinical_assessment_targets_only": true,
+    "diagnostic_code_assignment_allowed": false
+  }
+}

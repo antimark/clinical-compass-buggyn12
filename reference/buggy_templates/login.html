@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Войти · Клинический Компас{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/access.css') }}">{% endblock %}
+{% block header_right %}<a class="header-back" href="{{ url_for('index') }}"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg><span>На главную</span></a>{% endblock %}
+{% block content %}
+<!-- Демонстрационная форма входа: запросов на сервер нет. -->
+<main class="access-page" id="main-content">
+  <section class="access-card" aria-labelledby="login-title">
+    <span class="access-kicker">Личный кабинет</span>
+    <h1 id="login-title">Добро пожаловать снова.</h1>
+    <p class="access-lead">Введите логин и пароль, чтобы продолжить работу.</p>
+    <form id="loginForm" class="access-form" novalidate>
+      <fieldset class="access-role-group">
+        <legend>Войти как</legend>
+        <div class="access-role-options">
+          <label class="access-role-choice"><input type="radio" name="role" value="patient" checked><span>Пациент</span></label>
+          <label class="access-role-choice"><input type="radio" name="role" value="specialist"><span>Специалист</span></label>
+        </div>
+      </fieldset>
+      <div class="access-field"><label for="loginName">Логин</label><input id="loginName" name="login" type="text" autocomplete="username" placeholder="Логин от администратора" required maxlength="100"></div>
+      <div class="access-field"><label for="loginPassword">Пароль</label><div class="access-password"><input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Ваш пароль" required><button class="access-password-toggle" type="button" aria-label="Показать пароль" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg></button></div></div>
+      <p class="access-notice" id="loginNotice" role="status" aria-live="polite" hidden></p>
+      <button class="btn btn-primary access-submit" type="submit">Войти <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+    </form>
+    <p class="access-demo-disclaimer">Демо-версия: логин и пароль пока не проверяются. Не вводите настоящие пароли.</p>
+    <p class="access-bottom">Первый раз здесь? <a href="{{ url_for('register_choice') }}">Зарегистрироваться</a></p>
+  </section>
+</main>
+{% endblock %}
+{% block scripts %}<script defer src="{{ url_for('static', filename='js/access.js') }}"></script>{% endblock %}

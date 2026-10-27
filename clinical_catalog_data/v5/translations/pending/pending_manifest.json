@@ -1,0 +1,37 @@
+{
+  "translation_queue": [
+    {
+      "id": "CESD-R",
+      "reason": "no_confirmed_official_russian"
+    },
+    {
+      "id": "PC-PTSD-5",
+      "reason": "draft_translation_pending_user_review"
+    },
+    {
+      "id": "ITQ",
+      "reason": "validated_ru_available_but_translation_rights_for_commercial_use_unconfirmed"
+    },
+    {
+      "id": "ITQ-CC",
+      "reason": "no_confirmed_official_russian_for_cc_version"
+    },
+    {
+      "id": "IDQ",
+      "reason": "no_confirmed_official_russian"
+    },
+    {
+      "id": "IAQ",
+      "reason": "no_confirmed_official_russian"
+    },
+    {
+      "id": "IADQ",
+      "reason": "no_confirmed_official_russian"
+    },
+    {
+      "id": "ITI",
+      "reason": "ru_version_not_confirmed"
+    }
+  ],
+  "approval_note": "Approval of Russian wording is not psychometric validation nor a copyright clearance."
+}

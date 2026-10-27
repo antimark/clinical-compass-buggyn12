@@ -1,0 +1,244 @@
+{
+  "version": "1.0",
+  "checked_at": "2026-10-25",
+  "sources": [
+    {
+      "id": "nice_social",
+      "title": "NICE CG159 — Social anxiety disorder",
+      "url": "https://www.nice.org.uk/Guidance/CG159/chapter/recommendations",
+      "guideline_year_or_revision": "2013",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_stroke_rehab",
+      "title": "NICE NG236 — Stroke rehabilitation in adults",
+      "url": "https://www.nice.org.uk/guidance/ng236/chapter/Recommendations",
+      "guideline_year_or_revision": "2023",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_stroke_tia",
+      "title": "NICE NG128 — Stroke and TIA initial management",
+      "url": "https://www.nice.org.uk/guidance/NG128/chapter/recommendations",
+      "guideline_year_or_revision": "2019",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_delirium",
+      "title": "NICE CG103 — Delirium prevention and management",
+      "url": "https://www.nice.org.uk/guidance/cg103/chapter/Recommendations",
+      "guideline_year_or_revision": "2010–2023",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_osa",
+      "title": "NICE NG202 — Obstructive sleep apnoea/hypopnoea",
+      "url": "https://www.nice.org.uk/guidance/NG202/chapter/1-obstructive-sleep-apnoeahypopnoea-syndrome",
+      "guideline_year_or_revision": "2021",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "aan_tics",
+      "title": "American Academy of Neurology — Treatment of tics (CBIT)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6537133/",
+      "guideline_year_or_revision": "2019",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_opioids",
+      "title": "NICE CG52 — Opioid detoxification",
+      "url": "https://www.nice.org.uk/guidance/CG52/chapter/recommendations",
+      "guideline_year_or_revision": "2007",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_naltrexone_opioids",
+      "title": "NICE TA115 — Naltrexone after opioid detoxification",
+      "url": "https://www.nice.org.uk/guidance/ta115/chapter/1-guidance",
+      "guideline_year_or_revision": "2007",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "cdc_tbi",
+      "title": "CDC — Managing return to activities after mild TBI",
+      "url": "https://www.cdc.gov/heads-up/hcp/clinical-guidance/",
+      "guideline_year_or_revision": "2025",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "aan_tremor",
+      "title": "AAN summary — Management of essential tremor",
+      "url": "https://www.aan.com/Guidelines/home/GetGuidelineContent/493",
+      "guideline_year_or_revision": "2011",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "mds_tremor_2026",
+      "title": "Movement Disorder Society evidence review — essential tremor",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41556478/",
+      "guideline_year_or_revision": "2026",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "bpd_psych_review",
+      "title": "Crotty et al. 2024 — psychotherapies for borderline personality disorder systematic review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37902689/",
+      "guideline_year_or_revision": "2024",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_depression",
+      "title": "NICE NG222 — Depression in adults: treatment and management",
+      "url": "https://www.nice.org.uk/guidance/ng222/chapter/Recommendations",
+      "guideline_year_or_revision": "2022",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_anxiety",
+      "title": "NICE CG113 — GAD and panic disorder in adults",
+      "url": "https://www.nice.org.uk/guidance/cg113/chapter/Recommendations",
+      "guideline_year_or_revision": "2011",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_ptsd",
+      "title": "NICE NG116 — Post-traumatic stress disorder",
+      "url": "https://www.nice.org.uk/guidance/ng116/chapter/recommendations",
+      "guideline_year_or_revision": "2018",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "va_ptsd",
+      "title": "VA/DoD CPG — PTSD and acute stress disorder",
+      "url": "https://doi.org/10.7326/M23-2757",
+      "guideline_year_or_revision": "2023",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_ocd",
+      "title": "NICE CG31 — OCD and body dysmorphic disorder",
+      "url": "https://www.nice.org.uk/guidance/cg31/chapter/Recommendations",
+      "guideline_year_or_revision": "2005",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_bipolar",
+      "title": "NICE CG185 — Bipolar disorder assessment and management",
+      "url": "https://www.nice.org.uk/guidance/cg185/chapter/Recommendations",
+      "guideline_year_or_revision": "2014",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_psychosis",
+      "title": "NICE CG178 — Psychosis and schizophrenia in adults",
+      "url": "https://www.nice.org.uk/guidance/cg178/chapter/recommendations",
+      "guideline_year_or_revision": "2014",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_adhd",
+      "title": "NICE NG87 — ADHD diagnosis and management",
+      "url": "https://www.nice.org.uk/guidance/ng87/chapter/recommendations",
+      "guideline_year_or_revision": "2018",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_bpd",
+      "title": "NICE CG78 — Borderline personality disorder",
+      "url": "https://www.nice.org.uk/guidance/cg78/chapter/Recommendations",
+      "guideline_year_or_revision": "2009",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_ed",
+      "title": "NICE NG69 — Eating disorders",
+      "url": "https://www.nice.org.uk/guidance/ng69/chapter/recommendations",
+      "guideline_year_or_revision": "2017",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_aud",
+      "title": "NICE CG115 — Alcohol-use disorders",
+      "url": "https://www.nice.org.uk/guidance/cg115/chapter/Recommendations",
+      "guideline_year_or_revision": "2011",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_tobacco",
+      "title": "NICE NG209 — Tobacco dependence",
+      "url": "https://www.nice.org.uk/guidance/NG209/chapter/treating-tobacco-dependence",
+      "guideline_year_or_revision": "2021–2025",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_alzheimer",
+      "title": "NICE NG97 — Dementia",
+      "url": "https://www.nice.org.uk/guidance/ng97/chapter/Recommendations",
+      "guideline_year_or_revision": "2018",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_parkinson",
+      "title": "NICE NG71 — Parkinson’s disease",
+      "url": "https://www.nice.org.uk/guidance/ng71/chapter/Recommendations",
+      "guideline_year_or_revision": "2017",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_epilepsy",
+      "title": "NICE NG217 — Epilepsies, treating seizures",
+      "url": "https://www.nice.org.uk/guidance/ng217/chapter/treating-epileptic-seizures-in-children-young-people-and-adults",
+      "guideline_year_or_revision": "2022–2025",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_headache",
+      "title": "NICE CG150 — Headaches over 12s",
+      "url": "https://www.nice.org.uk/guidance/cg150/chapter/recommendations",
+      "guideline_year_or_revision": "2012–2025",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_ms",
+      "title": "NICE NG220 — Multiple sclerosis in adults",
+      "url": "https://www.nice.org.uk/guidance/ng220/chapter/Recommendations",
+      "guideline_year_or_revision": "2022–2026",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "nice_autism",
+      "title": "NICE CG142 — Autism in adults",
+      "url": "https://www.nice.org.uk/guidance/CG142/chapter/Recommendations",
+      "guideline_year_or_revision": "2012–2021",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "aasm_insomnia",
+      "title": "AASM 2021 guideline CBT-I",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7853203/",
+      "guideline_year_or_revision": "2021",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "who_depression",
+      "title": "WHO mhGAP — Brief structured psychological treatment",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/depression/brief-structured-psychological-treatment",
+      "guideline_year_or_revision": "2023",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "who_psychosis",
+      "title": "WHO mhGAP — Psychoeducation family interventions and CBT",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/psychosis-and-bipolar-disorders/psychoeducation-family-interventions-and-cognitive-behavioural-therapy",
+      "guideline_year_or_revision": "2023",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    },
+    {
+      "id": "who_epilepsy",
+      "title": "WHO mhGAP — Antiseizure medications",
+      "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/epilepsy-and-seizures/antiseizure-medicines-for-management-of-epilepsy-in-adults-and-children",
+      "guideline_year_or_revision": "2023",
+      "jurisdiction": "international; NOT proof of registration in Russia"
+    }
+  ]
+}

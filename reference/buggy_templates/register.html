@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+{% block title %}Регистрация · Клинический Компас{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+{% block header_right %}
+<a class="header-back" href="{{ url_for('index') }}" aria-label="На главную">
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg>
+  <span>На главную</span>
+</a>
+{% endblock %}
+{% block content %}
+<!--
+  ЕДИНЫЙ МАСТЕР РЕГИСТРАЦИИ
+  /register            -> шаг 0: выбор роли
+  /register/patient    -> шаг 1: ключ пациента (шаг 0 пропущен)
+  /register/specialist -> шаг 1: ключ врача (шаг 0 пропущен)
+
+  На всех маршрутах одна карточка и один набор слайдов.
+  JS переключает выбранную роль и видимость соответствующих полей.
+  Серверная регистрация пока НЕ реализована.
+-->
+<main class="registration-page" id="main-content" data-role="{{ role or '' }}" data-initial-role="{{ role or '' }}">
+  <div class="registration-ambient registration-ambient-a" aria-hidden="true"></div>
+  <div class="registration-ambient registration-ambient-b" aria-hidden="true"></div>
+
+  <section class="registration-card" aria-label="Регистрация">
+    <!-- Верхняя часть карточки не перемещается во время перелистывания. -->
+    <div class="registration-card-top">
+      <div class="registration-step-label" id="registrationStepLabel" aria-live="polite">
+        {{ 'ШАГ 01 — ДОСТУП' if role else 'ШАГ 00 — НАЧАЛО' }}
+      </div>
+      <span class="registration-step-count" id="stepCount" aria-live="polite">{{ '01' if role else '00' }} <span>/ 04</span></span>
+    </div>
+    <div class="registration-progress" id="progressIndicator" role="progressbar"
+         aria-label="Прогресс регистрации" aria-valuemin="0" aria-valuemax="4" aria-valuenow="{{ 1 if role else 0 }}"
+         aria-valuetext="{{ 'Шаг 1 из 4' if role else 'Выбор роли' }}">
+      <span class="progress-segment {% if role %}is-active{% endif %}" aria-hidden="true"></span>
+      <span class="progress-segment" aria-hidden="true"></span>
+      <span class="progress-segment" aria-hidden="true"></span>
+      <span class="progress-segment" aria-hidden="true"></span>
+    </div>
+
+    <form class="registration-form" id="registrationForm" method="post" novalidate autocomplete="on">
+      <!--
+        Каждый слайд — самостоятельный раздел формы.
+        JS переключает data-step, а смещение и прокрутка полностью заданы в register.css.
+        inert и aria-hidden не дают перейти Tab в невидимые поля.
+      -->
+      <div class="registration-viewport">
+        {# На прямых ссылках сразу показываем шаг 1 без анимации при загрузке. #}
+        <div class="registration-track{% if role %} is-initializing{% endif %}" id="slideTrack" data-step="{{ 1 if role else 0 }}">
+
+          <!-- ШАГ 0: выбор роли — тот же слайдер, что и остальные шаги. -->
+          <section class="registration-slide registration-choice-slide" data-step="0"
+                   aria-labelledby="chooseRoleTitle" {% if role %}aria-hidden="true" inert{% endif %}>
+            <h1 class="slide-title" id="chooseRoleTitle" tabindex="-1">Как вы будете пользоваться платформой?</h1>
+            <p class="slide-description">Выберите роль, чтобы продолжить регистрацию. Пациент получает ключ от врача, специалист — от администратора.</p>
+            <div class="registration-choice-grid" aria-label="Выбор роли">
+              <button class="registration-choice-option" type="button" data-select-role="patient">
+                <span class="registration-choice-icon"><svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg></span>
+                <strong>Я пациент</strong>
+                <span class="registration-choice-description">Для сопровождения своего лечения</span>
+                <svg class="icon registration-choice-arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </button>
+              <button class="registration-choice-option" type="button" data-select-role="specialist">
+                <span class="registration-choice-icon"><svg class="icon" aria-hidden="true"><use href="#i-medical"></use></svg></span>
+                <strong>Я специалист</strong>
+                <span class="registration-choice-description">Для работы с пациентами</span>
+                <svg class="icon registration-choice-arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+              </button>
+            </div>
+            <p class="registration-choice-login">Уже есть аккаунт? <a href="{{ url_for('login') }}">Войти</a></p>
+          </section>
+
+          <!-- ШАГ 1: КЛЮЧ. Для пациента ключ выдает врач, для врача — администратор. -->
+          <section class="registration-slide" data-step="1" aria-labelledby="register-title"
+                   {% if not role %}aria-hidden="true" inert{% endif %}>
+            <h1 class="slide-title" id="register-title" tabindex="-1">Введите ключ регистрации</h1>
+            <p class="slide-description">
+              <span data-role-only="patient" {% if role != 'patient' %}hidden{% endif %}>Введите индивидуальный ключ, который вам выдал лечащий врач.</span>
+              <span data-role-only="specialist" {% if role != 'specialist' %}hidden{% endif %}>Введите ключ доступа, выданный администратором платформы.</span>
+            </p>
+            <div class="registration-fields">
+              <div class="registration-field">
+                <label for="regKey">Ключ регистрации <span class="field-required" aria-hidden="true">*</span></label>
+                <div class="password-control">
+                  <input id="regKey" name="key" class="registration-input" type="password" autocomplete="off"
+                         placeholder="Введите ваш ключ" maxlength="128" required aria-describedby="keyHint keyError">
+                  <button class="password-visibility" type="button" data-toggle-password="regKey"
+                          aria-label="Показать ключ" aria-pressed="false">
+                    <svg class="icon show-icon" aria-hidden="true"><use href="#i-eye"></use></svg>
+                    <svg class="icon hide-icon" aria-hidden="true"><use href="#i-eye-off"></use></svg>
+                  </button>
+                </div>
+                <p class="field-helper" id="keyHint">
+                  <span data-role-only="patient" {% if role != 'patient' %}hidden{% endif %}>Нет ключа? Обратитесь к вашему врачу.</span>
+                  <span data-role-only="specialist" {% if role != 'specialist' %}hidden{% endif %}>Нет ключа? Обратитесь к администратору.</span>
+                </p>
+                <p class="field-error" id="keyError" aria-live="polite"></p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ШАГ 2: СОЗДАНИЕ ЛОГИНА. Логин пользователь придумывает самостоятельно. -->
+          <section class="registration-slide" data-step="2" aria-labelledby="loginTitle" aria-hidden="true" inert>
+            <h2 class="slide-title" id="loginTitle" tabindex="-1">Придумайте логин</h2>
+            <p class="slide-description">Используйте его для входа в платформу. Доступность логина будет проверяться после подключения серверной части.</p>
+            <div class="registration-fields">
+              <div class="registration-field">
+                <label for="regLogin">Логин <span class="field-required" aria-hidden="true">*</span></label>
+                <input id="regLogin" name="login" class="registration-input" type="text"
+                       autocomplete="username" autocapitalize="none" spellcheck="false"
+                       placeholder="Например, ivan.petrov" minlength="3" maxlength="50" required
+                       aria-describedby="loginHint loginError">
+                <p class="field-helper" id="loginHint">Не менее 3 символов.</p>
+                <p class="field-error" id="loginError" aria-live="polite"></p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ШАГ 3: ПАРОЛЬ. Одинаков для двух ролей. -->
+          <section class="registration-slide" data-step="3" aria-labelledby="passwordTitle" aria-hidden="true" inert>
+            <h2 class="slide-title" id="passwordTitle" tabindex="-1">Придумайте пароль</h2>
+            <p class="slide-description">Для защиты учётной записи используйте пароль длиной не менее 8 символов.</p>
+            <div class="registration-fields">
+              <div class="registration-field">
+                <label for="regPassword">Пароль <span class="field-required" aria-hidden="true">*</span></label>
+                <div class="password-control">
+                  <input id="regPassword" name="password" class="registration-input" type="password"
+                         autocomplete="new-password" minlength="8" maxlength="128" required
+                         placeholder="Не менее 8 символов" aria-describedby="passwordError">
+                  <button class="password-visibility" type="button" data-toggle-password="regPassword"
+                          aria-label="Показать пароль" aria-pressed="false">
+                    <svg class="icon show-icon" aria-hidden="true"><use href="#i-eye"></use></svg>
+                    <svg class="icon hide-icon" aria-hidden="true"><use href="#i-eye-off"></use></svg>
+                  </button>
+                </div>
+                <p class="field-error" id="passwordError" aria-live="polite"></p>
+              </div>
+              <div class="registration-field">
+                <label for="regRepeatPassword">Повторите пароль <span class="field-required" aria-hidden="true">*</span></label>
+                <div class="password-control">
+                  <input id="regRepeatPassword" name="repeatPassword" class="registration-input" type="password"
+                         autocomplete="new-password" maxlength="128" required
+                         placeholder="Введите пароль ещё раз" aria-describedby="repeatError">
+                  <button class="password-visibility" type="button" data-toggle-password="regRepeatPassword"
+                          aria-label="Показать пароль" aria-pressed="false">
+                    <svg class="icon show-icon" aria-hidden="true"><use href="#i-eye"></use></svg>
+                    <svg class="icon hide-icon" aria-hidden="true"><use href="#i-eye-off"></use></svg>
+                  </button>
+                </div>
+                <p class="field-error" id="repeatError" aria-live="polite"></p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ШАГ 4: ЛИЧНЫЕ ДАННЫЕ. Только здесь формы двух ролей различаются. -->
+          <section class="registration-slide registration-details-slide" data-step="4" aria-labelledby="detailsTitle" aria-hidden="true" inert>
+            <h2 class="slide-title" id="detailsTitle" tabindex="-1">
+              <span data-role-only="patient" {% if role != 'patient' %}hidden{% endif %}>Расскажите о себе</span><span data-role-only="specialist" {% if role != 'specialist' %}hidden{% endif %}>Информация о враче</span>
+            </h2>
+            <p class="slide-description">Обязательные поля отмечены звёздочкой. Остальное можно заполнить позже.</p>
+
+            <div class="registration-fields registration-details-grid">
+              <!-- Для всех: Фамилия, Имя обязательны; Отчество — нет. -->
+              <div class="registration-field">
+                <label for="regLastName">Фамилия <span class="field-required" aria-hidden="true">*</span></label>
+                <input id="regLastName" name="lastName" class="registration-input" type="text"
+                       autocomplete="family-name" maxlength="100" placeholder="Ваша фамилия" required
+                       aria-describedby="lastNameError">
+                <p class="field-error" id="lastNameError" aria-live="polite"></p>
+              </div>
+              <div class="registration-field">
+                <label for="regFirstName">Имя <span class="field-required" aria-hidden="true">*</span></label>
+                <input id="regFirstName" name="firstName" class="registration-input" type="text"
+                       autocomplete="given-name" maxlength="100" placeholder="Ваше имя" required
+                       aria-describedby="firstNameError">
+                <p class="field-error" id="firstNameError" aria-live="polite"></p>
+              </div>
+              <div class="registration-field">
+                <label for="regMiddleName">Отчество</label>
+                <input id="regMiddleName" name="middleName" class="registration-input" type="text"
+                       autocomplete="additional-name" maxlength="100" placeholder="При наличии"
+                       aria-describedby="middleNameError">
+                <p class="field-error" id="middleNameError" aria-live="polite"></p>
+              </div>
+
+              <!-- Взаимоисключающие поля: JS скрывает и отключает поля другой роли. -->
+              <!-- Пациент: дата рождения и контакты не обязательны. -->
+              <div class="registration-field" data-role-only="patient" {% if role != 'patient' %}hidden{% endif %}>
+                <label for="regBirthDate">Дата рождения</label>
+                <input id="regBirthDate" name="birthDate" class="registration-input" type="date"
+                       autocomplete="bday" aria-describedby="birthDateError">
+                <p class="field-error" id="birthDateError" aria-live="polite"></p>
+              </div>
+              <div class="registration-field" data-role-only="patient" {% if role != 'patient' %}hidden{% endif %}>
+                <label for="regPatientPhone">Телефон</label>
+                <input id="regPatientPhone" name="patientPhone" class="registration-input" type="tel"
+                       autocomplete="tel" maxlength="30" placeholder="+7 999 123-45-67"
+                       aria-describedby="patientPhoneError">
+                <p class="field-error" id="patientPhoneError" aria-live="polite"></p>
+              </div>
+              <div class="registration-field" data-role-only="patient" {% if role != 'patient' %}hidden{% endif %}>
+                <label for="regPatientEmail">Электронная почта</label>
+                <input id="regPatientEmail" name="patientEmail" class="registration-input" type="email"
+                       autocomplete="email" maxlength="254" placeholder="mail@example.com"
+                       aria-describedby="patientEmailError">
+                <p class="field-error" id="patientEmailError" aria-live="polite"></p>
+              </div>
+              <!-- Врач: специальность обязательна, место работы и контакты опциональны. -->
+              <div class="registration-field" data-role-only="specialist" {% if role != 'specialist' %}hidden{% endif %}>
+                <label for="regSpecialty">Специальность <span class="field-required" aria-hidden="true">*</span></label>
+                <input id="regSpecialty" name="specialty" class="registration-input" type="text"
+                       maxlength="120" placeholder="Например, психиатр" required
+                       aria-describedby="specialtyError">
+                <p class="field-error" id="specialtyError" aria-live="polite"></p>
+              </div>
+              <div class="registration-field" data-role-only="specialist" {% if role != 'specialist' %}hidden{% endif %}>
+                <label for="regOrganization">Медицинская организация</label>
+                <input id="regOrganization" name="organization" class="registration-input" type="text"
+                       autocomplete="organization" maxlength="200" placeholder="Название организации"
+                       aria-describedby="organizationError">
+                <p class="field-error" id="organizationError" aria-live="polite"></p>
+              </div>
+              <div class="registration-field" data-role-only="specialist" {% if role != 'specialist' %}hidden{% endif %}>
+                <label for="regPosition">Должность</label>
+                <input id="regPosition" name="position" class="registration-input" type="text"
+                       autocomplete="organization-title" maxlength="120" placeholder="Ваша должность"
+                       aria-describedby="positionError">
+                <p class="field-error" id="positionError" aria-live="polite"></p>
+              </div>
+              <div class="registration-field" data-role-only="specialist" {% if role != 'specialist' %}hidden{% endif %}>
+                <label for="regSpecialistEmail">Рабочая почта</label>
+                <input id="regSpecialistEmail" name="specialistEmail" class="registration-input" type="email"
+                       autocomplete="email" maxlength="254" placeholder="doctor@clinic.ru"
+                       aria-describedby="specialistEmailError">
+                <p class="field-error" id="specialistEmailError" aria-live="polite"></p>
+              </div>
+              <div class="registration-field" data-role-only="specialist" {% if role != 'specialist' %}hidden{% endif %}>
+                <label for="regSpecialistPhone">Рабочий телефон</label>
+                <input id="regSpecialistPhone" name="specialistPhone" class="registration-input" type="tel"
+                       autocomplete="tel" maxlength="30" placeholder="+7 999 123-45-67"
+                       aria-describedby="specialistPhoneError">
+                <p class="field-error" id="specialistPhoneError" aria-live="polite"></p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Итог показывается без отправки формы / создания аккаунта. -->
+          <section class="registration-slide registration-finished" data-step="5" aria-labelledby="finishTitle" aria-hidden="true" inert>
+            <div class="finished-icon"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg></div>
+            <h2 class="slide-title" id="finishTitle" tabindex="-1">Все поля заполнены</h2>
+            <p class="slide-description">Вы прошли четыре шага. Это демонстрация интерфейса: учётная запись пока не создана, а данные не отправлены на сервер.</p>
+          </section>
+        </div>
+      </div>
+
+      <!-- Кнопки переключают шаги; карточка и навигация остаются на месте. -->
+      <footer class="registration-card-footer">
+        <button class="btn btn-secondary registration-back" type="button" id="backStep" {% if not role %}hidden{% endif %}>
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"></use></svg><span>Назад</span>
+        </button>
+        <p class="footer-note">Демо · без отправки данных</p>
+        <button class="btn btn-primary registration-next" type="submit" id="nextStep" {% if not role %}hidden{% endif %}>
+          <span>Продолжить</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+        </button>
+      </footer>
+    </form>
+  </section>
+  <p class="registration-bottom-note">
+    <svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+    Регистрация по персональному ключу
+  </p>
+</main>
+{% endblock %}
+{% block scripts %}
+<script defer src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}

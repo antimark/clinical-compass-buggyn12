@@ -1,0 +1,716 @@
+[
+  {
+    "path": "/",
+    "role": "shared",
+    "title": "Лендинг",
+    "action": "Выбрать роль/войти",
+    "family": "public"
+  },
+  {
+    "path": "/login",
+    "role": "shared",
+    "title": "Вход",
+    "action": "Начать сессию",
+    "family": "auth"
+  },
+  {
+    "path": "/register",
+    "role": "shared",
+    "title": "Выбор роли",
+    "action": "Выбрать роль",
+    "family": "auth"
+  },
+  {
+    "path": "/register/patient",
+    "role": "shared",
+    "title": "Регистрация пациента",
+    "action": "Зарегистрироваться/принять приглашение",
+    "family": "auth"
+  },
+  {
+    "path": "/register/specialist",
+    "role": "shared",
+    "title": "Регистрация врача",
+    "action": "Зарегистрироваться",
+    "family": "auth"
+  },
+  {
+    "path": "/onboarding",
+    "role": "shared",
+    "title": "Первоначальная настройка",
+    "action": "Заполнить профиль/согласия",
+    "family": "wizard"
+  },
+  {
+    "path": "/invite/:token",
+    "role": "shared",
+    "title": "Принятие приглашения",
+    "action": "Проверить врача/права/принять",
+    "family": "wizard"
+  },
+  {
+    "path": "/notifications",
+    "role": "shared",
+    "title": "Центр уведомлений",
+    "action": "Открыть событие/отметить прочитанным",
+    "family": "inbox"
+  },
+  {
+    "path": "/settings",
+    "role": "shared",
+    "title": "Профиль и настройки",
+    "action": "Изменить профиль/тему/роль",
+    "family": "settings"
+  },
+  {
+    "path": "/doctors",
+    "role": "shared",
+    "title": "Каталог врачей",
+    "action": "Фильтровать/выбрать врача",
+    "family": "public"
+  },
+  {
+    "path": "/doctors/:slug",
+    "role": "shared",
+    "title": "Публичный и авторизованный профиль врача; вкладка общих пациентов при ACL",
+    "action": "Поделиться ссылкой; отправить обращение; при роли doctor написать коллеге/открыть доступный список общих пациентов",
+    "family": "public"
+  },
+  {
+    "path": "/doctors/:slug/reviews",
+    "role": "shared",
+    "title": "Публичные отзывы",
+    "action": "Читать проверенные отзывы",
+    "family": "public"
+  },
+  {
+    "path": "/patient",
+    "role": "patient",
+    "title": "Сегодня",
+    "action": "Check-in 1–5, перейти к задачам",
+    "family": "dashboard"
+  },
+  {
+    "path": "/patient/tasks",
+    "role": "patient",
+    "title": "Задания и опросники",
+    "action": "Начать назначенную форму",
+    "family": "list"
+  },
+  {
+    "path": "/patient/questionnaires/:requestId",
+    "role": "patient",
+    "title": "Прохождение опросника",
+    "action": "Отправить ответы",
+    "family": "wizard"
+  },
+  {
+    "path": "/patient/questionnaires/:requestId/result",
+    "role": "patient",
+    "title": "Результат формы",
+    "action": "Посмотреть результат/динамику",
+    "family": "detail"
+  },
+  {
+    "path": "/patient/trends",
+    "role": "patient",
+    "title": "Моя динамика",
+    "action": "Фильтровать 7/30/90 дней",
+    "family": "charts"
+  },
+  {
+    "path": "/patient/treatment",
+    "role": "patient",
+    "title": "Моё лечение",
+    "action": "Просмотр утверждённого плана",
+    "family": "detail"
+  },
+  {
+    "path": "/patient/treatment/adherence",
+    "role": "patient",
+    "title": "Дневник приёма",
+    "action": "Отметить точный или приблизительный приём",
+    "family": "calendar"
+  },
+  {
+    "path": "/patient/adverse-events/new",
+    "role": "patient",
+    "title": "Сообщение о возможном нежелательном явлении",
+    "action": "Создать самоотчёт",
+    "family": "form"
+  },
+  {
+    "path": "/patient/appointments",
+    "role": "patient",
+    "title": "Мои приёмы",
+    "action": "Записи и предклинические запросы",
+    "family": "list"
+  },
+  {
+    "path": "/patient/appointments/new",
+    "role": "patient",
+    "title": "Запросить приём",
+    "action": "Запрос нового приёма, при отсутствии связи — мастер обращения",
+    "family": "form"
+  },
+  {
+    "path": "/patient/messages",
+    "role": "patient",
+    "title": "Сообщения врачам",
+    "action": "Выбрать диалог",
+    "family": "messenger"
+  },
+  {
+    "path": "/patient/messages/:threadId",
+    "role": "patient",
+    "title": "Чат пациент—врач: одно сообщение до ответа врача",
+    "action": "Приватный диалог с врачом, previsit или clinical link",
+    "family": "messenger"
+  },
+  {
+    "path": "/patient/assistant",
+    "role": "patient",
+    "title": "AI-помощник",
+    "action": "Поговорить/подготовить сводку",
+    "family": "messenger"
+  },
+  {
+    "path": "/patient/assistant/share/:draftId",
+    "role": "patient",
+    "title": "Проверка и отправка сводки",
+    "action": "Редактировать/выбрать врача/подтвердить",
+    "family": "wizard"
+  },
+  {
+    "path": "/patient/specialists",
+    "role": "patient",
+    "title": "Мои специалисты",
+    "action": "Врач/клиника/статус/разрешения",
+    "family": "list"
+  },
+  {
+    "path": "/patient/specialists/find",
+    "role": "patient",
+    "title": "Найти врача",
+    "action": "Перенаправление в публичный каталог врачей",
+    "family": "list"
+  },
+  {
+    "path": "/patient/access",
+    "role": "patient",
+    "title": "Разрешения на данные и видимость состава команды врачей",
+    "action": "Изменить дополнительные grants/PII согласия",
+    "family": "settings"
+  },
+  {
+    "path": "/patient/requests",
+    "role": "patient",
+    "title": "Мои обращения к врачам",
+    "action": "Просмотреть обращения и статусы",
+    "family": "patient"
+  },
+  {
+    "path": "/patient/requests/new",
+    "role": "patient",
+    "title": "Первичное обращение",
+    "action": "Отправить выбранный intake snapshot",
+    "family": "patient"
+  },
+  {
+    "path": "/patient/requests/:requestId",
+    "role": "patient",
+    "title": "Карточка обращения",
+    "action": "Просмотреть предложение времени/диалог",
+    "family": "patient"
+  },
+  {
+    "path": "/patient/appointments/:appointmentId/visit",
+    "role": "patient",
+    "title": "Аудио/видео-комната пациента",
+    "action": "Присоединиться к подтверждённой консультации",
+    "family": "patient"
+  },
+  {
+    "path": "/patient/reviews/new/:appointmentId",
+    "role": "patient",
+    "title": "Отзыв после визита",
+    "action": "Оставить проверенный отзыв",
+    "family": "patient"
+  },
+  {
+    "path": "/doctor",
+    "role": "doctor",
+    "title": "Рабочий стол",
+    "action": "Перейти к сигналам/задачам",
+    "family": "dashboard"
+  },
+  {
+    "path": "/doctor/patients",
+    "role": "doctor",
+    "title": "Пациенты",
+    "action": "Сортировка/фильтр/открыть карту",
+    "family": "list"
+  },
+  {
+    "path": "/doctor/patients/:patientId",
+    "role": "doctor",
+    "title": "Обзор пациента",
+    "action": "Назначить задачу/открыть раздел",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/trends",
+    "role": "doctor",
+    "title": "Динамика пациента",
+    "action": "Сравнить шкалы и события",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/history",
+    "role": "doctor",
+    "title": "Анамнез",
+    "action": "Просмотреть разрешённые данные",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/treatment",
+    "role": "doctor",
+    "title": "Лечение пациента",
+    "action": "Создать/изменить назначение с подтверждением",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/psychotherapy",
+    "role": "doctor",
+    "title": "Поведенческая терапия",
+    "action": "Просмотреть/назначить задания",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/visits",
+    "role": "doctor",
+    "title": "История визитов",
+    "action": "Создать черновик записи визита",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/adverse-events",
+    "role": "doctor",
+    "title": "Возможные нежелательные явления",
+    "action": "Оценить предполагаемую связь",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/decisions",
+    "role": "doctor",
+    "title": "Клинические решения/маршрутизация",
+    "action": "Оценить/подтвердить или отклонить",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/access",
+    "role": "doctor",
+    "title": "Доступные разделы/связи",
+    "action": "Посмотреть scope/версию шаблона",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/alerts",
+    "role": "doctor",
+    "title": "Алерты",
+    "action": "Acknowledge/оценка/эскалация",
+    "family": "list"
+  },
+  {
+    "path": "/doctor/alerts/:alertId",
+    "role": "doctor",
+    "title": "Оценка сигнала",
+    "action": "Зафиксировать человеческое решение",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/messages",
+    "role": "doctor",
+    "title": "Сообщения пациентов",
+    "action": "Открыть разговор",
+    "family": "messenger"
+  },
+  {
+    "path": "/doctor/messages/:threadId",
+    "role": "doctor",
+    "title": "Двусторонний чат при открытом диалоге",
+    "action": "Приватный диалог с конкретным пациентом",
+    "family": "messenger"
+  },
+  {
+    "path": "/doctor/appointments",
+    "role": "doctor",
+    "title": "Запросы и записи",
+    "action": "Запросы и подтверждённые приёмы",
+    "family": "list"
+  },
+  {
+    "path": "/doctor/calendar",
+    "role": "doctor",
+    "title": "Расписание",
+    "action": "Просмотреть подтверждённые визиты",
+    "family": "calendar"
+  },
+  {
+    "path": "/doctor/questionnaires",
+    "role": "doctor",
+    "title": "Каталог и назначения",
+    "action": "Назначить валидированную форму",
+    "family": "list"
+  },
+  {
+    "path": "/doctor/questionnaires/assign",
+    "role": "doctor",
+    "title": "Назначить опросник",
+    "action": "Выбрать пациента/версию/дедлайн",
+    "family": "form"
+  },
+  {
+    "path": "/doctor/invitations",
+    "role": "doctor",
+    "title": "Приглашения пациентам",
+    "action": "Просмотреть статусы/отозвать",
+    "family": "list"
+  },
+  {
+    "path": "/doctor/invitations/new",
+    "role": "doctor",
+    "title": "Создать приглашение",
+    "action": "Врач инициирует Clinical Link из обращения или напрямую",
+    "family": "wizard"
+  },
+  {
+    "path": "/doctor/clinical-library",
+    "role": "doctor",
+    "title": "Клиническая база",
+    "action": "Открыть проверенный источник/правило",
+    "family": "list"
+  },
+  {
+    "path": "/doctor/clinical-library/:articleId",
+    "role": "doctor",
+    "title": "Клинический материал",
+    "action": "Просмотреть источник/версию/ограничения",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/import",
+    "role": "doctor",
+    "title": "Импорт синтетической выписки",
+    "action": "Загрузить/проверить извлечённые поля",
+    "family": "wizard"
+  },
+  {
+    "path": "/doctor/requests",
+    "role": "doctor",
+    "title": "Очередь первичных обращений",
+    "action": "Принять к рассмотрению/открыть",
+    "family": "doctor"
+  },
+  {
+    "path": "/doctor/requests/:requestId",
+    "role": "doctor",
+    "title": "Анкета предварительного обращения (отдельно от чата)",
+    "action": "Изучить только shared intake; начать диалог/ответить; предложить время; после консультации инициировать приглашение",
+    "family": "doctor"
+  },
+  {
+    "path": "/doctor/profile/edit",
+    "role": "doctor",
+    "title": "Публичная страница врача: редактирование",
+    "action": "Редактировать профиль/места практики",
+    "family": "doctor"
+  },
+  {
+    "path": "/doctor/reviews",
+    "role": "doctor",
+    "title": "Отзывы о враче",
+    "action": "Просмотреть опубликованные отзывы",
+    "family": "doctor"
+  },
+  {
+    "path": "/doctor/appointments/:appointmentId/visit",
+    "role": "doctor",
+    "title": "Первичный приём и комната врача",
+    "action": "Прочитать intake/провести визит",
+    "family": "doctor"
+  },
+  {
+    "path": "/clinic",
+    "role": "clinic",
+    "title": "Обзор клиники",
+    "action": "Общий статус без клинических данных",
+    "family": "dashboard"
+  },
+  {
+    "path": "/clinic/appointments",
+    "role": "clinic",
+    "title": "Очередь записи",
+    "action": "Обработать разрешённые запросы",
+    "family": "list"
+  },
+  {
+    "path": "/clinic/patients",
+    "role": "clinic",
+    "title": "Пациенты клиники",
+    "action": "Фильтровать только разрешённые поля",
+    "family": "list"
+  },
+  {
+    "path": "/clinic/patients/:patientRef",
+    "role": "clinic",
+    "title": "Административная карточка пациента",
+    "action": "Посмотреть доступные регистрационные сведения",
+    "family": "detail"
+  },
+  {
+    "path": "/clinic/staff",
+    "role": "clinic",
+    "title": "Сотрудники",
+    "action": "Управлять членством/ролями",
+    "family": "list"
+  },
+  {
+    "path": "/clinic/invitations",
+    "role": "clinic",
+    "title": "Организационные приглашения",
+    "action": "Пригласить сотрудника, не создавать clinical link",
+    "family": "list"
+  },
+  {
+    "path": "/clinic/access-templates",
+    "role": "clinic",
+    "title": "Шаблоны административного доступа",
+    "action": "Просмотр/создание версионированных шаблонов",
+    "family": "list"
+  },
+  {
+    "path": "/clinic/licenses",
+    "role": "clinic",
+    "title": "Лицензии и места",
+    "action": "Просмотр лимитов и использования",
+    "family": "dashboard"
+  },
+  {
+    "path": "/clinic/audit",
+    "role": "clinic",
+    "title": "Журнал административных операций",
+    "action": "Фильтровать обезличенные события",
+    "family": "list"
+  },
+  {
+    "path": "/research",
+    "role": "research",
+    "title": "Рабочий стол аналитики",
+    "action": "Последние аналитические наборы",
+    "family": "dashboard"
+  },
+  {
+    "path": "/research/datasets",
+    "role": "research",
+    "title": "Каталог разрешённых датасетов",
+    "action": "Выбрать версию и описание полей",
+    "family": "list"
+  },
+  {
+    "path": "/research/cohorts",
+    "role": "research",
+    "title": "Конструктор когорты",
+    "action": "Фильтры+N+пропуски+график",
+    "family": "analytics"
+  },
+  {
+    "path": "/research/compare",
+    "role": "research",
+    "title": "Сравнение групп A/B",
+    "action": "Задать условия A и B/пересчитать",
+    "family": "analytics"
+  },
+  {
+    "path": "/research/signals",
+    "role": "research",
+    "title": "Гипотезы/сигналы",
+    "action": "Просмотреть наблюдательные сигналы",
+    "family": "analytics"
+  },
+  {
+    "path": "/research/cases/:caseId",
+    "role": "research",
+    "title": "Синтетический мини-кейс",
+    "action": "Открыть разрешённый учебный кейс",
+    "family": "detail"
+  },
+  {
+    "path": "/research/exports",
+    "role": "research",
+    "title": "Экспорт агрегатов",
+    "action": "Скачать CSV и методологию",
+    "family": "analytics"
+  },
+  {
+    "path": "/doctors/:slug/share",
+    "role": "shared",
+    "title": "Поделиться ссылкой на врача",
+    "action": "Скопировать каноническую ссылку",
+    "family": "public"
+  },
+  {
+    "path": "/patient/requests/:requestId/chat",
+    "role": "patient",
+    "title": "Чат по первичному обращению",
+    "action": "Одно первое сообщение; последующие после ответа",
+    "family": "messaging"
+  },
+  {
+    "path": "/patient/access/care-team",
+    "role": "patient",
+    "title": "Согласие на видимость общих пациентов",
+    "action": "Разрешить или отозвать видимость пары врачей",
+    "family": "access"
+  },
+  {
+    "path": "/doctor/requests/:requestId/chat",
+    "role": "doctor",
+    "title": "Первичное сообщение и приём диалога врачом",
+    "action": "Ответить/отказать; открыть диалог",
+    "family": "messaging"
+  },
+  {
+    "path": "/doctor/colleagues",
+    "role": "doctor",
+    "title": "Коллеги и профессиональная переписка",
+    "action": "Открыть публичный профиль и переписку",
+    "family": "doctor"
+  },
+  {
+    "path": "/doctor/colleagues/:doctorId/messages",
+    "role": "doctor",
+    "title": "Личный диалог двух врачей",
+    "action": "Написать коллеге без доступа к карте пациента",
+    "family": "messaging"
+  },
+  {
+    "path": "/doctor/colleagues/:doctorId/shared-patients",
+    "role": "doctor",
+    "title": "Общие пациенты с персональным разрешением",
+    "action": "Показать только подтверждённые пациентом связи",
+    "family": "access"
+  },
+  {
+    "path": "/clinical-library",
+    "role": "shared",
+    "title": "Клинический справочник",
+    "action": "Поиск по проверенным источникам",
+    "family": "detail"
+  },
+  {
+    "path": "/patient/profile",
+    "role": "patient",
+    "title": "Мой профиль",
+    "action": "Редактировать данные профиля",
+    "family": "detail"
+  },
+  {
+    "path": "/invite/accept",
+    "role": "shared",
+    "title": "Принять приглашение",
+    "action": "Просмотр условий и подтверждение",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/clinical-copilot",
+    "role": "doctor",
+    "title": "Клинический помощник",
+    "action": "Учебные предложения и источники",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/nlp-lab",
+    "role": "doctor",
+    "title": "Лаборатория NLP",
+    "action": "Учебное извлечение из синтетического текста",
+    "family": "detail"
+  },
+  {
+    "path": "/research/demo-v3",
+    "role": "research",
+    "title": "Синтетические исследования",
+    "action": "Просмотр демонстрационных наборов",
+    "family": "detail"
+  },
+  {
+    "path": "/demo/journeys",
+    "role": "shared",
+    "title": "Сценарии оценки",
+    "action": "Оценочный режим",
+    "family": "detail"
+  },
+  {
+    "path": "/demo/profile",
+    "role": "shared",
+    "title": "Демонстрационный профиль",
+    "action": "Оценочный режим",
+    "family": "detail"
+  },
+  {
+    "path": "/api-lab.html",
+    "role": "shared",
+    "title": "API-лаборатория",
+    "action": "Диагностический раздел",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/clinical-intelligence",
+    "role": "doctor",
+    "title": "Разбор обращения Clinical Intelligence",
+    "action": "NLP-метки, проверка, черновик карты, маршрутизация",
+    "family": "detail"
+  },
+  {
+    "path": "/doctor/patients/:patientId/clinical-intelligence/chat/:threadId",
+    "role": "doctor",
+    "title": "Чат Clinical Copilot",
+    "action": "Справочные ответы по выбранному обращению",
+    "family": "messenger"
+  },
+  {
+    "path": "/patient/assistant/thread/:threadId",
+    "role": "patient",
+    "title": "Справочный AI-чат",
+    "action": "Чат по выбранной записи",
+    "family": "messenger"
+  },
+  {
+    "path": "/assessments",
+    "role": "shared",
+    "title": "Пилотные опросники",
+    "action": "Выбрать из четырёх форм без входа",
+    "family": "questionnaire"
+  },
+  {
+    "path": "/assessments/:code",
+    "role": "shared",
+    "title": "Заполнение опросника гостем",
+    "action": "Ответить на вопросы",
+    "family": "questionnaire"
+  },
+  {
+    "path": "/assessments/:code/result",
+    "role": "shared",
+    "title": "Предварительный результат",
+    "action": "Войти/зарегистрироваться/сохранить",
+    "family": "questionnaire"
+  },
+  {
+    "path": "/patient/admin-identity",
+    "role": "patient",
+    "title": "Разрешение на ФИО для администрации",
+    "action": "Сохранить значения и выдать/отозвать согласие",
+    "family": "settings"
+  }
+]

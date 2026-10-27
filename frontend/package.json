@@ -1,0 +1,10 @@
+{
+  "name": "clinical-compass-frontend-rebuild",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node ./tests/smoke.mjs && node ./tests/design.mjs && node ./tests/clinical-demo.mjs && node ./tests/guest-assessments.mjs"
+  },
+  "description": "Static vanilla frontend; package file only supports dependency-free tests."
+}

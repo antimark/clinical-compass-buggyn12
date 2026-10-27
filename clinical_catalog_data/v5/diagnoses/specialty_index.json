@@ -1,0 +1,748 @@
+{
+  "psychiatry": [
+    {
+      "code": "F00",
+      "title_ru": "Деменция при болезни Альцгеймера",
+      "source": "diagnoses/by_code/f00.json"
+    },
+    {
+      "code": "F01",
+      "title_ru": "Сосудистая деменция",
+      "source": "diagnoses/by_code/f01.json"
+    },
+    {
+      "code": "F02",
+      "title_ru": "Деменция при других заболеваниях, классифицированных в других рубриках",
+      "source": "diagnoses/by_code/f02.json"
+    },
+    {
+      "code": "F03",
+      "title_ru": "Деменция неуточнённая",
+      "source": "diagnoses/by_code/f03.json"
+    },
+    {
+      "code": "F05",
+      "title_ru": "Делирий, не вызванный алкоголем или другими психоактивными веществами",
+      "source": "diagnoses/by_code/f05.json"
+    },
+    {
+      "code": "F06.7",
+      "title_ru": "Лёгкое когнитивное расстройство",
+      "source": "diagnoses/by_code/f06_7.json"
+    },
+    {
+      "code": "F07.2",
+      "title_ru": "Постконтузионный синдром",
+      "source": "diagnoses/by_code/f07_2.json"
+    },
+    {
+      "code": "F10.1",
+      "title_ru": "Вредное употребление алкоголя",
+      "source": "diagnoses/by_code/f10_1.json"
+    },
+    {
+      "code": "F10.2",
+      "title_ru": "Синдром зависимости от алкоголя",
+      "source": "diagnoses/by_code/f10_2.json"
+    },
+    {
+      "code": "F11.2",
+      "title_ru": "Синдром зависимости от опиоидов",
+      "source": "diagnoses/by_code/f11_2.json"
+    },
+    {
+      "code": "F12.2",
+      "title_ru": "Синдром зависимости от каннабиноидов",
+      "source": "diagnoses/by_code/f12_2.json"
+    },
+    {
+      "code": "F13.2",
+      "title_ru": "Синдром зависимости от седативных или снотворных средств",
+      "source": "diagnoses/by_code/f13_2.json"
+    },
+    {
+      "code": "F17.2",
+      "title_ru": "Синдром зависимости от табака",
+      "source": "diagnoses/by_code/f17_2.json"
+    },
+    {
+      "code": "F20",
+      "title_ru": "Шизофрения",
+      "source": "diagnoses/by_code/f20.json"
+    },
+    {
+      "code": "F21",
+      "title_ru": "Шизотипическое расстройство",
+      "source": "diagnoses/by_code/f21.json"
+    },
+    {
+      "code": "F22",
+      "title_ru": "Хронические бредовые расстройства",
+      "source": "diagnoses/by_code/f22.json"
+    },
+    {
+      "code": "F23",
+      "title_ru": "Острые и преходящие психотические расстройства",
+      "source": "diagnoses/by_code/f23.json"
+    },
+    {
+      "code": "F25",
+      "title_ru": "Шизоаффективные расстройства",
+      "source": "diagnoses/by_code/f25.json"
+    },
+    {
+      "code": "F30.1",
+      "title_ru": "Мания без психотических симптомов",
+      "source": "diagnoses/by_code/f30_1.json"
+    },
+    {
+      "code": "F31",
+      "title_ru": "Биполярное аффективное расстройство",
+      "source": "diagnoses/by_code/f31.json"
+    },
+    {
+      "code": "F32",
+      "title_ru": "Депрессивный эпизод",
+      "source": "diagnoses/by_code/f32.json"
+    },
+    {
+      "code": "F33",
+      "title_ru": "Рекуррентное депрессивное расстройство",
+      "source": "diagnoses/by_code/f33.json"
+    },
+    {
+      "code": "F34.0",
+      "title_ru": "Циклотимия",
+      "source": "diagnoses/by_code/f34_0.json"
+    },
+    {
+      "code": "F34.1",
+      "title_ru": "Дистимия",
+      "source": "diagnoses/by_code/f34_1.json"
+    },
+    {
+      "code": "F40.0",
+      "title_ru": "Агорафобия",
+      "source": "diagnoses/by_code/f40_0.json"
+    },
+    {
+      "code": "F40.1",
+      "title_ru": "Социальные фобии",
+      "source": "diagnoses/by_code/f40_1.json"
+    },
+    {
+      "code": "F40.2",
+      "title_ru": "Специфические (изолированные) фобии",
+      "source": "diagnoses/by_code/f40_2.json"
+    },
+    {
+      "code": "F41.0",
+      "title_ru": "Паническое расстройство",
+      "source": "diagnoses/by_code/f41_0.json"
+    },
+    {
+      "code": "F41.1",
+      "title_ru": "Генерализованное тревожное расстройство",
+      "source": "diagnoses/by_code/f41_1.json"
+    },
+    {
+      "code": "F41.2",
+      "title_ru": "Смешанное тревожное и депрессивное расстройство",
+      "source": "diagnoses/by_code/f41_2.json"
+    },
+    {
+      "code": "F42",
+      "title_ru": "Обсессивно-компульсивное расстройство",
+      "source": "diagnoses/by_code/f42.json"
+    },
+    {
+      "code": "F43.0",
+      "title_ru": "Острая реакция на стресс",
+      "source": "diagnoses/by_code/f43_0.json"
+    },
+    {
+      "code": "F43.1",
+      "title_ru": "Посттравматическое стрессовое расстройство",
+      "source": "diagnoses/by_code/f43_1.json"
+    },
+    {
+      "code": "F43.2",
+      "title_ru": "Расстройства адаптации",
+      "source": "diagnoses/by_code/f43_2.json"
+    },
+    {
+      "code": "F44.9",
+      "title_ru": "Диссоциативное (конверсионное) расстройство неуточнённое",
+      "source": "diagnoses/by_code/f44_9.json"
+    },
+    {
+      "code": "F45.0",
+      "title_ru": "Соматизированное расстройство",
+      "source": "diagnoses/by_code/f45_0.json"
+    },
+    {
+      "code": "F45.2",
+      "title_ru": "Ипохондрическое расстройство",
+      "source": "diagnoses/by_code/f45_2.json"
+    },
+    {
+      "code": "F45.4",
+      "title_ru": "Устойчивое соматоформное болевое расстройство",
+      "source": "diagnoses/by_code/f45_4.json"
+    },
+    {
+      "code": "F48.0",
+      "title_ru": "Неврастения",
+      "source": "diagnoses/by_code/f48_0.json"
+    },
+    {
+      "code": "F50.0",
+      "title_ru": "Нервная анорексия",
+      "source": "diagnoses/by_code/f50_0.json"
+    },
+    {
+      "code": "F50.2",
+      "title_ru": "Нервная булимия",
+      "source": "diagnoses/by_code/f50_2.json"
+    },
+    {
+      "code": "F51.0",
+      "title_ru": "Бессонница неорганической этиологии",
+      "source": "diagnoses/by_code/f51_0.json"
+    },
+    {
+      "code": "F51.1",
+      "title_ru": "Сонливость неорганической этиологии",
+      "source": "diagnoses/by_code/f51_1.json"
+    },
+    {
+      "code": "F60.0",
+      "title_ru": "Параноидное расстройство личности",
+      "source": "diagnoses/by_code/f60_0.json"
+    },
+    {
+      "code": "F60.2",
+      "title_ru": "Диссоциальное расстройство личности",
+      "source": "diagnoses/by_code/f60_2.json"
+    },
+    {
+      "code": "F60.3",
+      "title_ru": "Эмоционально неустойчивое расстройство личности",
+      "source": "diagnoses/by_code/f60_3.json"
+    },
+    {
+      "code": "F60.5",
+      "title_ru": "Ананкастное расстройство личности",
+      "source": "diagnoses/by_code/f60_5.json"
+    },
+    {
+      "code": "F60.6",
+      "title_ru": "Тревожное (избегающее) расстройство личности",
+      "source": "diagnoses/by_code/f60_6.json"
+    },
+    {
+      "code": "F60.7",
+      "title_ru": "Зависимое расстройство личности",
+      "source": "diagnoses/by_code/f60_7.json"
+    },
+    {
+      "code": "F63.0",
+      "title_ru": "Патологическое влечение к азартным играм",
+      "source": "diagnoses/by_code/f63_0.json"
+    },
+    {
+      "code": "F70",
+      "title_ru": "Умственная отсталость лёгкой степени (термин рубрики МКБ-10)",
+      "source": "diagnoses/by_code/f70.json"
+    },
+    {
+      "code": "F80.1",
+      "title_ru": "Расстройство экспрессивной речи",
+      "source": "diagnoses/by_code/f80_1.json"
+    },
+    {
+      "code": "F81.0",
+      "title_ru": "Специфическое расстройство чтения",
+      "source": "diagnoses/by_code/f81_0.json"
+    },
+    {
+      "code": "F84.0",
+      "title_ru": "Детский аутизм",
+      "source": "diagnoses/by_code/f84_0.json"
+    },
+    {
+      "code": "F84.5",
+      "title_ru": "Синдром Аспергера",
+      "source": "diagnoses/by_code/f84_5.json"
+    },
+    {
+      "code": "F90.0",
+      "title_ru": "Нарушение активности и внимания",
+      "source": "diagnoses/by_code/f90_0.json"
+    },
+    {
+      "code": "F91.3",
+      "title_ru": "Оппозиционно-вызывающее расстройство",
+      "source": "diagnoses/by_code/f91_3.json"
+    },
+    {
+      "code": "F95.2",
+      "title_ru": "Комбинированное вокальное и множественное моторное тикозное расстройство (синдром Туретта)",
+      "source": "diagnoses/by_code/f95_2.json"
+    },
+    {
+      "code": "G20",
+      "title_ru": "Болезнь Паркинсона",
+      "source": "diagnoses/by_code/g20.json"
+    },
+    {
+      "code": "G21.1",
+      "title_ru": "Другие лекарственные формы вторичного паркинсонизма",
+      "source": "diagnoses/by_code/g21_1.json"
+    },
+    {
+      "code": "G30",
+      "title_ru": "Болезнь Альцгеймера",
+      "source": "diagnoses/by_code/g30.json"
+    },
+    {
+      "code": "G40",
+      "title_ru": "Эпилепсия",
+      "source": "diagnoses/by_code/g40.json"
+    },
+    {
+      "code": "G47.0",
+      "title_ru": "Нарушения засыпания и поддержания сна (бессонница)",
+      "source": "diagnoses/by_code/g47_0.json"
+    },
+    {
+      "code": "G47.1",
+      "title_ru": "Нарушения в виде повышенной сонливости (гиперсомния)",
+      "source": "diagnoses/by_code/g47_1.json"
+    },
+    {
+      "code": "R41.3",
+      "title_ru": "Другие амнезии (нарушение памяти)",
+      "source": "diagnoses/by_code/r41_3.json"
+    }
+  ],
+  "psychology": [
+    {
+      "code": "F10.1",
+      "title_ru": "Вредное употребление алкоголя",
+      "source": "diagnoses/by_code/f10_1.json"
+    },
+    {
+      "code": "F10.2",
+      "title_ru": "Синдром зависимости от алкоголя",
+      "source": "diagnoses/by_code/f10_2.json"
+    },
+    {
+      "code": "F11.2",
+      "title_ru": "Синдром зависимости от опиоидов",
+      "source": "diagnoses/by_code/f11_2.json"
+    },
+    {
+      "code": "F12.2",
+      "title_ru": "Синдром зависимости от каннабиноидов",
+      "source": "diagnoses/by_code/f12_2.json"
+    },
+    {
+      "code": "F17.2",
+      "title_ru": "Синдром зависимости от табака",
+      "source": "diagnoses/by_code/f17_2.json"
+    },
+    {
+      "code": "F21",
+      "title_ru": "Шизотипическое расстройство",
+      "source": "diagnoses/by_code/f21.json"
+    },
+    {
+      "code": "F32",
+      "title_ru": "Депрессивный эпизод",
+      "source": "diagnoses/by_code/f32.json"
+    },
+    {
+      "code": "F33",
+      "title_ru": "Рекуррентное депрессивное расстройство",
+      "source": "diagnoses/by_code/f33.json"
+    },
+    {
+      "code": "F34.0",
+      "title_ru": "Циклотимия",
+      "source": "diagnoses/by_code/f34_0.json"
+    },
+    {
+      "code": "F34.1",
+      "title_ru": "Дистимия",
+      "source": "diagnoses/by_code/f34_1.json"
+    },
+    {
+      "code": "F40.0",
+      "title_ru": "Агорафобия",
+      "source": "diagnoses/by_code/f40_0.json"
+    },
+    {
+      "code": "F40.1",
+      "title_ru": "Социальные фобии",
+      "source": "diagnoses/by_code/f40_1.json"
+    },
+    {
+      "code": "F40.2",
+      "title_ru": "Специфические (изолированные) фобии",
+      "source": "diagnoses/by_code/f40_2.json"
+    },
+    {
+      "code": "F41.0",
+      "title_ru": "Паническое расстройство",
+      "source": "diagnoses/by_code/f41_0.json"
+    },
+    {
+      "code": "F41.1",
+      "title_ru": "Генерализованное тревожное расстройство",
+      "source": "diagnoses/by_code/f41_1.json"
+    },
+    {
+      "code": "F41.2",
+      "title_ru": "Смешанное тревожное и депрессивное расстройство",
+      "source": "diagnoses/by_code/f41_2.json"
+    },
+    {
+      "code": "F42",
+      "title_ru": "Обсессивно-компульсивное расстройство",
+      "source": "diagnoses/by_code/f42.json"
+    },
+    {
+      "code": "F43.0",
+      "title_ru": "Острая реакция на стресс",
+      "source": "diagnoses/by_code/f43_0.json"
+    },
+    {
+      "code": "F43.1",
+      "title_ru": "Посттравматическое стрессовое расстройство",
+      "source": "diagnoses/by_code/f43_1.json"
+    },
+    {
+      "code": "F43.2",
+      "title_ru": "Расстройства адаптации",
+      "source": "diagnoses/by_code/f43_2.json"
+    },
+    {
+      "code": "F44.9",
+      "title_ru": "Диссоциативное (конверсионное) расстройство неуточнённое",
+      "source": "diagnoses/by_code/f44_9.json"
+    },
+    {
+      "code": "F45.0",
+      "title_ru": "Соматизированное расстройство",
+      "source": "diagnoses/by_code/f45_0.json"
+    },
+    {
+      "code": "F45.2",
+      "title_ru": "Ипохондрическое расстройство",
+      "source": "diagnoses/by_code/f45_2.json"
+    },
+    {
+      "code": "F45.4",
+      "title_ru": "Устойчивое соматоформное болевое расстройство",
+      "source": "diagnoses/by_code/f45_4.json"
+    },
+    {
+      "code": "F48.0",
+      "title_ru": "Неврастения",
+      "source": "diagnoses/by_code/f48_0.json"
+    },
+    {
+      "code": "F50.0",
+      "title_ru": "Нервная анорексия",
+      "source": "diagnoses/by_code/f50_0.json"
+    },
+    {
+      "code": "F50.2",
+      "title_ru": "Нервная булимия",
+      "source": "diagnoses/by_code/f50_2.json"
+    },
+    {
+      "code": "F51.0",
+      "title_ru": "Бессонница неорганической этиологии",
+      "source": "diagnoses/by_code/f51_0.json"
+    },
+    {
+      "code": "F60.0",
+      "title_ru": "Параноидное расстройство личности",
+      "source": "diagnoses/by_code/f60_0.json"
+    },
+    {
+      "code": "F60.2",
+      "title_ru": "Диссоциальное расстройство личности",
+      "source": "diagnoses/by_code/f60_2.json"
+    },
+    {
+      "code": "F60.3",
+      "title_ru": "Эмоционально неустойчивое расстройство личности",
+      "source": "diagnoses/by_code/f60_3.json"
+    },
+    {
+      "code": "F60.5",
+      "title_ru": "Ананкастное расстройство личности",
+      "source": "diagnoses/by_code/f60_5.json"
+    },
+    {
+      "code": "F60.6",
+      "title_ru": "Тревожное (избегающее) расстройство личности",
+      "source": "diagnoses/by_code/f60_6.json"
+    },
+    {
+      "code": "F60.7",
+      "title_ru": "Зависимое расстройство личности",
+      "source": "diagnoses/by_code/f60_7.json"
+    },
+    {
+      "code": "F63.0",
+      "title_ru": "Патологическое влечение к азартным играм",
+      "source": "diagnoses/by_code/f63_0.json"
+    },
+    {
+      "code": "F70",
+      "title_ru": "Умственная отсталость лёгкой степени (термин рубрики МКБ-10)",
+      "source": "diagnoses/by_code/f70.json"
+    },
+    {
+      "code": "F80.1",
+      "title_ru": "Расстройство экспрессивной речи",
+      "source": "diagnoses/by_code/f80_1.json"
+    },
+    {
+      "code": "F81.0",
+      "title_ru": "Специфическое расстройство чтения",
+      "source": "diagnoses/by_code/f81_0.json"
+    },
+    {
+      "code": "F84.0",
+      "title_ru": "Детский аутизм",
+      "source": "diagnoses/by_code/f84_0.json"
+    },
+    {
+      "code": "F84.5",
+      "title_ru": "Синдром Аспергера",
+      "source": "diagnoses/by_code/f84_5.json"
+    },
+    {
+      "code": "F90.0",
+      "title_ru": "Нарушение активности и внимания",
+      "source": "diagnoses/by_code/f90_0.json"
+    },
+    {
+      "code": "F91.3",
+      "title_ru": "Оппозиционно-вызывающее расстройство",
+      "source": "diagnoses/by_code/f91_3.json"
+    },
+    {
+      "code": "G44.2",
+      "title_ru": "Головная боль напряжённого типа",
+      "source": "diagnoses/by_code/g44_2.json"
+    }
+  ],
+  "neurology": [
+    {
+      "code": "F00",
+      "title_ru": "Деменция при болезни Альцгеймера",
+      "source": "diagnoses/by_code/f00.json"
+    },
+    {
+      "code": "F01",
+      "title_ru": "Сосудистая деменция",
+      "source": "diagnoses/by_code/f01.json"
+    },
+    {
+      "code": "F02",
+      "title_ru": "Деменция при других заболеваниях, классифицированных в других рубриках",
+      "source": "diagnoses/by_code/f02.json"
+    },
+    {
+      "code": "F03",
+      "title_ru": "Деменция неуточнённая",
+      "source": "diagnoses/by_code/f03.json"
+    },
+    {
+      "code": "F05",
+      "title_ru": "Делирий, не вызванный алкоголем или другими психоактивными веществами",
+      "source": "diagnoses/by_code/f05.json"
+    },
+    {
+      "code": "F06.7",
+      "title_ru": "Лёгкое когнитивное расстройство",
+      "source": "diagnoses/by_code/f06_7.json"
+    },
+    {
+      "code": "F07.2",
+      "title_ru": "Постконтузионный синдром",
+      "source": "diagnoses/by_code/f07_2.json"
+    },
+    {
+      "code": "F13.2",
+      "title_ru": "Синдром зависимости от седативных или снотворных средств",
+      "source": "diagnoses/by_code/f13_2.json"
+    },
+    {
+      "code": "F44.9",
+      "title_ru": "Диссоциативное (конверсионное) расстройство неуточнённое",
+      "source": "diagnoses/by_code/f44_9.json"
+    },
+    {
+      "code": "F45.0",
+      "title_ru": "Соматизированное расстройство",
+      "source": "diagnoses/by_code/f45_0.json"
+    },
+    {
+      "code": "F45.4",
+      "title_ru": "Устойчивое соматоформное болевое расстройство",
+      "source": "diagnoses/by_code/f45_4.json"
+    },
+    {
+      "code": "F48.0",
+      "title_ru": "Неврастения",
+      "source": "diagnoses/by_code/f48_0.json"
+    },
+    {
+      "code": "F51.0",
+      "title_ru": "Бессонница неорганической этиологии",
+      "source": "diagnoses/by_code/f51_0.json"
+    },
+    {
+      "code": "F51.1",
+      "title_ru": "Сонливость неорганической этиологии",
+      "source": "diagnoses/by_code/f51_1.json"
+    },
+    {
+      "code": "F70",
+      "title_ru": "Умственная отсталость лёгкой степени (термин рубрики МКБ-10)",
+      "source": "diagnoses/by_code/f70.json"
+    },
+    {
+      "code": "F80.1",
+      "title_ru": "Расстройство экспрессивной речи",
+      "source": "diagnoses/by_code/f80_1.json"
+    },
+    {
+      "code": "F81.0",
+      "title_ru": "Специфическое расстройство чтения",
+      "source": "diagnoses/by_code/f81_0.json"
+    },
+    {
+      "code": "F84.0",
+      "title_ru": "Детский аутизм",
+      "source": "diagnoses/by_code/f84_0.json"
+    },
+    {
+      "code": "F84.5",
+      "title_ru": "Синдром Аспергера",
+      "source": "diagnoses/by_code/f84_5.json"
+    },
+    {
+      "code": "F90.0",
+      "title_ru": "Нарушение активности и внимания",
+      "source": "diagnoses/by_code/f90_0.json"
+    },
+    {
+      "code": "F95.2",
+      "title_ru": "Комбинированное вокальное и множественное моторное тикозное расстройство (синдром Туретта)",
+      "source": "diagnoses/by_code/f95_2.json"
+    },
+    {
+      "code": "G20",
+      "title_ru": "Болезнь Паркинсона",
+      "source": "diagnoses/by_code/g20.json"
+    },
+    {
+      "code": "G21.1",
+      "title_ru": "Другие лекарственные формы вторичного паркинсонизма",
+      "source": "diagnoses/by_code/g21_1.json"
+    },
+    {
+      "code": "G24.9",
+      "title_ru": "Дистония неуточнённая",
+      "source": "diagnoses/by_code/g24_9.json"
+    },
+    {
+      "code": "G25.0",
+      "title_ru": "Эссенциальный тремор",
+      "source": "diagnoses/by_code/g25_0.json"
+    },
+    {
+      "code": "G30",
+      "title_ru": "Болезнь Альцгеймера",
+      "source": "diagnoses/by_code/g30.json"
+    },
+    {
+      "code": "G35",
+      "title_ru": "Рассеянный склероз",
+      "source": "diagnoses/by_code/g35.json"
+    },
+    {
+      "code": "G40",
+      "title_ru": "Эпилепсия",
+      "source": "diagnoses/by_code/g40.json"
+    },
+    {
+      "code": "G43",
+      "title_ru": "Мигрень",
+      "source": "diagnoses/by_code/g43.json"
+    },
+    {
+      "code": "G43.0",
+      "title_ru": "Мигрень без ауры",
+      "source": "diagnoses/by_code/g43_0.json"
+    },
+    {
+      "code": "G43.1",
+      "title_ru": "Мигрень с аурой",
+      "source": "diagnoses/by_code/g43_1.json"
+    },
+    {
+      "code": "G44.2",
+      "title_ru": "Головная боль напряжённого типа",
+      "source": "diagnoses/by_code/g44_2.json"
+    },
+    {
+      "code": "G47.0",
+      "title_ru": "Нарушения засыпания и поддержания сна (бессонница)",
+      "source": "diagnoses/by_code/g47_0.json"
+    },
+    {
+      "code": "G47.1",
+      "title_ru": "Нарушения в виде повышенной сонливости (гиперсомния)",
+      "source": "diagnoses/by_code/g47_1.json"
+    },
+    {
+      "code": "G47.3",
+      "title_ru": "Апноэ во сне",
+      "source": "diagnoses/by_code/g47_3.json"
+    },
+    {
+      "code": "G62.9",
+      "title_ru": "Полиневропатия неуточнённая",
+      "source": "diagnoses/by_code/g62_9.json"
+    },
+    {
+      "code": "G45.9",
+      "title_ru": "Преходящая церебральная ишемическая атака неуточнённая",
+      "source": "diagnoses/by_code/g45_9.json"
+    },
+    {
+      "code": "I63",
+      "title_ru": "Инфаркт мозга (ишемический инсульт)",
+      "source": "diagnoses/by_code/i63.json"
+    },
+    {
+      "code": "S06.0",
+      "title_ru": "Сотрясение головного мозга",
+      "source": "diagnoses/by_code/s06_0.json"
+    },
+    {
+      "code": "R41.3",
+      "title_ru": "Другие амнезии (нарушение памяти)",
+      "source": "diagnoses/by_code/r41_3.json"
+    }
+  ]
+}

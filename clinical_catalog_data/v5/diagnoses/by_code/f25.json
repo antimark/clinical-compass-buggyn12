@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "F25",
+  "title_ru": "Шизоаффективные расстройства",
+  "synonyms_ru": [],
+  "specialties": [
+    "psychiatry"
+  ],
+  "description_clinician": "Сочетание выраженных аффективных и шизофреноподобных симптомов в одном эпизоде",
+  "description_patient": "Состояние с одновременными расстройствами настроения и психотическими симптомами",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Сочетание выраженных аффективных и шизофреноподобных симптомов в одном эпизоде"
+    ],
+    "course_and_duration": "Оценить взаимное время появления синдромов",
+    "functional_impact": "Существенное нарушение функционирования",
+    "exclude_and_check": "Шизофрения и расстройства настроения с психотическими симптомами",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры."
+  },
+  "differential_diagnosis_icd10": [
+    "F20",
+    "F31",
+    "F32"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "",
+  "red_flags": [],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "family_intervention_psychosis",
+        "target_path": "therapies/by_id/family_intervention_psychosis.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_psychosis",
+          "who_psychosis"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "cbtp",
+        "target_path": "therapies/by_id/cbtp.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_psychosis",
+          "who_psychosis"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [
+      {
+        "substance_id": "risperidone",
+        "target_path": "medicines/by_inn/risperidone.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_psychosis"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "quetiapine",
+        "target_path": "medicines/by_inn/quetiapine.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_psychosis"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "aripiprazole",
+        "target_path": "medicines/by_inn/aripiprazole.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_psychosis"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "olanzapine",
+        "target_path": "medicines/by_inn/olanzapine.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_psychosis"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "paliperidone",
+        "target_path": "medicines/by_inn/paliperidone.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_psychosis"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      }
+    ],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

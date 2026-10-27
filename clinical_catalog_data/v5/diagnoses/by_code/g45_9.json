@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "G45.9",
+  "title_ru": "Преходящая церебральная ишемическая атака неуточнённая",
+  "synonyms_ru": [],
+  "specialties": [
+    "neurology"
+  ],
+  "description_clinician": "Внезапно возникшие очаговые неврологические симптомы возможного сосудистого происхождения с последующим регрессом",
+  "description_patient": "Даже прошедшие внезапные нарушения речи, зрения или силы требуют неотложной помощи",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Внезапно возникшие очаговые неврологические симптомы возможного сосудистого происхождения с последующим регрессом"
+    ],
+    "course_and_duration": "Минуты/часы; требует неотложного исключения инсульта",
+    "functional_impact": "Высокий сосудистый риск даже при восстановлении",
+    "exclude_and_check": "Мигренозная аура, эпилепсия, гипогликемия",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры.",
+    "assessment_checklist_original_summary": [
+      "Внезапный преходящий очаговый дефицит",
+      "Время возникновения и регресс симптомов",
+      "Срочное исключение инсульта и других причин",
+      "Проверка сосудистых факторов риска и экстренный маршрут"
+    ],
+    "uses_official_thresholds": false
+  },
+  "differential_diagnosis_icd10": [
+    "I63",
+    "G43.1",
+    "G40"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "",
+  "red_flags": [
+    "При внезапном/тяжёлом ухудшении, нарушении безопасности или жизненно важных функций — срочная очная медицинская оценка; не откладывать из-за заполнения шкалы."
+  ],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true,
+    "priority": "P0"
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "stroke_secondary_prevention",
+        "target_path": "therapies/by_id/stroke_secondary_prevention.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_stroke_tia",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [
+      {
+        "substance_id": "aspirin_low_dose",
+        "target_path": "medicines/by_inn/aspirin_low_dose.json",
+        "relationship": "etiology_specific_secondary_prevention",
+        "evidence_source_ids": [],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "clopidogrel",
+        "target_path": "medicines/by_inn/clopidogrel.json",
+        "relationship": "etiology_specific_secondary_prevention",
+        "evidence_source_ids": [],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "apixaban",
+        "target_path": "medicines/by_inn/apixaban.json",
+        "relationship": "etiology_specific_not_all_TIA",
+        "evidence_source_ids": [],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      }
+    ],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

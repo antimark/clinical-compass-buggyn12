@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "G43",
+  "title_ru": "Мигрень",
+  "synonyms_ru": [],
+  "specialties": [
+    "neurology"
+  ],
+  "description_clinician": "Повторяющиеся приступы головной боли с характерными признаками, иногда аурой, фото/фонофобией и тошнотой",
+  "description_patient": "Повторяющиеся приступы головной боли с характерными сопутствующими симптомами",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Повторяющиеся приступы головной боли с характерными признаками, иногда аурой, фото/фонофобией и тошнотой"
+    ],
+    "course_and_duration": "Повторные атаки; длительность приступов по клиническим критериям",
+    "functional_impact": "Влияние на активность и качество жизни",
+    "exclude_and_check": "Вторичная головная боль и другие первичные головные боли",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры.",
+    "assessment_checklist_original_summary": [
+      "Анамнез повторяющихся головных болей",
+      "Длительность, характер боли, сопутствующие фото- или фонофобия, тошнота",
+      "Наличие или отсутствие обратимой ауры",
+      "Исключение красных флагов вторичной головной боли"
+    ],
+    "uses_official_thresholds": false
+  },
+  "differential_diagnosis_icd10": [
+    "G44.2",
+    "I63"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "",
+  "red_flags": [],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true,
+    "priority": "P0"
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "migraine_behavioral",
+        "target_path": "therapies/by_id/migraine_behavioral.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_headache"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "headache_acupuncture",
+        "target_path": "therapies/by_id/headache_acupuncture.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_headache"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [
+      {
+        "substance_id": "amitriptyline",
+        "target_path": "medicines/by_inn/amitriptyline.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_headache"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "topiramate",
+        "target_path": "medicines/by_inn/topiramate.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_headache"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "propranolol",
+        "target_path": "medicines/by_inn/propranolol.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_headache"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "sumatriptan",
+        "target_path": "medicines/by_inn/sumatriptan.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_headache"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "ibuprofen",
+        "target_path": "medicines/by_inn/ibuprofen.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_headache"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "paracetamol",
+        "target_path": "medicines/by_inn/paracetamol.json",
+        "relationship": "guideline_mentioned_for_selected_population",
+        "evidence_source_ids": [
+          "nice_headache"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "onabotulinumtoxinA",
+        "target_path": "medicines/by_inn/onabotulinumtoxinA.json",
+        "relationship": "chronic_migraine_only",
+        "evidence_source_ids": [
+          "nice_headache"
+        ],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      }
+    ],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

@@ -1,0 +1,334 @@
+{
+  "catalog_version": "5.0.0",
+  "generated_on": "2026-10-25",
+  "application": "Clinical Compass",
+  "default_locale": "ru-RU",
+  "code_system": "ICD-10",
+  "instrument_count": 30,
+  "diagnosis_count": 77,
+  "priorities": {
+    "P0": "основной набор + технические демо",
+    "P1": "специальные шкалы и алгоритмические скрининги",
+    "P2": "сложные интервью, коммерчески лицензируемые и исследовательские инструменты"
+  },
+  "instruments": [
+    {
+      "instrument_id": "GAD-2",
+      "priority": "P0",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/gad_2.json",
+      "russian_content": "russian_validated_in_literature_exact_local_wording_needs_medical_collation",
+      "clinical_content_status": "draft_pending_clinical_review",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "GAD-7",
+      "priority": "P0",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/gad_7.json",
+      "russian_content": "russian_validated_in_literature_exact_local_wording_needs_medical_collation",
+      "clinical_content_status": "draft_pending_clinical_review",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "PHQ-2",
+      "priority": "P0",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/phq_2.json",
+      "russian_content": "russian_validated_in_literature_exact_local_wording_needs_medical_collation",
+      "clinical_content_status": "draft_pending_clinical_review",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "PHQ-9",
+      "priority": "P0",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/phq_9.json",
+      "russian_content": "russian_validated_in_literature_exact_local_wording_needs_medical_collation",
+      "clinical_content_status": "draft_pending_clinical_review",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "CAPS-5",
+      "priority": "P2",
+      "type": "clinician_structured_interview",
+      "path": "catalog/instruments/caps_5.json",
+      "russian_content": "clinical_guide_russian_not_licensed_interview_translation",
+      "clinical_content_status": "metadata_only_license_required",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "CC-DEMO-INTERVIEW-01",
+      "priority": "P0",
+      "type": "clinician_structured_interview",
+      "path": "catalog/instruments/cc_demo_interview_01.json",
+      "russian_content": "synthetic_test_only",
+      "clinical_content_status": "synthetic_nonvalidated_ux_only",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "DIVA-5",
+      "priority": "P2",
+      "type": "clinician_structured_interview",
+      "path": "catalog/instruments/diva_5.json",
+      "russian_content": "clinical_guide_russian_not_licensed_interview_translation",
+      "clinical_content_status": "metadata_only_license_required",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "MINI-7",
+      "priority": "P2",
+      "type": "clinician_structured_interview",
+      "path": "catalog/instruments/mini_7.json",
+      "russian_content": "clinical_guide_russian_not_licensed_interview_translation",
+      "clinical_content_status": "metadata_only_license_required",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "PAI",
+      "priority": "P2",
+      "type": "self_report_multiscale",
+      "path": "catalog/instruments/pai.json",
+      "russian_content": "clinical_guide_russian_not_licensed_interview_translation",
+      "clinical_content_status": "metadata_only_license_required",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "SCID-5-CV",
+      "priority": "P2",
+      "type": "clinician_structured_interview",
+      "path": "catalog/instruments/scid_5_cv.json",
+      "russian_content": "clinical_guide_russian_not_licensed_interview_translation",
+      "clinical_content_status": "metadata_only_license_required",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "SCID-5-PD",
+      "priority": "P2",
+      "type": "clinician_structured_interview",
+      "path": "catalog/instruments/scid_5_pd.json",
+      "russian_content": "clinical_guide_russian_not_licensed_interview_translation",
+      "clinical_content_status": "metadata_only_license_required",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "SCID-5-RV",
+      "priority": "P2",
+      "type": "clinician_structured_interview",
+      "path": "catalog/instruments/scid_5_rv.json",
+      "russian_content": "clinical_guide_russian_not_licensed_interview_translation",
+      "clinical_content_status": "metadata_only_license_required",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "CC-DEMO-MULTISCALE-01",
+      "priority": "P0",
+      "type": "synthetic_multiscale_fixture",
+      "path": "catalog/instruments/cc_demo_multiscale_01.json",
+      "russian_content": "synthetic_test_only",
+      "clinical_content_status": "synthetic_software_fixture_nonvalidated",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "DASS-21",
+      "priority": "P0",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/dass_21.json",
+      "russian_content": "validated_ru_available_external_not_embedded",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "DASS-42",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/dass_42.json",
+      "russian_content": "russian_translations_available_external_not_embedded",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "K6",
+      "priority": "P0",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/k6.json",
+      "russian_content": "validated_ru_available_external_not_embedded",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "K10",
+      "priority": "P0",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/k10.json",
+      "russian_content": "validated_ru_available_external_not_embedded",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "CES-D",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/ces_d.json",
+      "russian_content": "russian_adaptation_available_external_not_embedded",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "CESD-R",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/cesd_r.json",
+      "russian_content": "no_confirmed_official_russian",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "PCL-5",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/pcl_5.json",
+      "russian_content": "russian_research_translation_needs_exact_text_review",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "PC-PTSD-5",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/pc_ptsd_5.json",
+      "russian_content": "draft_translation_pending_user_review",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "LEC-5",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/lec_5.json",
+      "russian_content": "russian_research_translation_needs_exact_text_review",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "ITQ",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/itq.json",
+      "russian_content": "validated_ru_available_but_translation_rights_for_commercial_use_unconfirmed",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "ITQ-CC",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/itq_cc.json",
+      "russian_content": "no_confirmed_official_russian_for_cc_version",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "IDQ",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/idq.json",
+      "russian_content": "no_confirmed_official_russian",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "IAQ",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/iaq.json",
+      "russian_content": "no_confirmed_official_russian",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "IADQ",
+      "priority": "P1",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/iadq.json",
+      "russian_content": "no_confirmed_official_russian",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "ITI",
+      "priority": "P2",
+      "type": "clinician_structured_interview",
+      "path": "catalog/instruments/iti.json",
+      "russian_content": "ru_version_not_confirmed",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "IPIP",
+      "priority": "P1",
+      "type": "measure_library",
+      "path": "catalog/instruments/ipip.json",
+      "russian_content": "ru_translation_and_selected_form_need_validation",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": true,
+      "ready_for_use": false
+    },
+    {
+      "instrument_id": "SDRS-5",
+      "priority": "P2",
+      "type": "self_report_scale",
+      "path": "catalog/instruments/sdrs_5.json",
+      "russian_content": "no_verified_official_russian",
+      "clinical_content_status": "metadata_only_not_administrable",
+      "commercial_clearance": false,
+      "ready_for_use": false
+    }
+  ],
+  "diagnoses_path": "diagnoses/diagnoses_index.json",
+  "clinical_release_status": "NOT_APPROVED",
+  "notes": [
+    "Каталог — данные и справочник, не интегрированный код.",
+    "Инструменты без подтверждённой лицензии/локализации не назначать пациенту.",
+    "Диагностические критерии — авторские краткие ориентиры, не копия полного руководства ВОЗ."
+  ],
+  "release_date": "2026-10-25",
+  "therapy_method_count": 58,
+  "new_active_substance_count": 61,
+  "medicine_active_substance_count": 69,
+  "source_product_instruction_count": 8,
+  "therapy_index": "therapies/therapy_index.json",
+  "medicine_index": "medicines/medicine_index.json",
+  "medicine_source_product_index": "medicines/source_product_index.json",
+  "medicines_in_new_catalog": "INN reference cards only; original 8 branded instructions preserved unchanged",
+  "linked_diagnosis_count": 77,
+  "therapeutic_content_status": "editorial_needs_medical_review_not_clinically_deployable"
+}

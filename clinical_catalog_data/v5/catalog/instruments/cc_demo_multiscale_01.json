@@ -1,0 +1,301 @@
+{
+  "schema_version": "2.0.0",
+  "instrument_id": "CC-DEMO-MULTISCALE-01",
+  "instrument_version": "demo-1.0.0",
+  "language": "ru-RU",
+  "clinical_content_status": "synthetic_software_fixture_nonvalidated",
+  "information": {
+    "title": "Демонстрационный многомерный опросник качества ответов",
+    "authors": [
+      "Clinical Compass: синтетический тестовый контент"
+    ],
+    "year": 2026,
+    "purpose_patient": "Только проверка интерфейса опросника; не медицинское обследование.",
+    "purpose_clinician": "QA-фикстура для двух клинических показателей и двух типов показателей достоверности. Не валидирована.",
+    "diagnostic_purpose": false,
+    "recommended_for": {
+      "diagnosis": false,
+      "diagnostic_support": false,
+      "screening": false,
+      "monitoring": false,
+      "ui_qa": true
+    },
+    "icd10": {
+      "direct": [],
+      "associated": [],
+      "differential": []
+    },
+    "target_population": "Синтетические данные и разработчики; не использовать с реальными пациентами",
+    "clinical_limitations": [
+      "Нет психометрической валидации",
+      "Нет норм, T-баллов и диагностических порогов",
+      "Не имеет права на автоматическое клиническое заключение"
+    ],
+    "references": [],
+    "licensing": {
+      "content": "author_original_synthetic",
+      "permission_required": false
+    }
+  },
+  "ui": {
+    "audience": [
+      "developer"
+    ],
+    "default_mode": "software_demo",
+    "show_patient_warning": true,
+    "patient_warning": "Демонстрация системы; результаты не характеризуют ваше здоровье",
+    "require_all_scored_answers": true
+  },
+  "response_sets": {
+    "frequency_4": [
+      {
+        "id": "0",
+        "label": "Никогда",
+        "score": 0
+      },
+      {
+        "id": "1",
+        "label": "Изредка",
+        "score": 1
+      },
+      {
+        "id": "2",
+        "label": "Часто",
+        "score": 2
+      },
+      {
+        "id": "3",
+        "label": "Почти всегда",
+        "score": 3
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "m1",
+      "order": 1,
+      "text": "За последнюю неделю мне было трудно заниматься привычными делами.",
+      "response_set": "frequency_4",
+      "required": true
+    },
+    {
+      "id": "a1",
+      "order": 2,
+      "text": "За последнюю неделю я испытывал(а) внутреннее напряжение.",
+      "response_set": "frequency_4",
+      "required": true
+    },
+    {
+      "id": "m2",
+      "order": 3,
+      "text": "За последнюю неделю я чувствовал(а) недостаток энергии.",
+      "response_set": "frequency_4",
+      "required": true
+    },
+    {
+      "id": "a2",
+      "order": 4,
+      "text": "За последнюю неделю мне было трудно расслабиться.",
+      "response_set": "frequency_4",
+      "required": true
+    },
+    {
+      "id": "c1",
+      "order": 5,
+      "text": "За последнюю неделю я легко справлялся(ась) с привычными делами.",
+      "response_set": "frequency_4",
+      "required": true,
+      "tags": [
+        "reverse_pair_demo"
+      ]
+    },
+    {
+      "id": "c2",
+      "order": 6,
+      "text": "За последнюю неделю я почти не испытывал(а) внутреннего напряжения.",
+      "response_set": "frequency_4",
+      "required": true,
+      "tags": [
+        "reverse_pair_demo"
+      ]
+    },
+    {
+      "id": "p1",
+      "order": 7,
+      "text": "В любых обстоятельствах я всегда сохраняю полное спокойствие.",
+      "response_set": "frequency_4",
+      "required": true
+    },
+    {
+      "id": "p2",
+      "order": 8,
+      "text": "У меня никогда не возникает неприятных переживаний.",
+      "response_set": "frequency_4",
+      "required": true
+    }
+  ],
+  "scales": [
+    {
+      "id": "mood_example",
+      "kind": "clinical",
+      "label": "Учебный показатель самочувствия",
+      "item_ids": [
+        "m1",
+        "m2"
+      ],
+      "algorithm": {
+        "type": "sum",
+        "score_field": "score"
+      },
+      "score_range": {
+        "min": 0,
+        "max": 6
+      },
+      "norms": null,
+      "clinical_cutoffs": null,
+      "purpose": "software_demo_only"
+    },
+    {
+      "id": "anxiety_example",
+      "kind": "clinical",
+      "label": "Учебный показатель напряжения",
+      "item_ids": [
+        "a1",
+        "a2"
+      ],
+      "algorithm": {
+        "type": "sum",
+        "score_field": "score"
+      },
+      "score_range": {
+        "min": 0,
+        "max": 6
+      },
+      "norms": null,
+      "clinical_cutoffs": null,
+      "purpose": "software_demo_only"
+    },
+    {
+      "id": "inconsistency_example",
+      "kind": "validity",
+      "label": "Учебный индекс противоречивости",
+      "item_ids": [
+        "m1",
+        "a1",
+        "c1",
+        "c2"
+      ],
+      "algorithm": {
+        "type": "sum_absolute_reverse_pair_differences",
+        "pairs": [
+          {
+            "a": "m1",
+            "b": "c1",
+            "reverse_max": 3
+          },
+          {
+            "a": "a1",
+            "b": "c2",
+            "reverse_max": 3
+          }
+        ]
+      },
+      "score_range": {
+        "min": 0,
+        "max": 6
+      },
+      "norms": null,
+      "clinical_cutoffs": null,
+      "purpose": "software_demo_only",
+      "interpretation": "Число отражает расхождение ответов в этой искусственной форме; не измеряет ложь"
+    },
+    {
+      "id": "positive_impression_example",
+      "kind": "validity",
+      "label": "Учебный индекс идеализированных ответов",
+      "item_ids": [
+        "p1",
+        "p2"
+      ],
+      "algorithm": {
+        "type": "sum",
+        "score_field": "score"
+      },
+      "score_range": {
+        "min": 0,
+        "max": 6
+      },
+      "norms": null,
+      "clinical_cutoffs": null,
+      "purpose": "software_demo_only",
+      "interpretation": "Не является валидированной шкалой и не даёт права оценивать искренность"
+    }
+  ],
+  "scoring_policy": {
+    "calculate_scales_independently": true,
+    "missing_response": "block_completion",
+    "norm_conversion": "none",
+    "assessment_order": [
+      "check_completeness",
+      "score_validity_scales",
+      "score_clinical_scales",
+      "apply_interpretation_permissions"
+    ]
+  },
+  "interpretations": {
+    "patient": {
+      "message": "Это тестирование интерфейса, а не клиническая оценка.",
+      "show_numeric_scores": false
+    },
+    "clinician": {
+      "message": "Синтетическая техническая фикстура. Расчётные показатели не имеют клинического значения.",
+      "diagnostic_conclusions_allowed": false,
+      "automatic_diagnosis": false
+    },
+    "invalidity_handling": {
+      "automatically_accuse_of_lying": false,
+      "automatically_discard_patient": false,
+      "request_review_if_validity_signal": true
+    }
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": false,
+    "legal_review_required": false,
+    "synthetic_only": true
+  },
+  "priority": "P0",
+  "instrument_type": "synthetic_multiscale_fixture",
+  "catalog_schema_version": "4.0.0",
+  "localization": {
+    "language": "ru",
+    "status": "synthetic_test_only",
+    "text_rights_confirmed": true,
+    "release_approved": false,
+    "draft_segregated": false
+  },
+  "rights": {
+    "rights_holder": "Clinical Compass (original synthetic items)",
+    "copyright_status": "original_synthetic_fixture",
+    "commercial_use": "allowed",
+    "research_use": "allowed",
+    "open_use": "allowed",
+    "electronic_administration": "allowed",
+    "public_distribution": "allowed",
+    "translation_rights": "allowed_but_validate",
+    "patient_feedback_allowed": "no_diagnostic_claims",
+    "license_source_url": "",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "availability": {
+    "russian_form": "synthetic_fixture",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "",
+    "protected_material_embedded": false
+  }
+}

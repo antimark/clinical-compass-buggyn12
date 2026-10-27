@@ -1,0 +1,803 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "active_substance_index",
+  "count": 69,
+  "items": [
+    {
+      "id": "escitalopram",
+      "name_ru": "эсциталопрам",
+      "class": "SSRI",
+      "path": "medicines/by_inn/escitalopram.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F40.1",
+        "F41.0",
+        "F41.1",
+        "F42"
+      ],
+      "source_product_ids": [
+        "cipralex_escitalopram_10mg"
+      ]
+    },
+    {
+      "id": "sertraline",
+      "name_ru": "сертралин",
+      "class": "SSRI",
+      "path": "medicines/by_inn/sertraline.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F40.1",
+        "F41.0",
+        "F41.1",
+        "F42",
+        "F43.1"
+      ],
+      "source_product_ids": [
+        "zoloft_sertraline_50mg"
+      ]
+    },
+    {
+      "id": "venlafaxine",
+      "name_ru": "венлафаксин",
+      "class": "SNRI",
+      "path": "medicines/by_inn/venlafaxine.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F40.1",
+        "F41.0",
+        "F41.1",
+        "F43.1"
+      ],
+      "source_product_ids": [
+        "velaxin_venlafaxine_xr_75mg"
+      ]
+    },
+    {
+      "id": "lamotrigine",
+      "name_ru": "ламотриджин",
+      "class": "anticonvulsant_mood_stabilizer",
+      "path": "medicines/by_inn/lamotrigine.json",
+      "diagnosis_codes": [
+        "F31",
+        "G40"
+      ],
+      "source_product_ids": [
+        "lamictal_lamotrigine_25mg"
+      ]
+    },
+    {
+      "id": "risperidone",
+      "name_ru": "рисперидон",
+      "class": "antipsychotic",
+      "path": "medicines/by_inn/risperidone.json",
+      "diagnosis_codes": [
+        "F00",
+        "F20",
+        "F23",
+        "F25",
+        "F30.1",
+        "F31",
+        "G30"
+      ],
+      "source_product_ids": [
+        "risperidone_canon_2mg"
+      ]
+    },
+    {
+      "id": "quetiapine",
+      "name_ru": "кветиапин",
+      "class": "antipsychotic",
+      "path": "medicines/by_inn/quetiapine.json",
+      "diagnosis_codes": [
+        "F20",
+        "F25",
+        "F30.1",
+        "F31"
+      ],
+      "source_product_ids": [
+        "seroquel_quetiapine_ir_100mg"
+      ]
+    },
+    {
+      "id": "atomoxetine",
+      "name_ru": "атомоксетин",
+      "class": "nonstimulant_adhd",
+      "path": "medicines/by_inn/atomoxetine.json",
+      "diagnosis_codes": [
+        "F90.0"
+      ],
+      "source_product_ids": [
+        "atomoxetine_canon_40mg"
+      ]
+    },
+    {
+      "id": "maritupirdine",
+      "name_ru": "маритупирдин",
+      "class": "anxiolytic_local",
+      "path": "medicines/by_inn/maritupirdine.json",
+      "diagnosis_codes": [
+        "F41.1"
+      ],
+      "source_product_ids": [
+        "aviandr_maritupirdine_instruction"
+      ]
+    },
+    {
+      "id": "fluoxetine",
+      "name_ru": "флуоксетин",
+      "class": "SSRI",
+      "path": "medicines/by_inn/fluoxetine.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F42",
+        "F50.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "fluvoxamine",
+      "name_ru": "флувоксамин",
+      "class": "SSRI",
+      "path": "medicines/by_inn/fluvoxamine.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F42"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "paroxetine",
+      "name_ru": "пароксетин",
+      "class": "SSRI",
+      "path": "medicines/by_inn/paroxetine.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F40.1",
+        "F41.0",
+        "F41.1",
+        "F42",
+        "F43.1"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "citalopram",
+      "name_ru": "циталопрам",
+      "class": "SSRI",
+      "path": "medicines/by_inn/citalopram.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F42"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "duloxetine",
+      "name_ru": "дулоксетин",
+      "class": "SNRI",
+      "path": "medicines/by_inn/duloxetine.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "F41.1"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "mirtazapine",
+      "name_ru": "миртазапин",
+      "class": "antidepressant",
+      "path": "medicines/by_inn/mirtazapine.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "bupropion",
+      "name_ru": "бупропион",
+      "class": "antidepressant_nicotine",
+      "path": "medicines/by_inn/bupropion.json",
+      "diagnosis_codes": [
+        "F17.2",
+        "F32",
+        "F33"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "amitriptyline",
+      "name_ru": "амитриптилин",
+      "class": "TCA",
+      "path": "medicines/by_inn/amitriptyline.json",
+      "diagnosis_codes": [
+        "F32",
+        "F33",
+        "G43",
+        "G43.0",
+        "G43.1",
+        "G44.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "clomipramine",
+      "name_ru": "кломипрамин",
+      "class": "TCA",
+      "path": "medicines/by_inn/clomipramine.json",
+      "diagnosis_codes": [
+        "F42"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "pregabalin",
+      "name_ru": "прегабалин",
+      "class": "gabapentinoid",
+      "path": "medicines/by_inn/pregabalin.json",
+      "diagnosis_codes": [
+        "F41.1",
+        "G40"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "lithium",
+      "name_ru": "литий",
+      "class": "mood_stabilizer",
+      "path": "medicines/by_inn/lithium.json",
+      "diagnosis_codes": [
+        "F30.1",
+        "F31",
+        "F33"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "valproate",
+      "name_ru": "вальпроаты (вальпроевая кислота/натрия вальпроат)",
+      "class": "anticonvulsant_mood_stabilizer",
+      "path": "medicines/by_inn/valproate.json",
+      "diagnosis_codes": [
+        "F30.1",
+        "F31",
+        "G40"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "carbamazepine",
+      "name_ru": "карбамазепин",
+      "class": "anticonvulsant",
+      "path": "medicines/by_inn/carbamazepine.json",
+      "diagnosis_codes": [
+        "F31",
+        "G40"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "levetiracetam",
+      "name_ru": "леветирацетам",
+      "class": "anticonvulsant",
+      "path": "medicines/by_inn/levetiracetam.json",
+      "diagnosis_codes": [
+        "G40"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "oxcarbazepine",
+      "name_ru": "окскарбазепин",
+      "class": "anticonvulsant",
+      "path": "medicines/by_inn/oxcarbazepine.json",
+      "diagnosis_codes": [
+        "G40"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "lacosamide",
+      "name_ru": "лакосамид",
+      "class": "anticonvulsant",
+      "path": "medicines/by_inn/lacosamide.json",
+      "diagnosis_codes": [
+        "G40"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "topiramate",
+      "name_ru": "топирамат",
+      "class": "anticonvulsant",
+      "path": "medicines/by_inn/topiramate.json",
+      "diagnosis_codes": [
+        "G40",
+        "G43",
+        "G43.0",
+        "G43.1"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "zonisamide",
+      "name_ru": "зонисамид",
+      "class": "anticonvulsant",
+      "path": "medicines/by_inn/zonisamide.json",
+      "diagnosis_codes": [
+        "G40"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "aripiprazole",
+      "name_ru": "арипипразол",
+      "class": "antipsychotic",
+      "path": "medicines/by_inn/aripiprazole.json",
+      "diagnosis_codes": [
+        "F20",
+        "F25",
+        "F30.1",
+        "F31"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "olanzapine",
+      "name_ru": "оланзапин",
+      "class": "antipsychotic",
+      "path": "medicines/by_inn/olanzapine.json",
+      "diagnosis_codes": [
+        "F20",
+        "F25",
+        "F30.1",
+        "F31"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "clozapine",
+      "name_ru": "клозапин",
+      "class": "antipsychotic",
+      "path": "medicines/by_inn/clozapine.json",
+      "diagnosis_codes": [
+        "F20"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "haloperidol",
+      "name_ru": "галоперидол",
+      "class": "antipsychotic",
+      "path": "medicines/by_inn/haloperidol.json",
+      "diagnosis_codes": [
+        "F20",
+        "F23",
+        "F30.1",
+        "F31"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "paliperidone",
+      "name_ru": "палиперидон",
+      "class": "antipsychotic",
+      "path": "medicines/by_inn/paliperidone.json",
+      "diagnosis_codes": [
+        "F20",
+        "F25"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "methylphenidate",
+      "name_ru": "метилфенидат",
+      "class": "stimulant_adhd",
+      "path": "medicines/by_inn/methylphenidate.json",
+      "diagnosis_codes": [
+        "F90.0"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "lisdexamfetamine",
+      "name_ru": "лиздексамфетамин",
+      "class": "stimulant_adhd",
+      "path": "medicines/by_inn/lisdexamfetamine.json",
+      "diagnosis_codes": [
+        "F90.0"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "guanfacine",
+      "name_ru": "гуанфацин",
+      "class": "alpha2_adhd",
+      "path": "medicines/by_inn/guanfacine.json",
+      "diagnosis_codes": [
+        "F90.0",
+        "F95.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "acamprosate",
+      "name_ru": "акампросат",
+      "class": "alcohol_relapse_prevention",
+      "path": "medicines/by_inn/acamprosate.json",
+      "diagnosis_codes": [
+        "F10.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "naltrexone",
+      "name_ru": "налтрексон",
+      "class": "opioid_antagonist",
+      "path": "medicines/by_inn/naltrexone.json",
+      "diagnosis_codes": [
+        "F10.2",
+        "F11.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "disulfiram",
+      "name_ru": "дисульфирам",
+      "class": "alcohol_aversive",
+      "path": "medicines/by_inn/disulfiram.json",
+      "diagnosis_codes": [
+        "F10.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "nalmefene",
+      "name_ru": "налмефен",
+      "class": "alcohol_reduction",
+      "path": "medicines/by_inn/nalmefene.json",
+      "diagnosis_codes": [
+        "F10.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "buprenorphine",
+      "name_ru": "бупренорфин",
+      "class": "opioid_agonist_therapy",
+      "path": "medicines/by_inn/buprenorphine.json",
+      "diagnosis_codes": [
+        "F11.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "methadone",
+      "name_ru": "метадон",
+      "class": "opioid_agonist_therapy",
+      "path": "medicines/by_inn/methadone.json",
+      "diagnosis_codes": [
+        "F11.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "varenicline",
+      "name_ru": "варениклин",
+      "class": "smoking_cessation",
+      "path": "medicines/by_inn/varenicline.json",
+      "diagnosis_codes": [
+        "F17.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "cytisinicline",
+      "name_ru": "цитизин",
+      "class": "smoking_cessation",
+      "path": "medicines/by_inn/cytisinicline.json",
+      "diagnosis_codes": [
+        "F17.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "nicotine_nrt",
+      "name_ru": "никотин (заместительная терапия)",
+      "class": "smoking_cessation",
+      "path": "medicines/by_inn/nicotine_nrt.json",
+      "diagnosis_codes": [
+        "F17.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "donepezil",
+      "name_ru": "донепезил",
+      "class": "acetylcholinesterase_inhibitor",
+      "path": "medicines/by_inn/donepezil.json",
+      "diagnosis_codes": [
+        "F00",
+        "G30"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "rivastigmine",
+      "name_ru": "ривастигмин",
+      "class": "acetylcholinesterase_inhibitor",
+      "path": "medicines/by_inn/rivastigmine.json",
+      "diagnosis_codes": [
+        "F00",
+        "F02",
+        "G30"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "primidone",
+      "name_ru": "примидон",
+      "class": "anticonvulsant",
+      "path": "medicines/by_inn/primidone.json",
+      "diagnosis_codes": [
+        "G25.0"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "clonidine",
+      "name_ru": "клонидин",
+      "class": "alpha2_agonist",
+      "path": "medicines/by_inn/clonidine.json",
+      "diagnosis_codes": [
+        "F95.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "galantamine",
+      "name_ru": "галантамин",
+      "class": "acetylcholinesterase_inhibitor",
+      "path": "medicines/by_inn/galantamine.json",
+      "diagnosis_codes": [
+        "F00",
+        "G30"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "memantine",
+      "name_ru": "мемантин",
+      "class": "nmda_antagonist",
+      "path": "medicines/by_inn/memantine.json",
+      "diagnosis_codes": [
+        "F00",
+        "G30"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "levodopa_carbidopa",
+      "name_ru": "леводопа + карбидопа",
+      "class": "dopaminergic",
+      "path": "medicines/by_inn/levodopa_carbidopa.json",
+      "diagnosis_codes": [
+        "G20"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "levodopa_benserazide",
+      "name_ru": "леводопа + бенсеразид",
+      "class": "dopaminergic",
+      "path": "medicines/by_inn/levodopa_benserazide.json",
+      "diagnosis_codes": [
+        "G20"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "pramipexole",
+      "name_ru": "прамипексол",
+      "class": "dopamine_agonist",
+      "path": "medicines/by_inn/pramipexole.json",
+      "diagnosis_codes": [
+        "G20"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "ropinirole",
+      "name_ru": "ропинирол",
+      "class": "dopamine_agonist",
+      "path": "medicines/by_inn/ropinirole.json",
+      "diagnosis_codes": [
+        "G20"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "rasagiline",
+      "name_ru": "разагилин",
+      "class": "MAO_B_inhibitor",
+      "path": "medicines/by_inn/rasagiline.json",
+      "diagnosis_codes": [
+        "G20"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "selegiline",
+      "name_ru": "селегилин",
+      "class": "MAO_B_inhibitor",
+      "path": "medicines/by_inn/selegiline.json",
+      "diagnosis_codes": [
+        "G20"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "propranolol",
+      "name_ru": "пропранолол",
+      "class": "beta_blocker",
+      "path": "medicines/by_inn/propranolol.json",
+      "diagnosis_codes": [
+        "G25.0",
+        "G43",
+        "G43.0",
+        "G43.1"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "sumatriptan",
+      "name_ru": "суматриптан",
+      "class": "triptan",
+      "path": "medicines/by_inn/sumatriptan.json",
+      "diagnosis_codes": [
+        "G43",
+        "G43.0",
+        "G43.1"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "ibuprofen",
+      "name_ru": "ибупрофен",
+      "class": "NSAID",
+      "path": "medicines/by_inn/ibuprofen.json",
+      "diagnosis_codes": [
+        "G43",
+        "G43.0",
+        "G43.1",
+        "G44.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "paracetamol",
+      "name_ru": "парацетамол",
+      "class": "analgesic",
+      "path": "medicines/by_inn/paracetamol.json",
+      "diagnosis_codes": [
+        "G43",
+        "G43.0",
+        "G43.1",
+        "G44.2"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "onabotulinumtoxinA",
+      "name_ru": "онаботулотоксин А",
+      "class": "botulinum_toxin",
+      "path": "medicines/by_inn/onabotulinumtoxinA.json",
+      "diagnosis_codes": [
+        "G24.9",
+        "G43"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "ocrelizumab",
+      "name_ru": "окрелизумаб",
+      "class": "MS_disease_modifying",
+      "path": "medicines/by_inn/ocrelizumab.json",
+      "diagnosis_codes": [
+        "G35"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "ofatumumab",
+      "name_ru": "офатумумаб",
+      "class": "MS_disease_modifying",
+      "path": "medicines/by_inn/ofatumumab.json",
+      "diagnosis_codes": [
+        "G35"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "dimethyl_fumarate",
+      "name_ru": "диметилфумарат",
+      "class": "MS_disease_modifying",
+      "path": "medicines/by_inn/dimethyl_fumarate.json",
+      "diagnosis_codes": [
+        "G35"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "teriflunomide",
+      "name_ru": "терифлуномид",
+      "class": "MS_disease_modifying",
+      "path": "medicines/by_inn/teriflunomide.json",
+      "diagnosis_codes": [
+        "G35"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "cladribine",
+      "name_ru": "кладрибин",
+      "class": "MS_disease_modifying",
+      "path": "medicines/by_inn/cladribine.json",
+      "diagnosis_codes": [
+        "G35"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "natalizumab",
+      "name_ru": "натализумаб",
+      "class": "MS_disease_modifying",
+      "path": "medicines/by_inn/natalizumab.json",
+      "diagnosis_codes": [
+        "G35"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "aspirin_low_dose",
+      "name_ru": "ацетилсалициловая кислота (антитромбоцитарная терапия)",
+      "class": "antiplatelet",
+      "path": "medicines/by_inn/aspirin_low_dose.json",
+      "diagnosis_codes": [
+        "G45.9",
+        "I63"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "clopidogrel",
+      "name_ru": "клопидогрел",
+      "class": "antiplatelet",
+      "path": "medicines/by_inn/clopidogrel.json",
+      "diagnosis_codes": [
+        "G45.9",
+        "I63"
+      ],
+      "source_product_ids": []
+    },
+    {
+      "id": "apixaban",
+      "name_ru": "апиксабан",
+      "class": "anticoagulant",
+      "path": "medicines/by_inn/apixaban.json",
+      "diagnosis_codes": [
+        "G45.9",
+        "I63"
+      ],
+      "source_product_ids": []
+    }
+  ]
+}

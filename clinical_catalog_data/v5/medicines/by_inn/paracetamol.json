@@ -1,0 +1,77 @@
+{
+  "id": "paracetamol",
+  "schema_version": "1.0.0",
+  "record_type": "active_substance_summary",
+  "international_nonproprietary_name": "paracetamol",
+  "name_ru": "парацетамол",
+  "therapeutic_class": "analgesic",
+  "description_patient": "Действующее вещество из группы «analgesic». Возможность лечения зависит от уточнённого диагноза, формы препарата и решения врача.",
+  "description_clinician": "Справочная карточка МНН/группы analgesic. Не является инструкцией конкретной лекарственной формы, схемой назначения или доказательством регистрации в РФ.",
+  "diagnosis_links": [
+    {
+      "code": "G43",
+      "relationship": "guideline_mentioned_for_selected_population",
+      "evidence_source_ids": [
+        "nice_headache"
+      ],
+      "ru_product_label_status": "not_verified_for_this_active_substance_in_this_catalog",
+      "approval_country": "not_inferred_from_international_guideline",
+      "requires_clinician_review": true
+    },
+    {
+      "code": "G43.0",
+      "relationship": "guideline_mentioned_for_selected_population",
+      "evidence_source_ids": [
+        "nice_headache"
+      ],
+      "ru_product_label_status": "not_verified_for_this_active_substance_in_this_catalog",
+      "approval_country": "not_inferred_from_international_guideline",
+      "requires_clinician_review": true
+    },
+    {
+      "code": "G43.1",
+      "relationship": "guideline_mentioned_for_selected_population",
+      "evidence_source_ids": [
+        "nice_headache"
+      ],
+      "ru_product_label_status": "not_verified_for_this_active_substance_in_this_catalog",
+      "approval_country": "not_inferred_from_international_guideline",
+      "requires_clinician_review": true
+    },
+    {
+      "code": "G44.2",
+      "relationship": "guideline_mentioned_for_selected_population",
+      "evidence_source_ids": [
+        "nice_headache"
+      ],
+      "ru_product_label_status": "not_verified_for_this_active_substance_in_this_catalog",
+      "approval_country": "not_inferred_from_international_guideline",
+      "requires_clinician_review": true
+    }
+  ],
+  "safety": {
+    "special_notes": [],
+    "contraindications": "Refer to current official SmPC and patient-specific medical history",
+    "dosing": "not_included_by_design"
+  },
+  "regulatory": {
+    "target_market": "RU",
+    "ru_current_registration_verified": false,
+    "ru_indication_approved_verified": false,
+    "ru_legal_availability": "not_checked",
+    "product_instructions_are_not_interchangeable": true,
+    "individualized_prescribing_required": true
+  },
+  "sources": [
+    {
+      "source_id": "nice_headache",
+      "url": "https://www.nice.org.uk/guidance/cg150/chapter/recommendations",
+      "role": "international_guideline"
+    }
+  ],
+  "source_product_ids": [],
+  "review": {
+    "editorial_status": "needs_pharmacist_and_physician_review",
+    "last_updated": "2026-10-25"
+  }
+}

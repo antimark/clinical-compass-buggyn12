@@ -1,0 +1,27 @@
+{
+  "id": "lamictal_lamotrigine_25mg",
+  "record_type": "source_product_instruction_pointer",
+  "title_ru": "Ламиктал",
+  "active_substance_id": "lamotrigine",
+  "original_instruction_path": "medicines/source_product_instructions/lamictal_lamotrigine_25mg.json",
+  "listed_icd10_codes_in_supplied_instruction": [
+    "F31",
+    "G40"
+  ],
+  "linked_diagnosis_codes_in_catalog": [
+    "F31",
+    "G40"
+  ],
+  "provenance": {
+    "origin": "user_supplied_zip_2026_10_18",
+    "original_source_filename": "инструкции_к_препаратам/lamictal_lamotrigine_25mg.json",
+    "sha256": "749ae3f2c4513ba50cadc99de0392aa639b5f2d65ef5ef0a5fa1fdd4406bdee3",
+    "not_current_grls_verification": true
+  },
+  "label_claim_provenance": "as_listed_in_user_supplied_source_instruction_not_independently_revalidated",
+  "formulation_sensitive": true,
+  "review": {
+    "registration_and_smpc_recheck_needed": true,
+    "last_updated": "2026-10-25"
+  }
+}

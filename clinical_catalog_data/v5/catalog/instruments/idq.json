@@ -1,0 +1,178 @@
+{
+  "schema_version": "4.0.0",
+  "instrument_id": "IDQ",
+  "instrument_version": "catalog-v4",
+  "priority": "P1",
+  "instrument_type": "self_report_scale",
+  "clinical_content_status": "metadata_only_not_administrable",
+  "information": {
+    "title": {
+      "ru": "Международный опросник депрессии IDQ",
+      "short": "IDQ"
+    },
+    "authors": "M. Shevlin; P. Hyland et al.",
+    "first_validation_year": 2023,
+    "purpose_clinician": "Диагностический скрининг по критериям МКБ-11; мониторинг выраженности",
+    "purpose_patient": "Помогает структурировать обсуждение симптомов; не устанавливает диагноз.",
+    "recommended_for": {
+      "screening": true,
+      "symptom_monitoring": true,
+      "diagnostic_support": true,
+      "clinical_diagnosis": false
+    },
+    "target_population": "Взрослые, если не указано иное; применимость проверяется врачом.",
+    "icd10": {
+      "screening_targets": [
+        {
+          "code": "F32"
+        },
+        {
+          "code": "F33"
+        }
+      ],
+      "nonspecific_symptom_overlap": [],
+      "differentials_not_inferred_by_scale": [],
+      "diagnosis_from_questionnaire": false,
+      "coding_rule": "Порог скрининга, даже при выполнении алгоритма, не устанавливает диагноз и не определяет код МКБ-10."
+    },
+    "icd11_context_text": "МКБ-11: единичный депрессивный эпизод 6A70; сопоставление с F32/F33 не автоматическое.",
+    "estimated_minutes": null,
+    "recall_period": "уточнить в первоисточнике",
+    "references": [
+      {
+        "url": "https://www.traumameasuresglobal.com/depression",
+        "role": "primary_instrument_information"
+      },
+      {
+        "role": "study_or_validation_resource",
+        "citation": "Shevlin et al., 2023",
+        "url": "https://doi.org/10.1002/jclp.23446"
+      }
+    ],
+    "clinical_limitations": "Самооценка и алгоритмическое соответствие критериям не заменяют клинического заключения.",
+    "question_count": 9,
+    "source_note": "Баллы от 0 до 36 по 9 пунктам; порог диагноз=сумма не используется."
+  },
+  "language": "ru",
+  "localization": {
+    "language": "ru",
+    "status": "no_confirmed_official_russian",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "draft_segregated": false,
+    "release_approved": false
+  },
+  "questions": [],
+  "response_sets": [],
+  "scales": [
+    {
+      "scale_id": "depressive_symptoms",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "functional_impairment",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    }
+  ],
+  "scoring": {
+    "type": "not_enabled_pending_exact_text_and_protocol",
+    "auto_scoring_enabled": false,
+    "max_score": null,
+    "diagnostic_decision": "clinician_only",
+    "quality_gates": [
+      "licensed_or_open_exact_text",
+      "validated_version",
+      "permission_check",
+      "medical_review"
+    ]
+  },
+  "interpretations": {
+    "patient": {
+      "summary": "Результат требует оценки лечащим специалистом.",
+      "no_diagnostic_claim": true
+    },
+    "clinician": {
+      "summary": "Оцените клинические критерии, продолжительность и дифференциальный диагноз.",
+      "do_not_auto_diagnose": true
+    }
+  },
+  "licensing": {
+    "rights_holder": "International Trauma Consortium / creators",
+    "copyright_status": "free_use_published_full_license_scope_unverified",
+    "commercial_use": "confirm_with_authors",
+    "research_use": "free_use_subject_to_attribution",
+    "open_use": "confirm_full_license",
+    "electronic_administration": "confirm_digital_scope",
+    "public_distribution": "confirm_full_license",
+    "translation_rights": "contact_creators_before_adaptation",
+    "patient_feedback_allowed": "clinical_safety_review",
+    "license_source_url": "https://www.traumameasuresglobal.com/depression",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "rights": {
+    "rights_holder": "International Trauma Consortium / creators",
+    "copyright_status": "free_use_published_full_license_scope_unverified",
+    "commercial_use": "confirm_with_authors",
+    "research_use": "free_use_subject_to_attribution",
+    "open_use": "confirm_full_license",
+    "electronic_administration": "confirm_digital_scope",
+    "public_distribution": "confirm_full_license",
+    "translation_rights": "contact_creators_before_adaptation",
+    "patient_feedback_allowed": "clinical_safety_review",
+    "license_source_url": "https://www.traumameasuresglobal.com/depression",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "availability": {
+    "russian_form": "not_loaded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.traumameasuresglobal.com/depression",
+    "protected_material_embedded": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "risk_item_handling": "manual_clinician_protocol",
+    "automatic_diagnosis_allowed": false,
+    "suicide_risk_inference_from_score_allowed": false
+  },
+  "legacy_source_path": null,
+  "scoring_blueprint_non_executable": {
+    "response_options": "5-point 0-4",
+    "scales": {
+      "depressive_symptoms": {
+        "n_items": 9,
+        "range": [
+          0,
+          36
+        ]
+      }
+    },
+    "algorithm": "ICD-11 symptom and impairment criteria, no total-score cutoff",
+    "warning": "Russian item text and ICD-11 exact algorithm pending."
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [
+      "F32",
+      "F33"
+    ],
+    "icd10_possible_overlap": [],
+    "icd10_differentials": [],
+    "icd11_context_text": "МКБ-11: единичный депрессивный эпизод 6A70; сопоставление с F32/F33 не автоматическое.",
+    "clinical_assessment_targets_only": true,
+    "diagnostic_code_assignment_allowed": false
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "schema_version": "3.0.0",
+  "instrument_id": "MINI-7",
+  "instrument_version": "official_version_required",
+  "language": "ru-RU",
+  "clinical_content_status": "metadata_only_license_required",
+  "information": {
+    "title": "Mini International Neuropsychiatric Interview — DSM-5 family",
+    "type": "clinician_structured_interview",
+    "authors": [
+      "David V. Sheehan",
+      "Yves Lecrubier",
+      "соавторы"
+    ],
+    "first_publication_or_revision_year": 2015,
+    "purpose_patient": "Информация о назначении инструмента; самостоятельно проходить это интервью без специалиста не следует.",
+    "purpose_clinician": "Краткое структурированное интервью для нескольких распространённых психических расстройств. Состав модулей зависит от приобретённой версии.",
+    "estimated_minutes": "15–30 (ориентировочно, зависит от версии и случая)",
+    "target_population": "Взрослые",
+    "recommended_for": {
+      "structured_diagnostic_interview": true,
+      "diagnostic_support": true,
+      "symptom_monitoring": false,
+      "independent_diagnosis": false
+    },
+    "icd10": {
+      "mapping_status": "reference_only_not_dsm_equivalence",
+      "codes": [
+        {
+          "code": "F32",
+          "label": "Депрессивный эпизод"
+        },
+        {
+          "code": "F33",
+          "label": "Рекуррентное депрессивное расстройство"
+        },
+        {
+          "code": "F31",
+          "label": "Биполярное аффективное расстройство"
+        },
+        {
+          "code": "F41.1",
+          "label": "Генерализованное тревожное расстройство"
+        },
+        {
+          "code": "F41.0",
+          "label": "Паническое расстройство"
+        },
+        {
+          "code": "F40.1",
+          "label": "Социальные фобии"
+        },
+        {
+          "code": "F42",
+          "label": "Обсессивно-компульсивное расстройство"
+        },
+        {
+          "code": "F43.1",
+          "label": "Посттравматическое стрессовое расстройство"
+        },
+        {
+          "code": "F20",
+          "label": "Шизофрения"
+        },
+        {
+          "code": "F25",
+          "label": "Шизоаффективные расстройства"
+        },
+        {
+          "code": "F10",
+          "label": "Психические и поведенческие расстройства вследствие употребления алкоголя"
+        },
+        {
+          "code": "F11–F19",
+          "label": "Нарушения вследствие других психоактивных веществ; диапазон рубрик"
+        }
+      ]
+    },
+    "validation": [
+      {
+        "citation": "Sheehan et al., 1998, Journal of Clinical Psychiatry: первоначальная валидация семейства MINI в сравнении с SCID/CIDI; НЕ является отдельной валидацией MINI 7",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/9881538/"
+      }
+    ],
+    "limitations": [
+      "Только специалист; структурированное интервью не заменяет полного обследования, клинического решения и оценки безопасности.",
+      "DSM-5/МКБ-10 соответствия требуют экспертной проверки.",
+      "Качество конкретного русскоязычного перевода не подтверждается самим JSON."
+    ],
+    "source_urls": [
+      "https://eprovide.mapi-trust.org/instruments/mini-international-neuropsychiatric-interview"
+    ],
+    "validation_version_warning": "Валидация Sheehan 1998 относится к исторической версии, результаты нельзя автоматически переносить на MINI 7."
+  },
+  "ui": {
+    "audience": [
+      "clinician"
+    ],
+    "show_in_clinical_reference": true,
+    "patient_assignable": false,
+    "clinical_admin_enabled": false,
+    "licensed_content_loaded": false,
+    "assignment_guard": "deny_unless_licensed_and_clinically_approved"
+  },
+  "response_sets": {},
+  "questions": [],
+  "modules": [
+    {
+      "id": "mood",
+      "title": "Аффективные расстройства",
+      "covered_domains": [
+        "большая депрессия",
+        "маниакальные/гипоманиакальные эпизоды"
+      ],
+      "clinician_notes": "Строго соблюдать официальные скрининговые вопросы.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "anxiety",
+      "title": "Тревожные расстройства",
+      "covered_domains": [
+        "паника",
+        "ГТР",
+        "социальная тревога"
+      ],
+      "clinician_notes": "Модули зависят от версии.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "ocd_ptsd",
+      "title": "ОКР и ПТСР",
+      "covered_domains": [
+        "обсессии и компульсии",
+        "реакции после травмы"
+      ],
+      "clinician_notes": "Учитывать возможную тяжёлую дистрессовую реакцию.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "psychosis",
+      "title": "Психотические расстройства",
+      "covered_domains": [
+        "психотические проявления"
+      ],
+      "clinician_notes": "Временная связь с эпизодами настроения и веществами.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "substance",
+      "title": "Употребление веществ",
+      "covered_domains": [
+        "алкоголь и другие ПАВ"
+      ],
+      "clinician_notes": "Не путать скрининг употребления с подтверждением зависимости.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "risk",
+      "title": "Модуль оценки риска, если входит в лицензионную конфигурацию",
+      "covered_domains": [
+        "суицидальные мысли и поведение"
+      ],
+      "clinician_notes": "Не подменяет текущую клиническую оценку безопасности; отдельно хранить и ограничивать доступ.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    }
+  ],
+  "scoring": {
+    "type": "not_computable_without_licensed_protocol",
+    "auto_scoring_enabled": false,
+    "score_scale": null,
+    "missing_answer_policy": "cannot_finalize_incomplete",
+    "diagnostic_decision": "clinician_only"
+  },
+  "interpretations": {
+    "patient": {
+      "title": "Результат обсудите с врачом",
+      "text": "Интервью помогает врачу структурировать обследование; автоматическое заключение не формируется."
+    },
+    "clinician": {
+      "title": "Клиническая интерпретация",
+      "text": "Интерпретировать по официальному руководству, совокупности критериев, исключений и клинических данных; необоснованное присвоение диагноза запрещено."
+    },
+    "auto_diagnosis": false
+  },
+  "licensing": {
+    "rights_holder": "David V. Sheehan / уполномоченные лицензиаты и дистрибьюторы (актуальный канал зависит от версии и формата)",
+    "commercial": "Для бумажного/фиксированного PDF запрос правообладателю; компьютеризированное применение — через Proem Behavioral Health; согласовать российский перевод, аудиторию и SaaS.",
+    "research": "Бесплатное не подразумевается: требуется согласовать лицензирование академического/клинического исследования, конкретные модули и язык.",
+    "open": "Запрещено публиковать или переводить полное интервью без письменного разрешения.",
+    "contact_url": "https://eprovide.mapi-trust.org/instruments/mini-international-neuropsychiatric-interview",
+    "permission_needed_for_app": true,
+    "free_public_republication": false
+  },
+  "publication": {
+    "is_patient_assignable": false,
+    "is_clinically_approved": false,
+    "in_public_demo": false,
+    "licensing_review": "pending",
+    "requires_manual_and_training": true
+  },
+  "safety": {
+    "suicidality_assessment": "separate_assessment_when_indicated",
+    "no_autonomous_triage": true,
+    "clinician_signoff_required": true
+  },
+  "clinician_guide": {
+    "steps": [
+      {
+        "id": "before",
+        "title": "Подготовка и рамки",
+        "clinician_instructions": "Уточните цель обследования, версии инструмента, временной период, язык, информированное согласие и условия конфиденциальности.",
+        "checks": []
+      },
+      {
+        "id": "safety",
+        "title": "Безопасность",
+        "clinician_instructions": "При клинических сигналах риска отдельно оцените непосредственную безопасность и действуйте по протоколу организации, не дожидаясь окончания интервью.",
+        "checks": []
+      },
+      {
+        "id": "context",
+        "title": "Клинический контекст",
+        "clinician_instructions": "Установите хронологию эпизодов, функциональные нарушения, предшествующее лечение, влияние веществ/лекарств, возможные соматические причины и коморбидность.",
+        "checks": []
+      },
+      {
+        "id": "version",
+        "title": "Сверить форму",
+        "clinician_instructions": "Убедитесь в номере версии, языке, купленных модулях и правильном recall-period.",
+        "checks": []
+      },
+      {
+        "id": "skip",
+        "title": "Контроль переходов",
+        "clinician_instructions": "Проводите вопросы и переходы точно по официальному интервью; если ответ неясен, клинически уточняйте, не меняя логики.",
+        "checks": []
+      },
+      {
+        "id": "diagnosis",
+        "title": "Уточнить результаты",
+        "clinician_instructions": "Отрицательный результат одного модуля не исключает другие состояния и не заменяет дифференциальную диагностику.",
+        "checks": []
+      },
+      {
+        "id": "finish",
+        "title": "Завершение",
+        "clinician_instructions": "Документируйте подтверждённые, исключённые и неопределённые критерии; решение по диагностическому коду и тактике принимает врач.",
+        "checks": []
+      }
+    ],
+    "common_errors": [
+      "Брать устаревшую MINI 5.0.0 и подписывать MINI 7",
+      "Заменять врачебное интервью ответами пациента в чате",
+      "Включать чувствительный модуль без протокола безопасности"
+    ]
+  }
+}

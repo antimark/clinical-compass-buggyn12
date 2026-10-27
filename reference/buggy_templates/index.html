@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% block title %}Клинический Компас — сопровождение между приёмами{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+{% block header_right %}
+  <nav class="header-nav" aria-label="Навигация по главной странице">
+    <a href="#about">О платформе</a>
+    <a href="#features">Возможности</a>
+    <a href="#how-it-works">Как это работает</a>
+  </nav>
+  <a class="header-login" href="{{ url_for('login') }}">Войти <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+{% endblock %}
+{% block content %}
+<!-- Секции главной страницы идут в порядке просмотра: hero -> about -> features -> steps -> privacy -> FAQ -> CTA. -->
+<main id="main-content" class="home-main">
+  <!-- 01. Hero + карточки для двух ролей -->
+  <section class="home-hero" aria-labelledby="landing-title">
+    <div class="page-container">
+      <div class="hero-top">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-line"></span> Вместе на пути к здоровью</span>
+          <h1 id="landing-title">Забота продолжается <span class="headline-accent">между приёмами.</span></h1>
+          <p class="hero-description">Цифровое пространство для совместного наблюдения за лечением — понятное пациенту и удобное для медицинского специалиста.</p>
+          <a class="hero-explore" href="#how-it-works">Как это работает <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
+        </div>
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="{{ url_for('static', filename='images/hero-photo-placeholder.png') }}" width="1200" height="800" alt="Место для будущей фотографии проекта" fetchpriority="high">
+          <div class="hero-photo-note"><span class="note-dot"></span> Пространство для заботы</div>
+        </div>
+      </div>
+
+      <div class="audience-section" id="choose-role">
+        <div class="audience-section-heading">
+          <span>Начните с выбора роли</span>
+          <span>01 <span class="audience-divider">/</span> 02</span>
+        </div>
+        <div class="audience-grid" aria-label="Регистрация по роли">
+          <article class="audience-card">
+            <div class="audience-text"><h2>Ваше здоровье под рукой</h2><p>План лечения, рекомендации и важные изменения — в одном пространстве.</p></div>
+            <a class="btn btn-primary audience-button" href="{{ url_for('register', role='patient') }}">Я пациент <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+          </article>
+          <article class="audience-card">
+            <div class="audience-text"><h2>Больше времени для главного</h2><p>Наблюдение за динамикой и контакт с пациентом между визитами.</p></div>
+            <a class="btn btn-primary audience-button" href="{{ url_for('register', role='specialist') }}">Я специалист <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+          </article>
+        </div>
+      </div>
+      <a class="hero-scroll-cue" href="#about">Узнать о платформе <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"></use></svg></a>
+    </div>
+  </section>
+
+  <!-- 02. Что такое Клинический Компас -->
+  <section class="home-section about-section" id="about" aria-labelledby="about-title">
+    <div class="page-container about-layout">
+      <div class="section-intro">
+        <span class="section-label">01 / О платформе</span>
+        <h2 id="about-title" class="section-title">Лечение не заканчивается, когда вы выходите из кабинета.</h2>
+      </div>
+      <div class="about-body">
+        <p class="about-lead">Между приёмами возникает множество вопросов. Как следовать рекомендациям? Какие изменения важно заметить? Как врачу видеть общую картину?</p>
+        <p>«Клинический Компас» — концепция единого цифрового пространства, в котором пациенту проще следовать своему плану, а специалисту — сопровождать лечение и отслеживать изменения во времени.</p>
+        <div class="about-points">
+          <div><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg><span>Понятные следующие шаги</span></div>
+          <div><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg><span>Важная информация в одном месте</span></div>
+          <div><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg><span>Единый контекст для пациента и врача</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. Концепция возможностей платформы -->
+  <section class="home-section features-section" id="features" aria-labelledby="features-title">
+    <div class="page-container">
+      <div class="section-header">
+        <div><span class="section-label">02 / Возможности</span><h2 id="features-title" class="section-title">Всё важное —<br>на своих местах.</h2></div>
+        <p>Продумываем инструменты, которые помогут сделать ежедневное сопровождение лечения проще и последовательнее.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card feature-card-large">
+          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-list-check"></use></svg></div>
+          <div class="feature-content"><h3>План лечения</h3><p>Рекомендации, назначения и следующие шаги — в понятной структуре, к которой легко вернуться.</p></div>
+          <div class="mini-schedule" aria-hidden="true">
+            <span class="schedule-label">План на сегодня</span>
+            <div class="schedule-row"><span class="schedule-check checked"><svg class="icon"><use href="#i-check"></use></svg></span><span class="schedule-line schedule-line-long"></span><span class="schedule-hour">09:00</span></div>
+            <div class="schedule-row"><span class="schedule-check checked"><svg class="icon"><use href="#i-check"></use></svg></span><span class="schedule-line"></span><span class="schedule-hour">13:00</span></div>
+            <div class="schedule-row"><span class="schedule-check"></span><span class="schedule-line schedule-line-medium"></span><span class="schedule-hour">20:00</span></div>
+          </div>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-activity"></use></svg></div>
+          <div class="feature-content"><h3>Динамика состояния</h3><p>Наблюдения между приёмами помогают замечать изменения и обсуждать их со специалистом.</p></div>
+          <div class="sparkline" aria-hidden="true"><svg viewBox="0 0 280 90" preserveAspectRatio="none"><path class="sparkline-fill" d="M0 65 C22 64 34 48 55 52 S91 75 110 55 S144 34 164 47 S204 56 224 29 S264 35 280 14 L280 90 L0 90Z"/><path class="sparkline-stroke" d="M0 65 C22 64 34 48 55 52 S91 75 110 55 S144 34 164 47 S204 56 224 29 S264 35 280 14"/></svg></div>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-message-circle"></use></svg></div>
+          <div class="feature-content"><h3>Связь с лечащей командой</h3><p>Удобный контекст для вопросов, уточнений и коммуникации по ходу лечения.</p></div>
+          <div class="message-mock" aria-hidden="true"><span></span><span></span><span></span></div>
+        </article>
+      </div>
+      <p class="section-fineprint">Показанные возможности иллюстрируют концепцию продукта и не являются действующими медицинскими функциями в текущем прототипе.</p>
+    </div>
+  </section>
+
+  <!-- 04. Сценарий начала использования -->
+  <section class="home-section steps-section" id="how-it-works" aria-labelledby="steps-title">
+    <div class="page-container">
+      <div class="section-header"><div><span class="section-label">03 / Как это работает</span><h2 id="steps-title" class="section-title">Простой путь<br>к совместной работе.</h2></div><p>Всё начинается с доступа от администратора. Затем каждый пользователь попадает в пространство, соответствующее своей роли.</p></div>
+      <div class="steps-grid">
+        <article class="step-card"><div class="step-number">01 <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></div><h3>Получите доступ</h3><p>Пациент получает ключ регистрации от врача, а специалист — от администратора.</p></article>
+        <article class="step-card"><div class="step-number">02 <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg></div><h3>Создайте аккаунт</h3><p>Введите ключ, придумайте логин и пароль, затем заполните личные данные.</p></article>
+        <article class="step-card"><div class="step-number">03 <svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg></div><h3>Начните сопровождение</h3><p>После подключения серверной части станет доступно рабочее пространство платформы.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. Конфиденциальность и честное описание демо -->
+  <section class="home-section trust-section" id="privacy" aria-labelledby="privacy-title">
+    <div class="page-container trust-layout">
+      <div class="trust-mark"><div class="trust-mark-inner"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></div></div>
+      <div class="trust-text"><span class="section-label">04 / Конфиденциальность</span><h2 id="privacy-title" class="section-title">Личное остаётся личным.</h2><p>Медицинская информация требует особого отношения. В концепции платформы предусмотрен ролевой доступ, а регистрация начинается с персонального ключа доступа.</p><p class="trust-note">В этой демонстрации данные не отправляются на сервер. Защищённый доступ и работа с медицинскими данными должны быть реализованы и проверены на следующем этапе.</p></div>
+    </div>
+  </section>
+
+  <!-- 06. FAQ без JavaScript: стандартный элемент details -->
+  <section class="home-section faq-section" id="faq" aria-labelledby="faq-title">
+    <div class="page-container faq-layout">
+      <div><span class="section-label">05 / Вопросы и ответы</span><h2 id="faq-title" class="section-title">Хорошо знать<br>заранее.</h2></div>
+      <div class="faq-items">
+        <details class="faq-item"><summary>Как получить ключ регистрации?<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p>Пациент получает ключ у врача, специалист — у администратора платформы. Логин и пароль при регистрации вы придумываете самостоятельно.</p></details>
+        <details class="faq-item"><summary>Чем отличаются аккаунты пациента и специалиста?<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p>Они рассчитаны на разные задачи: пациент следит за своим планом лечения, а специалист сопровождает пациентов. Сейчас показана демонстрационная регистрация для обеих ролей.</p></details>
+        <details class="faq-item"><summary>Можно ли пользоваться платформой уже сейчас?<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p>Пока доступен интерфейсный прототип. Полноценный вход, создание аккаунтов и функции сопровождения потребуют подключения серверной части.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07. Нижний призыв зарегистрироваться -->
+  <section class="bottom-cta" id="start" aria-labelledby="cta-title">
+    <div class="page-container"><div class="cta-inner"><span class="cta-eyebrow"><span class="cta-eyebrow-dot"></span> Клинический Компас</span><h2 id="cta-title">Ваш путь начинается<br>с первого шага.</h2><p>Создайте учётную запись по персональному ключу от врача или администратора.</p><a class="btn cta-button" href="{{ url_for('register_choice') }}">Зарегистрироваться <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a><div class="cta-dots" aria-hidden="true"><i></i><i></i><i></i></div></div></div>
+  </section>
+</main>
+<!-- Общий подвал главной страницы -->
+<footer class="site-footer"><div class="page-container footer-inner"><a class="footer-brand" href="{{ url_for('index') }}">клинический<span>.</span>компас</a><p>Цифровое сопровождение между приёмами.</p><nav aria-label="Навигация в подвале"><a href="#about">О платформе</a><a href="#privacy">Конфиденциальность</a><a href="{{ url_for('login') }}">Войти</a></nav><small>© 2026 Клинический Компас · Прототип интерфейса</small></div></footer>
+{% endblock %}

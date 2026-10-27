@@ -1,0 +1,50 @@
+{
+  "id": "cpap",
+  "schema_version": "1.0.0",
+  "record_type": "therapeutic_method",
+  "title_ru": "CPAP-терапия при обструктивном апноэ сна",
+  "title_en": "",
+  "category": "medical_support",
+  "is_psychotherapy": false,
+  "description_patient": "Аппаратное поддержание проходимости дыхательных путей во сне.",
+  "description_clinician": "Назначается после оценки типа апноэ и специализированного обследования; не универсально для любого G47.3.",
+  "implementation": {
+    "delivery_modes": [
+      "by_qualified_professional"
+    ],
+    "workflow_hint": "Комплексная клиническая оценка → согласование целей и метода → проведение обученным специалистом → мониторинг исходов",
+    "technical_content_not_a_therapy_manual": true
+  },
+  "diagnosis_links": [
+    {
+      "code": "G47.3",
+      "relation": "conditional_or_adjunct",
+      "source_ids": [
+        "nice_osa"
+      ],
+      "country_label_status": "not_applicable",
+      "note": "Связь основана на международных рекомендациях; конкретная клиническая применимость зависит от формы и тяжести заболевания."
+    }
+  ],
+  "clinical_evidence": {
+    "tier": "specialist_or_context_dependent",
+    "guideline_source_ids": [
+      "nice_osa"
+    ],
+    "evidence_strength_ungraded": true
+  },
+  "safety": {
+    "requires_professional": true,
+    "notes": "Не заменяет дифференциацию обструктивного и центрального апноэ сна."
+  },
+  "rights": {
+    "summary_text": "original_editorial_summary",
+    "therapy_protocols_or_branded_manuals": "not_included; may be copyrighted",
+    "use_in_commercial_software": "metadata_only; protocol/material license separate"
+  },
+  "review": {
+    "status": "needs_specialist_review",
+    "scope": "adult-oriented unless otherwise specified; paediatric indications require separate review",
+    "verified_at": "2026-10-25"
+  }
+}

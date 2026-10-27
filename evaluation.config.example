@@ -1,0 +1,8 @@
+# Public non-secret example; DO NOT copy actual secrets or patient data into source.
+# Evaluation launcher creates a private session.secret and SQLite in --workspace.
+CC_CONDA_ENV=cc-m1
+CC_CI_NLP_MODEL=qwen3:4b-instruct
+CC_CI_CHAT_PROVIDER=ollama
+CC_CI_NLP_PROVIDER=ollama
+# Use doctor/check/serve commands in EVALUATOR_QUICKSTART.md.
+# No flag here authorizes identifiable patient data, clinical pilot or automatic treatment.

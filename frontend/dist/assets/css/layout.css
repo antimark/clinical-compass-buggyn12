@@ -1,0 +1,183 @@
+/* Structural/layout CSS. All colour, frost and radius choices derive from system.css. */
+.shell { width: min(calc(100% - 2 * var(--page-pad)),var(--content)); margin-inline: auto; }
+.topbar-wrap { position: sticky; top: 0; z-index: 100; padding: 16px 0 8px; pointer-events: none; }
+.topbar {
+  position: relative;
+  min-height: 72px;
+  border: 1px solid transparent;
+  border-radius: var(--r-pill);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  justify-content: space-between;
+  background: var(--glass-fill);
+  -webkit-backdrop-filter: var(--frost);
+  backdrop-filter: var(--frost);
+  box-shadow: var(--shadow);
+  pointer-events: auto;
+}
+.brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; font-size: 17px; letter-spacing: -.045em; font-weight: 760; }
+/* Small environment marker travels with the product name, not the action buttons. */
+.brand-demo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--r-pill);
+  padding: 4px 9px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 11px;
+  letter-spacing: 0;
+  font-weight: 730;
+  line-height: 1.3;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  box-shadow: inset 0 1px rgba(255,255,255,.64), 0 5px 15px rgba(222,111,40,.22);
+  color: #29201a;
+}
+.header-right { display: flex; align-items: center; gap: 9px; margin-left: auto; }
+/* Reference link belongs to the right action group and matches the login button. */
+.header-library { flex-shrink: 0; }
+.environment { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; border-radius: var(--r-pill); padding: 8px 11px; border: 1px solid var(--border); font-size: 11px; font-weight: 650; color: var(--ink-2); }
+.environment::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.avatar { width: var(--control-height); height: var(--control-height); display: grid; place-items: center; border-radius: 50%; color: var(--ink); font-weight: 760; border: 1px solid var(--border); background: var(--surface-strong); }
+.avatar:hover { background: var(--glass-hover-raised); }
+.header-menu-anchor { position: relative; }
+.account-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  width: min(var(--account-menu-width),calc(100vw - 36px));
+  background: var(--glass-fill-raised);
+  border: 1px solid transparent;
+  border-radius: var(--r-lg);
+  padding: 10px;
+  box-shadow: var(--shadow-float);
+  z-index: 220;
+  -webkit-backdrop-filter: var(--frost-dense);
+  backdrop-filter: var(--frost-dense);
+  isolation: isolate;
+  overflow: hidden;
+}
+.account-summary { padding: 12px 14px 15px; border-bottom: 1px solid var(--divider); margin-bottom: 7px; }
+.menu-item { width: 100%; display: flex; align-items: center; gap: 11px; border: none; border-radius: var(--r-pill); padding: 11px 14px; color: var(--ink); background: transparent; text-align: left; font-size: 14px; }
+.menu-item:hover, .menu-item:focus-visible { background: var(--surface-strong); }
+.menu-item.danger { color: var(--danger); }
+
+main { min-height: calc(100vh - 230px); padding: clamp(32px,5vw,70px) 0 90px; }
+.section { margin-bottom: clamp(46px,7vw,94px); }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.section-heading p { margin: 8px 0 0; }
+/* Home-only decoration: the upper span of a huge orange ring appears behind
+   the Frost cards. SVG is a monochrome mask, so its colours follow --accent and --accent-strong.
+   The ring stays viewport-fixed while the homepage content scrolls. */
+#app.is-home {
+  position: relative;
+  isolation: isolate;
+}
+#app.is-home::before {
+  content: "";
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  z-index: -1;
+  pointer-events: none;
+  /* A simple two-color gradient using the design-system accent tokens. */
+  background: linear-gradient(125deg, var(--accent) 0%, var(--accent-strong) 100%);
+  opacity: .85;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1800 1800'%3E%3Ccircle cx='900' cy='900' r='830' fill='none' stroke='black' stroke-width='132'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1800 1800'%3E%3Ccircle cx='900' cy='900' r='830' fill='none' stroke='black' stroke-width='132'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center 520px;
+  mask-position: center 520px;
+  -webkit-mask-size: max(130vw, 1000px) auto;
+  mask-size: max(130vw, 1000px) auto;
+}
+@media (max-width: 720px) {
+  #app.is-home::before {
+    opacity: .52;
+    -webkit-mask-position: center 620px;
+    mask-position: center 620px;
+  }
+}
+
+/* Landing hero uses the same full-width shell as the header and lower sections. */
+.hero { padding: clamp(20px,3vw,40px) 0 20px; width: 100%; }
+.hero-actions { grid-template-columns: repeat(2,minmax(0,1fr)); width: 100%; }
+.hero h1 { max-width: 1100px; margin-bottom: 20px; }
+.hero .lead { font-size: clamp(17px,2vw,21px); color: var(--ink-2); line-height: 1.6; max-width: 690px; margin-bottom: 30px; }
+.columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.columns.three { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.columns.four { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.dashboard-grid { display: grid; grid-template-columns: minmax(0,1.65fr) minmax(310px,1fr); gap: 20px; align-items: start; }
+.dashboard-grid > * { min-width: 0; }
+.stack { display: flex; flex-direction: column; gap: 18px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.space-between { justify-content: space-between; }
+.grow { flex: 1; }
+.gap-sm { gap: 8px; }
+.page-title { font-size: clamp(32px,4.1vw,52px); margin: 11px 0 12px; max-width: 950px; }
+.page-intro { max-width: 780px; color: var(--ink-2); font-size: 16px; margin: 0 0 32px; }
+.crumbs { display: flex; gap: 9px; align-items: center; font-size: 13px; color: var(--ink-3); }
+.crumbs a:hover { color: var(--accent-strong); }
+.side-layout { display: grid; grid-template-columns: 222px minmax(0,1fr); gap: 30px; align-items: start; }
+.section-nav {
+  position: sticky;
+  top: 112px;
+  padding: 10px;
+  border: 0;
+  border-radius: var(--r-lg);
+  background: var(--graphite-panel);
+  color: var(--nav-text);
+  box-shadow: var(--shadow);
+}
+.section-nav a { display: flex; align-items: center; gap: 11px; border-radius: var(--r-pill); padding: 11px 13px; font-size: 13px; font-weight: 620; color: var(--nav-muted); }
+.section-nav a:hover { color: var(--nav-text); background: var(--nav-hover); }
+.section-nav a.active, .section-nav a.active:hover { color: var(--nav-text); background: var(--nav-active); }
+.section-nav .nav-caption { color: var(--nav-caption); font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 12px; }
+.footer { border-top: 1px solid var(--divider); padding: 28px 0 34px; color: var(--ink-3); font-size: 12px; }
+.footer .shell { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+
+@media (max-width:1050px) {
+  .columns.four { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .side-layout { grid-template-columns: 1fr; }
+  .section-nav { position: static; display: flex; flex-wrap: wrap; gap: 4px; }
+  .section-nav .nav-caption { display: none; }
+  .section-nav a { padding: 9px 12px; }
+}
+@media (max-width:720px) {
+  .topbar-wrap { padding: 8px 0 3px; }
+  .topbar { padding: 8px 10px; min-height: 64px; border-radius: var(--r-pill); }
+  .brand { font-size: 15px; gap: 8px; }
+  .brand-mark { width: 34px; height: 34px; }
+  .topbar .header-library { display: none; }
+  .topbar .header-right .btn { padding: 10px 11px; font-size: 12px; }
+  .columns,.columns.three,.columns.four,.hero-actions { grid-template-columns: minmax(0,1fr); }
+  .hero { padding-top: 22px; }
+  .hero h1 { font-size: clamp(36px,9vw,56px); }
+  .section-heading { align-items: start; flex-direction: column; }
+}
+@media (max-width:460px) {
+  .brand-demo { display: none; }
+  .topbar { gap: var(--s2); }
+}
+@media (max-width:360px) {
+  /* Keep complete navigation labels readable inside the capsule on very narrow phones. */
+  .brand-mark { display: none; }
+  .topbar .header-right .btn { white-space: nowrap; padding: 9px 8px; font-size: 11px; }
+}
+@media (max-width:400px) {
+  .brand .brand-word { max-width: 100px; font-size: 14px; line-height: 1.05; }
+  .header-right { gap: 5px; }
+}

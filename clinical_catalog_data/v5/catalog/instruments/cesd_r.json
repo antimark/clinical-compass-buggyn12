@@ -1,0 +1,163 @@
+{
+  "schema_version": "4.0.0",
+  "instrument_id": "CESD-R",
+  "instrument_version": "catalog-v4",
+  "priority": "P1",
+  "instrument_type": "self_report_scale",
+  "clinical_content_status": "metadata_only_not_administrable",
+  "information": {
+    "title": {
+      "ru": "Пересмотренная шкала CESD-R",
+      "short": "CESD-R"
+    },
+    "authors": "W.W. Eaton et al.",
+    "first_validation_year": 2004,
+    "purpose_clinician": "Скрининг депрессивной симптоматики, мониторинг",
+    "purpose_patient": "Помогает структурировать обсуждение симптомов; не устанавливает диагноз.",
+    "recommended_for": {
+      "screening": true,
+      "symptom_monitoring": true,
+      "diagnostic_support": false,
+      "clinical_diagnosis": false
+    },
+    "target_population": "Взрослые, если не указано иное; применимость проверяется врачом.",
+    "icd10": {
+      "screening_targets": [
+        {
+          "code": "F32"
+        },
+        {
+          "code": "F33"
+        }
+      ],
+      "nonspecific_symptom_overlap": [],
+      "differentials_not_inferred_by_scale": [],
+      "diagnosis_from_questionnaire": false,
+      "coding_rule": "Порог скрининга, даже при выполнении алгоритма, не устанавливает диагноз и не определяет код МКБ-10."
+    },
+    "icd11_context_text": "",
+    "estimated_minutes": null,
+    "recall_period": "прошлая неделя",
+    "references": [
+      {
+        "url": "https://cesd-r.com/download/",
+        "role": "primary_instrument_information"
+      }
+    ],
+    "clinical_limitations": "Самооценка и алгоритмическое соответствие критериям не заменяют клинического заключения.",
+    "question_count": 20,
+    "source_note": "На официальном сайте нет русского перевода. Тексты не включены до пользовательского согласования."
+  },
+  "language": "ru",
+  "localization": {
+    "language": "ru",
+    "status": "no_confirmed_official_russian",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "draft_segregated": false,
+    "release_approved": false
+  },
+  "questions": [],
+  "response_sets": [],
+  "scales": [
+    {
+      "scale_id": "depression",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    }
+  ],
+  "scoring": {
+    "type": "not_enabled_pending_exact_text_and_protocol",
+    "auto_scoring_enabled": false,
+    "max_score": null,
+    "diagnostic_decision": "clinician_only",
+    "quality_gates": [
+      "licensed_or_open_exact_text",
+      "validated_version",
+      "permission_check",
+      "medical_review"
+    ]
+  },
+  "interpretations": {
+    "patient": {
+      "summary": "Результат требует оценки лечащим специалистом.",
+      "no_diagnostic_claim": true
+    },
+    "clinician": {
+      "summary": "Оцените клинические критерии, продолжительность и дифференциальный диагноз.",
+      "do_not_auto_diagnose": true
+    }
+  },
+  "licensing": {
+    "rights_holder": "CESD-R developers",
+    "copyright_status": "public_domain_claim_verify_text_and_locale",
+    "commercial_use": "original_free_see_terms_ru_translate_first",
+    "research_use": "original_free_ru_translate_first",
+    "open_use": "original_free_ru_translate_first",
+    "electronic_administration": "original_free_with_cautions",
+    "public_distribution": "original_free_with_cautions",
+    "translation_rights": "ru_not_listed_on_developers_site",
+    "patient_feedback_allowed": "clinical_safety_review",
+    "license_source_url": "https://cesd-r.com/download/",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "rights": {
+    "rights_holder": "CESD-R developers",
+    "copyright_status": "public_domain_claim_verify_text_and_locale",
+    "commercial_use": "original_free_see_terms_ru_translate_first",
+    "research_use": "original_free_ru_translate_first",
+    "open_use": "original_free_ru_translate_first",
+    "electronic_administration": "original_free_with_cautions",
+    "public_distribution": "original_free_with_cautions",
+    "translation_rights": "ru_not_listed_on_developers_site",
+    "patient_feedback_allowed": "clinical_safety_review",
+    "license_source_url": "https://cesd-r.com/download/",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "availability": {
+    "russian_form": "not_loaded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://cesd-r.com/download/",
+    "protected_material_embedded": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "risk_item_handling": "manual_clinician_protocol",
+    "automatic_diagnosis_allowed": false,
+    "suicide_risk_inference_from_score_allowed": false
+  },
+  "legacy_source_path": null,
+  "scoring_blueprint_non_executable": {
+    "response_options": "Likert with frequency/duration; official instrument required",
+    "scales": {
+      "depression": {
+        "n_items": 20
+      }
+    },
+    "warning": "Do not assume legacy CES-D scoring compatibility."
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [
+      "F32",
+      "F33"
+    ],
+    "icd10_possible_overlap": [],
+    "icd10_differentials": [],
+    "icd11_context_text": "",
+    "clinical_assessment_targets_only": true,
+    "diagnostic_code_assignment_allowed": false
+  }
+}

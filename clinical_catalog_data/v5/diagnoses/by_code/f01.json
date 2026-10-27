@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "F01",
+  "title_ru": "Сосудистая деменция",
+  "synonyms_ru": [],
+  "specialties": [
+    "psychiatry",
+    "neurology"
+  ],
+  "description_clinician": "Когнитивный дефицит с признаками сосудистого поражения головного мозга и клинически обоснованной связью",
+  "description_patient": "Когнитивные нарушения, связанные с сосудистыми изменениями мозга",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Когнитивный дефицит с признаками сосудистого поражения головного мозга и клинически обоснованной связью"
+    ],
+    "course_and_duration": "Острое, ступенеобразное или постепенное развитие по сосудистому типу",
+    "functional_impact": "Снижение повседневного функционирования",
+    "exclude_and_check": "Болезнь Альцгеймера, делирий, депрессия",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры."
+  },
+  "differential_diagnosis_icd10": [
+    "F00",
+    "F05",
+    "I63"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "",
+  "red_flags": [],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "cognitive_stimulation",
+        "target_path": "therapies/by_id/cognitive_stimulation.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_alzheimer"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "reminiscence",
+        "target_path": "therapies/by_id/reminiscence.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_alzheimer"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "cognitive_rehabilitation",
+        "target_path": "therapies/by_id/cognitive_rehabilitation.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_alzheimer",
+          "nice_ms",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "occupational_therapy",
+        "target_path": "therapies/by_id/occupational_therapy.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_alzheimer",
+          "nice_parkinson",
+          "nice_ms",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "stroke_secondary_prevention",
+        "target_path": "therapies/by_id/stroke_secondary_prevention.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_stroke_tia",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

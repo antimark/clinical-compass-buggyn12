@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://clinical-compass.example/schemas/multiscale-v2.schema.json",
+  "title": "Clinical Compass Multi-Scale Instrument v2 (extension metadata, development)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "instrument_id",
+    "instrument_version",
+    "information",
+    "questions",
+    "scales",
+    "scoring_policy",
+    "interpretations",
+    "publication"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^2\\."
+    },
+    "instrument_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instrument_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "type": "string"
+    },
+    "clinical_content_status": {
+      "type": "string"
+    },
+    "information": {
+      "type": "object"
+    },
+    "ui": {
+      "type": "object"
+    },
+    "response_sets": {
+      "type": "object"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "order",
+          "text",
+          "response_set",
+          "required"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "text": {
+            "type": "string"
+          },
+          "response_set": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "scales": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "algorithm"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "clinical",
+              "validity",
+              "treatment",
+              "interpersonal",
+              "auxiliary"
+            ]
+          },
+          "algorithm": {
+            "type": "object"
+          },
+          "item_ids": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "scoring_policy": {
+      "type": "object"
+    },
+    "interpretations": {
+      "type": "object",
+      "required": [
+        "patient",
+        "clinician"
+      ]
+    },
+    "publication": {
+      "type": "object",
+      "required": [
+        "is_patient_assignable",
+        "is_clinically_approved"
+      ]
+    }
+  }
+}

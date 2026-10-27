@@ -1,0 +1,215 @@
+{
+  "schema": "cc-demo-completion-manifest-v1",
+  "seed_version": "demo-completion-2026-10-26.1",
+  "synthetic": true,
+  "environment": "synthetic_dev",
+  "state": "MANAGED_SEED_AVAILABLE",
+  "reset": "phase01a.reset (pristine managed datasets only)",
+  "seed": "phase01a.seed",
+  "observability": "UI_MOCK except previously implemented backend routes",
+  "no_real_personal_data": true,
+  "catalog_version": "clinical-catalog-v5-2026-10-25",
+  "research_dataset_id": "synthetic_research_v3",
+  "entities": {
+    "clinics": [
+      {
+        "id": "org_demo",
+        "name": "Синтетическая учебная организация",
+        "status": "existing_backend_seed"
+      }
+    ],
+    "staff": [
+      {
+        "id": "doc_psy",
+        "role": "doctor",
+        "source": "existing_backend_seed"
+      },
+      {
+        "id": "doc_ther",
+        "role": "doctor",
+        "source": "existing_backend_seed"
+      },
+      {
+        "id": "doc_gp",
+        "role": "doctor",
+        "source": "phase01a_fixtures"
+      },
+      {
+        "id": "doc_other",
+        "role": "doctor",
+        "source": "existing_backend_seed"
+      },
+      {
+        "id": "clinic_01",
+        "role": "clinic_admin",
+        "source": "existing_backend_seed"
+      },
+      {
+        "id": "researcher_01",
+        "role": "researcher",
+        "source": "existing_backend_seed"
+      }
+    ],
+    "patients": [
+      {
+        "id": "pat_c",
+        "user_id": "pat_03",
+        "source": "existing_backend_seed"
+      },
+      {
+        "id": "pat_a",
+        "user_id": "pat_01",
+        "source": "existing_backend_seed"
+      },
+      {
+        "id": "pxp_history_01",
+        "user_id": "pxu_history_01",
+        "source": "existing_backend_seed"
+      },
+      {
+        "id": "pxp_history_02",
+        "user_id": "pxu_history_02",
+        "source": "existing_backend_seed"
+      }
+    ],
+    "cases": [
+      {
+        "id": "dx_fixture_incoming_case",
+        "patient_id": "pxp_history_02",
+        "doctor_id": "doc_psy",
+        "source": "existing_doctor_experience_fixture"
+      }
+    ],
+    "appointments": [
+      {
+        "id": "dx_fixture_offer",
+        "case_id": "dx_fixture_incoming_case",
+        "patient_id": "pxp_history_02",
+        "doctor_id": "doc_psy",
+        "source": "existing_doctor_experience_fixture"
+      }
+    ],
+    "threads": [
+      {
+        "id": "dx_fixture_incoming_case",
+        "case_id": "dx_fixture_incoming_case",
+        "patient_id": "pxp_history_02",
+        "doctor_id": "doc_psy",
+        "storage": "cc_messages.context_id; no separate thread ORM"
+      }
+    ],
+    "signals": [
+      {
+        "id": "al_001",
+        "patient_id": "pat_a",
+        "source": "existing_backend_seed",
+        "evidence_id": "phase01a_critical_source",
+        "clinical_rule": false
+      }
+    ],
+    "catalog": [
+      {
+        "id": "F41.1",
+        "kind": "diagnosis"
+      },
+      {
+        "id": "product:aviandr_maritupirdine_instruction",
+        "kind": "medicine"
+      }
+    ],
+    "research": [
+      {
+        "id": "synthetic_research_v3",
+        "version": "1.0.0",
+        "separate_from_application_patients": true
+      }
+    ]
+  },
+  "allowed_scenarios": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10"
+  ],
+  "boundaries": {
+    "clinical_intelligence_adapter_patient_id": "pxp_history_02",
+    "clinical_intelligence_adapter_case_id": "dx_fixture_incoming_case",
+    "clinical_intelligence_adapter_appointment_id": "dx_fixture_offer",
+    "clinical_intelligence_scope": "symptoms_only_after_server_acl",
+    "research_no_patient_link": true
+  },
+  "phase01a": {
+    "version": "1",
+    "canonical": true,
+    "seed": "python -m cc_api.synthetic_dataset create",
+    "repeat": "python -m cc_api.synthetic_dataset seed DATASET",
+    "reset": "python -m cc_api.synthetic_dataset reset DATASET",
+    "personas": {
+      "new_empty": {
+        "user_id": "pat_03",
+        "patient_id": "pat_c",
+        "d01": "new account created via registration; generated IDs captured by E2E, never preseeded"
+      },
+      "history": {
+        "user_id": "pxu_history_01",
+        "patient_id": "pxp_history_01",
+        "doctor_id": "doc_ther"
+      },
+      "aviandr_discussion": {
+        "user_id": "pxu_history_02",
+        "patient_id": "pxp_history_02",
+        "doctor_id": "doc_psy",
+        "case_id": "dx_fixture_incoming_case",
+        "appointment_id": "dx_fixture_offer",
+        "message_ids": [
+          "msg_demo_01",
+          "msg_demo_02"
+        ],
+        "prescription": false
+      },
+      "alternative_critical": {
+        "user_id": "pat_01",
+        "patient_id": "pat_a",
+        "doctor_id": "doc_psy",
+        "signal_id": "al_001",
+        "evidence_id": "phase01a_critical_source",
+        "rule": "SYNTHETIC_TEST_TRIGGER",
+        "clinical_validation": false
+      }
+    },
+    "staff": {
+      "psychiatrist": "doc_psy",
+      "psychotherapist": "doc_ther",
+      "general_practitioner": "doc_gp",
+      "unlinked_doctor": "doc_other",
+      "clinic_admin": "clinic_01",
+      "researcher": "researcher_01"
+    },
+    "references": {
+      "questionnaire_submission": "ds_fixture_history_02",
+      "observations": [
+        "obs_fixture_history_02_0",
+        "obs_fixture_history_02_1",
+        "obs_fixture_history_02_2",
+        "obs_fixture_history_02_3",
+        "obs_fixture_history_02_4",
+        "obs_fixture_history_02_5",
+        "obs_fixture_history_02_6"
+      ],
+      "decision_history": "phase01a_graph_v1",
+      "research": "synthetic_research_v3 (independent read-only research_data; study_demo_v1 permitted aggregates)"
+    },
+    "illustrative_only": [
+      "routing_and_safety.json",
+      "frontend/dist/assets/fixtures/clinical_intelligence_synthetic_v1.json"
+    ],
+    "legacy_entities": "Unseeded duplicate account/case/thread proposals removed; synthetic_profiles.json remains Phase01B illustrative input only.",
+    "d01_status": "server_saved_registration_case_review; see docs/phase01a/D01_E2E_RESULTS.md"
+  }
+}

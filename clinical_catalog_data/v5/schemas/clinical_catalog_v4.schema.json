@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Clinical Compass catalog instrument v4, thin structural contract",
+  "type": "object",
+  "required": [
+    "instrument_id",
+    "priority",
+    "instrument_type",
+    "information",
+    "localization",
+    "rights",
+    "availability",
+    "publication",
+    "questions"
+  ],
+  "properties": {
+    "instrument_id": {
+      "type": "string",
+      "minLength": 2
+    },
+    "priority": {
+      "enum": [
+        "P0",
+        "P1",
+        "P2"
+      ]
+    },
+    "instrument_type": {
+      "type": "string"
+    },
+    "information": {
+      "type": "object"
+    },
+    "localization": {
+      "type": "object",
+      "required": [
+        "status",
+        "release_approved"
+      ],
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "release_approved": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rights": {
+      "type": "object",
+      "required": [
+        "copyright_status",
+        "commercial_use",
+        "research_use",
+        "open_use",
+        "electronic_administration",
+        "public_distribution",
+        "translation_rights",
+        "patient_feedback_allowed",
+        "license_source_url",
+        "last_verified_at"
+      ]
+    },
+    "availability": {
+      "type": "object",
+      "required": [
+        "usable_for_patient",
+        "usable_for_clinician",
+        "protected_material_embedded"
+      ]
+    },
+    "publication": {
+      "type": "object",
+      "required": [
+        "clinical_release_approved"
+      ]
+    },
+    "questions": {
+      "type": "array"
+    },
+    "clinical_content_status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

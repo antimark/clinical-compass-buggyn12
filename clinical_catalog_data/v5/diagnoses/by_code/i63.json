@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "I63",
+  "title_ru": "Инфаркт мозга (ишемический инсульт)",
+  "synonyms_ru": [],
+  "specialties": [
+    "neurology"
+  ],
+  "description_clinician": "Внезапный очаговый неврологический дефицит с данными за церебральную ишемию",
+  "description_patient": "Внезапные симптомы возможного инсульта — повод для экстренной медицинской помощи",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Внезапный очаговый неврологический дефицит с данными за церебральную ишемию"
+    ],
+    "course_and_duration": "Острое начало; неотложная диагностика",
+    "functional_impact": "Может вызывать инвалидизацию и угрожать жизни",
+    "exclude_and_check": "Геморрагический инсульт, мигрень, функциональные симптомы",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры.",
+    "assessment_checklist_original_summary": [
+      "Внезапное начало очагового неврологического дефицита",
+      "Срочный неврологический осмотр и диагностика",
+      "Нейровизуализация и оценка сосудистой этиологии",
+      "Немедленное направление по экстренному маршруту, без ожидания результатов шкалы"
+    ],
+    "uses_official_thresholds": false
+  },
+  "differential_diagnosis_icd10": [
+    "G45.9",
+    "G43.1"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "",
+  "red_flags": [
+    "При внезапном/тяжёлом ухудшении, нарушении безопасности или жизненно важных функций — срочная очная медицинская оценка; не откладывать из-за заполнения шкалы."
+  ],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true,
+    "priority": "P0"
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "speech_language_therapy",
+        "target_path": "therapies/by_id/speech_language_therapy.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_autism",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "cognitive_rehabilitation",
+        "target_path": "therapies/by_id/cognitive_rehabilitation.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_alzheimer",
+          "nice_ms",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "occupational_therapy",
+        "target_path": "therapies/by_id/occupational_therapy.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_alzheimer",
+          "nice_parkinson",
+          "nice_ms",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "neuro_physiotherapy",
+        "target_path": "therapies/by_id/neuro_physiotherapy.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_parkinson",
+          "nice_ms",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "stroke_secondary_prevention",
+        "target_path": "therapies/by_id/stroke_secondary_prevention.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_stroke_tia",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [
+      {
+        "substance_id": "aspirin_low_dose",
+        "target_path": "medicines/by_inn/aspirin_low_dose.json",
+        "relationship": "etiology_specific_secondary_prevention",
+        "evidence_source_ids": [],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "clopidogrel",
+        "target_path": "medicines/by_inn/clopidogrel.json",
+        "relationship": "etiology_specific_secondary_prevention",
+        "evidence_source_ids": [],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      },
+      {
+        "substance_id": "apixaban",
+        "target_path": "medicines/by_inn/apixaban.json",
+        "relationship": "etiology_specific_not_all_ischemic_strokes",
+        "evidence_source_ids": [],
+        "ru_regulatory_status": "not_verified",
+        "is_prescribing_recommendation": false
+      }
+    ],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

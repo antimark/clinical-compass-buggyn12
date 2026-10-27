@@ -1,0 +1,198 @@
+{
+  "schema_version": "4.0.0",
+  "instrument_id": "DASS-42",
+  "instrument_version": "catalog-v4",
+  "priority": "P1",
+  "instrument_type": "self_report_scale",
+  "clinical_content_status": "metadata_only_not_administrable",
+  "information": {
+    "title": {
+      "ru": "Шкала депрессии, тревоги и стресса — 42 пункта",
+      "short": "DASS-42"
+    },
+    "authors": "S.H. Lovibond; P.F. Lovibond",
+    "first_validation_year": 1995,
+    "purpose_clinician": "Скрининг, мониторинг трёх измерений дистресса",
+    "purpose_patient": "Помогает структурировать обсуждение симптомов; не устанавливает диагноз.",
+    "recommended_for": {
+      "screening": true,
+      "symptom_monitoring": true,
+      "diagnostic_support": false,
+      "clinical_diagnosis": false
+    },
+    "target_population": "Взрослые, если не указано иное; применимость проверяется врачом.",
+    "icd10": {
+      "screening_targets": [
+        {
+          "code": "F32"
+        },
+        {
+          "code": "F41.1"
+        },
+        {
+          "code": "F43.2"
+        }
+      ],
+      "nonspecific_symptom_overlap": [],
+      "differentials_not_inferred_by_scale": [],
+      "diagnosis_from_questionnaire": false,
+      "coding_rule": "Порог скрининга, даже при выполнении алгоритма, не устанавливает диагноз и не определяет код МКБ-10."
+    },
+    "icd11_context_text": "",
+    "estimated_minutes": null,
+    "recall_period": "1 неделя",
+    "references": [
+      {
+        "url": "https://dass.psy.unsw.edu.au/DASSFAQ.htm",
+        "role": "primary_instrument_information"
+      },
+      {
+        "url": "https://dass.psy.unsw.edu.au/Russian/Fattakhov/Fattakhov%20Russian.htm",
+        "role": "russian_translation_available_for_both_versions"
+      }
+    ],
+    "clinical_limitations": "Самооценка и алгоритмическое соответствие критериям не заменяют клинического заключения.",
+    "question_count": 42,
+    "source_note": "Не объединять с DASS-21 при сравнении без нормирования."
+  },
+  "language": "ru",
+  "localization": {
+    "language": "ru",
+    "status": "russian_translations_available_external_not_embedded",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "draft_segregated": false,
+    "release_approved": false
+  },
+  "questions": [],
+  "response_sets": [],
+  "scales": [
+    {
+      "scale_id": "depression",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "anxiety",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    },
+    {
+      "scale_id": "stress",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    }
+  ],
+  "scoring": {
+    "type": "not_enabled_pending_exact_text_and_protocol",
+    "auto_scoring_enabled": false,
+    "max_score": null,
+    "diagnostic_decision": "clinician_only",
+    "quality_gates": [
+      "licensed_or_open_exact_text",
+      "validated_version",
+      "permission_check",
+      "medical_review"
+    ]
+  },
+  "interpretations": {
+    "patient": {
+      "summary": "Результат требует оценки лечащим специалистом.",
+      "no_diagnostic_claim": true
+    },
+    "clinician": {
+      "summary": "Оцените клинические критерии, продолжительность и дифференциальный диагноз.",
+      "do_not_auto_diagnose": true
+    }
+  },
+  "licensing": {
+    "rights_holder": "S.H. Lovibond and P.F. Lovibond",
+    "copyright_status": "authors_state_public_domain_with_use_conditions",
+    "commercial_use": "restricted_conditions_verify_use_case",
+    "research_use": "free_with_specific_conditions",
+    "open_use": "not_unrestricted",
+    "electronic_administration": "online_use_restricted_follow_developers_conditions",
+    "public_distribution": "not_unrestricted",
+    "translation_rights": "original_ru_translation_check_separately",
+    "patient_feedback_allowed": "automatic_patient_scoring_feedback_restricted",
+    "license_source_url": "https://dass.psy.unsw.edu.au/DASSFAQ.htm",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "rights": {
+    "rights_holder": "S.H. Lovibond and P.F. Lovibond",
+    "copyright_status": "authors_state_public_domain_with_use_conditions",
+    "commercial_use": "restricted_conditions_verify_use_case",
+    "research_use": "free_with_specific_conditions",
+    "open_use": "not_unrestricted",
+    "electronic_administration": "online_use_restricted_follow_developers_conditions",
+    "public_distribution": "not_unrestricted",
+    "translation_rights": "original_ru_translation_check_separately",
+    "patient_feedback_allowed": "automatic_patient_scoring_feedback_restricted",
+    "license_source_url": "https://dass.psy.unsw.edu.au/DASSFAQ.htm",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "availability": {
+    "russian_form": "not_loaded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://dass.psy.unsw.edu.au/DASSFAQ.htm",
+    "protected_material_embedded": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "risk_item_handling": "manual_clinician_protocol",
+    "automatic_diagnosis_allowed": false,
+    "suicide_risk_inference_from_score_allowed": false
+  },
+  "legacy_source_path": null,
+  "scoring_blueprint_non_executable": {
+    "response_options": "4-point 0-3",
+    "scales": {
+      "depression": {
+        "n_items": 14,
+        "range": [
+          0,
+          42
+        ]
+      },
+      "anxiety": {
+        "n_items": 14,
+        "range": [
+          0,
+          42
+        ]
+      },
+      "stress": {
+        "n_items": 14,
+        "range": [
+          0,
+          42
+        ]
+      }
+    }
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [
+      "F32",
+      "F41.1",
+      "F43.2"
+    ],
+    "icd10_possible_overlap": [],
+    "icd10_differentials": [],
+    "icd11_context_text": "",
+    "clinical_assessment_targets_only": true,
+    "diagnostic_code_assignment_allowed": false
+  }
+}

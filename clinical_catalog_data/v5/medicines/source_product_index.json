@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "count": 8,
+  "items": [
+    {
+      "id": "atomoxetine_canon_40mg",
+      "title_ru": "Атомоксетин Канон",
+      "active_substance_id": "atomoxetine",
+      "instruction_path": "medicines/source_product_instructions/atomoxetine_canon_40mg.json",
+      "overlay_path": "medicines/source_product_overlays/atomoxetine_canon_40mg.json",
+      "linked_diagnosis_codes": [
+        "F90.0"
+      ]
+    },
+    {
+      "id": "aviandr_maritupirdine_instruction",
+      "title_ru": "Авиандр",
+      "active_substance_id": "maritupirdine",
+      "instruction_path": "medicines/source_product_instructions/aviandr_maritupirdine_instruction.json",
+      "overlay_path": "medicines/source_product_overlays/aviandr_maritupirdine_instruction.json",
+      "linked_diagnosis_codes": [
+        "F41.1"
+      ]
+    },
+    {
+      "id": "cipralex_escitalopram_10mg",
+      "title_ru": "Ципралекс",
+      "active_substance_id": "escitalopram",
+      "instruction_path": "medicines/source_product_instructions/cipralex_escitalopram_10mg.json",
+      "overlay_path": "medicines/source_product_overlays/cipralex_escitalopram_10mg.json",
+      "linked_diagnosis_codes": [
+        "F32",
+        "F33",
+        "F41.1",
+        "F41.0",
+        "F40.1",
+        "F42"
+      ]
+    },
+    {
+      "id": "lamictal_lamotrigine_25mg",
+      "title_ru": "Ламиктал",
+      "active_substance_id": "lamotrigine",
+      "instruction_path": "medicines/source_product_instructions/lamictal_lamotrigine_25mg.json",
+      "overlay_path": "medicines/source_product_overlays/lamictal_lamotrigine_25mg.json",
+      "linked_diagnosis_codes": [
+        "F31",
+        "G40"
+      ]
+    },
+    {
+      "id": "risperidone_canon_2mg",
+      "title_ru": "Рисперидон Канон",
+      "active_substance_id": "risperidone",
+      "instruction_path": "medicines/source_product_instructions/risperidone_canon_2mg.json",
+      "overlay_path": "medicines/source_product_overlays/risperidone_canon_2mg.json",
+      "linked_diagnosis_codes": [
+        "F20",
+        "F31",
+        "F00",
+        "G30",
+        "F70"
+      ]
+    },
+    {
+      "id": "seroquel_quetiapine_ir_100mg",
+      "title_ru": "Сероквель",
+      "active_substance_id": "quetiapine",
+      "instruction_path": "medicines/source_product_instructions/seroquel_quetiapine_ir_100mg.json",
+      "overlay_path": "medicines/source_product_overlays/seroquel_quetiapine_ir_100mg.json",
+      "linked_diagnosis_codes": [
+        "F20",
+        "F31"
+      ]
+    },
+    {
+      "id": "velaxin_venlafaxine_xr_75mg",
+      "title_ru": "Велаксин",
+      "active_substance_id": "venlafaxine",
+      "instruction_path": "medicines/source_product_instructions/velaxin_venlafaxine_xr_75mg.json",
+      "overlay_path": "medicines/source_product_overlays/velaxin_venlafaxine_xr_75mg.json",
+      "linked_diagnosis_codes": [
+        "F32",
+        "F33",
+        "F41.1",
+        "F40.1",
+        "F41.0"
+      ]
+    },
+    {
+      "id": "zoloft_sertraline_50mg",
+      "title_ru": "Золофт",
+      "active_substance_id": "sertraline",
+      "instruction_path": "medicines/source_product_instructions/zoloft_sertraline_50mg.json",
+      "overlay_path": "medicines/source_product_overlays/zoloft_sertraline_50mg.json",
+      "linked_diagnosis_codes": [
+        "F32",
+        "F33",
+        "F42",
+        "F41.0",
+        "F43.1",
+        "F40.1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "schema_version": "3.0.0",
+  "instrument_id": "SCID-5-RV",
+  "instrument_version": "official_version_required",
+  "language": "ru-RU",
+  "clinical_content_status": "metadata_only_license_required",
+  "information": {
+    "title": "Structured Clinical Interview for DSM-5 — Research Version",
+    "type": "clinician_semistructured_interview",
+    "authors": [
+      "Michael B. First",
+      "Janet B. W. Williams",
+      "Robert L. Spitzer",
+      "Miriam Gibbon"
+    ],
+    "first_publication_or_revision_year": 2015,
+    "purpose_patient": "Информация о назначении инструмента; самостоятельно проходить это интервью без специалиста не следует.",
+    "purpose_clinician": "Более подробная оценка DSM-5 диагнозов для исследовательских протоколов, включая течение и спецификаторы.",
+    "estimated_minutes": "45–120 (core); 45–180 (enhanced)",
+    "target_population": "Взрослые, исследовательские выборки",
+    "recommended_for": {
+      "structured_diagnostic_interview": true,
+      "diagnostic_support": true,
+      "symptom_monitoring": false,
+      "independent_diagnosis": false
+    },
+    "icd10": {
+      "mapping_status": "reference_only_not_dsm_equivalence",
+      "codes": [
+        {
+          "code": "F32",
+          "label": "Депрессивный эпизод"
+        },
+        {
+          "code": "F33",
+          "label": "Рекуррентное депрессивное расстройство"
+        },
+        {
+          "code": "F31",
+          "label": "Биполярное аффективное расстройство"
+        },
+        {
+          "code": "F41.1",
+          "label": "Генерализованное тревожное расстройство"
+        },
+        {
+          "code": "F41.0",
+          "label": "Паническое расстройство"
+        },
+        {
+          "code": "F40.1",
+          "label": "Социальные фобии"
+        },
+        {
+          "code": "F42",
+          "label": "Обсессивно-компульсивное расстройство"
+        },
+        {
+          "code": "F43.1",
+          "label": "Посттравматическое стрессовое расстройство"
+        },
+        {
+          "code": "F20",
+          "label": "Шизофрения"
+        },
+        {
+          "code": "F25",
+          "label": "Шизоаффективные расстройства"
+        },
+        {
+          "code": "F10",
+          "label": "Психические и поведенческие расстройства вследствие употребления алкоголя"
+        },
+        {
+          "code": "F11–F19",
+          "label": "Нарушения вследствие других психоактивных веществ; диапазон рубрик"
+        }
+      ]
+    },
+    "validation": [
+      {
+        "citation": "Официальные материалы Columbia University по SCID-5-RV, объёму модулей и режимам",
+        "url": "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-12"
+      }
+    ],
+    "limitations": [
+      "Только специалист; структурированное интервью не заменяет полного обследования, клинического решения и оценки безопасности.",
+      "DSM-5/МКБ-10 соответствия требуют экспертной проверки.",
+      "Качество конкретного русскоязычного перевода не подтверждается самим JSON."
+    ],
+    "source_urls": [
+      "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-12",
+      "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-15"
+    ]
+  },
+  "ui": {
+    "audience": [
+      "clinician"
+    ],
+    "show_in_clinical_reference": true,
+    "patient_assignable": false,
+    "clinical_admin_enabled": false,
+    "licensed_content_loaded": false,
+    "assignment_guard": "deny_unless_licensed_and_clinically_approved"
+  },
+  "response_sets": {},
+  "questions": [],
+  "modules": [
+    {
+      "id": "core",
+      "title": "Базовый исследовательский набор",
+      "covered_domains": [
+        "диагнозы, входящие в лицензированный SCID-5-RV Core"
+      ],
+      "clinician_notes": "Состав набора и правила ветвления задаются конкретной версией лицензии.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    },
+    {
+      "id": "enhanced",
+      "title": "Расширенные модули",
+      "covered_domains": [
+        "дополнительные расстройства и спецификаторы",
+        "жизненный анамнез"
+      ],
+      "clinician_notes": "Не принимать наличие расширенных модулей за признак пригодности любого проекта.",
+      "official_questions_required": true,
+      "content_status": "not_included_due_to_licensing",
+      "questions": [],
+      "routing_rules": {
+        "status": "requires_official_licensed_version",
+        "do_not_infer_skips": true
+      },
+      "decision": {
+        "status": "clinician_only",
+        "may_be": "met/not_met/insufficient_information/not_assessed"
+      }
+    }
+  ],
+  "scoring": {
+    "type": "not_computable_without_licensed_protocol",
+    "auto_scoring_enabled": false,
+    "score_scale": null,
+    "missing_answer_policy": "cannot_finalize_incomplete",
+    "diagnostic_decision": "clinician_only"
+  },
+  "interpretations": {
+    "patient": {
+      "title": "Результат обсудите с врачом",
+      "text": "Интервью помогает врачу структурировать обследование; автоматическое заключение не формируется."
+    },
+    "clinician": {
+      "title": "Клиническая интерпретация",
+      "text": "Интерпретировать по официальному руководству, совокупности критериев, исключений и клинических данных; необоснованное присвоение диагноза запрещено."
+    },
+    "auto_diagnosis": false
+  },
+  "licensing": {
+    "rights_holder": "American Psychiatric Association Publishing (APA Publishing)",
+    "commercial": "Лицензия и разрешение через APA Publishing; отдельные условия для клинических испытаний, адаптации и электронной реализации.",
+    "research": "Лицензирование требуется даже для академического применения; доступны версии PDF и Word в соответствии с конкретным разрешением.",
+    "open": "Нельзя свободно распространять протокол или модифицированные шаблоны.",
+    "contact_url": "https://www.columbiapsychiatry.org/research/research-labs/diagnostic-and-assessment-lab/structured-clinical-interview-dsm-disorders-15",
+    "permission_needed_for_app": true,
+    "free_public_republication": false
+  },
+  "publication": {
+    "is_patient_assignable": false,
+    "is_clinically_approved": false,
+    "in_public_demo": false,
+    "licensing_review": "pending",
+    "requires_manual_and_training": true
+  },
+  "safety": {
+    "suicidality_assessment": "separate_assessment_when_indicated",
+    "no_autonomous_triage": true,
+    "clinician_signoff_required": true
+  },
+  "clinician_guide": {
+    "steps": [
+      {
+        "id": "before",
+        "title": "Подготовка и рамки",
+        "clinician_instructions": "Уточните цель обследования, версии инструмента, временной период, язык, информированное согласие и условия конфиденциальности.",
+        "checks": []
+      },
+      {
+        "id": "safety",
+        "title": "Безопасность",
+        "clinician_instructions": "При клинических сигналах риска отдельно оцените непосредственную безопасность и действуйте по протоколу организации, не дожидаясь окончания интервью.",
+        "checks": []
+      },
+      {
+        "id": "context",
+        "title": "Клинический контекст",
+        "clinician_instructions": "Установите хронологию эпизодов, функциональные нарушения, предшествующее лечение, влияние веществ/лекарств, возможные соматические причины и коморбидность.",
+        "checks": []
+      },
+      {
+        "id": "protocol",
+        "title": "Согласование с протоколом",
+        "clinician_instructions": "Проверьте, какие модули выбраны в исследовании, версии критериев, допустимость модификаций и обученность оценщика.",
+        "checks": []
+      },
+      {
+        "id": "blinding",
+        "title": "Снижение систематических ошибок",
+        "clinician_instructions": "По возможности сохраняйте независимость интервьюера от исходов лечения и результатов других тестов.",
+        "checks": []
+      },
+      {
+        "id": "change_control",
+        "title": "Контроль изменений",
+        "clinician_instructions": "Любая модификация лицензированного Word/PDF должна отвечать правам конкретного соглашения и проходить контроль версий.",
+        "checks": []
+      },
+      {
+        "id": "finish",
+        "title": "Завершение",
+        "clinician_instructions": "Документируйте подтверждённые, исключённые и неопределённые критерии; решение по диагностическому коду и тактике принимает врач.",
+        "checks": []
+      }
+    ],
+    "common_errors": [
+      "Применять скрининговые скипы из произвольного HTML",
+      "Смешивать текущие и lifetime диагнозы",
+      "Не фиксировать версии интервью и контроль отклонений от протокола"
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "F84.5",
+  "title_ru": "Синдром Аспергера",
+  "synonyms_ru": [],
+  "specialties": [
+    "psychiatry",
+    "psychology",
+    "neurology"
+  ],
+  "description_clinician": "Особенности взаимного социального взаимодействия и ограниченных интересов без типичного выраженного раннего языкового отставания",
+  "description_patient": "Категория МКБ-10 в спектре аутистических особенностей развития",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Особенности взаимного социального взаимодействия и ограниченных интересов без типичного выраженного раннего языкового отставания"
+    ],
+    "course_and_duration": "Начало в развитии",
+    "functional_impact": "Социальная адаптация может быть затруднена",
+    "exclude_and_check": "Другие расстройства аутистического спектра, тревога",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры."
+  },
+  "differential_diagnosis_icd10": [
+    "F84.0",
+    "F40.1"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "В МКБ-11 прежний синдром Аспергера не выделяется как самостоятельная нозология; объединён в расстройства аутистического спектра.",
+  "red_flags": [],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "parent_training",
+        "target_path": "therapies/by_id/parent_training.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_adhd",
+          "nice_autism"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "autism_social_skills",
+        "target_path": "therapies/by_id/autism_social_skills.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_autism"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "autism_adaptive_skills",
+        "target_path": "therapies/by_id/autism_adaptive_skills.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_autism"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "speech_language_therapy",
+        "target_path": "therapies/by_id/speech_language_therapy.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_autism",
+          "nice_stroke_rehab"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

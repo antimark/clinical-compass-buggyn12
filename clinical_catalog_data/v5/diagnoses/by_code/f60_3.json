@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "coding_system": "ICD-10 WHO (base) / local coding adaptation pending verification",
+  "classification_release_reference": "WHO ICD-10 2019; clinical descriptions WHO 1992",
+  "code": "F60.3",
+  "title_ru": "Эмоционально неустойчивое расстройство личности",
+  "synonyms_ru": [],
+  "specialties": [
+    "psychiatry",
+    "psychology"
+  ],
+  "description_clinician": "Устойчивые проблемы регуляции эмоций, импульсивность; возможны нестабильные отношения и самовосприятие",
+  "description_patient": "Трудности эмоциональной регуляции и импульсивность на протяжении длительного времени",
+  "criteria": {
+    "type": "editorial_summary_not_complete_official_ICD_criteria",
+    "main_features": [
+      "Устойчивые проблемы регуляции эмоций, импульсивность",
+      "возможны нестабильные отношения и самовосприятие"
+    ],
+    "course_and_duration": "Длительный паттерн, а не краткий кризис",
+    "functional_impact": "Нарушение отношений и функционирования",
+    "exclude_and_check": "БАР, ПТСР, СДВГ, последствия травмы",
+    "exact_threshold_and_qualifiers": "Уточнить в официальном руководстве МКБ-10 и актуальных клинических рекомендациях; здесь приведены только ориентиры.",
+    "assessment_checklist_original_summary": [
+      "Длительный сквозной паттерн импульсивности и нестабильной регуляции эмоций",
+      "Характер отношений и самооценки в течение жизни",
+      "Наблюдение симптомов в разных жизненных контекстах",
+      "Дифференциальная оценка БАР, травматических расстройств и СДВГ"
+    ],
+    "uses_official_thresholds": false
+  },
+  "differential_diagnosis_icd10": [
+    "F31",
+    "F43.1",
+    "F90.0"
+  ],
+  "diagnostic_workflow": {
+    "clinical_history": true,
+    "assess_duration": true,
+    "assess_functional_impairment": true,
+    "medical_and_medication_review": true,
+    "clinician_confirmation_required": true,
+    "auto_code_from_questionnaire": false
+  },
+  "suggested_questionnaires": [],
+  "icd11_context_text": "МКБ-11 использует иную модель расстройств личности с оценкой выраженности и признаков; «пограничный паттерн» не отдельный прямой код МКБ-10.",
+  "red_flags": [
+    "Оценку суицидального риска и безопасности проводить отдельным клиническим протоколом; ни одна шкала не заменяет оценки врача."
+  ],
+  "sources": [
+    {
+      "type": "WHO_ICD10_clinical_descriptions",
+      "url": "https://www.who.int/publications/i/item/9241544228"
+    },
+    {
+      "type": "WHO_ICD10_2019_tabular",
+      "url": "https://icd.who.int/browse10/2019/en"
+    }
+  ],
+  "review": {
+    "editorial_status": "needs_specialist_review",
+    "official_criteria_reproduction": false,
+    "last_updated": "2026-10-25",
+    "not_for_automated_diagnosis": true,
+    "priority": "P0"
+  },
+  "rights": {
+    "content": "original_editorial_summary_not_verbatim_WHO_text",
+    "WHO_source_reproduction": "confirm_classification_license_and_version_before_commercial_bundling"
+  },
+  "treatment_links": {
+    "therapy_methods": [
+      {
+        "therapy_id": "dbt",
+        "target_path": "therapies/by_id/dbt.json",
+        "relationship": "guideline_supported_in_selected_context",
+        "evidence_source_ids": [
+          "nice_bpd",
+          "bpd_psych_review"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "mbt",
+        "target_path": "therapies/by_id/mbt.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "nice_bpd",
+          "bpd_psych_review"
+        ],
+        "is_auto_treatment_plan": false
+      },
+      {
+        "therapy_id": "schema_therapy",
+        "target_path": "therapies/by_id/schema_therapy.json",
+        "relationship": "conditional_or_adjunct",
+        "evidence_source_ids": [
+          "bpd_psych_review"
+        ],
+        "is_auto_treatment_plan": false
+      }
+    ],
+    "medicines_active_substances": [],
+    "supplied_products": [],
+    "clinical_use": "reference_for_clinician_not_preprescribed_therapy",
+    "scope": "Links show possible clinical relevance subject to patient details and local guidance",
+    "if_empty": "No diagnosis-specific treatment link established in this catalog; do not infer lack of any care",
+    "auto_recommendation_disabled": true,
+    "needs_medical_review": true
+  },
+  "last_treatment_link_update": "2026-10-25"
+}

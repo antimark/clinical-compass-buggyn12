@@ -1,0 +1,37 @@
+{
+  "id": "risperidone_canon_2mg",
+  "record_type": "source_product_instruction_pointer",
+  "title_ru": "Рисперидон Канон",
+  "active_substance_id": "risperidone",
+  "original_instruction_path": "medicines/source_product_instructions/risperidone_canon_2mg.json",
+  "listed_icd10_codes_in_supplied_instruction": [
+    "F20",
+    "F30",
+    "F31",
+    "F00",
+    "G30",
+    "F91",
+    "F70",
+    "F71",
+    "F72"
+  ],
+  "linked_diagnosis_codes_in_catalog": [
+    "F20",
+    "F31",
+    "F00",
+    "G30",
+    "F70"
+  ],
+  "provenance": {
+    "origin": "user_supplied_zip_2026_10_18",
+    "original_source_filename": "инструкции_к_препаратам/risperidone_canon_2mg.json",
+    "sha256": "839069c92b229c915729d4bed9a8f453250e4c54baf8b27fbe67a31b1e19285c",
+    "not_current_grls_verification": true
+  },
+  "label_claim_provenance": "as_listed_in_user_supplied_source_instruction_not_independently_revalidated",
+  "formulation_sensitive": true,
+  "review": {
+    "registration_and_smpc_recheck_needed": true,
+    "last_updated": "2026-10-25"
+  }
+}

@@ -1,0 +1,12 @@
+# Limits and independent pilot gates
+Phase04 integrates the technical evaluation product. It does not authorize clinical practice, identifiable health-data processing, automatic clinical actions, emergency service or24hmonitoring. `experimental_needs_validation` remains visible and does not disable authorized evaluation functions. Physician confirmation, consent, source grants, CSRF/CAS/audit remain mandatory.
+
+- Clinical rule validation, diagnostic/risk-prediction sensitivity/specificity and treatment effectiveness NOT_ACCEPTED. Safety uses narrow hand-authored intake criteria; private diary/patientAI are excluded. Unsupported/ambiguous narratives can yield no signal.
+- Patient assistant deliberately publishes verified reference extracts; no unrestricted model medical prose. Source/citation identity is not proof of semantic clinical accuracy. Doctor model failures/timeouts are honest rejected jobs, not successful medical advice.
+- Local SQL test inbox only; no external notification provider, emergency calls, staffing or SLA. Receipt, seen, ACK and care are distinct. Revalidation clears cached UI on focus/periodic checks, not copies previously seen legitimately.
+- Real PostgreSQL races/migrations and actual Keycloak/PKCE/MFA NOT_RUN for this release. Synthetic signed IdP/local evaluation accounts do not establish production assurance. Professional/email verification remains deferred.5expectedXFAIL/24strictP0NOT_ACCEPTED remain visible.
+- Instrument copyright/licensing/Russian clinical validation and current drug-registration/safety review are independent. Only supplied reference projections and permitted original demo forms are exposed; no automatic prescriptions or medication-safety assurance.
+- SQLite is not newly encrypted. Logical purge does not erase WAL/backups/snapshots. Trusted operators need separate legal/privacy/TLS/key/backup/retention/access procedures before any remote/realpatient deployment. The obvious-identifier filter cannot certify deidentification.
+- Verified deployment is existing macOS Apple Silicon cc-m1/Ollama/Chromium. `/usr/bin/sips` photo processing and other OS/hardware/clean dependency installation NOT_VERIFIED. No dependencies/weights were installed in this phase.
+
+Next acceptance is independent organizer use of the clean source ZIP on new lawful cases with their ordinary accounts. Any pilot requires separate legal, clinical, security, infrastructure and staffing approval. NoPhase05 or clinical pilot is started by this delivery.

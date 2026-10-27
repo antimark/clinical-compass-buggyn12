@@ -1,0 +1,125 @@
+{
+  "synthetic": true,
+  "dataset_id": "synthetic_research_v3",
+  "version": "3.0.1",
+  "title": "Синтетический учебный набор: наблюдения самочувствия",
+  "description": "Детерминированные вымышленные наблюдения для проверки фильтров и агрегатов; не связаны с пациентами и не являются клиническим исследованием.",
+  "measure": {
+    "code": "mood_1_5",
+    "label": "Учебная отметка самочувствия 1–5",
+    "unit_of_analysis": "one_observation",
+    "null_policy": "Exclude null from mean; include in total and missing count."
+  },
+  "subjects": [
+    {
+      "id": "synthetic_01",
+      "cohort": "A"
+    },
+    {
+      "id": "synthetic_02",
+      "cohort": "A"
+    },
+    {
+      "id": "synthetic_03",
+      "cohort": "A"
+    },
+    {
+      "id": "synthetic_04",
+      "cohort": "A"
+    },
+    {
+      "id": "synthetic_05",
+      "cohort": "A"
+    },
+    {
+      "id": "synthetic_06",
+      "cohort": "A"
+    },
+    {
+      "id": "synthetic_07",
+      "cohort": "B"
+    },
+    {
+      "id": "synthetic_08",
+      "cohort": "B"
+    },
+    {
+      "id": "synthetic_09",
+      "cohort": "B"
+    },
+    {
+      "id": "synthetic_10",
+      "cohort": "B"
+    },
+    {
+      "id": "synthetic_11",
+      "cohort": "B"
+    },
+    {
+      "id": "synthetic_12",
+      "cohort": "B"
+    }
+  ],
+  "observations": [
+    {
+      "subject_id": "synthetic_01",
+      "date": "2026-10-15",
+      "mood_1_5": 1
+    },
+    {
+      "subject_id": "synthetic_02",
+      "date": "2026-10-16",
+      "mood_1_5": 2
+    },
+    {
+      "subject_id": "synthetic_03",
+      "date": "2026-10-17",
+      "mood_1_5": 3
+    },
+    {
+      "subject_id": "synthetic_04",
+      "date": "2026-10-18",
+      "mood_1_5": 4
+    },
+    {
+      "subject_id": "synthetic_05",
+      "date": "2026-10-19",
+      "mood_1_5": 5
+    },
+    {
+      "subject_id": "synthetic_06",
+      "date": "2026-10-20",
+      "mood_1_5": null
+    },
+    {
+      "subject_id": "synthetic_07",
+      "date": "2026-10-21",
+      "mood_1_5": 3
+    },
+    {
+      "subject_id": "synthetic_08",
+      "date": "2026-10-22",
+      "mood_1_5": 4
+    },
+    {
+      "subject_id": "synthetic_09",
+      "date": "2026-10-23",
+      "mood_1_5": 4
+    },
+    {
+      "subject_id": "synthetic_10",
+      "date": "2026-10-24",
+      "mood_1_5": 4
+    },
+    {
+      "subject_id": "synthetic_11",
+      "date": "2026-10-25",
+      "mood_1_5": 5
+    },
+    {
+      "subject_id": "synthetic_12",
+      "date": "2026-10-26",
+      "mood_1_5": null
+    }
+  ]
+}

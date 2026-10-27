@@ -1,0 +1,11 @@
+# Evaluation acceptance summary — Phase04
+
+Technical code acceptance on existing macOS Apple Silicon/cc-m1/Ollama: full validator601FlaskPASS+5expectedXFAIL/0XPASS,31ChromiumPASS,23offlinePASS;45extendedNodePASS.11frozen design hashes/86base route keys preserved. NoPhase04schema change; head0018.
+
+Independent newcase scenario:3newpatients plus negative case, actualQwenNLP/evidence, independent correctness/relevance review, explicitnativeDraft/readback, manualreferral, deterministicoutbox→localtestinbox→explicitdoctorACK, doctor2turnchat, patient2turnchat/account andprivateDiary, currentCataloghighlight, actualprocessrestart/passwordrelogin, SQLhistory/purge/privacy. Reference assistant publishes verified extracts, not free medical model prose. Role/tenant/consent/CSRF/sourceversion/idempotency protections retained.
+
+Visual before/after:5criticalpage states×4widths360/390/768/1280×2themes, source-only evidence stored separately. Redcritical/amberconcern, neutralindependentreview, technicaldetails collapsed. Text contrast measured≥5.10:1, severityindicators≥6.24:1, meaningful targets≥44px, keyboard/reducedmotion and nohorizontaloverflow. Originallegacy/teacher authorities remain separate from actualgoverned delivery. D01/D07/D02/D05A and03B/03Cregressions pass; oldtests preserved with explicitopening ofnewcollapsedlegacysection.
+
+Pre-release clean-room ZIP pipeline passed freshprivateworkspace,existinglocalmodelhealth, ordinaryCLIaccount/passwordlogin, fournewaccounts/cases/invites/consents, independentreceiptACK, CSRFdenial/manualreferral/idempotency, actualrestart/relogin/readback. Final archive identifies its exact sourcecommit and everyfilechecksum in PACKAGE_MANIFEST.json. The finalZIP externalchecksum and clean-room proof are supplied separately in the release report; no archive contains runtimeDB/secrets/logs/weights or bulkyQA.
+
+Clinical status stays experimental_needs_validation. No clinical pilot/identifiablehealthrecords/automaticclinicalactions/emergencyservice/24hmonitoring/SLA. RealPostgreSQL/Keycloak/MFA/professional/emailverification and clinicalaccuracy/effectiveness NOT_RUN/NOT_ACCEPTED;24strictP0rows remain unaccepted. The5expectedxfails are not removed to claim success. See UNRESOLVED_AND_PILOT_GATES.md and EVALUATION_DEPLOYMENT.md.

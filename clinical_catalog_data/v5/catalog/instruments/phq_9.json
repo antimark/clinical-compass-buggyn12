@@ -1,0 +1,643 @@
+{
+  "$schema": "../questionnaire.schema.json",
+  "schema_version": "1.0.0",
+  "instrument_id": "PHQ-9",
+  "instrument_version": "ru-1.0.0-draft",
+  "language": "ru-RU",
+  "clinical_content_status": "draft_pending_clinical_review",
+  "information": {
+    "title": {
+      "ru": "Опросник здоровья пациента — 9",
+      "en": "Patient Health Questionnaire-9",
+      "short": "PHQ-9"
+    },
+    "authors": [
+      "Kurt Kroenke",
+      "Robert L. Spitzer",
+      "Janet B. W. Williams"
+    ],
+    "first_validation_year": 2001,
+    "origin": "самооценка на основе критериев DSM-IV с последующей валидацией",
+    "purpose_patient": "Помогает заметить признаки сниженного настроения и понять, стоит ли обсудить их со специалистом.",
+    "purpose_clinician": "Стандартизированный скрининг симптомов депрессии и наблюдение динамики, без самостоятельной постановки диагноза.",
+    "target_population": "Прежде всего взрослые в общей практике и клиническом наблюдении. Для детей, подростков и специальных групп нужны отдельные возрастные/популяционные обоснования.",
+    "recall_period": {
+      "value": 2,
+      "unit": "weeks",
+      "label": "Последние 2 недели"
+    },
+    "estimated_minutes": 3,
+    "recommended_for": {
+      "screening": {
+        "recommended": true,
+        "strength": "yes"
+      },
+      "symptom_monitoring": {
+        "recommended": true,
+        "strength": "preferred",
+        "note": "Подходит для отслеживания динамики при одинаковой версии и интервале наблюдения."
+      },
+      "clinical_diagnosis": {
+        "recommended": false,
+        "note": "Не позволяет поставить или исключить диагноз; требуется клиническая оценка."
+      }
+    },
+    "icd10": {
+      "classification": "ICD-10",
+      "diagnosis_from_questionnaire": false,
+      "screening_targets": [
+        {
+          "code": "F32",
+          "name": "Депрессивный эпизод",
+          "role": "проверить клинические критерии при положительном скрининге"
+        },
+        {
+          "code": "F33",
+          "name": "Рекуррентное депрессивное расстройство",
+          "role": "рассматривать только с учётом анамнеза повторных эпизодов"
+        }
+      ],
+      "nonspecific_symptom_overlap": [
+        {
+          "code": "F41.2",
+          "name": "Смешанное тревожное и депрессивное расстройство",
+          "caveat": "Требует критериев сочетания симптомов; один PHQ не отделяет его от депрессии."
+        }
+      ],
+      "differentials_not_inferred_by_scale": [
+        {
+          "code": "F31",
+          "name": "Биполярное аффективное расстройство",
+          "caveat": "При наличии мании/гипомании в анамнезе депрессивные симптомы возможны в рамках БАР."
+        },
+        {
+          "code": "F43.2",
+          "name": "Расстройства адаптации",
+          "caveat": "Нужна оценка связи со стрессором и критериев МКБ-10."
+        }
+      ],
+      "coding_rule": "Баллы PHQ не определяют код F32.x/F33.x, текущий эпизод, наличие психотических симптомов или подтверждённый диагноз. Кодирование выполняет врач."
+    },
+    "references": [
+      {
+        "id": "kroenke2001",
+        "authors": "Kroenke K.; Spitzer R. L.; Williams J. B. W.",
+        "year": 2001,
+        "title": "The PHQ-9: validity of a brief depression severity measure",
+        "journal": "Journal of General Internal Medicine",
+        "doi": "10.1046/j.1525-1497.2001.016009606.x",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11556941/",
+        "role": "original_validation",
+        "finding": "Подтверждены свойства PHQ-9 как инструмента оценки тяжести симптомов и скрининга в первичной помощи; пороги тяжести 5/10/15/20."
+      },
+      {
+        "id": "pogosova2014",
+        "authors": "Погосова Н. В.; Довженко Т. В.; Бабин А. Г.; Курсаков А. А.; Выгодин В. А.",
+        "year": 2014,
+        "title": "Русскоязычная версия опросников PHQ-2 и 9: чувствительность и специфичность при выявлении депрессии у пациентов общемедицинской амбулаторной практики",
+        "journal": "Кардиоваскулярная терапия и профилактика",
+        "doi": "10.15829/1728-8800-2014-3-18-24",
+        "url": "https://doi.org/10.15829/1728-8800-2014-3-18-24",
+        "role": "russian_clinical_validation",
+        "finding": "Сравнение русских PHQ-2 и PHQ-9 с психиатрической оценкой по МКБ-10; оптимальные пороги в изученной выборке ≥3 и ≥10 соответственно."
+      },
+      {
+        "id": "levis2019",
+        "authors": "Levis B. et al.",
+        "year": 2019,
+        "title": "Accuracy of Patient Health Questionnaire-9 (PHQ-9) for screening to detect major depression: individual participant data meta-analysis",
+        "journal": "BMJ",
+        "doi": "10.1136/bmj.l1476",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30967483/",
+        "role": "individual_participant_data_meta_analysis",
+        "finding": "Метаанализ диагностической точности: пороги зависят от референсного клинического интервью и популяции."
+      }
+    ],
+    "text_source": {
+      "title": "Русская форма PHQ-9 (распространяемая версия опросника)",
+      "url": "https://m.steps2wellbeing.co.uk/_document/content/page_section/phq9_russian_for_russia_969.pdf",
+      "publisher": "Patient Health Questionnaire, русскоязычный бланк",
+      "verification": "Сопоставлена с русскоязычным примером Российского общества психиатров, но формальная экспертиза версии в Clinical Compass ещё не проведена.",
+      "secondary_url": "https://psychiatr.ru/education/slide/107"
+    },
+    "licensing": {
+      "instrument": "Оригинальные PHQ/GAD допускают воспроизведение, перевод и распространение без отдельного разрешения (с атрибуцией).",
+      "translation": "Конкретная русская редакция и право её цифровой дистрибуции должны быть подтверждены владельцем продукта.",
+      "notice": "Не удалять указания первоисточника и авторов."
+    },
+    "clinical_limitations": [
+      "Баллы не являются самостоятельным диагнозом и не определяют подтип/тяжесть расстройства по МКБ-10.",
+      "Порог скрининга и границы выраженности симптомов — разные сущности.",
+      "Языковые версии и пороги не всегда эквивалентны между популяциями."
+    ],
+    "licensing_v4": {
+      "rights_holder": "Original developers / Pfizer PHQ group",
+      "copyright_status": "original_public_domain",
+      "commercial_use": "original_allowed_translation_verify",
+      "research_use": "original_allowed_translation_verify",
+      "open_use": "original_allowed_translation_verify",
+      "electronic_administration": "original_allowed_translation_verify",
+      "public_distribution": "original_allowed_translation_verify",
+      "translation_rights": "russian_text_specific_rights_verify",
+      "patient_feedback_allowed": "clinical_safety_review",
+      "license_source_url": "https://www.phqscreeners.com/",
+      "last_verified_at": "2026-10-25",
+      "review_required": true,
+      "commercial_clearance": true,
+      "digital_clearance": true
+    },
+    "russian_release_status": "draft_pending_exact_adaptation_review"
+  },
+  "ui": {
+    "audience": [
+      "patient",
+      "clinician"
+    ],
+    "display_title": "PHQ-9",
+    "instruction": "Как часто за последние 2 недели Вас беспокоили следующие проблемы?",
+    "layout": {
+      "page_size": 5
+    },
+    "allow_draft": true,
+    "require_all_scored_answers": true
+  },
+  "questions": [
+    {
+      "id": "phq_q1",
+      "order": 1,
+      "text": "Вам не хотелось ничего делать",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "phq_q2",
+      "order": 2,
+      "text": "У Вас было плохое настроение, Вы были подавлены или испытывали чувство безысходности",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "phq_q3",
+      "order": 3,
+      "text": "Вам было трудно заснуть, у Вас был прерывистый сон, или Вы слишком много спали",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "phq_q4",
+      "order": 4,
+      "text": "Вы были утомлены, или у Вас было мало сил",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "phq_q5",
+      "order": 5,
+      "text": "У Вас был плохой аппетит, или Вы переедали",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "phq_q6",
+      "order": 6,
+      "text": "Вы плохо о себе думали: считали себя неудачником (неудачницей), были в себе разочарованы или считали, что подвели свою семью",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "phq_q7",
+      "order": 7,
+      "text": "Вам было трудно сосредоточиться (например, на чтении газеты или просмотре телепередач)",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "phq_q8",
+      "order": 8,
+      "text": "Вы двигались или говорили настолько медленно, что окружающие это замечали? Или, наоборот, Вы были настолько суетливы или взбудоражены, что двигались гораздо больше обычного",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "phq_q9",
+      "order": 9,
+      "text": "Вас посещали мысли о том, что Вам лучше было бы умереть, или о том, чтобы причинить себе какой-нибудь вред",
+      "type": "single_choice",
+      "required": true,
+      "options": [
+        {
+          "id": "0",
+          "label": "Ни разу",
+          "score": 0
+        },
+        {
+          "id": "1",
+          "label": "Несколько дней",
+          "score": 1
+        },
+        {
+          "id": "2",
+          "label": "Более половины дней",
+          "score": 2
+        },
+        {
+          "id": "3",
+          "label": "Почти каждый день",
+          "score": 3
+        }
+      ]
+    }
+  ],
+  "supplementary_questions": [
+    {
+      "id": "phq_functioning",
+      "type": "single_choice",
+      "scored": false,
+      "required": false,
+      "display_condition": {
+        "type": "any_scored_answer_at_least",
+        "value": 1
+      },
+      "text": "Если какие-либо проблемы отмечены, насколько они затрудняли Вашу работу, домашние дела или общение с другими людьми?",
+      "options": [
+        {
+          "id": "0",
+          "label": "Совсем не трудно",
+          "score": null
+        },
+        {
+          "id": "1",
+          "label": "Немного трудно",
+          "score": null
+        },
+        {
+          "id": "2",
+          "label": "Очень трудно",
+          "score": null
+        },
+        {
+          "id": "3",
+          "label": "Чрезвычайно трудно",
+          "score": null
+        }
+      ],
+      "notes": "Отдельная оценка влияния на функционирование; НЕ включается в сумму баллов."
+    }
+  ],
+  "scoring": {
+    "type": "sum",
+    "item_ids": [
+      "phq_q1",
+      "phq_q2",
+      "phq_q3",
+      "phq_q4",
+      "phq_q5",
+      "phq_q6",
+      "phq_q7",
+      "phq_q8",
+      "phq_q9"
+    ],
+    "min_score": 0,
+    "max_score": 27,
+    "missing_answer_policy": "incomplete_no_total",
+    "score_direction": "higher_is_more_symptomatic",
+    "positive_screen_cutoff": 10,
+    "positive_screen_semantics": "clinical_further_assessment_not_diagnosis",
+    "alternative_cutoffs": [],
+    "supplementary_in_total": false
+  },
+  "score_scale": {
+    "type": "symptom_severity",
+    "bands": [
+      {
+        "min": 0,
+        "max": 4,
+        "severity_code": "Минимальная выраженность",
+        "patient": {
+          "heading": "Минимальная выраженность",
+          "text": "Сейчас отмечено мало симптомов снижения настроения. Это не исключает трудностей, если они продолжают Вас беспокоить."
+        },
+        "clinician": {
+          "summary": "Минимальная выраженность по PHQ-9, клинический диагноз не исключён.",
+          "recommended_next_step": "Учитывать анамнез, жалобы и динамику."
+        }
+      },
+      {
+        "min": 5,
+        "max": 9,
+        "severity_code": "Лёгкая выраженность",
+        "patient": {
+          "heading": "Лёгкая выраженность",
+          "text": "Есть отдельные симптомы, связанные с настроением. Если они мешают жизни, стоит обсудить их со специалистом."
+        },
+        "clinician": {
+          "summary": "Лёгкая выраженность депрессивных симптомов.",
+          "recommended_next_step": "Оценить влияние на функционирование и повторить по плану наблюдения."
+        }
+      },
+      {
+        "min": 10,
+        "max": 14,
+        "severity_code": "Умеренная выраженность",
+        "patient": {
+          "heading": "Умеренная выраженность",
+          "text": "Симптомы заметны и могут влиять на повседневную жизнь. Рекомендуется обсудить результат с врачом."
+        },
+        "clinician": {
+          "summary": "Умеренная выраженность; ≥10 — распространённый скрининговый порог, а не диагноз.",
+          "recommended_next_step": "Клиническое интервью, оценка влияния на функционирование, анамнеза мании/гипомании и иных причин."
+        }
+      },
+      {
+        "min": 15,
+        "max": 19,
+        "severity_code": "Выраженные симптомы",
+        "patient": {
+          "heading": "Выраженные симптомы",
+          "text": "Симптомы выражены. Желательно в ближайшее время обсудить самочувствие со специалистом."
+        },
+        "clinician": {
+          "summary": "Умеренно тяжёлая выраженность по оригинальной шкале.",
+          "recommended_next_step": "Приоритетное клиническое обследование и согласование дальнейших действий."
+        }
+      },
+      {
+        "min": 20,
+        "max": 27,
+        "severity_code": "Очень выраженные симптомы",
+        "patient": {
+          "heading": "Очень выраженные симптомы",
+          "text": "Симптомы значительно выражены. Важно как можно скорее обратиться к медицинскому специалисту."
+        },
+        "clinician": {
+          "summary": "Тяжёлая выраженность по оригинальной шкале, не равно кодам F32.2/F33.2.",
+          "recommended_next_step": "Своевременная клиническая оценка, включая безопасность и функционирование."
+        }
+      }
+    ],
+    "patient_disclaimer": "Опросник не ставит диагноз и не заменяет медицинскую консультацию.",
+    "clinician_disclaimer": "Ни диапазон баллов, ни позитивный скрининг не дают основания автоматически выставить код МКБ-10."
+  },
+  "monitoring": {
+    "main_purpose": "symptom_tracking",
+    "trend_compatible_with": [
+      "same_instrument_id",
+      "same_instrument_version",
+      "same_recall_period",
+      "same_scoring"
+    ],
+    "repeat_interval": "По назначению врача; в демонстрационном приложении может настраиваться индивидуально.",
+    "automatic_clinical_improvement_claim": false
+  },
+  "safety": {
+    "requires_clinician_review_before_production": true,
+    "never_auto_diagnose": true,
+    "never_auto_treat": true,
+    "do_not_equate_negative_screen_with_no_disorder": true,
+    "item_rules": [
+      {
+        "question_id": "phq_q9",
+        "condition": {
+          "score_gte": 1
+        },
+        "event": "clinical_safety_followup_needed",
+        "safety_meaning": "Ответ об отдельных мыслях о смерти/самоповреждении; сам по себе не устанавливает намерение или степень суицидального риска.",
+        "patient_message": "Вы указали переживания, о которых важно рассказать специалисту. Если Вы прямо сейчас в опасности, обратитесь за экстренной помощью по местному номеру службы спасения.",
+        "clinician_message": "Нужна своевременная оценка безопасности, включая прямые вопросы о мыслях, намерении, плане, доступе к средствам и защитных факторах, по утверждённому клиническому протоколу. Не классифицировать риск только по ответу на PHQ-9.",
+        "routing_requirements": "Перед включением в production определить порядок обработки, ответственных, сроки реакции и доступность помощи; в текущем каталоге только метаданные, не работающий алерт."
+      }
+    ]
+  },
+  "priority": "P0",
+  "instrument_type": "self_report_scale",
+  "catalog_schema_version": "4.0.0",
+  "localization": {
+    "language": "ru",
+    "status": "russian_validated_in_literature_exact_local_wording_needs_medical_collation",
+    "russian_validation_source": "https://doi.org/10.15829/1728-8800-2014-3-18-24",
+    "text_rights_confirmed": false,
+    "release_approved": false,
+    "draft_segregated": false
+  },
+  "rights": {
+    "rights_holder": "Original developers / Pfizer PHQ group",
+    "copyright_status": "original_public_domain",
+    "commercial_use": "original_allowed_translation_verify",
+    "research_use": "original_allowed_translation_verify",
+    "open_use": "original_allowed_translation_verify",
+    "electronic_administration": "original_allowed_translation_verify",
+    "public_distribution": "original_allowed_translation_verify",
+    "translation_rights": "russian_text_specific_rights_verify",
+    "patient_feedback_allowed": "clinical_safety_review",
+    "license_source_url": "https://www.phqscreeners.com/",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "availability": {
+    "russian_form": "inherited_draft_review_pending",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.phqscreeners.com/",
+    "protected_material_embedded": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [
+      "F32",
+      "F33"
+    ],
+    "icd10_possible_overlap": [
+      "F41.2"
+    ],
+    "icd10_differentials": [
+      "F31",
+      "F43.2"
+    ],
+    "code_assignment_from_scale": false,
+    "icd11_context_text": ""
+  }
+}

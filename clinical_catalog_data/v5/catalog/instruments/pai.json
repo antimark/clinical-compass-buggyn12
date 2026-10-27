@@ -1,0 +1,476 @@
+{
+  "schema_version": "3.0.0",
+  "instrument_id": "PAI",
+  "instrument_version": "official_version_required",
+  "language": "ru-RU",
+  "clinical_content_status": "metadata_only_license_required",
+  "information": {
+    "title": "Personality Assessment Inventory",
+    "type": "self_report_inventory",
+    "authors": [
+      "Leslie C. Morey"
+    ],
+    "first_publication_or_revision_year": 1991,
+    "purpose_patient": "Изучение широкого спектра переживаний и трудностей в рамках обследования, назначенного специалистом.",
+    "purpose_clinician": "Многопрофильная психометрическая оценка клинических проявлений, факторов лечения, межличностного стиля и достоверности ответов; не подтверждает диагноз независимо от интервью.",
+    "estimated_minutes": "обычно менее 60",
+    "target_population": "Взрослые 18+",
+    "recommended_for": {
+      "structured_diagnostic_interview": false,
+      "diagnostic_support": true,
+      "symptom_monitoring": false,
+      "independent_diagnosis": false
+    },
+    "icd10": {
+      "mapping_status": "reference_only_not_dsm_equivalence",
+      "codes": [
+        {
+          "code": "F32",
+          "label": "Депрессивный эпизод"
+        },
+        {
+          "code": "F33",
+          "label": "Рекуррентное депрессивное расстройство"
+        },
+        {
+          "code": "F41.1",
+          "label": "Генерализованное тревожное расстройство"
+        },
+        {
+          "code": "F41.0",
+          "label": "Паническое расстройство"
+        },
+        {
+          "code": "F40.1",
+          "label": "Социальные фобии"
+        },
+        {
+          "code": "F31",
+          "label": "Биполярное аффективное расстройство"
+        },
+        {
+          "code": "F20",
+          "label": "Шизофрения"
+        },
+        {
+          "code": "F25",
+          "label": "Шизоаффективные расстройства"
+        },
+        {
+          "code": "F60",
+          "label": "Специфические расстройства личности; выбирается уточняющий код после диагностики"
+        },
+        {
+          "code": "F10",
+          "label": "Психические и поведенческие расстройства вследствие употребления алкоголя"
+        },
+        {
+          "code": "F11–F19",
+          "label": "Нарушения вследствие других психоактивных веществ; диапазон рубрик"
+        }
+      ]
+    },
+    "validation": [
+      {
+        "citation": "PAR Technical Information: нормы N=1000; клиническая выборка N=1265; студенты N=1051",
+        "url": "https://www.parinc.com/products/pai"
+      },
+      {
+        "citation": "Португальская психометрическая оценка PAI (2024); валидация языковой версии",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11169847/"
+      }
+    ],
+    "limitations": [
+      "Только специалист; структурированное интервью не заменяет полного обследования, клинического решения и оценки безопасности.",
+      "DSM-5/МКБ-10 соответствия требуют экспертной проверки.",
+      "Качество конкретного русскоязычного перевода не подтверждается самим JSON."
+    ],
+    "source_urls": [
+      "https://www.parinc.com/products/pai",
+      "https://www.parinc.com/about/connect-with-us/licensing-team"
+    ],
+    "official_items_count": 344,
+    "main_scale_count": 22,
+    "validity_scales_count": 4,
+    "clinical_scales_count": 11,
+    "treatment_consideration_scales_count": 5,
+    "interpersonal_scales_count": 2
+  },
+  "ui": {
+    "audience": [
+      "patient",
+      "clinician"
+    ],
+    "show_in_clinical_reference": true,
+    "patient_assignable": false,
+    "clinical_admin_enabled": false,
+    "licensed_content_loaded": false,
+    "assignment_guard": "deny_unless_par_licensed"
+  },
+  "response_sets": {
+    "pai_response_options": {
+      "status": "licensed_response_definitions_not_included",
+      "options": [],
+      "note": "Четырёхкатегориальная шкала; точные формулировки и кодирование — из официальной формы PAR."
+    }
+  },
+  "questions": [],
+  "modules": [
+    {
+      "id": "self_report",
+      "title": "Самостоятельное заполнение под контролем специалиста",
+      "covered_domains": [
+        "все 344 пункта"
+      ],
+      "official_questions_required": true,
+      "questions": [],
+      "item_count": 344,
+      "content_status": "not_included_due_to_licensing"
+    }
+  ],
+  "scoring": {
+    "type": "multiscale_norm_referenced",
+    "auto_scoring_enabled": false,
+    "score_scale": null,
+    "output_order": [
+      "validity",
+      "clinical",
+      "treatment",
+      "interpersonal"
+    ],
+    "mandatory_review_order": "validity_scales_first",
+    "norms_status": "not_included_rights_protected",
+    "invalid_protocol_behavior": "do_not_release_interpreted_profile_without_clinician_review",
+    "diagnostic_decision": "clinician_only",
+    "missing_answer_policy": "official_par_rules_only"
+  },
+  "interpretations": {
+    "patient": {
+      "title": "Результаты требуют профессиональной интерпретации",
+      "text": "Опросник показывает закономерности самоотчёта. Результат не подтверждает заболевание и обсуждается с клиническим психологом или врачом."
+    },
+    "clinician": {
+      "title": "Сначала оценка достоверности",
+      "text": "Проверить ICN, INF, NIM, PIM по лицензированным нормам. Затем осторожно оценивать клинические шкалы, функциональные трудности и контекст. Никакая шкала не равна коду МКБ."
+    },
+    "elevated_validity_scale_message": "Не использовать обвинительные формулировки «пациент лжёт»: показатели могут меняться из-за особенностей состояния, понимания и контекста.",
+    "auto_diagnosis": false
+  },
+  "licensing": {
+    "rights_holder": "Psychological Assessment Resources (PAR), разработчик Leslie C. Morey",
+    "commercial": "Клинические печатные/цифровые протоколы закупаются через PAR; для онлайн-реализации в собственном приложении необходимо письменное разрешение PAR, включая права на нормативы, расчёты и выводы.",
+    "research": "Письменное разрешение требуется при копировании/адаптации/переводе/онлайн-применении; возможны особые исследовательские условия и скидки по запросу.",
+    "open": "Нельзя публиковать вопросы, ключи, нормы, бланки и тестовые отчёты в открытом каталоге.",
+    "contact_url": "https://www.parinc.com/about/connect-with-us/licensing-team",
+    "permission_needed_for_app": true,
+    "free_public_republication": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "suicidality_assessment": "separate_assessment_when_indicated",
+    "no_autonomous_triage": true,
+    "clinician_signoff_required": true
+  },
+  "scales": [
+    {
+      "scale_id": "ICN",
+      "title_ru": "Несогласованность",
+      "scale_type": "validity",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "INF",
+      "title_ru": "Нетипичные ответы",
+      "scale_type": "validity",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "NIM",
+      "title_ru": "Негативное впечатление",
+      "scale_type": "validity",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "PIM",
+      "title_ru": "Позитивное впечатление",
+      "scale_type": "validity",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "SOM",
+      "title_ru": "Соматические жалобы",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "ANX",
+      "title_ru": "Тревога",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "ARD",
+      "title_ru": "Связанные с тревогой расстройства",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "DEP",
+      "title_ru": "Депрессия",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "MAN",
+      "title_ru": "Мания",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "PAR",
+      "title_ru": "Паранойяльные проявления",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "SCZ",
+      "title_ru": "Признаки расстройств спектра шизофрении",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "BOR",
+      "title_ru": "Пограничные черты",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "ANT",
+      "title_ru": "Антисоциальные черты",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "ALC",
+      "title_ru": "Проблемы употребления алкоголя",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "DRG",
+      "title_ru": "Проблемы употребления наркотических веществ",
+      "scale_type": "clinical",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "AGG",
+      "title_ru": "Агрессия",
+      "scale_type": "treatment",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "SUI",
+      "title_ru": "Суицидальные мысли",
+      "scale_type": "treatment",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "STR",
+      "title_ru": "Стресс",
+      "scale_type": "treatment",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "NON",
+      "title_ru": "Недостаток поддержки",
+      "scale_type": "treatment",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "RXR",
+      "title_ru": "Отвержение лечения",
+      "scale_type": "treatment",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "DOM",
+      "title_ru": "Доминирование",
+      "scale_type": "interpersonal",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    },
+    {
+      "scale_id": "WRM",
+      "title_ru": "Теплота в отношениях",
+      "scale_type": "interpersonal",
+      "item_ids": [],
+      "calculation_status": "licensed_scoring_key_required",
+      "raw_to_norm_conversion": "requires_official_norm_tables",
+      "interpretation_cutoffs": null
+    }
+  ],
+  "clinician_guide": {
+    "steps": [
+      {
+        "id": "before",
+        "title": "Подготовка и рамки",
+        "clinician_instructions": "Уточните цель обследования, версии инструмента, временной период, язык, информированное согласие и условия конфиденциальности.",
+        "checks": []
+      },
+      {
+        "id": "safety",
+        "title": "Безопасность",
+        "clinician_instructions": "При клинических сигналах риска отдельно оцените непосредственную безопасность и действуйте по протоколу организации, не дожидаясь окончания интервью.",
+        "checks": []
+      },
+      {
+        "id": "context",
+        "title": "Клинический контекст",
+        "clinician_instructions": "Установите хронологию эпизодов, функциональные нарушения, предшествующее лечение, влияние веществ/лекарств, возможные соматические причины и коморбидность.",
+        "checks": []
+      },
+      {
+        "id": "start",
+        "title": "Правильное проведение",
+        "clinician_instructions": "Пациент заполняет официальную версию; обеспечить подходящие условия, понимание языка и отсутствие давления.",
+        "checks": []
+      },
+      {
+        "id": "quality",
+        "title": "Сначала шкалы валидности",
+        "clinician_instructions": "Изучить ICN/INF/NIM/PIM по нормам PAR, количество пропусков и обстоятельства заполнения.",
+        "checks": []
+      },
+      {
+        "id": "profile",
+        "title": "Профиль",
+        "clinician_instructions": "Рассматривать клинические, связанные с лечением и межличностные шкалы как гипотезы, а не самостоятельные диагнозы.",
+        "checks": []
+      },
+      {
+        "id": "explain",
+        "title": "Обратная связь",
+        "clinician_instructions": "Описывать врачу вероятные области дополнительного исследования, пациенту — нейтральные понятные формулировки.",
+        "checks": []
+      },
+      {
+        "id": "finish",
+        "title": "Завершение",
+        "clinician_instructions": "Документируйте подтверждённые, исключённые и неопределённые критерии; решение по диагностическому коду и тактике принимает врач.",
+        "checks": []
+      }
+    ],
+    "common_errors": [
+      "Считать NIM/PIM доказательством сознательной лжи",
+      "Строить T-баллы по выдуманной формуле",
+      "Показывать полный профиль до проверки валидности протокола"
+    ]
+  },
+  "priority": "P2",
+  "instrument_type": "self_report_multiscale",
+  "catalog_schema_version": "4.0.0",
+  "localization": {
+    "language": "ru",
+    "status": "clinical_guide_russian_not_licensed_interview_translation",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "release_approved": false,
+    "draft_segregated": false
+  },
+  "rights": {
+    "rights_holder": "PAR, Inc.",
+    "copyright_status": "copyrighted",
+    "commercial_use": "separate_digital_license_required",
+    "research_use": "license_or_purchase_and_check_digital_rights",
+    "open_use": "not_allowed_without_permission",
+    "electronic_administration": "written_permission_required",
+    "public_distribution": "prohibited_without_permission",
+    "translation_rights": "written_permission_required",
+    "patient_feedback_allowed": "subject_to_license_and_clinical_review",
+    "license_source_url": "https://www.parinc.com/products/PAI",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": false,
+    "digital_clearance": false
+  },
+  "availability": {
+    "russian_form": "licensed_questions_not_embedded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.appi.org/Products/Structured-Clinical-Interview-for-DSM-5-(SCID-5)",
+    "protected_material_embedded": false
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [],
+    "code_assignment_from_scale": false,
+    "icd11_context_text": ""
+  }
+}

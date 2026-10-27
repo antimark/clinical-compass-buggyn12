@@ -1,0 +1,11 @@
+# Current evaluation authority — Phase04
+AGENTS.md is one of11 frozen files and remains byte-identical. Its historical “synthetic-only prototype” describes the original development profile. The user-approved Phase03B/03C/04 policy adds a separate acknowledged `evaluation_sandbox`: generated synthetic or lawfully and properly deidentified narratives, never identifiable realpatient health records. Technical functions operate on new cases without fixture-ID whitelists; `experimental_needs_validation` is visible and does not disable authorized evaluation work.
+
+This addendum does not remove any AGENTS safeguards: current role/tenant/consent/source/visibility,CSRF,CAS,idempotency,audit and manual clinician decisions remain mandatory. Patient AI and private diary are not clinician records or safety sources. Experimental reference output never creates a diagnosis, prescription, referral, signature or publication automatically. No emergency monitoring/24h staffing/SLA or clinical validation is claimed. Rights and publication constraints on instruments and references remain independent.
+
+Follow README.md and docs/phase04/EVALUATOR_QUICKSTART.md for current startup and package scope. Historical phase reports/test counts are retained as historical evidence; Phase04 current results are in docs/phase04/TEST_RESULTS.md. No clinical pilot/identifiabledata processing is authorized by this package. Production/medical approval, real PostgreSQL/Keycloak/MFA and professional/email verification require independent gates.
+
+
+## Jury-release AGENTS revision (2026-10-27)
+
+The opening historic description that AGENTS.md was “frozen” referred to an earlier evaluation-baseline set. For the separately requested jury-delivery workstream, AGENTS.md has now been intentionally updated to cover the new designer UI, current guest/role flows, tests, remediation and future container packaging. This **does not weaken** synthetic-only input, informed consent, tenant/source ACL, CSRF, audit or manual physician decision gates. The current release remains experimental and must not be described as medically approved. A Docker plan in the Codex instructions is not evidence that Docker has been implemented or verified.

@@ -1,0 +1,403 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "medicinal_product_instruction",
+  "language": "ru",
+  "product": {
+    "name": "Ципралекс",
+    "international_nonproprietary_name": "эсциталопрам",
+    "international_nonproprietary_name_latin": "escitalopram",
+    "type": "антидепрессант (СИОЗС)",
+    "pharmacotherapeutic_group": "Психоаналептики; антидепрессанты; селективные ингибиторы обратного захвата серотонина",
+    "atc": {
+      "code": "N06AB10",
+      "description": "Эсциталопрам"
+    },
+    "prescription_required": true,
+    "registration_number": "ЛП-№(011897)-(РГ-RU)",
+    "country_of_registration": "Россия",
+    "dosage_form": "таблетки, покрытые пленочной оболочкой",
+    "strength_per_tablet": {
+      "amount": 10,
+      "unit": "мг",
+      "substance": "эсциталопрам (в форме оксалата)"
+    },
+    "route": "перорально",
+    "active_substances": [
+      {
+        "name": "эсциталопрам",
+        "salt_form": "оксалат",
+        "amount_per_tablet_mg": 10
+      }
+    ],
+    "excipients": {
+      "tablet_core": [
+        "тальк",
+        "кроскармеллоза натрия",
+        "целлюлоза микрокристаллическая",
+        "кремния диоксид коллоидный",
+        "магния стеарат"
+      ],
+      "film_coating": {
+        "name": "пленочная оболочка",
+        "components": [
+          "гипромеллоза",
+          "макрогол 400",
+          "титана диоксид (E171)"
+        ]
+      }
+    }
+  },
+  "indications_and_dosing": [
+    {
+      "diagnosis_or_condition": "Депрессивные эпизоды",
+      "icd10_codes": [
+        "F32",
+        "F33"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 10,
+      "tablets_per_administration": 1,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 10,
+      "administration_times": [
+        "любое удобное время"
+      ],
+      "duration": "Не менее 6 месяцев после исчезновения симптомов",
+      "indication_status": "зарегистрированное показание",
+      "max_daily_dose_mg": 20
+    },
+    {
+      "diagnosis_or_condition": "Генерализованное тревожное расстройство",
+      "icd10_codes": [
+        "F41.1"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 10,
+      "tablets_per_administration": 1,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 10,
+      "administration_times": [
+        "любое удобное время"
+      ],
+      "duration": "Не менее 3 месяцев; при необходимости 6 месяцев и дольше",
+      "indication_status": "зарегистрированное показание",
+      "max_daily_dose_mg": 20
+    },
+    {
+      "diagnosis_or_condition": "Паническое расстройство (с агорафобией либо без нее)",
+      "icd10_codes": [
+        "F41.0"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 5,
+      "tablets_per_administration": null,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 5,
+      "administration_times": [
+        "любое удобное время"
+      ],
+      "duration": "Обычно несколько месяцев",
+      "indication_status": "зарегистрированное показание",
+      "dose_titration": "5 мг/сут первую неделю, затем 10 мг/сут; максимум 20 мг/сут",
+      "strength_note": "Для 5 мг необходима пригодная дозировка либо допустимое инструкцией деление таблетки"
+    },
+    {
+      "diagnosis_or_condition": "Социальное тревожное расстройство",
+      "icd10_codes": [
+        "F40.1"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 10,
+      "tablets_per_administration": 1,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 10,
+      "administration_times": [
+        "любое удобное время"
+      ],
+      "duration": "Не менее 3 месяцев; продление индивидуально",
+      "indication_status": "зарегистрированное показание",
+      "max_daily_dose_mg": 20
+    },
+    {
+      "diagnosis_or_condition": "Обсессивно-компульсивное расстройство",
+      "icd10_codes": [
+        "F42"
+      ],
+      "age_min_years": 18,
+      "dose_per_administration_mg": 10,
+      "tablets_per_administration": 1,
+      "administrations_per_day": 1,
+      "total_daily_dose_mg": 10,
+      "administration_times": [
+        "любое удобное время"
+      ],
+      "duration": "Продолжительно, по крайней мере 6 месяцев; для профилактики рецидива может потребоваться год и более",
+      "indication_status": "зарегистрированное показание",
+      "max_daily_dose_mg": 20
+    }
+  ],
+  "administration_instructions": {
+    "before_meal_minutes": null,
+    "swallow_whole": true,
+    "do_not_chew": true,
+    "missed_dose": null,
+    "discontinuation": "Снижать дозу постепенно; длительность титрации при отмене зависит от симптомов и длительности терапии (в доступном источнике минимум 1–2 недели)"
+  },
+  "adverse_event_frequency_definitions": {
+    "очень часто": ">=1/10 (10% и более)",
+    "часто": ">=1/100 и <1/10 (от 1% до менее 10%)",
+    "нечасто": ">=1/1000 и <1/100 (от 0,1% до менее 1%)",
+    "редко": ">=1/10000 и <1/1000 (от 0,01% до менее 0,1%)",
+    "очень редко": "<1/10000 (менее 0,01%)",
+    "частота неизвестна": "невозможно оценить частоту на основании имеющихся данных"
+  },
+  "adverse_effects": [
+    {
+      "effect": "тошнота",
+      "frequency": "очень часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "головная боль",
+      "frequency": "часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "сонливость",
+      "frequency": "часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "головокружение",
+      "frequency": "часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "парестезия",
+      "frequency": "часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "тремор",
+      "frequency": "часто",
+      "system": "нервная система"
+    },
+    {
+      "effect": "тревога",
+      "frequency": "часто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "беспокойство",
+      "frequency": "часто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "бессонница",
+      "frequency": "часто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "необычные сновидения",
+      "frequency": "часто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "диарея",
+      "frequency": "часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "запор",
+      "frequency": "часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "рвота",
+      "frequency": "часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "сухость во рту",
+      "frequency": "часто",
+      "system": "желудочно-кишечный тракт"
+    },
+    {
+      "effect": "усиленное потоотделение",
+      "frequency": "часто",
+      "system": "кожа и подкожные ткани"
+    },
+    {
+      "effect": "снижение аппетита",
+      "frequency": "часто",
+      "system": "обмен веществ"
+    },
+    {
+      "effect": "увеличение массы тела",
+      "frequency": "часто",
+      "system": "обмен веществ"
+    },
+    {
+      "effect": "снижение либидо",
+      "frequency": "часто",
+      "system": "половая система"
+    },
+    {
+      "effect": "аноргазмия у женщин",
+      "frequency": "часто",
+      "system": "половая система"
+    },
+    {
+      "effect": "нарушение эякуляции",
+      "frequency": "часто",
+      "system": "половая система"
+    },
+    {
+      "effect": "паническая атака",
+      "frequency": "нечасто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "спутанность сознания",
+      "frequency": "нечасто",
+      "system": "психические нарушения"
+    },
+    {
+      "effect": "анафилактическая реакция",
+      "frequency": "редко",
+      "system": "иммунная система"
+    },
+    {
+      "effect": "удлинение интервала QT",
+      "frequency": "частота неизвестна",
+      "system": "сердечно-сосудистая система"
+    },
+    {
+      "effect": "гипонатриемия",
+      "frequency": "частота неизвестна",
+      "system": "обмен веществ"
+    },
+    {
+      "effect": "серотониновый синдром",
+      "frequency": "частота неизвестна",
+      "system": "нервная система"
+    }
+  ],
+  "contraindications": [
+    "Повышенная чувствительность к эсциталопраму или компонентам",
+    "Совместный прием неселективных необратимых ингибиторов МАО",
+    "Совместный прием пимозида",
+    "Возраст до 18 лет согласно использованной инструкции"
+  ],
+  "excipient_warnings": [],
+  "precautions": [
+    "Суицидальные идеи, особенно у молодых взрослых и в начале терапии",
+    "Мания или гипомания; не заменяет стабилизатор настроения при биполярном расстройстве",
+    "Удлинение интервала QT при предрасположенности",
+    "Судорожные состояния, сахарный диабет, гипонатриемия",
+    "Кровотечение при совместном приеме НПВС, антикоагулянтов и антиагрегантов"
+  ],
+  "drug_interactions": [
+    {
+      "agents": [
+        "неселективные необратимые ингибиторы МАО"
+      ],
+      "classification": "противопоказано",
+      "risk": "Серотониновый синдром и тяжелые реакции"
+    },
+    {
+      "agents": [
+        "пимозид"
+      ],
+      "classification": "противопоказано",
+      "risk": "Риск аритмий"
+    },
+    {
+      "agents": [
+        "лекарства, удлиняющие QT"
+      ],
+      "classification": "избегать",
+      "risk": "Аддитивное удлинение QT"
+    },
+    {
+      "agents": [
+        "трамадол",
+        "триптаны",
+        "литий",
+        "зверобой"
+      ],
+      "classification": "осторожность",
+      "risk": "Серотониновый синдром"
+    },
+    {
+      "agents": [
+        "НПВС",
+        "варфарин",
+        "антиагреганты"
+      ],
+      "classification": "осторожность",
+      "risk": "Риск кровотечений"
+    },
+    {
+      "agents": [
+        "ингибиторы CYP2C19",
+        "омепразол"
+      ],
+      "classification": "осторожность",
+      "risk": "Возможно повышение концентрации эсциталопрама"
+    }
+  ],
+  "special_populations": {
+    "under_18": "не применять, по использованной инструкции",
+    "pregnancy": "допускается только при крайней необходимости после оценки пользы и риска",
+    "breastfeeding": "кормление грудью не рекомендуется",
+    "age_over_65": "начальная доза 5 мг/сут, максимум обычно 10 мг/сут",
+    "renal_impairment": "тяжелое нарушение функции почек (КК менее 30 мл/мин): осторожность",
+    "hepatic_impairment": "при нарушении функции печени старт обычно 5 мг/сут на 2 недели, затем максимум 10 мг/сут по ответу"
+  },
+  "storage": {
+    "temperature_max_celsius": null,
+    "protect_from_light": null,
+    "keep_in_original_packaging": true,
+    "shelf_life_years": null
+  },
+  "clinical_decision_support": {
+    "automatic_prescription_allowed": false,
+    "indication_requires_clinician_confirmation": true,
+    "screening_scale_result_sufficient_for_prescription": false,
+    "adverse_effect_reports_prove_causality": false,
+    "recommended_review": [
+      "подтвержденный клинический диагноз и зарегистрированное показание",
+      "возраст и соматические заболевания",
+      "беременность и лактация",
+      "лекарственные взаимодействия",
+      "побочные реакции и мониторинг безопасности",
+      "соответствие дозы, лекарственной формы и титрации актуальной инструкции"
+    ],
+    "note": "Справочная запись для медицинской информационной системы, а не назначение. Результаты шкал и скрининга не подтверждают диагноз самостоятельно. Показания и дозы оценивает врач, сверяя с актуальной официальной инструкцией.",
+    "related_screening_scales": [
+      "PHQ-9",
+      "GAD-7",
+      "HAM-A",
+      "PDSS",
+      "Y-BOCS"
+    ]
+  },
+  "sources": [
+    {
+      "type": "official_instruction_republication",
+      "url": "https://www.rlsnet.ru/drugs/cipraleks-24934",
+      "description": "Инструкция и таблица побочных реакций (редакция может быть старше регистрационных сведений)"
+    },
+    {
+      "type": "drug_reference",
+      "url": "https://www.vidal.ru/drugs/cipralex__3385",
+      "description": "Регистрационный номер и форма 10 мг"
+    }
+  ],
+  "verification": {
+    "prepared_date": "2026-10-18",
+    "source_instruction_date": null,
+    "limitations": "Для лекарственной формы и дозирования использована доступная инструкция РЛС; актуальная редакция регистрационного досье 2025 года должна быть дополнительно сопоставлена по ГРЛС. Частоты/показания не следует переносить на другие препараты эсциталопрама без проверки."
+  }
+}

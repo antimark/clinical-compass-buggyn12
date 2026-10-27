@@ -1,0 +1,9 @@
+{
+  "source": "additive v13 candidate; DOES NOT mutate original v12 route inventory",
+  "routes": [
+    {"path":"/clinical-library","role":"public","ui":"read_only"},
+    {"path":"/clinical-library/:kind/:id","role":"public","ui":"read_only"},
+    {"path":"/research/demo-v3","role":"researcher","ui":"synthetic_only"},
+    {"path":"/doctor/nlp-lab","role":"doctor","ui":"synthetic_only_unpersisted"}
+  ]
+}

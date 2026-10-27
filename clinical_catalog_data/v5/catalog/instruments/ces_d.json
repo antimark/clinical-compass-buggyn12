@@ -1,0 +1,177 @@
+{
+  "schema_version": "4.0.0",
+  "instrument_id": "CES-D",
+  "instrument_version": "catalog-v4",
+  "priority": "P1",
+  "instrument_type": "self_report_scale",
+  "clinical_content_status": "metadata_only_not_administrable",
+  "information": {
+    "title": {
+      "ru": "Шкала депрессивных симптомов CES-D",
+      "short": "CES-D"
+    },
+    "authors": "L.S. Radloff",
+    "first_validation_year": 1977,
+    "purpose_clinician": "Скрининг депрессивной симптоматики, мониторинг",
+    "purpose_patient": "Помогает структурировать обсуждение симптомов; не устанавливает диагноз.",
+    "recommended_for": {
+      "screening": true,
+      "symptom_monitoring": true,
+      "diagnostic_support": false,
+      "clinical_diagnosis": false
+    },
+    "target_population": "Взрослые, если не указано иное; применимость проверяется врачом.",
+    "icd10": {
+      "screening_targets": [
+        {
+          "code": "F32"
+        },
+        {
+          "code": "F33"
+        }
+      ],
+      "nonspecific_symptom_overlap": [],
+      "differentials_not_inferred_by_scale": [],
+      "diagnosis_from_questionnaire": false,
+      "coding_rule": "Порог скрининга, даже при выполнении алгоритма, не устанавливает диагноз и не определяет код МКБ-10."
+    },
+    "icd11_context_text": "",
+    "estimated_minutes": null,
+    "recall_period": "прошлая неделя",
+    "references": [
+      {
+        "url": "https://www.apa.org/depression-guideline/assessment",
+        "role": "primary_instrument_information"
+      },
+      {
+        "role": "study_or_validation_resource",
+        "citation": "Radloff, 1977",
+        "url": "https://doi.org/10.1177/014662167700100306"
+      },
+      {
+        "role": "study_or_validation_resource",
+        "citation": "Андрющенко и соавт., 2003",
+        "url": "https://psytests.org/depr/cesd.html"
+      }
+    ],
+    "clinical_limitations": "Самооценка и алгоритмическое соответствие критериям не заменяют клинического заключения.",
+    "question_count": 20,
+    "source_note": "Не смешивать с CESD-R при построении временного ряда."
+  },
+  "language": "ru",
+  "localization": {
+    "language": "ru",
+    "status": "russian_adaptation_available_external_not_embedded",
+    "russian_validation_source": null,
+    "text_rights_confirmed": false,
+    "draft_segregated": false,
+    "release_approved": false
+  },
+  "questions": [],
+  "response_sets": [],
+  "scales": [
+    {
+      "scale_id": "depression",
+      "type": "clinical",
+      "auto_scoring_enabled": false
+    }
+  ],
+  "scoring": {
+    "type": "not_enabled_pending_exact_text_and_protocol",
+    "auto_scoring_enabled": false,
+    "max_score": null,
+    "diagnostic_decision": "clinician_only",
+    "quality_gates": [
+      "licensed_or_open_exact_text",
+      "validated_version",
+      "permission_check",
+      "medical_review"
+    ]
+  },
+  "interpretations": {
+    "patient": {
+      "summary": "Результат требует оценки лечащим специалистом.",
+      "no_diagnostic_claim": true
+    },
+    "clinician": {
+      "summary": "Оцените клинические критерии, продолжительность и дифференциальный диагноз.",
+      "do_not_auto_diagnose": true
+    }
+  },
+  "licensing": {
+    "rights_holder": "CES-D original in public domain",
+    "copyright_status": "original_public_domain",
+    "commercial_use": "original_allowed_ru_translation_verify",
+    "research_use": "original_allowed_ru_translation_verify",
+    "open_use": "original_allowed_ru_translation_verify",
+    "electronic_administration": "original_allowed_ru_translation_verify",
+    "public_distribution": "original_allowed_ru_translation_verify",
+    "translation_rights": "russian_adaptation_permissions_verify",
+    "patient_feedback_allowed": "clinical_safety_review",
+    "license_source_url": "https://www.apa.org/depression-guideline/assessment",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "rights": {
+    "rights_holder": "CES-D original in public domain",
+    "copyright_status": "original_public_domain",
+    "commercial_use": "original_allowed_ru_translation_verify",
+    "research_use": "original_allowed_ru_translation_verify",
+    "open_use": "original_allowed_ru_translation_verify",
+    "electronic_administration": "original_allowed_ru_translation_verify",
+    "public_distribution": "original_allowed_ru_translation_verify",
+    "translation_rights": "russian_adaptation_permissions_verify",
+    "patient_feedback_allowed": "clinical_safety_review",
+    "license_source_url": "https://www.apa.org/depression-guideline/assessment",
+    "last_verified_at": "2026-10-25",
+    "review_required": true,
+    "commercial_clearance": true,
+    "digital_clearance": true
+  },
+  "availability": {
+    "russian_form": "not_loaded",
+    "usable_for_patient": false,
+    "usable_for_clinician": false,
+    "source_url": "https://www.apa.org/depression-guideline/assessment",
+    "protected_material_embedded": false
+  },
+  "publication": {
+    "clinical_release_approved": false,
+    "medical_review_required": true,
+    "localization_review_required": true,
+    "legal_review_required": true,
+    "synthetic_only": true
+  },
+  "safety": {
+    "risk_item_handling": "manual_clinician_protocol",
+    "automatic_diagnosis_allowed": false,
+    "suicide_risk_inference_from_score_allowed": false
+  },
+  "legacy_source_path": null,
+  "scoring_blueprint_non_executable": {
+    "response_options": "4-point 0-3",
+    "scales": {
+      "depression": {
+        "range": [
+          0,
+          60
+        ],
+        "n_items": 20
+      }
+    },
+    "warning": "Several positive-affect items reverse scored; exact official key required."
+  },
+  "diagnostic_linkage": {
+    "icd10_targets": [
+      "F32",
+      "F33"
+    ],
+    "icd10_possible_overlap": [],
+    "icd10_differentials": [],
+    "icd11_context_text": "",
+    "clinical_assessment_targets_only": true,
+    "diagnostic_code_assignment_allowed": false
+  }
+}

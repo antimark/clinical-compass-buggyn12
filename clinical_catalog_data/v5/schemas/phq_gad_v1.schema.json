@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://clinical-compass.example/schemas/questionnaire.v1.json",
+  "title": "Clinical Compass Questionnaire v1 (draft)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "instrument_id",
+    "instrument_version",
+    "language",
+    "clinical_content_status",
+    "information",
+    "ui",
+    "questions",
+    "supplementary_questions",
+    "scoring",
+    "score_scale",
+    "monitoring",
+    "safety"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "instrument_id": {
+      "enum": [
+        "PHQ-9",
+        "PHQ-2",
+        "GAD-7",
+        "GAD-2"
+      ]
+    },
+    "instrument_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "const": "ru-RU"
+    },
+    "clinical_content_status": {
+      "enum": [
+        "draft_pending_clinical_review",
+        "approved"
+      ]
+    },
+    "information": {
+      "type": "object",
+      "required": [
+        "title",
+        "authors",
+        "first_validation_year",
+        "purpose_patient",
+        "purpose_clinician",
+        "recommended_for",
+        "icd10",
+        "references",
+        "text_source",
+        "licensing"
+      ]
+    },
+    "ui": {
+      "type": "object",
+      "required": [
+        "instruction",
+        "layout",
+        "require_all_scored_answers"
+      ]
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "order",
+          "text",
+          "type",
+          "required",
+          "options"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(phq|gad)_q[1-9]$"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 3
+          },
+          "type": {
+            "const": "single_choice"
+          },
+          "required": {
+            "const": true
+          },
+          "options": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "score"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "score": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "supplementary_questions": {
+      "type": "array"
+    },
+    "scoring": {
+      "type": "object",
+      "required": [
+        "type",
+        "item_ids",
+        "min_score",
+        "max_score",
+        "positive_screen_cutoff",
+        "alternative_cutoffs",
+        "missing_answer_policy"
+      ]
+    },
+    "score_scale": {
+      "type": "object",
+      "required": [
+        "type",
+        "bands",
+        "patient_disclaimer",
+        "clinician_disclaimer"
+      ],
+      "properties": {
+        "bands": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "min",
+              "max",
+              "severity_code",
+              "patient",
+              "clinician"
+            ],
+            "properties": {
+              "min": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "max": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "patient": {
+                "type": "object",
+                "required": [
+                  "heading",
+                  "text"
+                ]
+              },
+              "clinician": {
+                "type": "object",
+                "required": [
+                  "summary",
+                  "recommended_next_step"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "monitoring": {
+      "type": "object"
+    },
+    "safety": {
+      "type": "object",
+      "required": [
+        "never_auto_diagnose",
+        "requires_clinician_review_before_production"
+      ]
+    },
+    "derived_from": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
