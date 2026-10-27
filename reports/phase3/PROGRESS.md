@@ -23,3 +23,6 @@ Append-only observations (includes baseline failures and reruns; not unique acce
 
 Raw: `reports/phase3/raw/scenarios.jsonl`. This automated observation summary does not set the phase gate.
 <!-- live-evidence-phase3:end -->
+
+
+HANDOFF A0 2026-10-27T20:19:02.174850+00:00: user requests selective integration of Clinical_Compass_Codex_Handoff_Integration_Docker_2026-10-27.zip, then native/live/container acceptance. Read all required handoff documents. Diagnostic apply-check fails only overlapping main.js/views.js; no patch applied. Preserve current 102 routes/249 APIs and 1871 registry rows. Existing Docker: Linux photo real multipart PASS; foreign-tenant Evaluation guard correctly 401 with consent/revoke PASS; Linux 620PASS + 2 noexec-fixture FAIL (focused 4PASS with exec tmpfs), 5XFAIL. Browser Docker108/110 initially; patient Qwen focused now PASS; extraction remains timeout pending explicit nonthinking/context fix (18 focused unit PASS), final image built and dedicated project restarted without deleting volumes. Next: private key/session durability verify and only failed NLP scenario, plus review historical UX patch. No push authorized.
