@@ -3,7 +3,8 @@ import json,csv,hashlib,datetime,shutil,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'deliverables/jury_screencast';PRIVATE=Path('/private/tmp/cc-jury-screencast-20261028')
 metrics=json.load(open(OUT/'TECHNICAL_VALIDATION.json'));edl=json.load(open(OUT/'EDIT_DECISION_LIST.json'));privacy=json.load(open(OUT/'PRIVACY_FRAME_SCAN.json'));black=json.load(open(OUT/'BLACK_FREEZE_ANALYSIS.json'));playback=[json.loads(x) for x in (OUT/'PLAYBACK_RESULTS.jsonl').read_text().splitlines()]
-assert len(metrics)==9 and len(playback)>=9 and not privacy['findings'] and all(not x['black_intervals_over_0_7s'] for x in black)
+display_policy=json.load(open(OUT/'INVITATION_DISPLAY_POLICY.json')) if (OUT/'INVITATION_DISPLAY_POLICY.json').exists() else {}
+assert len(metrics)==9 and len(playback)>=9 and (display_policy.get('show_synthetic_login_password') or not privacy['findings']) and all(not x['black_intervals_over_0_7s'] for x in black)
 assert not any(y['classification']=='REVIEW_REQUIRED' for x in black for y in x['static_intervals_over_15s'])
 rows=list(csv.DictReader(open(OUT/'VIDEO_INDEX.csv')));inventory=[r for r in rows if r['scenario_id']=='route_inventory'];assert len(inventory)==102
 captured=sum(r['verification_status']!='NOT_CAPTURED' for r in inventory)
@@ -36,7 +37,7 @@ limitations='''# Раскрытые ограничения
 
 Технические первые дубли не скрыты: неверный селектор secondary-кнопок прервал запись после успешного создания черновика и перед загрузкой фото; продолжение выполнено с тем же документом, создание включено отдельным фрагментом с пояснением. Открытие CSV в Chromium запускало повторное скачивание — фактический выгруженный файл открыт как текст отдельно. Ожидание завершения входа второго врача и клик по видимой дорожке темы исправлены только в скрипте. Неуспешные дубли и все исходные WebM сохранены приватно; они не считаются успешными тестами приложения.
 
-В итоговых роликах нет озвучки/музыки; русские поясняющие титры намеренны. Есть обычные паузы для чтения и24-секундное реальное ожидание Qwen; это не потерянные кадры. Все кадры приглашений прошли маскирование; OCR/QR проверка80 кадров с шагом0.5s дополнительно не нашла известных секретов или читаемых QR. Это выборочная проверка распознавания, не обещание абсолютной обнаружимости любого секрета.
+В итоговых роликах нет озвучки/музыки; русские поясняющие титры намеренны. Есть обычные паузы для чтения и24-секундное реальное ожидание Qwen; это не потерянные кадры. По прямому запросу владельца прототипа показаны настоящие учебные QR, ссылки, коды приглашений, логины и пароли синтетических аккаунтов. Реквизиты входа даны в поясняющих титрах: штатные password-поля исходного интерфейса отрисованы точками. Это не добавленная функция раскрытия пароля. Показанные приглашения к настоящему времени приняты либо отозваны; их повторная активация не выполнялась. Системные ключи, cookies и приватные файлы никогда не были частью записи.
 '''
 (OUT/'DISCLOSED_LIMITATIONS.md').write_text(limitations)
 report=f'''# Итог записи Clinical Compass — 2026-10-28
@@ -51,6 +52,10 @@ report=f'''# Итог записи Clinical Compass — 2026-10-28
 
 Каждая сцена сохранялась и fsync добавлялась в SCENES.jsonl и reports/phase3/raw/screencast-recording-20261028.jsonl. .agent/CHECKPOINT.md и EXECPLAN обновлялись после каждой сцены. Первые технические неудачи перечислены в DISCLOSED_LIMITATIONS, исходники сохранены, успешные API-действия повторно не создавались ради исправления селектора. Подпись/публикация, согласия, CSRF и разграничение доступа не обходились.
 
+## Редакторская проверка титров
+
+Титры проверены по фактическим действиям: короткое действие и польза для каждой роли; статусы «Работает в прототипе», «Экспериментально · решение за врачом», «Частично реализовано», «Планируется» разделены. Польза не выдаётся за клиническую валидацию. Полный список — CAPTION_REVIEW.csv. Сцены, длительности, AI-ответы и порядок действий не изменены. Учебные реквизиты раскрыты только по прямому запросу владельца прототипа.
+
 ## Основной ролик: фактический монтаж
 
 {timeline}
@@ -61,9 +66,9 @@ VIDEO_INDEX.csv: {captured}/102 маршрута с реальным видео,
 
 - ffprobe: все9 —1920×1080/H.264/30fps/yuv420p, лимиты PASS.
 - Полное декодирование всех9 ffmpeg без ошибок PASS; настоящее воспроизведение Chromium, начало>0.6s, seek в середину/конец, mediaError=null PASS.
-- Начало/середина/конец всех9 —27 кадров просмотрены; контакты и оригинальные кадры сохранены приватно в {PRIVATE}/qa-frames. Контроль: читаемые титры и окна, реальные результаты, нет debug-панелей/браузерной адресной строки/посторонних окон.
+- Начало/середина/конец всех9 —27 кадров просмотрены; контакты и оригинальные кадры сохранены приватно в {PRIVATE}/caption-revision-qa. Контроль: читаемые титры и окна, реальные результаты, нет debug-панелей/браузерной адресной строки/посторонних окон.
 - Blackdetect:0 интервалов>0.7s. Freezedetect:3 интервала>15s, все совпадают с явно обозначенным реальным ожиданием Qwen в трёх версиях. Непояснённых длинных остановок не обнаружено.
-- Маски применены ко всем кадрам секретных областей приглашений; приватные пароли в штатных password-полях. AppleVision OCR по известным секретным фрагментам и QR-декодирование80 кадров после масок:0 находок. Дополнительно просмотрены маскированные начало/конец. Выборочное распознавание не является абсолютной гарантией.
+- По явному запросу пользователя полностью восстановлены настоящие учебные QR/ссылки/коды. В проверенных кадрах QR действительно читается. Для пяти синтетических аккаунтов логин и пароль показаны в точных поясняющих титрах; исходные password-поля остаются штатно замаскированными браузером. Скрывающих областей монтажа больше нет. Первые результаты проверки замаскированной версии архивированы и не описывают текущие видео.
 
 Машиночитаемые доказательства: TECHNICAL_VALIDATION.json, PLAYBACK_RESULTS.jsonl, BLACK_FREEZE_ANALYSIS.json, PRIVACY_FRAME_SCAN.json, AI_TIMINGS.jsonl, EDIT_DECISION_LIST.json. Точный порядок сцен и первые дубли — SCENES.jsonl. Все исходные WebM остаются в {PRIVATE}/raw; промежуточные MP4 в {PRIVATE}/sanitized-source-clips и previous-mp4/failed-attempts. Ничего из этого не загружать на Drive. Приватные учётные файлы/ключи/БД не скопированы в deliverables. Исторические отчёты и исходные архивы сохранены.
 
@@ -89,7 +94,7 @@ handoff=f'''# Clinical Compass — видео для жюри
 
 {timeline}
 
-Все102 маршрута перечислены в [VIDEO_INDEX.csv]({OUT}/VIDEO_INDEX.csv):49 сняты,53 NOT_CAPTURED. Это не приёмка1883 действий. Детали и реальные времена Qwen: [отчёт]({OUT}/RECORDING_REPORT.md). Планируемое обозначено в финале полного ролика и главе05. Исследовательский график отсутствует; OIDC/MFA, часть исследований/импорта и автономный Docker-LLM ограничены. [Полные ограничения]({OUT}/DISCLOSED_LIMITATIONS.md).
+Все102 маршрута перечислены в [VIDEO_INDEX.csv]({OUT}/VIDEO_INDEX.csv):49 сняты,53 NOT_CAPTURED. Это не приёмка1883 действий. Детали и реальные времена Qwen: [отчёт]({OUT}/RECORDING_REPORT.md). Планируемое обозначено в финале полного ролика и главе05. По вашему запросу учебные QR, ссылки, коды, логины и пароли показаны открыто; значения паролей добавлены в титры, поскольку исходный интерфейс рисует их точками. Исследовательский график отсутствует; OIDC/MFA, часть исследований/импорта и автономный Docker-LLM ограничены. [Полные ограничения]({OUT}/DISCLOSED_LIMITATIONS.md).
 
 Загрузка на Google Drive: создайте новую папку «Clinical Compass — Jury videos — 2026-10-28», загрузите эти9 MP4 и VIDEO_INDEX.csv/JURY_VIDEO_HANDOFF.md/DISCLOSED_LIMITATIONS.md. Дождитесь обработки и проверьте начало, перемотку и качество1080p полного/короткого видео. Выберите разрешения для нужных зрителей и проверьте доступ из другой сессии. Старый Drive-файл не заменять; ссылка на новую папку будет новой. ZIP — для передачи/скачивания, для онлайн-показа загрузите MP4 отдельно. Ничего не загружено автоматически, Git push не выполнялся.
 
@@ -103,10 +108,10 @@ if source.exists():
 manifest=json.load(open(OUT/'SOURCE_CLIP_MANIFEST.json'))
 for x in manifest:x['file']=str(dest/Path(x['file']).name)
 (OUT/'SOURCE_CLIP_MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
-(OUT/'VISUAL_REVIEW.json').write_text(json.dumps({'result':'PASS','reviewed_frames':27,'positions':['start','middle','end'],'videos':9,'method':'manual contact-sheet review plus full-size catalog/Qwen/admin samples','checks':['readable UI/captions','secret blocks masked','no debug panels or foreign windows','real result states','intentional Qwen wait disclosed']},ensure_ascii=False,indent=2))
+(OUT/'VISUAL_REVIEW.json').write_text(json.dumps({'result':'PASS','reviewed_frames':27,'positions':['start','middle','end'],'videos':9,'method':'current-caption start/middle/end contact-sheet review plus full-size restored QR and credential samples','checks':['readable UI/captions','prototype invitations and synthetic credentials intentionally visible by explicit user request','no debug panels or foreign windows','real result states','intentional Qwen wait disclosed']},ensure_ascii=False,indent=2))
 # Final checkpoint preserves previous release handoff and raw data.
 section=f'''\n\n## Screencast COMPLETE — 2026-10-28
-Nine MP4 ready: Full527.63s / Quick169.67s, seven chapters within caps. Native real Chromium/Flask/SQLite; fresh Qwen NLP24.409s + doctorchat10.875s. All9 full-decode/actual Chromium play+seek PASS;27 beginning/middle/end frames reviewed; black>0.7s0;3 static>15s intervals are explicitly labelled real Qwen waits;80 masked invitation frames OCR/QR0 findings.49/102 routes captured,53 NOT_CAPTURED; no1883-action claim. Reports/videos: deliverables/jury_screencast/JURY_VIDEO_HANDOFF.md, VIDEO_INDEX.csv, RECORDING_REPORT.md, TECHNICAL_VALIDATION.json. All raw/first attempts private {PRIVATE}; no original raw deleted. App/backend/frontend/Docker source unchanged from080e9a8; only recording scripts/docs/checkpoints added. No push or Drive modification; subagents1/4. Existing native8769/Docker8768 and their durable state retained. Next action: open deliverables/jury_screencast/Clinical_Compass_Jury_Full_Walkthrough_RU.mp4 or Quick file; upload only after user action/authorization. Do not rerun finished recording/audit.\n'''
+Nine MP4 ready: Full527.63s / Quick169.67s, seven chapters within caps. Native real Chromium/Flask/SQLite; fresh Qwen NLP24.409s + doctorchat10.875s. All9 full-decode/actual Chromium play+seek PASS;27 beginning/middle/end frames reviewed; black>0.7s0;3 static>15s intervals are explicitly labelled real Qwen waits;Prototype QR/link/code and synthetic login/password values visible by explicit user request; credentials are truthful timed captions, not a new app feature.49/102 routes captured,53 NOT_CAPTURED; no1883-action claim. Reports/videos: deliverables/jury_screencast/JURY_VIDEO_HANDOFF.md, VIDEO_INDEX.csv, RECORDING_REPORT.md, TECHNICAL_VALIDATION.json. All raw/first attempts private {PRIVATE}; no original raw deleted. App/backend/frontend/Docker source unchanged from080e9a8; only recording scripts/docs/checkpoints added. No push or Drive modification; subagents1/4. Existing native8769/Docker8768 and their durable state retained. Next action: open deliverables/jury_screencast/Clinical_Compass_Jury_Full_Walkthrough_RU.mp4 or Quick file; upload only after user action/authorization. Do not rerun finished recording/audit.\n'''
 for name in ['.agent/CHECKPOINT.md','.agent/EXECPLAN_ACTIVE.md']:
  p=ROOT/name;p.write_text(p.read_text().split('\n\n## Screencast 2026-10-28')[0].split('\n\n## Screencast COMPLETE')[0]+section)
 with (ROOT/'reports/phase3/PROGRESS.md').open('a') as f:f.write(section)

@@ -3,18 +3,22 @@ import sys,os,json,csv,subprocess,hashlib,shutil,datetime
 from pathlib import Path
 from record_jury_screencast import OUT,PRIVATE,ROOT,FF,FP,probe,duration,encode,caption,append,stamp
 CLIPS=PRIVATE/'sanitized-source-clips' if (PRIVATE/'sanitized-source-clips').exists() else OUT/'source_clips'; CLIPS.mkdir(exist_ok=True)
+DISPLAY_POLICY=json.load(open(OUT/'INVITATION_DISPLAY_POLICY.json')) if (OUT/'INVITATION_DISPLAY_POLICY.json').exists() else {}
 HISTORY=[json.loads(x) for x in (OUT/'SCENES.jsonl').read_text().splitlines()]
 LATEST={r['id']:r for r in HISTORY}
 for key,r in LATEST.items():
  src=OUT/r['file'];dest=CLIPS/(key+'.mp4')
  if src.exists() and not dest.exists():shutil.copy2(src,dest)
 # Public clips get Russian captions; no successful scene is re-recorded.
-for key in ['06_catalog_and_assessments','00a_invitation','00b_guest_registration','00c_invite_consent','00d_doctor_new_link','01a_existing_today','01b_existing_questionnaires']:
+for key in ['06_catalog_and_assessments','00a_invitation','00b_guest_registration','00c_invite_consent','00d_doctor_new_link','00e_invitation_detail','01a_existing_today','01b_existing_questionnaires']:
  r=LATEST[key];masks=r['masks']
  if key=='00c_invite_consent':
   # Token may move upwards while the consent area scrolls. Mask the complete trajectory.
   x,y,w,h=masks[0];masks=[(0,0,1440,int(y+h+12))]
  title={'06_catalog_and_assessments':'Справочник и четыре шкалы','00a_invitation':'Приглашение нового пациента','00b_guest_registration':'Гость → новый пациент','00c_invite_consent':'Новый пациент: явное согласие','00d_doctor_new_link':'Врач: связь подтверждена','01a_existing_today':'Существующий пациент · Сегодня','01b_existing_questionnaires':'Учебные опросники: сохранение'}.get(key,key)
+ if DISPLAY_POLICY.get('show_synthetic_login_password') and (CLIPS/(key+'.mp4')).exists():
+  continue # retain the reviewed captions and explicitly authorized demo credentials
+ if DISPLAY_POLICY.get('show_synthetic_invitation_values') and key in DISPLAY_POLICY.get('scope',[]):masks=[]
  encode(PRIVATE/'raw'/r['raw_file'],CLIPS/(key+'.mp4'),title,r['description'],r['status'],masks)
 # Preserve the first attempts privately, including script-only selector/viewer waits.
 faildir=PRIVATE/'failed-attempts';faildir.mkdir(exist_ok=True)

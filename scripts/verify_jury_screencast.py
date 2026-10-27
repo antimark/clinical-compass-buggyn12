@@ -44,11 +44,15 @@ for key in ['00a_invitation','00c_invite_consent','00e_invitation_detail']:
  clip_root=PRIVATE/'sanitized-source-clips' if (PRIVATE/'sanitized-source-clips').exists() else OUT/'source_clips'
  path=clip_root/(key+'.mp4');subprocess.run([FF,'-y','-v','error','-i',str(path),'-vf','fps=2',str(frames/(key+'-%04d.png'))],check=True)
 state=json.loads((PRIVATE/'state.json').read_text());known=[]
-if state.get('invite',{}).get('token'):known += [state['invite']['token'],state['invite']['token'][:10]]
+policy=json.load(open(OUT/'INVITATION_DISPLAY_POLICY.json')) if (OUT/'INVITATION_DISPLAY_POLICY.json').exists() else {}
+if not policy.get('show_synthetic_invitation_values') and state.get('invite',{}).get('token'):known += [state['invite']['token'],state['invite']['token'][:10]]
 known += [state['new_password'],state['new_password'][:10]]
 actors=json.loads(Path('/private/tmp/clinical-compass-jury-handoff-20261027/jury-actors.json').read_text())
 known += [v['password'] for v in actors.values()]
 secretfile=PRIVATE/'known-secret-fragments.txt';secretfile.write_text('\n'.join(known));os.chmod(secretfile,0o600)
 scan=subprocess.check_output(['/private/tmp/cc-video-tools/video_privacy_scan',str(frames),str(secretfile)])
-(OUT/'PRIVACY_FRAME_SCAN.json').write_bytes(scan);result=json.loads(scan);assert result['frames']>0 and not result['findings'],result
-print('PLAYBACK9 PASS; privacy frames',result['frames'],'no detected known secrets/readable QR',flush=True)
+(OUT/'PRIVACY_FRAME_SCAN.json').write_bytes(scan);result=json.loads(scan);assert result['frames']>0
+if not policy.get('show_synthetic_invitation_values'):assert not result['findings'],result
+result['authorized_visible_demo_values']=policy
+(OUT/'PRIVACY_FRAME_SCAN.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
+print('PLAYBACK9 PASS; privacy frames',result['frames'],'prototype invitation QR and synthetic credentials may be intentionally visible per display policy',flush=True)
