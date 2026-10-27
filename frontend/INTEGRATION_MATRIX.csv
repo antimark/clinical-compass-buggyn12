@@ -1,6 +1,6 @@
-﻿Маршрут,Роль,Экран,Состояние UI,Фактический API / функция,Ограничения
+Маршрут,Роль,Экран,Состояние UI,Фактический API / функция,Ограничения
 /,shared,Лендинг,UI,—,Публичная главная; только реальные ссылки
-/login,shared,Вход,запись,POST /api/v1/onboarding/login; GET /api/v1/auth/oidc/capabilities,Локальный вход только при разрешённом bootstrap; OIDC server redirect
+/login,shared,Вход,запись,POST /api/v1/onboarding/login; проверенный локальный next,Возврат только на существующий маршрут разрешённой роли; перенос гостевой формы имеет приоритет; конкретные сценарии PASS native/Docker в handoff E2E
 /register,shared,Выбор роли,UI,GET /api/v1/onboarding/bootstrap,Выбор роли
 /register/patient,shared,Регистрация пациента,запись,POST /api/v1/onboarding/register,Синтетический режим; .test/.example и пароль 12+
 /register/specialist,shared,Регистрация врача,недоступно,GET /api/v1/staff-enrollment/capabilities,Саморегистрация специалиста не выдаёт роль
@@ -11,23 +11,23 @@
 /doctors,shared,Каталог врачей,чтение,GET /api/v1/public/doctors,Поиск по возвращённому списку
 /doctors/:slug,shared,Публичный и авторизованный профиль врача; вкладка общих пациентов при ACL,чтение,GET /api/v1/public/doctors/:slug,Публичные опубликованные сведения; без вымышленных рейтингов
 /doctors/:slug/reviews,shared,Публичные отзывы,частично,GET /api/v1/public/doctors/:slug,Отдельный API отзывов не подтверждён; пустые данные
-/patient,patient,Сегодня,запись,GET /api/v1/patient-experience/dashboard; POST /api/v1/patients/me/check-ins,"Отметка 1–5, задачи и динамика"
+/patient,patient,Сегодня,запись,patient-experience/dashboard; POST patients/me/check-ins; p0/care-plans; plan-items/:id/report,"Самочувствие, реальные планы и самоотчёт; только сервер подтверждает сохранение; конкретные сценарии PASS native/Docker в handoff E2E"
 /patient/tasks,patient,Задания и опросники,запись,GET definitions/assignments; POST /api/v1/patient-experience/questionnaires/self-assign,"4 пилотных шкалы PHQ/GAD запускаются в synthetic/evaluation sandbox; только вымышленные данные, нет клинического допуска"
 /patient/questionnaires/:requestId,patient,Прохождение опросника,запись,GET/PUT /api/v1/patient-experience/questionnaires/assignments/:id[/draft]; POST .../:id/submit,"Технические формы 1–4 и 4 пилотных PHQ/GAD 0–3; версия формы, сохранение черновика и завершение; на синтетических данных"
 /patient/questionnaires/:requestId/result,patient,Результат формы,чтение,GET /api/v1/patient-experience/questionnaires/assignments/:id/result,"Серверный итог (сумма), отдельные ответы и предупреждение; диагноз/клинические пороги не выдаются"
 /patient/trends,patient,Моя динамика,чтение,GET /api/v1/patient-experience/chart,Точки берутся из ответа API
-/patient/treatment,patient,Моё лечение,чтение,GET /api/v1/p0/care-plans,Только опубликованные планы
+/patient/treatment,patient,Моё лечение,запись,GET /api/v1/p0/care-plans; GET clinical-workflow documents; POST plan-items/:id/report,Полные авторские поля опубликованного плана; самоотчёт без полного dose-calendar; конкретные сценарии PASS native/Docker в handoff E2E
 /patient/treatment/adherence,patient,Дневник приёма,запись,GET /api/v1/p0/care-plans; POST /api/v1/p0/plan-items/:id/report,Статусы completed/missed/uncertain/partial
 /patient/adverse-events/new,patient,Сообщение о возможном нежелательном явлении,запись,POST /api/v1/p0/adverse-events,Самоотчёт без предположения о причинности
 /patient/appointments,patient,Мои приёмы,запись,GET /api/v1/appointments; POST /api/v1/appointments/:id/confirm,Подтверждение предложения времени
 /patient/appointments/new,patient,Запросить приём,частично,POST /api/v1/previsit-cases,Переход в мастер первичного обращения
 /patient/messages,patient,Сообщения врачам,чтение,GET /api/v1/previsit-cases,В UI доступны чаты обращений
-/patient/messages/:threadId,patient,Чат пациент—врач: одно сообщение до ответа врача,недоступно,—,Не установлена связь непрозрачного threadId с другим пользователем
+/patient/messages/:threadId,patient,Диалог пациента с ведущим врачом,запись,GET/POST /api/v1/threads/patient_doctor/:doctorUserId/messages,Действующая клиническая связь; threadId в этом маршруте — разрешённый ID собеседника; конкретные сценарии PASS native/Docker в handoff E2E
 /patient/assistant,patient,AI-помощник,недоступно,/api/v1/clinical-copilot/patient-chat/...,Требует точного контекста и включённой функции; не имитируется
 /patient/assistant/share/:draftId,patient,Проверка и отправка сводки,недоступно,—,Нет подтверждённого безопасного workflow этой страницы
 /patient/specialists,patient,Мои специалисты,чтение,GET /api/v1/patients/me/links,Только подтверждённые связи
 /patient/specialists/find,patient,Найти врача,переход,GET /api/v1/public/doctors,Ссылка в каталог
-/patient/access,patient,Разрешения на данные и видимость состава команды врачей,частично,GET /api/v1/patient/care-team-visibility,Изменение consent/grant требуется доработать
+/patient/access,patient,Разрешения на данные и видимость состава команды врачей,запись,GET /api/v1/patients/me/links; DELETE clinical-links/:id; care-team/visibility,"Эффективные scopes, отзыв связи и отдельное согласие на обмен пары врачей; конкретные сценарии PASS native/Docker в handoff E2E"
 /patient/requests,patient,Мои обращения к врачам,чтение,GET /api/v1/previsit-cases,Собственные обращения
 /patient/requests/new,patient,Первичное обращение,запись,POST /api/v1/previsit-cases,"Отдельная анкета, case_consent"
 /patient/requests/:requestId,patient,Карточка обращения,чтение,GET /api/v1/previsit-cases/:id,Только переданная анкета
@@ -37,22 +37,22 @@
 /doctor/patients,doctor,Пациенты,чтение,GET /api/v1/doctors/me/patients,Серверная фильтрация/ACL; клиентский поиск по текущей странице
 /doctor/patients/:patientId,doctor,Обзор пациента,чтение,GET /api/v1/doctors/me/patients/:id/overview,Только разрешённые поля
 /doctor/patients/:patientId/trends,doctor,Динамика пациента,чтение,GET /api/v1/patient-experience/physician/patients/:id/chart,Только при scope symptoms
-/doctor/patients/:patientId/history,doctor,Анамнез,чтение,GET /api/v1/p0/history/:id,При разрешении backend
-/doctor/patients/:patientId/treatment,doctor,Лечение пациента,частично,GET /api/v1/doctors/me/patients/:id/clinical,Назначение/изменение не реализовано в новом UI
-/doctor/patients/:patientId/psychotherapy,doctor,Поведенческая терапия,недоступно,—,Подтверждённый учебный мастер не интегрирован
-/doctor/patients/:patientId/visits,doctor,История визитов,чтение,GET /api/v1/p0/encounters/:id,Создание записи не интегрировано
-/doctor/patients/:patientId/adverse-events,doctor,Возможные нежелательные явления,частично,GET /api/v1/p0/adverse-events?patient_id=:id,Оценка причинности не интегрирована
-/doctor/patients/:patientId/decisions,doctor,Клинические решения/маршрутизация,чтение,GET /api/v1/p0/decisions/:id,Клиническое решение через UI не записывается
+/doctor/patients/:patientId/history,doctor,Анамнез,чтение,GET /api/v1/p0/history/:id; GET /api/v1/clinical-workflow/patients/:id/documents,Сохранены legacy записи; добавлены опубликованные clinical encounter документы; конкретные сценарии PASS native/Docker в handoff E2E
+/doctor/patients/:patientId/treatment,doctor,Лечение пациента,запись,GET /api/v1/p0/care-plans; clinical-workflow documents POST/PUT/sign/publish,Поля препарата вводит врач; не AI-назначение; пациенту только опубликованное; конкретные сценарии PASS native/Docker в handoff E2E
+/doctor/patients/:patientId/psychotherapy,doctor,Поведенческая терапия,запись,clinical-workflow documents kind=treatment; behavioral item; POST/PUT/sign/publish,Учебный авторский план; личные действия врача; старые данные сохранены; конкретные сценарии PASS native/Docker в handoff E2E
+/doctor/patients/:patientId/visits,doctor,История визитов,запись,GET /api/v1/p0/encounters/:id; clinical-workflow documents POST/PUT/sign/publish,"Авторский черновик, отдельные редактирование/подпись/публикация; CAS и scopes сервера; конкретные сценарии PASS native/Docker в handoff E2E"
+/doctor/patients/:patientId/adverse-events,doctor,Возможные нежелательные явления,запись,GET /api/v1/p0/adverse-events; POST /api/v1/p0/adverse-events/:id/review,Сообщение не доказывает причинную связь; отзыв проверяется сервером; конкретные сценарии PASS native/Docker в handoff E2E
+/doctor/patients/:patientId/decisions,doctor,Клинические решения/маршрутизация,запись,GET/POST /api/v1/p0/decisions/:patientId,Только самостоятельное явно подтверждённое решение врача; конкретные сценарии PASS native/Docker в handoff E2E
 /doctor/patients/:patientId/access,doctor,Доступные разделы/связи,чтение,GET /api/v1/doctors/me/patients/:id/overview,"Просмотр только видимых данных, без полного редактора grants"
 /doctor/alerts,doctor,Алерты,чтение,GET /api/v1/doctor-experience/signals,Серверные сигналы
-/doctor/alerts/:alertId,doctor,Оценка сигнала,частично,GET /api/v1/doctor-experience/signals/:id,Оценка сигнала не записывается
+/doctor/alerts/:alertId,doctor,Оценка сигнала,запись,GET /api/v1/doctor-experience/signals/:id; POST :id/review,Источник/наблюдения/правило и история; личная оценка врача; не прогноз риска; конкретные сценарии PASS native/Docker в handoff E2E
 /doctor/messages,doctor,Сообщения пациентов,чтение,GET /api/v1/previsit-cases,Первичные чаты
-/doctor/messages/:threadId,doctor,Двусторонний чат при открытом диалоге,недоступно,—,Не установлена связь opaque threadId
+/doctor/messages/:threadId,doctor,Двусторонний чат при открытом диалоге,запись,GET/POST /api/v1/threads/patient_doctor/:patientUserId/messages,Связь и scopes проверяются сервером; чаты обращений отдельно; конкретные сценарии PASS native/Docker в handoff E2E
 /doctor/appointments,doctor,Запросы и записи,чтение,GET /api/v1/appointments,Подтверждённые сервером записи
 /doctor/calendar,doctor,Расписание,чтение,GET /api/v1/appointments,"Список, без интерактивной сетки календаря"
 /doctor/questionnaires,doctor,Каталог и назначения,запись,"GET /api/v1/patient-experience/questionnaires/definitions,/assignments; POST /assignments",Назначение 2 технических и 4 пилотных форм; просмотр результата при действующем врачебном доступе
 /doctor/questionnaires/assign,doctor,Назначить опросник,запись,GET /api/v1/patient-experience/questionnaires/definitions; POST /assignments,Проверка прав на сервере
-/doctor/invitations,doctor,Приглашения пациентам,запись,GET/POST /api/v1/onboarding/invitations,"Категории доступа, получатель"
+/doctor/invitations,doctor,Приглашения пациентам,запись,"GET/POST /api/v1/onboarding/invitations; trusted absolute_url, QR, copy",Секретные QR/ключ/ссылка только адресату; recipient/expiry/single-use/consent сохраняются; конкретные сценарии PASS native/Docker в handoff E2E
 /doctor/invitations/new,doctor,Создать приглашение,запись,POST /api/v1/onboarding/invitations,Отдельное согласие пациента
 /doctor/clinical-library,doctor,Клиническая база,чтение,GET /api/v1/clinical-catalog/search,"242 записи, серверный постраничный поиск; полный состав полей всех 77 лекарственных записей; ссылки на связанные карточки и первоисточники; внешние ссылки онлайн не проверялись"
 /doctor/clinical-library/:articleId,doctor,Клинический материал,частично,GET /api/v1/p0/reference-articles/:id,В зависимости от зарегистрированного источника
@@ -80,7 +80,7 @@
 /research/exports,research,Экспорт агрегатов,частично,GET /api/v1/research-workflow/definitions,Экспорт CSV не реализован через UI
 /doctors/:slug/share,shared,Поделиться ссылкой на врача,локально,GET /api/v1/public/doctors/:slug,Копирование канонического публичного URL
 /patient/requests/:requestId/chat,patient,Чат по первичному обращению,запись,GET/POST /api/v1/previsit-cases/:id/messages,Одно первое сообщение пациента обеспечивается сервером
-/patient/access/care-team,patient,Согласие на видимость общих пациентов,частично,GET /api/v1/patient/care-team-visibility,Только чтение согласий
+/patient/access/care-team,patient,Согласие на видимость общих пациентов,запись,GET /api/v1/patient/care-team-visibility; POST /api/v1/care-team/visibility,Отдельно от прямой связи пациента и врача; alias сохранён; конкретные сценарии PASS native/Docker в handoff E2E
 /doctor/requests/:requestId/chat,doctor,Первичное сообщение и приём диалога врачом,запись,GET/POST /api/v1/previsit-cases/:id/messages,Ответ врача открывает следующий этап
 /doctor/colleagues,doctor,Коллеги и профессиональная переписка,чтение,GET /api/v1/public/doctors,Публично видимые коллеги
 /doctor/colleagues/:doctorId/messages,doctor,Личный диалог двух врачей,запись,GET/POST /api/v1/threads/doctor_peer/:id/messages,Переписка без доступа к карте пациента

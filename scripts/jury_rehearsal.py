@@ -6,6 +6,13 @@ from pathlib import Path
 from urllib.request import build_opener,ProxyHandler
 ROOT=Path(__file__).resolve().parents[1]
 
+def source_revision():
+    try:
+        return subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True,stderr=subprocess.DEVNULL).strip()
+    except (OSError,subprocess.CalledProcessError):
+        try:return json.loads((ROOT/'PACKAGE_MANIFEST.json').read_text())['source_commit']
+        except (OSError,ValueError,KeyError):return 'UNVERSIONED_SOURCE'
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--workspace',required=True);p.add_argument('--port',type=int,default=8767);p.add_argument('--mode',choices=['fresh','restart'],required=True);p.add_argument('--phase',choices=['2'],default='2');a=p.parse_args()
     workspace=Path(a.workspace).expanduser().resolve()
@@ -45,7 +52,7 @@ def main():
             cmd([sys.executable,'-m','pytest','-q','-p','tests_e2e.pytest_evidence','tests_e2e/test_jury_live.py','tests_e2e/test_roles_live.py','--tb=short','--junitxml='+str(raw/(run+'.xml'))],'browser')
             cmd([sys.executable,'tests_e2e/seed_form_history.py'],'coherent-history')
             cmd([sys.executable,'tests_e2e/restart_probe.py','capture'],'restart-capture')
-            outcome={'run_id':run,'mode':a.mode,'status':'PASS','timestamp':dt.datetime.now(dt.timezone.utc).isoformat(),'source_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'methods':'real Flask/SQLite/Chromium/Ollama; no mock API; normal auth and explicit synthetic consent','evidence':str(raw.relative_to(ROOT)/(run+'-browser.log'))}
+            outcome={'run_id':run,'mode':a.mode,'status':'PASS','timestamp':dt.datetime.now(dt.timezone.utc).isoformat(),'source_revision':source_revision(),'methods':'real Flask/SQLite/Chromium/Ollama; no mock API; normal auth and explicit synthetic consent','evidence':str(raw.relative_to(ROOT)/(run+'-browser.log'))}
             with (raw/'rehearsals.jsonl').open('a') as f:f.write(json.dumps(outcome)+'\n');f.flush();os.fsync(f.fileno())
             print(json.dumps(outcome),flush=True)
         finally:

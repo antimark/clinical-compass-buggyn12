@@ -26,7 +26,8 @@ def snapshot():
     text+=f'\nRaw: `reports/phase{PHASE}/raw/scenarios.jsonl`. This automated observation summary does not set the phase gate.\n<!-- '+marker+':end -->\n'
     for relative in (f'reports/phase{PHASE}/PROGRESS.md','.agent/CHECKPOINT.md','.agent/EXECPLAN_ACTIVE.md'):
         target=ROOT/relative
-        old=target.read_text()
+        target.parent.mkdir(parents=True,exist_ok=True)
+        old=target.read_text() if target.exists() else f'# Phase {PHASE} — PARTIAL\n'
         old=re.sub(r'\n*<!-- '+marker+r':start -->.*?<!-- '+marker+r':end -->\n*','\n',old,flags=re.S).rstrip()
         temp=target.with_suffix('.tmp.'+str(os.getpid()))
         temp.write_text(old+text);temp.replace(target)

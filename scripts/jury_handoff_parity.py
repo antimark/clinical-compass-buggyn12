@@ -32,7 +32,8 @@ def main():
  path=ROOT/'reports/phase2/FEATURE_PARITY.csv';before=path.read_bytes();rows=list(csv.DictReader(before.decode().splitlines()));fields=list(rows[0]);stamp=dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
  (ROOT/('reports/phase3/raw/FEATURE_PARITY-before-final-'+stamp+'.csv')).write_bytes(before)
  for row in rows:
-  row['final_status']=row['final_status'].replace('Docker NOT_RUN','Docker NOT_RUN for this individual action; source preserved')
+  row['final_status']=row['final_status'].replace('Docker source preserved; action proof below','Docker NOT_RUN for this individual action; source preserved')
+  if row['final_status'].endswith('Docker NOT_RUN'):row['final_status']=row['final_status'].replace('Docker NOT_RUN','Docker NOT_RUN for this individual action; source preserved')
   if row['test_result'] in ('NATIVE E2E PASS (tested cases)','REAL HTTP PASS in authorized workflow'):
    row['test_result']='NATIVE + DOCKER PASS (specific covered workflow)';row['final_status']='PRESERVED; covered workflow native + Docker PASS';row['evidence']='reports/phase0/HANDOFF_NATIVE_RESULTS.md; reports/phase3/DOCKER_TEST_REPORT.md'
  covered_forms={'login','register','invite-preview','invite-accept','checkin','new-request','case-message','offer','assign-questionnaire','questionnaire','create-invitation','admin-identity-values','admin-identity-consent','profile','photo','catalog-search','ci-document','ci-referral','ci-message','ci-diary'}
@@ -48,7 +49,7 @@ def main():
   rows.append(dict(feature_id=identifier,role='role_scoped',route='*',action=attr+':'+name,baseline_status='Added in selective handoff integration after GitHub 675ce74',final_status='IMPLEMENTED; native + Docker action PASS',test_result='REAL UI/API persistence PASS in handoff tests',evidence='tests_e2e/test_handoff_live.py; reports/phase3/DOCKER_TEST_REPORT.md',notes='Specific synthetic lifecycle/ACL cases; not every possible input or tenant'))
  for target in (path,ROOT/'reports/phase3/DOCKER_PARITY.csv'):
   temp=target.with_suffix('.tmp')
-  with temp.open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
+  with temp.open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');w.writeheader();w.writerows(rows)
   temp.replace(target)
  status={'timestamp':dt.datetime.now(dt.timezone.utc).isoformat(),'revision':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'current_routes':len(now_routes),'current_api_operations':len(now_api),'registry_rows_before':len(list(csv.DictReader(before.decode().splitlines()))),'registry_rows_final':len(rows),'comparisons':comparisons,'gates':proof,'core_native':'PASS','core_container':'PASS','full_action_breadth':'PARTIAL; untested baseline controls retained, never promoted from source presence','source_hashes':{name:hashlib.sha256(value.encode()).hexdigest() for name,value in current.items() if name.startswith('frontend/dist/assets/js/')}}
  (ROOT/'reports/phase3/HANDOFF_SOURCE_PARITY.json').write_text(json.dumps(status,indent=2))

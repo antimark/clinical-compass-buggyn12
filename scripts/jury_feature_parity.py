@@ -86,7 +86,7 @@ def main():
                 seen.add(key)
                 add(*key,'Phase 0 visible DOM control',True,'reports/phase0/raw/controls.jsonl','Disabled='+str(control['disabled'])+'; label='+control['label'],'INVENTORIED; action NOT_RUN unless linked to specific E2E')
     out=ROOT/'reports/phase2/FEATURE_PARITY.csv';out.parent.mkdir(exist_ok=True)
-    with out.open('w') as f:w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
+    with out.open('w') as f:w=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');w.writeheader();w.writerows(rows)
     summary=dict(baseline_archive=original.name,baseline_sha256=hashlib.sha256(original.read_bytes()).hexdigest(),baseline_routes=len(routes),current_routes=len(now_routes),baseline_api_operations=len(old_api),current_api_operations=len(now_api),registry_rows=len(rows),missing_routes=missing_routes,missing_api=missing_api,phase2_status='NOT_RUN',phase3_status='NOT_RUN')
     (ROOT/'reports/phase0/raw/feature-parity-baseline.json').write_text(json.dumps(summary,indent=2))
     print(json.dumps(summary,indent=2))
