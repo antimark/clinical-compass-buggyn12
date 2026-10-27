@@ -87,6 +87,13 @@ class Client:
 def atomic(path,value):
     temp=path.with_suffix('.tmp');temp.write_text(json.dumps(value,indent=2));temp.replace(path)
 
+def source_revision():
+    try:
+        return subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True,stderr=subprocess.DEVNULL).strip()
+    except (OSError,subprocess.CalledProcessError):
+        try:return json.loads((ROOT/'PACKAGE_MANIFEST.json').read_text())['source_commit']
+        except (OSError,ValueError,KeyError):return 'UNVERSIONED_SOURCE'
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--workspace',required=True);p.add_argument('--base',default='http://127.0.0.1:8766');p.add_argument('--resume-run');a=p.parse_args()
     if urlsplit(a.base).hostname not in ('127.0.0.1','localhost','::1'):p.error('Loopback targets only')

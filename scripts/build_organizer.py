@@ -2,22 +2,23 @@
 import argparse,hashlib,json,os,stat,subprocess,zipfile
 from pathlib import Path,PurePosixPath
 
-TOP={'README.md','AGENTS.md','EVALUATION_POLICY_ADDENDUM.md','environment.yml','evaluation.config.example','alembic.ini','pytest.ini','pyproject.toml','package.json','Dockerfile','compose.yaml','.dockerignore','docker-compose.yml','docker-compose.yaml'}
+TOP={'README.md','AGENTS.md','EVALUATION_POLICY_ADDENDUM.md','environment.yml','evaluation.config.example','alembic.ini','pytest.ini','pyproject.toml','package.json','Dockerfile','compose.yaml','compose.cpu.yaml','.gitignore','.dockerignore','docker-compose.yml','docker-compose.yaml'}
 DIRS={'backend','frontend','migrations','contracts','clinical_catalog_data','reference','tests','tests_ui','scripts','demo_completion','docker','tests_e2e','tests_perf','research_data'}
 BLOCK_PARTS={'.git','.handoff','__pycache__','.pytest_cache','.ds_store','__macosx','node_modules','.ollama','models_cache','screenshots','before_after_screenshots','.ssh','.aws','.secrets','credentials'}
+PRIVATE_NAMES={'jury-actors.json','jury-linked-patient.json','jury-demo-patient.json','jury-second-doctor.json','jury-demo-state.json','jury-isolation-actors.json','restart-session.json','restart-probe.json','workspace-key-hashes.json'}
 BLOCK_SUFFIXES=('.sqlite','.db','.sqlite-wal','.sqlite-shm','.db-wal','.db-shm','.sqlite-journal','.db-journal','.log','.pyc','.pyo','.key','.pem','.p12','.gguf','.safetensors','.onnx','.zip','.7z','.tar','.gz','.bak','.tmp','.har','.secret')
-GUIDES={'EVALUATOR_QUICKSTART.md','EVALUATION_DEPLOYMENT.md','D01_D10_EVALUATION.md','UNRESOLVED_AND_PILOT_GATES.md','EVALUATION_ACCEPTANCE_SUMMARY.md','UX_REPAIR_2026_10_26.md','NEW_FRONTEND_INTEGRATION_AUDIT_2026_10_27.md','ROLE_JOURNEYS_AND_GUEST_HANDOFF_2026_10_27.md','AI_DEMO_GUIDE_2026_10_27.md','CODEX_PHASE0_PHASE1_PROMPT_2026_10_27.md','CODEX_JURY_RELEASE_PHASE0_PHASE3_PROMPT_2026_10_27.md','JURY_RELEASE_ACCEPTANCE.md','SUBAGENT_BUDGET_PROTOCOL.md','JURY_DEMO_RUNBOOK.md','DOCKER_JURY_RUNBOOK.md'}
+GUIDES={'EVALUATOR_QUICKSTART.md','EVALUATION_DEPLOYMENT.md','D01_D10_EVALUATION.md','UNRESOLVED_AND_PILOT_GATES.md','EVALUATION_ACCEPTANCE_SUMMARY.md','UX_REPAIR_2026_10_26.md','NEW_FRONTEND_INTEGRATION_AUDIT_2026_10_27.md','ROLE_JOURNEYS_AND_GUEST_HANDOFF_2026_10_27.md','AI_DEMO_GUIDE_2026_10_27.md','CODEX_PHASE0_PHASE1_PROMPT_2026_10_27.md','CODEX_JURY_RELEASE_PHASE0_PHASE3_PROMPT_2026_10_27.md','JURY_RELEASE_ACCEPTANCE.md','SUBAGENT_BUDGET_PROTOCOL.md','JURY_DEMO_RUNBOOK.md','DOCKER_JURY_RUNBOOK.md','JURY_RUNBOOK.md','DOCKER_LOCAL_MODEL_SECURITY_REVIEW.md','JURY_SCREENCAST_STORYBOARD_2026_10_27.md'}
 
 def allowed(name):
     path=PurePosixPath(name);parts=path.parts
     if path.is_absolute() or '..' in parts or '\\' in name:return False
     lower=[x.casefold() for x in parts]
     if any(x in BLOCK_PARTS or x.startswith('.env') or x.startswith('credentials.') for x in lower):return False
-    if lower[-1].endswith(BLOCK_SUFFIXES):return False
+    if lower[-1] in PRIVATE_NAMES or lower[-1].endswith(BLOCK_SUFFIXES):return False
     if parts[0]=='backend' and len(parts)>1 and parts[1]=='data':return False
     if len(parts)==1:return name in TOP
-    if name=='.codex/config.toml':return True
     if name in {'.agent/EXECPLAN_ACTIVE.md','.agent/CHECKPOINT.md'}:return True
+    if name in {'reports/FINAL_JURY_READINESS.md','reports/phase3/ARCHIVE_VALIDATION.md','reports/phase0/TEST_REPORT.md','reports/phase2/REHEARSAL_RESULTS.md','reports/phase2/REMEDIATION_LOG.md','reports/phase3/RUNTIME_SOURCE_MATCH.json','reports/phase3/HANDOFF_INTEGRATION.md','reports/phase3/HANDOFF_MERGE_MATRIX.csv','reports/phase0/HANDOFF_NATIVE_RESULTS.md','reports/phase1/PERFORMANCE_REPORT.md','reports/phase1/LOAD_REPORT.md','reports/phase2/FEATURE_PARITY.csv','reports/phase2/PARITY_STATUS.json','reports/phase3/DOCKER_TEST_REPORT.md','reports/phase3/DOCKER_PARITY.csv','reports/phase3/TRACE_MANIFEST.json','reports/phase3/PERFORMANCE_REPORT.md','reports/phase3/HANDOFF_SOURCE_PARITY.json','reports/phase3/FINAL_CHANGELOG.md','reports/phase3/DEFECTS.csv'}:return True
     if parts[0] in DIRS:return True
     if parts[0]=='docs':
         return name=='docs/SCREEN_IMPLEMENTATION_MATRIX.csv' or (len(parts)==3 and parts[1]=='phase04' and parts[2] in GUIDES)
@@ -53,7 +54,7 @@ def build(root,target,working=False):
     dirty=bool(subprocess.check_output(['git','diff','--name-only','HEAD'],cwd=root,text=True).strip())
     if dirty and not working:raise ValueError('Commit reviewed source before final organizer release; --include-working is provisional only')
     manifest=dict(product='Clinical Compass Evaluation MVP Phase04',source_commit=commit,provisional=working or dirty,
-        source_tree_sha256=hashlib.sha256(json.dumps(files,sort_keys=True).encode()).hexdigest(),clinical_review_status='experimental_needs_validation',platform_verified='macOS Apple Silicon, existing cc-m1 and local Ollama',files=files)
+        source_tree_sha256=hashlib.sha256(json.dumps(files,sort_keys=True).encode()).hexdigest(),clinical_review_status='experimental_needs_validation',platform_verified='macOS Apple Silicon cc-m1; Docker Linux/arm64 app + restricted native host Ollama; see acceptance scope',files=files)
     target.parent.mkdir(parents=True,exist_ok=True)
     with zipfile.ZipFile(target,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
         for item in files:

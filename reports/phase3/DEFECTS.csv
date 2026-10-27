@@ -1,0 +1,16 @@
+issue_id,priority,status,finding,resolution_or_limit,evidence
+APP-001,P1,RESOLVED,Linux photo required macOS sips,Bounded Linux Pillow worker; native sips kept,photo live + Linux source codec + restart read
+APP-002,P1,RESOLVED,Structured NLP exceeded45s in Docker,Explicit think:false/context4096; same schema/exact-span validator,native30.619s; Docker22.194s real local_llm
+APP-003,P1,RESOLVED,Published clinical visit absent from anamnesis,Supplement legacy history with published clinical documents,focused history UI native/Docker PASS
+APP-004,P1,RESOLVED,New clinical UI actions lacked wiring,Existing API forms create/edit/sign/publish/review/messages/access,16 distinct new UX cases native/Docker PASS
+APP-005,P2,RESOLVED,Client photo cap6MiB exceeded server2MiB,Client cap and copy aligned2MiB,real upload/invalid cases native/Docker
+APP-006,P0,RESOLVED_PRIOR_RETAINED,Lost guest submit response could duplicate retry,Patient-scoped nonce recovery retained,four forms/login/register/retry/other-patient cases PASS
+HAR-001,TEST,RESOLVED,Invite harness read consent_version from create not preview; consumed token expected404,Actual preview version and409 single-use contract,only failed cases rerun; original logs retained
+HAR-002,TEST,RESOLVED,Linux fake executable on noexec tmpfs; Mac renderer Node PATH missing,Explicit exec tmpfs / existing cc-m1 PATH,Linux focused4PASS; renderer1PASS
+HAR-003,TEST,RESOLVED,"Standalone image audit stdin not attached, empty output",Repeat with docker run-i and JSON result assertion,initial empty artifact preserved; actual image audit PASS
+LIM-001,P2,BLOCKED_OPTIONAL,CPU Ollama sidecar inference readiness timeout180s,Accepted default restricted native host GPU bridge,CPU mode not claimed ready
+LIM-002,P2,LIMITATION,Genuine invited staff OIDC/MFA and legacy study grants unconfigured,Legitimate guards kept; working staff/synthetic research paths,not a clinical or production verification claim
+LIM-003,P2,PARTIAL,Seven conditional routes/four guarded baseline routes and individual controls not exhaustively exercised,Preserved in source and parity; not promoted from rendering,full action breadth PARTIAL
+LIM-004,P2,NOT_IMPLEMENTED_BASELINE,Full per-dose missed-days calendar,Actual saved adherence report retained,no feature removed
+LIM-005,P2,NOT_RUN,External source-site availability,All allowed source fields/links rendered and safely escaped,third-party availability separated from local catalog acceptance
+PKG-001,TEST,RESOLVED,Fresh ZIP has no Git metadata or phase PROGRESS file,Manifest revision fallback and automatic evidence bootstrap,Fresh extracted source without Git:5 real Flask/SQLite/Chromium cases PASS; revision from manifest; evidence bootstrap PASS

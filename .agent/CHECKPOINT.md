@@ -1,51 +1,15 @@
-# Resumable checkpoint — Phase 2 IN_PROGRESS
+# Clinical Compass — completed local handoff (2026-10-27T21:07:12.811526+00:00)
 
-Source checkpoint: **eb64d3f** (local Git initialized after private source backup). Subagents 0/4. Overall READY: **NOT_READY** pending rehearsal, parity and actual Docker verification. Do not restart discovery.
+Review branch codex/jury-ux-docker-20261027. A97998fa, B50adacf, Cb611325, documentation9ed2803; final delivery/checkpoint commit follows. No push, master not overwritten. Subagents1/4, finished.
 
-Completed:
-- Phase 0: full source 618 PASS / 5 XFAIL / 0 FAIL (raw/source-regression.log). Live four forms, guest login/register saves/history/retry/tab isolation and 77 medicine DOM field checks PASS (95-case batch + four live server-negative cases). All eight role scenarios passed in recorded batches, including Qwen extraction/evidence/review/draft/referral, patient/doctor Qwen chats, consent-controlled patient FIO/revoke, staff full name, researcher filter/CSV and appointment/message/check-in flow.
-- Native server restart retained actual patient session, saved score/history and stable private keys. Private Playwright trace captured; redacted timeline shared. Inventory: 83 read-only PASS, 5 PARTIAL, 14 NOT_RUN, no observed 5xx/page-exception dead end in traversed final routes. Not exhaustive action acceptance.
-- Phase 1: run 20261027T151022Z, 335 ordinary HTTP samples / zero unexpected API errors; task n=3 each; one real Qwen chat 10.279s wall, ~19.48 generated tokens/s. See reports/phase1/PERFORMANCE_REPORT.md and LOAD_REPORT.md. Both initial harness errors (login race, invalid UUID key) retained; successful samples were not rerun.
+A/B/C/D achieved for the documented local synthetic jury scope. Native126 and Docker126 distinct pytest E2E PASS; real Qwen3actions each; actual photo/ACL/negative inputs/clipboard; restart retained session/keys/forms/published plan/messages/photo. Full source618PASS/1Linux-only SKIP/5expectedXFAIL; package/privacy22PASS; final frontend source/simulated contracts PASS. Docker60 reads0errors. Functional runtime/source487files match. Source parity102routes/249APIs/no original controls removed;1883registry rows. Broader action coverage remainsPARTIAL.
 
-Preservation: original resumable source archive has 102 routes / 249 API operations (two app.route methods refined into inventory); none removed. reports/phase2/FEATURE_PARITY.csv has 1,871 entries. User forbids hiding/removal/static substitution of working functions in Phases 2/3. Keep experimental and privacy restrictions. Source backup: reports/phase0/raw/source-backup-manifest.json.
+Clean initial source archive validated/extracted without.git and launched from fresh private SQLite on8772;5 real smoke cases PASS, manifest revision fallback and evidence bootstrap PASS. Sanitized evidence ZIP CRC/per-file hashes verified. Final source ZIP is rebuilt/verified from this final checkpoint commit; exact SHA256/commit/file counts live in ignored deliverables/RELEASE_CHECKSUMS.json, avoiding self-referential hashes.
 
-Next exact command:
-`PYTHONPATH=backend:. /Users/mark/miniforge3/envs/cc-m1/bin/python scripts/jury_rehearsal.py --mode fresh --workspace /private/tmp/clinical-compass-jury-phase2-20261027 --port 8767`
-Then restart same workspace with `--mode restart`, verify parity, run full source regression before Phase 3. Native original sandbox still serves on 127.0.0.1:8766; no reset required. Rehearsal server stops itself; private credentials/logs stay in its workspace. Full command logs/raw observations stay under reports/phase2/raw/ after each task.
+Deliverables: deliverables/Clinical_Compass_Jury_Source_20261027.zip; deliverables/Clinical_Compass_Jury_QA_Sanitized_20261027.zip; docs/final_demo/Clinical_Compass_Final_Screenshots_20261027.zip. Reports: reports/FINAL_JURY_READINESS.md, phase3/DOCKER_TEST_REPORT.md, PERFORMANCE_REPORT.md, ARCHIVE_VALIDATION.md, TRACE_MANIFEST.json, DOCKER_PARITY.csv; phase0/HANDOFF_NATIVE_RESULTS.md. Raw historical failures preserved locally, not shipped with private content.
 
-Disclosed gaps: genuine OIDC/MFA invited staff enrollment not configured; legacy researcher study grants absent; some baseline preview/dynamic actions and reviewed clinical content remain partial/not run. Source XFAILs are retained and not promoted. External source-link availability not verified. These limitations prevent unconditional jury readiness.
+Working apps left running: native http://127.0.0.1:8769/#/demo/journeys, private WS /private/tmp/clinical-compass-jury-handoff-20261027; Docker http://127.0.0.1:8768/#/demo/journeys, projectccjuryqa20261027, private client WS /private/tmp/clinical-compass-jury-docker-client-20261027. Private coherent account file jury-demo-patient.json, ordinary role file jury-actors.json. Never distribute them. Same workspace/project resumes without reset.
 
-<!-- live-evidence-phase2:start -->
-Latest completed: `backend/tests/test_contract.py::test_session_required` (PASS).
+Next reproducible action: review docs/phase04/JURY_RUNBOOK.md and DOCKER_JURY_RUNBOOK.md, open an already running app; if stopped use CC_PYTHON=/Users/mark/miniforge3/envs/cc-m1/bin/python bash scripts/evaluation.sh serve --workspace /private/tmp/clinical-compass-jury-handoff-20261027 --port 8769, or CC_JURY_PORT=8768 docker compose -p ccjuryqa20261027 up -d. Do not rerun successful full audits just to resume. No development blocker remains in tested core; broader conditional paths/clinical rights/actual OIDC/MFA/legacy study grants remain disclosed, CPU-sidecar inferenceBLOCKEDoptional. Accepted restricted Mac host-GPU topology proved; no model allowlist expansion/cloud substitution.
 
-Append-only observations (includes baseline failures and reruns; not unique acceptance counts):
-
-- live Chromium accessibility spotcheck: PASS 2
-- live Chromium keyboard spotcheck: FAIL 1
-- live Chromium keyboard spotcheck: PASS 1
-- live Flask + SQLite + Chromium: PASS 231
-- real authenticated HTTP; explicit synthetic fixture: PASS 8
-- source pytest; not live E2E: PASS 615
-- source pytest; not live E2E: SKIP 5
-
-Raw: `reports/phase2/raw/scenarios.jsonl`. This automated observation summary does not set the phase gate.
-<!-- live-evidence-phase2:end -->
-
-PHASE 2 GATE REVIEWED: fresh 107 PASS / restart 107 PASS; final source 618 PASS, 5 XFAIL, 0 FAIL. Supplemental catalog search/back, guest wrong-role and other-patient isolation, modal keyboard-focus fix, and actual doctor Qwen/pending-state regression pass. Files/evidence: reports/phase2/REHEARSAL_RESULTS.md, PARITY_STATUS.json, FEATURE_PARITY.csv (1,871 rows), API_REGISTRY.csv (249 actual operations / 213 paths). No 102-route/249-API loss. Full action breadth stays PARTIAL; overall NOT_READY pending Docker proof. Phase 3 now IN_PROGRESS. Native rehearse workspace serves at 127.0.0.1:8767; original native QA also at 8766. Next: read-only local Docker context/version preflight, then safe sidecar namespace build and real smoke. Never touch a remote Docker context or user databases. Subagents 0/4.
-Phase 3: local Docker Desktop engine now ready (29.8.1, Compose 5.5.1; Unix desktop-linux context). Exact arm64 Python/Node/Ollama manifests saved. Safe Compose sidecar namespace and non-root Gunicorn app implemented; native loopback provider allowlist unchanged. Linux portability repair retains macOS sips and adds CPU/memory/time-limited Pillow worker; native photo regression 19 PASS. Linux decoder must be tested after build; no container gate yet. Next: `CC_JURY_PORT=8768 docker compose -p ccjuryqa20261027 config`, actual build, explicit model volume setup, real smoke + restart/down-up. Never touch unrelated Docker projects/volumes. Subagents 0/4.
-Phase 3 current: default Compose now uses a restricted shared-loopback adapter to native Mac Ollama; actual listener remains 127.0.0.1:11434. CPU sidecar attempt retained separately in compose.cpu.yaml: 180s readiness timeout, not accepted for AI. Docker 110-case live suite and corrected Linux full source suite running; partial stdout preserved. Eleven actual bridge protocol checks PASS. Resume: inspect reports/phase3/raw/container-live.log and linux-source-current.log; never restart successful tests or reset jury_workspace volume. Next after live completion: extra photo/tenant probes, capture durable session/keys, compose down/up without -v, verify. Subagents 0/4.
-
-Priority screenshot packet completed: five real PNG + README + verified ZIP in docs/final_demo/. NLP snapshot expired; actual persisted rule proposals/evidence shown; no active alert pair and no research plot invented. Docker resumes at known 108/110 live results (two AI failures) and Linux 620 PASS/2 launcher FAIL/5XFAIL. Successful tests retained.
-
-<!-- live-evidence-phase3:start -->
-Latest completed: `tests_e2e/test_roles_live.py::test_doctor_real_qwen_evidence_manual_note_and_referral` (FAIL).
-
-Append-only observations (includes baseline failures and reruns; not unique acceptance counts):
-
-- live Flask + SQLite + Chromium: FAIL 1
-- live Flask + SQLite + Chromium: PASS 8
-- real Flask/Ollama missing-model response + Chromium: PASS 1
-- source pytest; not live E2E: PASS 72
-
-Raw: `reports/phase3/raw/scenarios.jsonl`. This automated observation summary does not set the phase gate.
-<!-- live-evidence-phase3:end -->
+Recommendation READY_WITH_DISCLOSED_LIMITATIONS for the exact localhost synthetic script. Clinical/public deployment and exhaustive control acceptance not approved. Storyboard only, no recording/Drive update. Proposed publication after review: git push -u origin codex/jury-ux-docker-20261027; no master push/merge without explicit approval.

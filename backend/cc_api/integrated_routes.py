@@ -21,7 +21,7 @@ from .instruments import INSTRUMENTS, numeric_total
 from .research import aggregate_observations
 from .messaging import pair_thread_key
 from .ai_adapter import SummaryRequest, summarize, AdapterDisabled, AdapterUnavailable
-from .doctor_access import authorized_patient
+from .doctor_access import authorized_patient, authorized_scopes
 
 
 def identifier(): return uuid.uuid4().hex[:20]
@@ -293,9 +293,18 @@ def register_integrated_routes(app, SessionLocal, current_user, require_role, er
         with SessionLocal() as db:
             u=require_role(db,'patient')
             links=list(db.scalars(select(DoctorPatientLink).where(DoctorPatientLink.patient_id==u.patient_id)))
-            doctors=[db.get(User,l.doctor_id) for l in links]
-            return {'items':[{'id':d.id,'display_name':d.display_name,'specialty':d.specialty} for d in doctors
-                if d and d.organization_id==u.organization_id]}
+            from werkzeug.exceptions import HTTPException
+            items=[]
+            for doctor_id in dict.fromkeys(link.doctor_id for link in links):
+                doctor=db.get(User,doctor_id)
+                if not doctor or doctor.organization_id!=u.organization_id:continue
+                try:categories=authorized_scopes(db,doctor,u.patient_id)
+                except HTTPException as exc:
+                    if exc.code!=404:raise
+                    categories=set()
+                items.append({'id':doctor.id,'display_name':doctor.display_name,
+                    'specialty':doctor.specialty,'categories':sorted(categories)})
+            return {'items':items}
 
     @app.get('/api/v1/doctors/me/linked-patients')
     def doctor_linked_patient_accounts():

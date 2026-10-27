@@ -1,0 +1,9 @@
+# Final integration change log
+
+- Selective historical UX integration, preserving current API contracts, all102 routes/249 operations and all original controls. Trusted configured invitation origin kept; QR/link/key/copy, safe role-checked login return and2MiB upload cap wired.
+- Human-readable signal cause/evidence/action history; actual persisted review. Anamnesis includes legacy data plus published clinical documents. Clinical draft create/edit/sign/publish, physician-authored treatment/behavioral plans, patient readback/adherence, paired messages and effective access scopes/revocation use real existing APIs.
+- Existing guest nonce recovery, full medicine fields, independent synthetic researcher query/export, FIO opt-in/revoke and staff names retained. Dose/source text never invented or truncated as complete.
+- Existing portable Linux image normalization retained and proved; native sips unchanged. Linux worker CPU/address-space/time/pixel/format bounds, metadata removal and malformed denial remain active. Exact pinned Linux Pillow/Gunicorn runtime; host Conda not changed.
+- Restricted nonpublic host-GPU bridge accepted with actual model digest/inference; CPU-sidecar failure retained honestly. Explicit nonthinking/context4096 structured NLP fixes timeouts without changing exact-span validation or clinical rules. Gunicorn nonroot control socket disabled.
+- Durable workspace/keys/migrations and native/Docker restart proven. Per-case fsync evidence, run-scoped private traces, append-only model metadata, source/image fingerprints, expanded1883-row parity, measured1/3/5-client Docker load.
+- Source packaging includes Docker CPU alternative, .gitignore/current guides and selected sanitized evidence; explicitly excludes generated actor/session/state filenames, DB/secrets/models/full traces. No master publication.

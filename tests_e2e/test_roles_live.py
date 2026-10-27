@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from playwright.sync_api import expect
 from tests_e2e.test_jury_live import browser,show,register,login,mutate,BASE,ROOT
-from tests_e2e.evidence import scenario,record,OUT
+from tests_e2e.evidence import scenario,record,OUT,RUN_ID
 WS=Path(os.environ.get('CC_QA_WORKSPACE','/private/tmp/clinical-compass-jury-20261027'))
 
 @pytest.fixture(scope='module')
@@ -113,7 +113,11 @@ def test_doctor_real_qwen_evidence_manual_note_and_referral(roles):
     with doctor.expect_response(lambda r:'/snapshot?' in r.url and r.request.method=='POST',timeout=65000) as analyzed:
         doctor.locator('[data-command=ci-analyze]').click()
     result=analyzed.value.json()
-    (OUT/'qwen-live-metadata.json').write_text(json.dumps({k:result.get(k) for k in ('analysis_status','mode','model_version','primary_model_version','error_code','claims_persisted')},indent=2))
+    metadata={k:result.get(k) for k in ('analysis_status','mode','model_version','primary_model_version','error_code','claims_persisted')}
+    with (OUT/'qwen-live-metadata.jsonl').open('a') as f:
+        f.write(json.dumps({'run_id':RUN_ID,**metadata})+'\n');f.flush();os.fsync(f.fileno())
+    # Replaceable latest summary; append-only JSONL above is authoritative raw evidence.
+    (OUT/'qwen-live-metadata.json').write_text(json.dumps(metadata,indent=2))
     assert analyzed.value.ok and result['mode']=='local_llm' and result['analysis_status']=='ready',result.get('error_code')
     assert result['tags'] and result['evidence']
     source='Вымышленный пациент: плохо сплю. Тревожусь из-за работы.'

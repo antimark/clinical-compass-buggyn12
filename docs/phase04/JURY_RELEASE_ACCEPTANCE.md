@@ -57,3 +57,10 @@
 G09: согласие/отзыв ФИО и имена сотрудников PASS в браузере; tenant isolation подтверждается source security tests, отдельный live cross-tenant сценарий пока NOT_RUN.
 G10: 83 READ-ONLY PASS, 5 PARTIAL, 14 NOT_RUN; рендеринг не считается выполненным действием. G11: полный source regression 618 PASS / 5 XFAIL / 0 FAIL; live CSRF/revision/idempotency и приватность чатов проверены. Объём защиты и ограничения указаны в отчёте.
 G12–G15 остаются NOT_RUN. Реестр сохранения функциональности: `reports/phase2/FEATURE_PARITY.csv`; ни один из 102 исходных маршрутов / 232 API не удалён.
+
+
+## Final handoff review — 2026-10-27
+
+Native and accepted Docker host-GPU mode:126 distinct browser cases each PASS; full native source618PASS/1Linux-only SKIP/5expectedXFAIL; final packaging22PASS. Real Qwen,77/77 medicine fields,4 forms/both handoffs, all4 roles, new clinical author lifecycle, messages/access/FIO/revocation and actual restart durability PASS within documented scenarios. Docker60 controlled reads/0errors. See reports/FINAL_JURY_READINESS.md and phase3/DOCKER_TEST_REPORT.md.
+
+G01–G09/G11–G14 local core PASS within the listed evidence; G10 broad action coverage PARTIAL (83 read-only +8 newly proven workflow route rows,7conditional NOT_RUN,4guarded/partial). G15 source archive is generated/verified by scripts/build_organizer.py with final manifest and checksums; no private runtime state included. Earlier232API reference was incomplete: actual249operations preserved. Optional CPU-sidecar AI remains BLOCKED, not the accepted model mode. Recommendation READY_WITH_DISCLOSED_LIMITATIONS for the exact localhost synthetic script; no unconditional clinical/public/exhaustive-feature signoff.

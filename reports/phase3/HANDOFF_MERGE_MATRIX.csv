@@ -1,0 +1,10 @@
+path,decision,reason
+backend/cc_api/clinical_catalog_v3.py,MERGED,Human-readable titles only; medical source values untouched
+backend/cc_api/integrated_routes.py,ADAPTED,GET /links exposes effective categories using existing authorized_scopes; revoked grants intersected
+backend/cc_api/onboarding_routes.py,KEPT_VERIFIED,Configured trusted PUBLIC_BASE_URL already passes native/Docker; no request Host trust expansion
+frontend/dist/assets/js/main.js,MERGED,"Safe role-checked return, real form/command actions, QR/link/key, 2MiB photo, draft edit, existing guest recovery and CI busy/focus retained"
+frontend/dist/assets/js/views.js,MERGED,Readable charts/documents/signal review/messaging/access/adherence; legacy records and newer research/intake recovery retained
+frontend/dist/assets/css/components.css,MERGED,"Dosing prominence, responsive invitation grid, detail anchor offset"
+backend/cc_api/profile_photos.py,KEPT_VERIFIED,"Existing bounded Linux codec, real multipart upload and reload PASS; native sips retained"
+Dockerfile;compose*.yaml;docker/,KEPT_AND_FIXED,Existing nonpublic Mac host bridge + CPU alternative; nonthinking NLP now real PASS; no topology rewrite
+three historical docs in patch,REFERENCE_ONLY,Current runbooks/checkpoints preserved; refresh final storyboard after live acceptance

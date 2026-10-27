@@ -16,7 +16,7 @@ def main():
     if previous:
         archive=OUT/('route-matrix-'+dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%SZ')+'.csv');archive.write_bytes(matrix.read_bytes())
     if not args.retry_incomplete:
-        with matrix.open('w') as f:csv.DictWriter(f,fieldnames=fields).writeheader()
+        with matrix.open('w') as f:csv.DictWriter(f,fieldnames=fields,lineterminator='\n').writeheader()
     pending={r['route'] for r in previous if r['status']!='READ-ONLY PASS'}
     updates={}
     with sync_playwright() as pw:
@@ -76,7 +76,7 @@ def main():
                     except Exception as e:row['status']='DEAD END/FAIL';row['reason']=type(e).__name__
                 updates[template]=row
                 if not args.retry_incomplete:
-                    with matrix.open('a') as f:csv.DictWriter(f,fieldnames=fields).writerow(row);f.flush();os.fsync(f.fileno())
+                    with matrix.open('a') as f:csv.DictWriter(f,fieldnames=fields,lineterminator='\n').writerow(row);f.flush();os.fsync(f.fileno())
                 record('inventory '+template,'PASS' if row['status']=='READ-ONLY PASS' else 'BLOCKED' if row['status']=='NOT RUN' else 'FAIL' if row['status']=='DEAD END/FAIL' else 'PARTIAL',time.monotonic()-start,role=role,method='live read-only route inventory',detail=row['reason'])
             if args.retry_incomplete:ctx.close();continue
             home={'guest':'/assessments','patient':'/patient/tasks','doctor':'/doctor','clinic_admin':'/clinic','researcher':'/research/demo-v3'}[role]
@@ -95,7 +95,7 @@ def main():
     if args.retry_incomplete:
         temp=matrix.with_suffix('.tmp')
         with temp.open('w') as f:
-            writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows(updates.get(row['route'],row) for row in previous)
+            writer=csv.DictWriter(f,fieldnames=fields,lineterminator='\n');writer.writeheader();writer.writerows(updates.get(row['route'],row) for row in previous)
         temp.replace(matrix)
     snapshot()
     print('Inventory persisted:',matrix)

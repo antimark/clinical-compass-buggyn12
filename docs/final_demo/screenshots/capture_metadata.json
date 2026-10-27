@@ -6,7 +6,7 @@
   },
   {
     "file": "02_doctor_ci_light.png",
-    "route": "/doctor/patients/c260f6987c60470e9a444e989d4c6e43/clinical-intelligence?case=effcae294dea4e31",
+    "route": "/doctor/patients/:patientId/clinical-intelligence?case=:caseId",
     "theme": "light"
   },
   {
@@ -17,7 +17,7 @@
   },
   {
     "file": "04_patient_light.png",
-    "route": "/patient/questionnaires/dq_b429f04f84c14753808027ed44850a0d/result",
+    "route": "/patient/questionnaires/:requestId/result",
     "theme": "light"
   },
   {
