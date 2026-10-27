@@ -15,7 +15,7 @@ export PYTHONPATH=backend:.
   --workspace /private/tmp/clinical-compass-jury-handoff-20261027 --port 8769
 ```
 
-If that server is already running, open `http://127.0.0.1:8769/#/demo/journeys` rather than starting a second process. For a new operator workspace choose a new private path; use `prepare_actors.py --workspace ...` and `evaluation_launcher privacy-setup --workspace ...` before serve. Generated role credentials stay mode 0600 outside source. Use independent browser profiles for roles. The patient is registered in the real UI; an invitation requires matching recipient, explicit categories and consent. QR is a secret for the recipient, not a slide asset. A localhost QR works on this Mac, not on a remote phone.
+If that server is already running, open `http://127.0.0.1:8769/#/demo/journeys` rather than starting a second process. For a new operator workspace choose a new private path; use `prepare_actors.py --workspace ...` and `evaluation_launcher privacy-setup --workspace ...` before serve. Generated role credentials stay mode 0600 outside source. The prepared coherent patient credentials are in private `jury-demo-patient.json`, with their full record linked to the same doctor; keep this file private. Use independent browser profiles for roles. The patient is registered in the real UI; an invitation requires matching recipient, explicit categories and consent. QR is a secret for the recipient, not a slide asset. A localhost QR works on this Mac, not on a remote phone.
 
 ## Updated 10–15 minute route
 

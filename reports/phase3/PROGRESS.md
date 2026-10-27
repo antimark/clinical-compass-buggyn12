@@ -14,13 +14,13 @@ HANDOFF A0 2026-10-27T20:19:02.174850+00:00: user requests selective integration
 Stage A selective integration PASS (source/contract level); see reports/phase3/HANDOFF_INTEGRATION.md and HANDOFF_MERGE_MATRIX.csv. Head before Stage A commit 6d7978a, review branch codex/jury-ux-docker-20261027; no push. Subagents 1/4, finished. Fresh native sandbox /private/tmp/clinical-compass-jury-handoff-20261027 serves :8769. Next: new action-level native E2E, then final container integration and bounded measurements. Reuse unaffected prior evidence; do not reset volumes or repeat full discovery.
 
 <!-- live-evidence-phase3:start -->
-Latest completed: `tests_e2e/test_handoff_live.py::test_explicit_pair_visibility_enable_and_revoke` (PASS).
+Latest completed: `tests_e2e/test_roles_live.py::test_patient_intake_messages_checkin_and_appointment` (PASS).
 
 Append-only observations (includes baseline failures and reruns; not unique acceptance counts):
 
 - authenticated persisted photo GET + Chromium reload: PASS 1
 - live Flask + SQLite + Chromium: FAIL 1
-- live Flask + SQLite + Chromium: PASS 137
+- live Flask + SQLite + Chromium: PASS 153
 - real Flask/Ollama missing-model response + Chromium: PASS 1
 - real authenticated HTTP; explicit synthetic fixture: PASS 4
 - real foreign local identities; Evaluation tenant authentication boundary; explicit current-patient consent + revoke: PASS 1
@@ -31,3 +31,68 @@ Append-only observations (includes baseline failures and reruns; not unique acce
 
 Raw: `reports/phase3/raw/scenarios.jsonl`. This automated observation summary does not set the phase gate.
 <!-- live-evidence-phase3:end -->
+
+Container load 20261027T204235Z: 1 clients, 1/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 2/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 3/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 4/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 5/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 6/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 7/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 8/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 9/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 10/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 11/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 12/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 13/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 14/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 15/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 16/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 17/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 18/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 19/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 1 clients, 20/20 samples flushed; current peak 1.
+
+Container load 20261027T204235Z: 3 clients, 3/20 samples flushed; current peak 3.
+
+Container load 20261027T204235Z: 3 clients, 6/20 samples flushed; current peak 3.
+
+Container load 20261027T204235Z: 3 clients, 9/20 samples flushed; current peak 3.
+
+Container load 20261027T204235Z: 3 clients, 12/20 samples flushed; current peak 3.
+
+Container load 20261027T204235Z: 3 clients, 15/20 samples flushed; current peak 3.
+
+Container load 20261027T204235Z: 3 clients, 18/20 samples flushed; current peak 3.
+
+Container load 20261027T204235Z: 3 clients, 20/20 samples flushed; current peak 3.
+
+Container load 20261027T204235Z: 5 clients, 5/20 samples flushed; current peak 5.
+
+Container load 20261027T204235Z: 5 clients, 10/20 samples flushed; current peak 5.
+
+Container load 20261027T204235Z: 5 clients, 15/20 samples flushed; current peak 5.
+
+Container load 20261027T204235Z: 5 clients, 20/20 samples flushed; current peak 5.
+
+
+Stage C PASS (2026-10-27T20:54:24.500399+00:00): final Docker126 distinct pytest E2E cases, real NLP22.194s and patient/doctor chats8.570/8.553s; live photo/negative upload guards; actual down-up + final restart session/keys/forms/plan/messages/photo;60 controlled reads0errors, p9517.85/25.17/28.74ms. Running image487 functional files equal source in both directions;102 routes/249 APIs/no static controls removed; parity1883 rows. See reports/phase3/DOCKER_TEST_REPORT.md, PERFORMANCE_REPORT.md, RUNTIME_SOURCE_MATCH.json and DOCKER_PARITY.csv. Stage D now final documentation/archive verification only. No app code/architecture/model requests remain necessary. Next: final acceptance/status/storyboard/defects, clean source+sanitized evidence ZIP, checksums, local delivery commit. No push authorized. Subagents1/4.

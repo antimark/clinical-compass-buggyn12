@@ -6,7 +6,7 @@ from cc_api.evaluation_launcher import workspace_config
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('organizer_builder',ROOT/'scripts/build_organizer.py');builder=importlib.util.module_from_spec(spec);spec.loader.exec_module(builder)
 
-@pytest.mark.parametrize('name',['backend/data/dev.sqlite','BACKEND/data/DEV.SQLITE','backend/cc_api/__pycache__/x.pyc','frontend/.DS_Store','backend/.ENV','backend/token.secret','tests/a.zip','tests/a.ZIP','tests/.env.example','frontend/x.sqlite-WAL','/backend/x.py','backend/../private.py','backend/a\\b.py'])
+@pytest.mark.parametrize('name',['backend/data/dev.sqlite','BACKEND/data/DEV.SQLITE','backend/cc_api/__pycache__/x.pyc','frontend/.DS_Store','backend/.ENV','backend/token.secret','tests/a.zip','tests/a.ZIP','tests/.env.example','frontend/x.sqlite-WAL','/backend/x.py','backend/../private.py','backend/a\\b.py','tests_e2e/jury-actors.json','tests_e2e/restart-session.json','frontend/jury-demo-patient.json','backend/jury-linked-patient.json','tests_e2e/workspace-key-hashes.json','tests_e2e/jury-second-doctor.json'])
 def test_forbidden_package_members(name):assert not builder.allowed(name)
 
 def test_source_allowlist_and_stable_private_workspace(tmp_path):

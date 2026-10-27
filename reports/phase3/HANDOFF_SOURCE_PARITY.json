@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-10-27T20:51:36.789484+00:00",
+  "revision": "50adacffa675cdcbd6419834b113b687f88325fd",
+  "current_routes": 102,
+  "current_api_operations": 249,
+  "registry_rows_before": 1883,
+  "registry_rows_final": 1883,
+  "comparisons": [
+    {
+      "baseline": "original_phase0_archive",
+      "routes": 102,
+      "api_operations": 249,
+      "static_controls": 49,
+      "missing_routes": [],
+      "missing_api": [],
+      "missing_static_controls": []
+    },
+    {
+      "baseline": "GitHub_675ce74",
+      "routes": 102,
+      "api_operations": 249,
+      "static_controls": 50,
+      "missing_routes": [],
+      "missing_api": [],
+      "missing_static_controls": []
+    }
+  ],
+  "gates": {
+    "native_core": {
+      "tests": 102,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "native_roles": {
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "native_source": {
+      "tests": 624,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 6
+    },
+    "container_core_ux": {
+      "tests": 117,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "container_final_roles": {
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "core_native": "PASS",
+  "core_container": "PASS",
+  "full_action_breadth": "PARTIAL; untested baseline controls retained, never promoted from source presence",
+  "source_hashes": {
+    "frontend/dist/assets/js/ui.js": "7188be85c38be5713fe48bcc8c335a22c92039ac21661b710b33e5c084f33beb",
+    "frontend/dist/assets/js/guest-assessments.js": "6025bd67bbba75b0231a135df625ed5eb3d59676b3880cc5b32d65bd45381ae8",
+    "frontend/dist/assets/js/main.js": "dcfbdba5bc68d2a60a239cdfc3b480d4a289fee3be03a3e1ac92432f19e50c21",
+    "frontend/dist/assets/js/views.js": "1039f47e3e30c5275b30f9ca5ad76fa8cabfca9dfd7e6187e4699096502929f9",
+    "frontend/dist/assets/js/clinical-demo.js": "2077db93baccaac1d8a2309e977cb3c7fc15849e775d83942def7f78ba0ca3e4",
+    "frontend/dist/assets/js/api-lab.js": "8fa63f37c05dfb75018243a33c84bd1331fd4900b9ae9fa126ba4b5be49c0ad1",
+    "frontend/dist/assets/js/api.js": "5b323897b8c2a8da16e671a5b3e4331352c3ea9da4123a5f2d346b1ea9854cf4"
+  }
+}

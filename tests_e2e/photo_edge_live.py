@@ -19,7 +19,7 @@ with sync_playwright() as pw:
   profile=p.request.get(BASE+'/api/v1/profiles/me').json();url=profile['photo_url'];r=p.request.get(BASE+url);assert r.ok and r.body().startswith(b'\x89PNG') and b'PRIVATE_SYNTHETIC_METADATA' not in r.body()
   show(p,'/doctor/profile/edit');expect(p.locator('img.doctor-photo').first).to_be_visible()
  before=profile['revision']
- for name,mime,data in [('malformed','image/png',b'not an image'),('mime_mismatch','image/jpeg',png(1,1)),('pixel_bomb','image/png',png(50000,50000)),('too_many_bytes','image/png',b'x'*(2*1024*1024+1))]:
+ for name,mime,data in ([] if os.environ.get('CC_PHOTO_READBACK_ONLY')=='1' else [('malformed','image/png',b'not an image'),('mime_mismatch','image/jpeg',png(1,1)),('pixel_bomb','image/png',png(50000,50000)),('too_many_bytes','image/png',b'x'*(2*1024*1024+1))]):
   with scenario('photo_reject_'+name,role='doctor',method='real multipart upload to running app; old image retained'):
    r=p.request.post(BASE+'/api/v1/profiles/me/photo',headers={'X-CSRF-Token':csrf(p)},multipart={'revision':str(before),'file':{'name':'synthetic.png','mimeType':mime,'buffer':data}})
    assert r.status==422,(name,r.status)

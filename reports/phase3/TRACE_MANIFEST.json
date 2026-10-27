@@ -1,0 +1,209 @@
+{
+  "timestamp": "2026-10-27T20:47:23.433217+00:00",
+  "traces": [
+    {
+      "mode": "native",
+      "private_filename": "handoff-20261027T203359Z-clinic_admin.zip",
+      "bytes": 47843,
+      "sha256": "2a73a3f9382d0bb370b2ad80573dfcae62ff43724ca547bacf237e6e4e4dd313",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "native",
+      "private_filename": "handoff-20261027T203359Z-doctor.zip",
+      "bytes": 1838652,
+      "sha256": "a4d7fa30a56dde63a6c6f1b9ba2521a2772b8576cc073020cbdf4a455b609cd4",
+      "event_methods": {
+        "page": 1,
+        "dialog": 4
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "native",
+      "private_filename": "handoff-20261027T203359Z-patient.zip",
+      "bytes": 126662,
+      "sha256": "329525e1a2aceb219ce3919bf934127ffecc136e4d027e3f325657082baf2e9b",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "native",
+      "private_filename": "handoff-20261027T203359Z-researcher.zip",
+      "bytes": 49008,
+      "sha256": "4c7a50177ea668557a58b94bdb058230801082e9444408bb532bfac729e6d8e1",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "native",
+      "private_filename": "handoff-clinic_admin.zip",
+      "bytes": 47246,
+      "sha256": "b421c2ee10aae499685ebda79c816eca18c7a1227e20959c0285b475d4d126c8",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "native",
+      "private_filename": "handoff-doctor.zip",
+      "bytes": 54466,
+      "sha256": "8225200e3960b18b3e995a77bbf9323405d5fdd254d5b04e320e58bafda1570c",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "native",
+      "private_filename": "handoff-patient.zip",
+      "bytes": 23867,
+      "sha256": "e1a975477744166933e82105dc9c70671ffae26c706e2efe1f2257a4e5eca168",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "native",
+      "private_filename": "handoff-researcher.zip",
+      "bytes": 48409,
+      "sha256": "6eb37ac36163351686c8f10e207603d17591d7de88c517107974434a86a386de",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "native",
+      "private_filename": "native-20261027T204310Z.zip",
+      "bytes": 345188,
+      "sha256": "25d5ae10b474aff3b8851ffe9a7e65e9adfcde9409f785eafb1f3161e416c28b",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "docker_host_gpu",
+      "private_filename": "handoff-20261027T203201Z-clinic_admin.zip",
+      "bytes": 51242,
+      "sha256": "2afc98f8ec83b9b356e49d13c53b21ea531f69a451e432c7b5b30e63fe24d49c",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "docker_host_gpu",
+      "private_filename": "handoff-20261027T203201Z-doctor.zip",
+      "bytes": 4092466,
+      "sha256": "4c4f9c21744ba2111ea9231ecedac0e0f4d89cfbd538254c0c2d84a418dbe42b",
+      "event_methods": {
+        "page": 1,
+        "dialog": 4
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "docker_host_gpu",
+      "private_filename": "handoff-20261027T203201Z-patient.zip",
+      "bytes": 2038870,
+      "sha256": "7efb1de517dedd9d79b22cc410d7731aa2fb13e4f3ffd2b8409bb47d04bec218",
+      "event_methods": {
+        "page": 1,
+        "dialog": 2
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "docker_host_gpu",
+      "private_filename": "handoff-20261027T203201Z-researcher.zip",
+      "bytes": 52410,
+      "sha256": "5a54453f76ddade457d492e1417a009fdf8eb3a791354d77148a4362ad8abcb3",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "docker_host_gpu",
+      "private_filename": "handoff-20261027T204020Z-clinic_admin.zip",
+      "bytes": 47841,
+      "sha256": "215641f7419bf8fa7ac392289d6fdac3f9470da405a6f39498686b6ce3601920",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "docker_host_gpu",
+      "private_filename": "handoff-20261027T204020Z-doctor.zip",
+      "bytes": 2057226,
+      "sha256": "b6614642bad1c07ae6564e0fa390463f8b6fde1f13684e5de5ca3ee9bc491c3e",
+      "event_methods": {
+        "page": 1,
+        "dialog": 4
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "docker_host_gpu",
+      "private_filename": "handoff-20261027T204020Z-patient.zip",
+      "bytes": 164820,
+      "sha256": "4bd4b4f0f13d8f7eb7c3310f4fe1cc7fe0f83a5f4350a36280c523c573e53c86",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "docker_host_gpu",
+      "private_filename": "handoff-20261027T204020Z-researcher.zip",
+      "bytes": 49001,
+      "sha256": "32fd578f670ac81e2b96c38dd1723bb25102ed3aaebf34f3119de0000baf1bb8",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    },
+    {
+      "mode": "docker_host_gpu",
+      "private_filename": "native-20261027T204448Z.zip",
+      "bytes": 356462,
+      "sha256": "27745306673f7991796c0507a95ac9e9f460656adcaea73514fd046f6fd9b0d6",
+      "event_methods": {
+        "page": 1
+      },
+      "recorded_page_error_events": 0,
+      "distribution": "private only; trace content/cookies/QR not included"
+    }
+  ],
+  "shared_evidence": "Only sanitized browser-timeline.jsonl, metrics and reports; no trace archive or screenshot with invitation tokens shipped",
+  "limitation": "Event counts depend on Playwright trace format; absence is not an exhaustive console audit"
+}
