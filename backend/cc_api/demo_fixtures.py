@@ -15,6 +15,10 @@ def initialize_demo_fixtures(app, SessionLocal):
         if workspace_enabled(app.config):
             from .patient_experience_fixtures import seed_patient_experience
             seed_patient_experience(SessionLocal, include_personas=False)
+            # Immutable bundled references/rules contain no patients or accounts.
+            # Keep exact ICD assistance available in fresh evaluation workspaces.
+            from .medical_references import seed_medical_references
+            seed_medical_references(SessionLocal)
         return
     if app.config['DEMO_MODE']:
         seed_demo(SessionLocal)

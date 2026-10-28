@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-10-28T10:42:14.891985+00:00",
+  "status": "PASS",
+  "baseline": "2cf8062",
+  "browser": {
+    "http://127.0.0.1:8769": {
+      "logged_checks": 95,
+      "failures": 0,
+      "distinct_medicine_entries": 77,
+      "all_pass": true
+    },
+    "http://127.0.0.1:8768": {
+      "logged_checks": 14,
+      "failures": 0,
+      "distinct_medicine_entries": 3,
+      "all_pass": true
+    }
+  },
+  "source_contracts": {
+    "n": 5,
+    "result": "PASS"
+  },
+  "frontend": "PASS_simulated_contracts_102routes_0errors",
+  "final_metadata_and_scroll": "PASS_focused_smokes_and_renderer",
+  "diagnosis_match": "native_and_Docker_saved_F41.1_Aviandr_catalog_back_name_only_PASS",
+  "raw_path": "reports/phase2/raw/catalog_visual_20261028.jsonl",
+  "raw_sha256": "2900a39b1d3300c3ab8bf3cfda5681cc28989894c37549a9e365639230010084",
+  "no_clinical_source_or_rule_changes": true,
+  "no_qwen_requests": true,
+  "full_app_audit_repeated": false
+}

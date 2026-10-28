@@ -1,3 +1,4 @@
+import {formDiagnoses,onDiagnosisInput,chooseMedication} from './medication-matches.js';
 import {api,bootstrap,getCsrf,segment} from './api.js';
 import {icon,esc,attr,link,button,state,errorState} from './ui.js';
 import {chrome,accountMenu,resolveView,roleHomes,roleNames,catalogDetail} from './views.js';
@@ -29,7 +30,7 @@ async function render(){const current=++renderId,{path}=routeInfo(),{route,param
  container.innerHTML=buildShell(path,content||`${pageTitle('Раздел недоступен')}${state('Не удалось открыть страницу','Проверьте маршрут.')}`);
  document.title=`${route?.title||'Clinical Compass'} · Clinical Compass`;
  if(path==='/invite/accept'||path.startsWith('/invite/')){let code=params.token||app.inviteToken;if(code){const input=$('#invite-token');if(input)input.value=code;}}
- if((path==='/clinical-library'||path==='/doctor/clinical-library')&&routeInfo().query.has('item')){let item=routeInfo().query.get('item')||'';let idx=item.indexOf(':');if(idx>0){const detail=byid('catalog-detail');if(detail){const html=await catalogDetail(item.slice(0,idx),item.slice(idx+1));if(current!==renderId)return;detail.innerHTML=html;detail.scrollIntoView({block:'start'});}}}
+ if((path==='/clinical-library'||path==='/doctor/clinical-library')&&routeInfo().query.has('item')){let item=routeInfo().query.get('item')||'';let idx=item.indexOf(':');if(idx>0){const detail=byid('catalog-detail');if(detail){const html=await catalogDetail(item.slice(0,idx),item.slice(idx+1));if(current!==renderId)return;detail.innerHTML=html;detail.scrollIntoView({block:'start',behavior:'instant'});}}}
 }
 function pageTitle(v){return `<h1 class="page-title">${esc(v)}</h1>`;}
 function navTo(path){if(!path.startsWith('/'))return;menuClose();closeModal();location.href='/#'+path;if(routeInfo().path===path)render();}
@@ -75,9 +76,9 @@ async function submit(form){if(!startBusy(form))return;clearValidation(form);let
  case 'team-visibility-create':{if(d.doctor_a===d.doctor_b)throw new Error('Выберите двух разных врачей');if(!form.querySelector('[name=confirmed]')?.checked)throw new Error('Нужно явное согласие');await api.post('/api/v1/care-team/visibility',{doctor_a:d.doctor_a,doctor_b:d.doctor_b,allow:true});toast('Разрешение на совместный доступ сохранено');await render();break;}
  case 'confirm-clinical-decision':{if(d.confirmed!=='on')throw new Error('Требуется личное подтверждение врача');await api.post('/api/v1/p0/decisions/'+segment(form.dataset.patient),{text:d.text,explicit_confirmation:true});toast('Подтверждённое решение сохранено');await render();break;}
  case 'adverse-review':{await api.post('/api/v1/p0/adverse-events/'+segment(form.dataset.id)+'/review',{status:d.status,review_text:d.review_text});toast('Оценка сохранена');await render();break;}
- case 'edit-clinical-document':{if(d.confirmed!=='on')throw new Error('Необходимо личное подтверждение врача');const items=[...form.querySelectorAll('fieldset[data-plan-item]')].map(field=>Object.fromEntries([...field.querySelectorAll('[name]')].map(input=>[input.name,input.value])));const diagnoses=[...form.querySelectorAll('[data-document-diagnosis]')].map(input=>JSON.parse(input.value));await api.put('/api/v1/clinical-workflow/documents/'+segment(form.dataset.id),{revision:Number(form.dataset.revision),mode:form.dataset.mode,content:{narrative:d.narrative||'',assessment:d.assessment||'',follow_up:d.follow_up||'',diagnoses,items}});toast('Изменения черновика сохранены сервером');await render();break;}
- case 'create-encounter':{if(d.confirmed!=='on')throw new Error('Необходимо подтверждение врача');const r=await api.post('/api/v1/clinical-workflow/patients/'+segment(form.dataset.patient)+'/documents',{kind:'encounter',mode:'quick',content:{narrative:d.narrative,assessment:'',follow_up:'',diagnoses:[],items:[]}});toast('Черновик приёма создан. Подпишите и опубликуйте после проверки.');await render();break;}
- case 'create-treatment':{if(d.confirmed!=='on')throw new Error('Необходимо подтверждение врача');const kind=form.dataset.kind;if(!['medication','behavioral'].includes(kind))throw new Error('Неизвестный тип плана');const item={item_type:kind,title:d.title,frequency:d.frequency,duration:d.duration||'',notes:d.notes||''};if(kind==='medication'){item.dose=d.dose;item.route=d.route||'';}await api.post('/api/v1/clinical-workflow/patients/'+segment(form.dataset.patient)+'/documents',{kind:'treatment',mode:'quick',content:{narrative:'',assessment:'',follow_up:'',diagnoses:[],items:[item]}});toast('Черновик плана создан. Чтобы пациент увидел его, подпишите и опубликуйте.');await render();break;}
+ case 'edit-clinical-document':{if(d.confirmed!=='on')throw new Error('Необходимо личное подтверждение врача');const items=[...form.querySelectorAll('fieldset[data-plan-item]')].map(field=>Object.fromEntries([...field.querySelectorAll('[name]')].map(input=>[input.name,input.value])));const diagnoses=form.querySelector('[data-diagnosis-row]')?await formDiagnoses(form):[...form.querySelectorAll('[data-document-diagnosis]')].map(input=>JSON.parse(input.value));await api.put('/api/v1/clinical-workflow/documents/'+segment(form.dataset.id),{revision:Number(form.dataset.revision),mode:form.dataset.mode,content:{narrative:d.narrative||'',assessment:d.assessment||'',follow_up:d.follow_up||'',diagnoses,items}});toast('Изменения черновика сохранены сервером');await render();break;}
+ case 'create-encounter':{if(d.confirmed!=='on')throw new Error('Необходимо подтверждение врача');const r=await api.post('/api/v1/clinical-workflow/patients/'+segment(form.dataset.patient)+'/documents',{kind:'encounter',mode:'quick',content:{narrative:d.narrative,assessment:'',follow_up:'',diagnoses:await formDiagnoses(form),items:[]}});toast('Черновик приёма создан. Подпишите и опубликуйте после проверки.');await render();break;}
+ case 'create-treatment':{if(d.confirmed!=='on')throw new Error('Необходимо подтверждение врача');const kind=form.dataset.kind;if(!['medication','behavioral'].includes(kind))throw new Error('Неизвестный тип плана');const item={item_type:kind,title:d.title,frequency:d.frequency,duration:d.duration||'',notes:d.notes||''};if(kind==='medication'){item.dose=d.dose;item.route=d.route||'';if(d.reference_id&&d.reference_version){item.reference_id=d.reference_id;item.reference_version=d.reference_version;}}await api.post('/api/v1/clinical-workflow/patients/'+segment(form.dataset.patient)+'/documents',{kind:'treatment',mode:'quick',content:{narrative:'',assessment:'',follow_up:'',diagnoses:[],items:[item]}});toast('Черновик плана создан. Чтобы пациент увидел его, подпишите и опубликуйте.');await render();break;}
  case 'signal-review':{await api.post('/api/v1/doctor-experience/signals/'+segment(form.dataset.id)+'/review',{status:d.status,assessment:d.assessment});toast('Оценка сигнала сохранена');await render();break;}
  case 'case-message':{await api.post('/api/v1/previsit-cases/'+segment(form.dataset.id)+'/messages',{text:d.text});toast('Сообщение отправлено');await render();break;}
  case 'peer-message':{await api.post('/api/v1/threads/doctor_peer/'+segment(form.dataset.id)+'/messages',{text:d.text});toast('Сообщение отправлено');await render();break;}
@@ -107,6 +108,8 @@ async function saveQuestionnaire(form,submitNow=false){const aid=form.dataset.id
  else toast('Черновик сохранён сервером');}
 async function runCommand(cmd,node){
  try{
+  if(cmd==='catalog-section'){const section=document.getElementById(node.dataset.section);if(section){section.focus({preventScroll:true});section.scrollIntoView({block:'start',behavior:'instant'});}return;}
+  if(cmd==='choose-reference-medication'){chooseMedication(node);toast('Название перенесено в форму. Дозу и режим определяет врач; ничего не сохранено.');return;}
   if(cmd==='menu'){menuToggle();return;}
   if(cmd==='settings'){settings();return;}
   if(cmd==='close-modal'){closeModal();return;}
@@ -152,8 +155,10 @@ function setupListeners(){
   if(menuOpen&&!e.target.closest('#floating-root')&&!e.target.closest('#avatar-button'))menuClose();
  });
  document.addEventListener('submit',e=>{const form=e.target.closest('form[data-form]');if(!form)return;e.preventDefault();submit(form);});
- document.addEventListener('change',e=>{if(e.target.id==='theme-switch'){setTheme(e.target.checked);return;}});
+ document.addEventListener('change',e=>{if(e.target.name==='diagnosis_status')onDiagnosisInput(e.target.closest('[data-diagnosis-row]').querySelector('[name=diagnosis_code]'));if(e.target.id==='theme-switch'){setTheme(e.target.checked);return;}});
  document.addEventListener('input',e=>{
+  if(e.target.name==='diagnosis_code')onDiagnosisInput(e.target);
+  if(e.target.id==='plan-title'){const f=e.target.form;if(f?.elements.reference_id){f.elements.reference_id.value='';f.elements.reference_version.value='';}}
   if(e.target.id==='doctor-search'){const q=e.target.value.toLocaleLowerCase('ru');document.querySelectorAll('#doctor-grid article').forEach(a=>{a.hidden=!a.textContent.toLocaleLowerCase('ru').includes(q);});}
   if(e.target.id==='patient-search'){const q=e.target.value.toLocaleLowerCase('ru');document.querySelectorAll('#patient-list .list-row').forEach(a=>{a.hidden=!a.textContent.toLocaleLowerCase('ru').includes(q);});}
  });

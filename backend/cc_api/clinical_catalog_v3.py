@@ -136,6 +136,20 @@ PUBLIC_SECTION_TITLES = {
     'drug_interactions':'Лекарственные взаимодействия',
     'language':'Язык источника',
     'source':'Источник',
+    'diagnosis_or_condition':'Диагноз / состояние', 'icd10_codes':'Коды МКБ-10 из источника',
+    'indication_status':'Статус показания в источнике', 'total_daily_dose_mg':'Суточная доза, мг',
+    'tablets_per_administration':'Таблеток за один приём', 'administration_times':'Время приёма',
+    'dose_titration':'Титрование дозы', 'max_daily_dose_mg':'Максимальная суточная доза, мг',
+    'initial_daily_dose_mg':'Начальная суточная доза, мг', 'dose_adjustment':'Коррекция дозы',
+    'before_meal_minutes':'До еды, минут', 'swallow_whole':'Проглатывать целиком',
+    'do_not_chew':'Не разжёвывать', 'missed_dose':'Пропуск приёма',
+    'discontinuation':'Прекращение приёма', 'active_substances':'Действующие вещества',
+    'strength_per_tablet':'Содержание в таблетке', 'strength_per_capsule':'Содержание в капсуле',
+    'amount':'Количество', 'unit':'Единица измерения', 'substance':'Вещество',
+    'salt_form':'Солевая форма', 'amount_per_tablet_mg':'Содержание в таблетке, мг',
+    'excipients':'Вспомогательные вещества', 'tablet_core':'Ядро таблетки',
+    'film_coating':'Оболочка', 'components':'Компоненты',
+
 }
 
 def _plain_lines(value, prefix='', depth=0):
@@ -166,6 +180,48 @@ def _safe_sections(raw, fields):
              'items': _plain_lines(raw[field])}
             for field in fields if field in raw and _plain_lines(raw[field])]
 
+
+def _medicine_key_sections(raw):
+    """Read-only source projection; never infer indications or calculate doses."""
+    product = raw.get('product') or {}
+    instructions = raw.get('indications_and_dosing') or []
+    indications, dosing = [], []
+    for instruction in instructions:
+        if not isinstance(instruction, dict):
+            continue
+        context = instruction.get('diagnosis_or_condition', '')
+        indications.extend(_plain_lines({k:v for k,v in instruction.items()
+            if k in ('diagnosis_or_condition','icd10_codes','age_min_years','indication_status')}))
+        if context:
+            dosing.append(str(context))
+        # Include titration, maxima, interaction-dependent regimens as
+        # represented in the source; never replace them with a generic dose.
+        dosing.extend(_plain_lines({k:v for k,v in instruction.items()
+            if k not in ('diagnosis_or_condition','icd10_codes','indication_status')}))
+    summary = raw.get('record_type') == 'active_substance_summary'
+    safety = raw.get('safety') or {}
+    composition = {k:product[k] for k in ('dosage_form','international_nonproprietary_name',
+        'strength_per_tablet','strength_per_capsule','active_substances','excipients') if k in product}
+    data = [
+        ('indications','Показания и диагнозы',indications if not summary else _plain_lines(raw.get('diagnosis_links')),
+            'Связи с диагнозами в сводной карточке не подтверждают показания конкретного препарата.' if summary else 'Показания из включённой инструкции; проверьте её актуальность.'),
+        ('dosing','Дозировка',dosing,'Режимы из источника, не индивидуальное назначение.'),
+        ('administration','Как применять',_plain_lines(raw.get('administration_instructions')),''),
+        ('composition','Состав препарата',_plain_lines(composition),''),
+        ('contraindications','Противопоказания',_plain_lines(raw.get('contraindications') if not summary else safety.get('contraindications')),''),
+        ('cautions','Применять с осторожностью',_plain_lines({k:raw[k] for k in ('precautions','excipient_warnings','special_populations') if k in raw}) if not summary else _plain_lines(safety.get('special_notes')),''),
+    ]
+    missing = {
+        'indications':'Показания в этой карточке не приведены.',
+        'dosing':'Дозировки не приведены. Откройте инструкцию конкретного препарата.',
+        'administration':'Способ применения в этой карточке не приведён.',
+        'composition':'Состав конкретной лекарственной формы не приведён.',
+        'contraindications':'Перечень не приведён. Это не означает отсутствия противопоказаний.',
+        'cautions':'Сведения не приведены. Это не означает отсутствия ограничений.',
+    }
+    return [dict(key=key,title=title,items=items,note=note,missing=missing[key] if not items else '',
+        warning=key in ('contraindications','cautions')) for key,title,items,note in data]
+
 @lru_cache(maxsize=1)
 def _index():
     data={}
@@ -190,6 +246,7 @@ def _index():
         # Every present field in all active-substance summaries is preserved.
         # Source links and reviewer provenance are reference data, not approvals.
         data[('medicine',id)]['reference_sections']=_safe_sections(raw, tuple(raw.keys()))
+        data[('medicine',id)]['medicine_key_sections']=_medicine_key_sections(raw)
     for path in sorted((ROOT/'medicines/source_product_instructions').glob('*.json')):
         raw=_json(path);prod=raw.get('product') or {};id='product:'+path.stem
         inn=str(prod.get('international_nonproprietary_name_latin') or '')
@@ -248,6 +305,7 @@ def _index():
                          'items': _plain_lines(value)} for field,value in raw.items()
                         if _plain_lines(value))
         item['reference_sections']=sections
+        item['medicine_key_sections']=_medicine_key_sections(raw)
         item['reference_warning']='Снимок инструкции из включённого источника: проверьте актуальность по официальной инструкции и противопоказания перед применением.'
 
         data[('medicine',id)]=item
@@ -298,7 +356,7 @@ def search(*, q='', kind='', diagnosis_code='', active_substance='', category=''
         if sn and sn not in normalized(item['source']):continue
         hay=normalized(' '.join([item['title'],item['id'],item['code'],item['description'],*item['aliases']]))
         if qn and (not item['code'].casefold().startswith(qn) if is_icd_query and item['kind']=='diagnosis' else qn not in hay):continue
-        rows.append({k:v for k,v in item.items() if k not in ('reference_sections','reference_warning')})
+        rows.append({k:v for k,v in item.items() if k not in ('reference_sections','reference_warning','medicine_key_sections')})
     if sort=='title_asc':rows.sort(key=lambda x:normalized(x['title']))
     elif sort=='title_desc':rows.sort(key=lambda x:normalized(x['title']),reverse=True)
     elif sort=='code':rows.sort(key=lambda x:(x['code'] or 'ZZZ',normalized(x['title'])))

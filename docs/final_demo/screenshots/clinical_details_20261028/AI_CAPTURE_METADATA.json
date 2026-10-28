@@ -1,0 +1,10 @@
+{
+  "mode": "deterministic_mock_fallback",
+  "analysis_status": "needs_review",
+  "model_version": "lexical-fixture-baseline-v0.1",
+  "degraded_reason": null,
+  "seconds": 47.207,
+  "timestamp": "2026-10-28T10:05:10.623723+00:00",
+  "tags": 3,
+  "evidence": 3
+}

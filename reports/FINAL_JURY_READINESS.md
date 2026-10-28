@@ -1,3 +1,5 @@
+> Обновление 28.10.2026: [новый стресс-тест](stress/20261028/STRESS_TEST_REPORT.md) завершён с раскрытыми ошибками. HTTP keep-alive24 263/0, сохранность PASS; текущий AI-прогон0/3 успешных Qwen inference. Историческая готовность ниже относится к прежнему проверенному запуску. Перед новым живым AI-показом требуется устранить timeout/HTTP failure и подтвердить настоящий NLP; сегодняшняя AI-готовность не подтверждена.
+
 # Clinical Compass — final local jury readiness
 
 **Recommendation: READY_WITH_DISCLOSED_LIMITATIONS for the documented localhost synthetic jury demonstration.** Native Mac and Linux/arm64 Docker application work with actual local Qwen, persistent state and all four roles. Clinical/public deployment and exhaustive acceptance of every individual source control remain unapproved/PARTIAL. No P0 failure remains in the tested core journeys.

@@ -1,0 +1,17 @@
+{
+  "python_compile": "PASS",
+  "reject_demo_port_8769": "PASS_expected_AssertionError_before_requests",
+  "readme_local_links": {
+    "n": 18,
+    "missing": 0
+  },
+  "docker_post_load": {
+    "restart_count": 0,
+    "oom_killed": false,
+    "tracebacks": 0,
+    "worker_timeouts": 0,
+    "oom_mentions": 0
+  },
+  "app_changes": false,
+  "full_regression_repeated": false
+}
