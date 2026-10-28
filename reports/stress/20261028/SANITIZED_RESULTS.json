@@ -1,0 +1,861 @@
+{
+  "20261028-001350Z": {
+    "stages": [
+      {
+        "run_id": "20261028-001350Z",
+        "stage": "read-c1",
+        "kind": "read",
+        "concurrency": 1,
+        "n": 5080,
+        "failures": 0,
+        "status_counts": {
+          "200": 5080
+        },
+        "elapsed_seconds": 20.001616917026695,
+        "throughput_rps": 253.9794668137839,
+        "p50_ms": 3.3946874900721014,
+        "p95_ms": 6.069691650918686,
+        "p99_ms": 9.197508731740529,
+        "peak_inflight": 1,
+        "halted": false,
+        "operations": {
+          "catalog_search": 2119,
+          "medicine_detail": 846,
+          "patient_dashboard": 846,
+          "doctor_patients": 423,
+          "research_summary": 423,
+          "clinic_staff": 423
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; urllib fresh HTTP connections",
+        "goodput_rps": 253.9794668137839
+      },
+      {
+        "run_id": "20261028-001350Z",
+        "stage": "read-c5",
+        "kind": "read",
+        "concurrency": 5,
+        "n": 6190,
+        "failures": 0,
+        "status_counts": {
+          "200": 6190
+        },
+        "elapsed_seconds": 20.015536583028734,
+        "throughput_rps": 309.2597580046158,
+        "p50_ms": 14.482750004390255,
+        "p95_ms": 29.161037207813923,
+        "p99_ms": 40.77825536020086,
+        "peak_inflight": 5,
+        "halted": false,
+        "operations": {
+          "catalog_search": 2580,
+          "medicine_detail": 1032,
+          "patient_dashboard": 1032,
+          "doctor_patients": 516,
+          "research_summary": 515,
+          "clinic_staff": 515
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; urllib fresh HTTP connections",
+        "goodput_rps": 309.2597580046158
+      },
+      {
+        "run_id": "20261028-001350Z",
+        "stage": "read-c10",
+        "kind": "read",
+        "concurrency": 10,
+        "n": 5881,
+        "failures": 0,
+        "status_counts": {
+          "200": 5881
+        },
+        "elapsed_seconds": 20.02347637497587,
+        "throughput_rps": 293.7052432788203,
+        "p50_ms": 31.511500012129545,
+        "p95_ms": 55.174209002871066,
+        "p99_ms": 82.8786828322335,
+        "peak_inflight": 10,
+        "halted": false,
+        "operations": {
+          "catalog_search": 2447,
+          "patient_dashboard": 981,
+          "medicine_detail": 981,
+          "doctor_patients": 492,
+          "research_summary": 491,
+          "clinic_staff": 489
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; urllib fresh HTTP connections",
+        "goodput_rps": 293.7052432788203
+      },
+      {
+        "run_id": "20261028-001350Z",
+        "stage": "read-c20",
+        "kind": "read",
+        "concurrency": 20,
+        "n": 1185,
+        "failures": 6,
+        "status_counts": {
+          "200": 1179,
+          "0": 6
+        },
+        "elapsed_seconds": 4.541877583018504,
+        "throughput_rps": 260.9053146721881,
+        "p50_ms": 69.75866702850908,
+        "p95_ms": 146.01525822654358,
+        "p99_ms": 198.00290127517692,
+        "peak_inflight": 20,
+        "halted": true,
+        "operations": {
+          "catalog_search": 494,
+          "medicine_detail": 198,
+          "research_summary": 97,
+          "patient_dashboard": 199,
+          "doctor_patients": 99,
+          "clinic_staff": 98
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; urllib fresh HTTP connections",
+        "goodput_rps": 259.5842751042277
+      },
+      {
+        "run_id": "20261028-001350Z",
+        "stage": "mixed-write-c1",
+        "kind": "mixed-write",
+        "concurrency": 1,
+        "n": 3075,
+        "failures": 0,
+        "status_counts": {
+          "201": 615,
+          "200": 2460
+        },
+        "elapsed_seconds": 15.003656458982732,
+        "throughput_rps": 204.95004057220922,
+        "p50_ms": 3.6299999919719994,
+        "p95_ms": 12.105975113809103,
+        "p99_ms": 15.529502665158358,
+        "peak_inflight": 1,
+        "halted": false,
+        "operations": {
+          "checkin_write": 615,
+          "catalog_search": 1027,
+          "medicine_detail": 409,
+          "patient_dashboard": 410,
+          "doctor_patients": 205,
+          "clinic_staff": 205,
+          "research_summary": 204
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; urllib fresh HTTP connections",
+        "goodput_rps": 204.95004057220922
+      },
+      {
+        "run_id": "20261028-001350Z",
+        "stage": "mixed-write-c5",
+        "kind": "mixed-write",
+        "concurrency": 5,
+        "n": 104,
+        "failures": 75,
+        "status_counts": {
+          "200": 22,
+          "201": 7,
+          "0": 75
+        },
+        "elapsed_seconds": 0.15679987496696413,
+        "throughput_rps": 663.2658350136539,
+        "p50_ms": 4.545000003417954,
+        "p95_ms": 18.15871704893652,
+        "p99_ms": 34.0507515106583,
+        "peak_inflight": 5,
+        "halted": true,
+        "operations": {
+          "catalog_search": 34,
+          "checkin_write": 20,
+          "medicine_detail": 15,
+          "patient_dashboard": 15,
+          "doctor_patients": 9,
+          "clinic_staff": 7,
+          "research_summary": 4
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; urllib fresh HTTP connections",
+        "goodput_rps": 184.94912707111504
+      }
+    ],
+    "resources": {
+      "n": 57,
+      "app_cpu_percent": 177.84,
+      "app_memory_mib": 119.5,
+      "client_cpu_percent": 29.4,
+      "client_rss_mib": 30.484375
+    },
+    "recovery": [
+      {
+        "after": "baseline",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.3263335169758648,
+        "p95_ms": 2.9075539496261626
+      },
+      {
+        "after": "read-c1",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 1.5987914812285453,
+        "p95_ms": 2.3859374836320044
+      },
+      {
+        "after": "read-c5",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.3335209989454597,
+        "p95_ms": 4.238345770863816
+      },
+      {
+        "after": "read-c10",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.1530000085476786,
+        "p95_ms": 3.1286900979466723
+      },
+      {
+        "after": "read-c20",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.192791522247717,
+        "p95_ms": 2.7322562469635154
+      },
+      {
+        "after": "mixed-write-c1",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 1.7949164612218738,
+        "p95_ms": 3.251828654902056
+      },
+      {
+        "after": "mixed-write-c5",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.1924374741502106,
+        "p95_ms": 3.022512650932185
+      },
+      {
+        "after": "app-restart",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 9.21985402237624,
+        "p95_ms": 56.00979619484859
+      }
+    ],
+    "llm": [
+      {
+        "burst": 2,
+        "index": 1,
+        "http_status": 429,
+        "elapsed_seconds": 0.017452166008297354,
+        "analysis_status": null,
+        "mode": null,
+        "model": null,
+        "tag_count": 0,
+        "evidence_count": 0,
+        "error_code": "CI_BUSY"
+      },
+      {
+        "burst": 2,
+        "index": 0,
+        "http_status": 200,
+        "elapsed_seconds": 47.10799454204971,
+        "analysis_status": "needs_review",
+        "mode": "deterministic_mock_fallback",
+        "model": "lexical-fixture-baseline-v0.1",
+        "tag_count": 3,
+        "evidence_count": 3,
+        "error_code": "local_timeout"
+      }
+    ],
+    "persistence": [
+      {
+        "integrity": "ok",
+        "foreign_key_violations": 0,
+        "acknowledged_writes": 622,
+        "persisted_matching_marker": 622,
+        "missing_acknowledged": 0,
+        "additional_unacknowledged_writes": 0,
+        "same_after_restart": true,
+        "keys_unchanged": true,
+        "session_survived": true
+      }
+    ],
+    "completion": [
+      {
+        "status": "MEASURED",
+        "run_id": "20261028-001350Z",
+        "mode": "finish"
+      }
+    ],
+    "request_count": 21515,
+    "failures": 81
+  },
+  "20261028-100714Z": {
+    "stages": [
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "read-c1",
+        "kind": "read",
+        "concurrency": 1,
+        "n": 1450,
+        "failures": 0,
+        "status_counts": {
+          "200": 1450
+        },
+        "elapsed_seconds": 20.00347995897755,
+        "throughput_rps": 72.48738734328278,
+        "goodput_rps": 72.48738734328278,
+        "p50_ms": 5.0886039971373975,
+        "p95_ms": 41.46736466209404,
+        "p99_ms": 100.22747776994947,
+        "peak_inflight": 1,
+        "halted": false,
+        "operations": {
+          "catalog_search": 605,
+          "medicine_detail": 242,
+          "patient_dashboard": 242,
+          "doctor_patients": 121,
+          "research_summary": 120,
+          "clinic_staff": 120
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "read-c5",
+        "kind": "read",
+        "concurrency": 5,
+        "n": 1458,
+        "failures": 0,
+        "status_counts": {
+          "200": 1458
+        },
+        "elapsed_seconds": 20.041944166994654,
+        "throughput_rps": 72.74743347509441,
+        "goodput_rps": 72.74743347509441,
+        "p50_ms": 22.25099949282594,
+        "p95_ms": 236.18441259022796,
+        "p99_ms": 574.1694341605762,
+        "peak_inflight": 5,
+        "halted": false,
+        "operations": {
+          "catalog_search": 609,
+          "medicine_detail": 246,
+          "patient_dashboard": 243,
+          "doctor_patients": 120,
+          "research_summary": 120,
+          "clinic_staff": 120
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "read-c10",
+        "kind": "read",
+        "concurrency": 10,
+        "n": 2888,
+        "failures": 0,
+        "status_counts": {
+          "200": 2888
+        },
+        "elapsed_seconds": 20.187612791953143,
+        "throughput_rps": 143.05802423311624,
+        "goodput_rps": 143.05802423311624,
+        "p50_ms": 45.307292020879686,
+        "p95_ms": 191.9645875052087,
+        "p99_ms": 338.92895758443086,
+        "peak_inflight": 10,
+        "halted": false,
+        "operations": {
+          "medicine_detail": 483,
+          "catalog_search": 1204,
+          "doctor_patients": 239,
+          "patient_dashboard": 484,
+          "research_summary": 239,
+          "clinic_staff": 239
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "read-c20",
+        "kind": "read",
+        "concurrency": 20,
+        "n": 3118,
+        "failures": 0,
+        "status_counts": {
+          "200": 3118
+        },
+        "elapsed_seconds": 20.253766499983612,
+        "throughput_rps": 153.9466745606316,
+        "goodput_rps": 153.9466745606316,
+        "p50_ms": 111.76654152222909,
+        "p95_ms": 263.0289482505757,
+        "p99_ms": 392.06023472652294,
+        "peak_inflight": 20,
+        "halted": false,
+        "operations": {
+          "catalog_search": 1301,
+          "medicine_detail": 525,
+          "patient_dashboard": 524,
+          "research_summary": 256,
+          "clinic_staff": 257,
+          "doctor_patients": 255
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "read-c40",
+        "kind": "read",
+        "concurrency": 40,
+        "n": 3030,
+        "failures": 0,
+        "status_counts": {
+          "200": 3030
+        },
+        "elapsed_seconds": 20.323102166992612,
+        "throughput_rps": 149.091412083787,
+        "goodput_rps": 149.091412083787,
+        "p50_ms": 236.6996464843396,
+        "p95_ms": 477.1273814199954,
+        "p99_ms": 827.8370535420268,
+        "peak_inflight": 40,
+        "halted": false,
+        "operations": {
+          "medicine_detail": 510,
+          "catalog_search": 1266,
+          "clinic_staff": 251,
+          "doctor_patients": 249,
+          "patient_dashboard": 505,
+          "research_summary": 249
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "read-c80",
+        "kind": "read",
+        "concurrency": 80,
+        "n": 3264,
+        "failures": 0,
+        "status_counts": {
+          "200": 3264
+        },
+        "elapsed_seconds": 20.700264291954227,
+        "throughput_rps": 157.6791462159568,
+        "goodput_rps": 157.6791462159568,
+        "p50_ms": 465.628125006333,
+        "p95_ms": 805.5615687888347,
+        "p99_ms": 926.333195712068,
+        "peak_inflight": 80,
+        "halted": false,
+        "operations": {
+          "clinic_staff": 268,
+          "catalog_search": 1356,
+          "medicine_detail": 552,
+          "research_summary": 270,
+          "doctor_patients": 272,
+          "patient_dashboard": 546
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "read-c160",
+        "kind": "read",
+        "concurrency": 160,
+        "n": 2505,
+        "failures": 0,
+        "status_counts": {
+          "200": 2505
+        },
+        "elapsed_seconds": 20.89040695800213,
+        "throughput_rps": 119.91149837511674,
+        "goodput_rps": 119.91149837511674,
+        "p50_ms": 1011.2470000167377,
+        "p95_ms": 3332.296658016275,
+        "p99_ms": 3696.4171099779196,
+        "peak_inflight": 160,
+        "halted": false,
+        "operations": {
+          "catalog_search": 1065,
+          "clinic_staff": 205,
+          "research_summary": 201,
+          "doctor_patients": 203,
+          "medicine_detail": 419,
+          "patient_dashboard": 412
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "mixed-write-c1",
+        "kind": "mixed-write",
+        "concurrency": 1,
+        "n": 916,
+        "failures": 0,
+        "status_counts": {
+          "201": 184,
+          "200": 732
+        },
+        "elapsed_seconds": 15.001184749999084,
+        "throughput_rps": 61.0618437987077,
+        "goodput_rps": 61.0618437987077,
+        "p50_ms": 6.142333470052108,
+        "p95_ms": 43.3843337232247,
+        "p99_ms": 95.42808120313573,
+        "peak_inflight": 1,
+        "halted": false,
+        "operations": {
+          "checkin_write": 184,
+          "catalog_search": 307,
+          "medicine_detail": 121,
+          "patient_dashboard": 122,
+          "doctor_patients": 61,
+          "clinic_staff": 61,
+          "research_summary": 60
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "mixed-write-c5",
+        "kind": "mixed-write",
+        "concurrency": 5,
+        "n": 713,
+        "failures": 0,
+        "status_counts": {
+          "200": 570,
+          "201": 143
+        },
+        "elapsed_seconds": 15.056036624999251,
+        "throughput_rps": 47.35642040190876,
+        "goodput_rps": 47.35642040190876,
+        "p50_ms": 32.85987500566989,
+        "p95_ms": 374.94476659921924,
+        "p99_ms": 694.158254994545,
+        "peak_inflight": 5,
+        "halted": false,
+        "operations": {
+          "catalog_search": 239,
+          "checkin_write": 143,
+          "medicine_detail": 94,
+          "patient_dashboard": 97,
+          "doctor_patients": 49,
+          "clinic_staff": 48,
+          "research_summary": 43
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "mixed-write-c10",
+        "kind": "mixed-write",
+        "concurrency": 10,
+        "n": 1766,
+        "failures": 0,
+        "status_counts": {
+          "200": 1414,
+          "201": 352
+        },
+        "elapsed_seconds": 16.751676749961916,
+        "throughput_rps": 105.42228257860903,
+        "goodput_rps": 105.42228257860903,
+        "p50_ms": 50.414146011462435,
+        "p95_ms": 264.61362474947236,
+        "p99_ms": 455.7491317187663,
+        "peak_inflight": 10,
+        "halted": false,
+        "operations": {
+          "catalog_search": 586,
+          "checkin_write": 352,
+          "doctor_patients": 118,
+          "medicine_detail": 240,
+          "patient_dashboard": 239,
+          "clinic_staff": 115,
+          "research_summary": 116
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "mixed-write-c20",
+        "kind": "mixed-write",
+        "concurrency": 20,
+        "n": 1592,
+        "failures": 0,
+        "status_counts": {
+          "200": 1274,
+          "201": 318
+        },
+        "elapsed_seconds": 15.234909833990969,
+        "throughput_rps": 104.49684424439789,
+        "goodput_rps": 104.49684424439789,
+        "p50_ms": 143.03370847483166,
+        "p95_ms": 448.7805478012886,
+        "p99_ms": 609.0132269816237,
+        "peak_inflight": 20,
+        "halted": false,
+        "operations": {
+          "catalog_search": 532,
+          "checkin_write": 318,
+          "medicine_detail": 213,
+          "patient_dashboard": 211,
+          "clinic_staff": 107,
+          "doctor_patients": 112,
+          "research_summary": 99
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      },
+      {
+        "run_id": "20261028-100714Z",
+        "stage": "mixed-write-c40",
+        "kind": "mixed-write",
+        "concurrency": 40,
+        "n": 1563,
+        "failures": 0,
+        "status_counts": {
+          "200": 1250,
+          "201": 313
+        },
+        "elapsed_seconds": 15.532755833002739,
+        "throughput_rps": 100.62605868554661,
+        "goodput_rps": 100.62605868554661,
+        "p50_ms": 359.8789589595981,
+        "p95_ms": 659.6157581021538,
+        "p99_ms": 865.6370694015636,
+        "peak_inflight": 40,
+        "halted": false,
+        "operations": {
+          "catalog_search": 530,
+          "checkin_write": 313,
+          "clinic_staff": 91,
+          "research_summary": 109,
+          "doctor_patients": 94,
+          "medicine_detail": 213,
+          "patient_dashboard": 213
+        },
+        "method": "closed-loop, no RPS pacing, independent cookie jars cloned from four ordinary role sessions; one persistent HTTP/1.1 connection per worker; no transparent retries"
+      }
+    ],
+    "resources": {
+      "n": 121,
+      "app_cpu_percent": 346.58,
+      "app_memory_mib": 121.5,
+      "client_cpu_percent": 16.4,
+      "client_rss_mib": 40.203125
+    },
+    "recovery": [
+      {
+        "after": "baseline",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 16.745416505727917,
+        "p95_ms": 24.296926870010793
+      },
+      {
+        "after": "read-c1",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 3.97333299042657,
+        "p95_ms": 6.127450155327095
+      },
+      {
+        "after": "read-c5",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.994917012983933,
+        "p95_ms": 4.356597582227549
+      },
+      {
+        "after": "read-c10",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 3.259937511757016,
+        "p95_ms": 5.471904212026856
+      },
+      {
+        "after": "read-c20",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 1.8775835051201284,
+        "p95_ms": 2.9627044714288777
+      },
+      {
+        "after": "read-c40",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 1.6498540062457323,
+        "p95_ms": 2.5457935786107546
+      },
+      {
+        "after": "read-c80",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.5945414963644,
+        "p95_ms": 4.7515584185021
+      },
+      {
+        "after": "read-c160",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.1618754835799336,
+        "p95_ms": 4.78108317183796
+      },
+      {
+        "after": "mixed-write-c1",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.8624790138565004,
+        "p95_ms": 3.915220667840912
+      },
+      {
+        "after": "mixed-write-c5",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 1.6755414835643023,
+        "p95_ms": 2.5074916251469395
+      },
+      {
+        "after": "mixed-write-c10",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 13.444291515043005,
+        "p95_ms": 26.284281379776075
+      },
+      {
+        "after": "mixed-write-c20",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 1.952125021489337,
+        "p95_ms": 3.93986616109032
+      },
+      {
+        "after": "mixed-write-c40",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 1.675916981184855,
+        "p95_ms": 2.496737334877252
+      },
+      {
+        "after": "qwen-burst-2",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 3.3686874667182565,
+        "p95_ms": 7.795787689974528
+      },
+      {
+        "after": "qwen-burst-4",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 2.9836460016667843,
+        "p95_ms": 3.8162419863510872
+      },
+      {
+        "after": "app-restart",
+        "n": 10,
+        "all_200": true,
+        "p50_ms": 10.797687515150756,
+        "p95_ms": 54.22753573220682
+      }
+    ],
+    "llm": [
+      {
+        "burst": 2,
+        "index": 0,
+        "http_status": 429,
+        "elapsed_seconds": 0.02595875004772097,
+        "analysis_status": null,
+        "mode": null,
+        "model": null,
+        "tag_count": 0,
+        "evidence_count": 0,
+        "error_code": "CI_BUSY"
+      },
+      {
+        "burst": 2,
+        "index": 1,
+        "http_status": 200,
+        "elapsed_seconds": 45.17775512498338,
+        "analysis_status": "needs_review",
+        "mode": "deterministic_mock_fallback",
+        "model": "lexical-fixture-baseline-v0.1",
+        "tag_count": 3,
+        "evidence_count": 3,
+        "error_code": "local_timeout"
+      },
+      {
+        "burst": 4,
+        "index": 3,
+        "http_status": 429,
+        "elapsed_seconds": 0.03099429199937731,
+        "analysis_status": null,
+        "mode": null,
+        "model": null,
+        "tag_count": 0,
+        "evidence_count": 0,
+        "error_code": "CI_BUSY"
+      },
+      {
+        "burst": 4,
+        "index": 2,
+        "http_status": 429,
+        "elapsed_seconds": 0.03129395900759846,
+        "analysis_status": null,
+        "mode": null,
+        "model": null,
+        "tag_count": 0,
+        "evidence_count": 0,
+        "error_code": "CI_BUSY"
+      },
+      {
+        "burst": 4,
+        "index": 1,
+        "http_status": 429,
+        "elapsed_seconds": 0.034573249984532595,
+        "analysis_status": null,
+        "mode": null,
+        "model": null,
+        "tag_count": 0,
+        "evidence_count": 0,
+        "error_code": "CI_BUSY"
+      },
+      {
+        "burst": 4,
+        "index": 0,
+        "http_status": 200,
+        "elapsed_seconds": 0.06031800003256649,
+        "analysis_status": "needs_review",
+        "mode": "deterministic_mock_fallback",
+        "model": "lexical-fixture-baseline-v0.1",
+        "tag_count": 3,
+        "evidence_count": 3,
+        "error_code": "local_http_failure"
+      }
+    ],
+    "persistence": [
+      {
+        "integrity": "ok",
+        "foreign_key_violations": 0,
+        "acknowledged_writes": 1310,
+        "persisted_matching_marker": 1310,
+        "missing_acknowledged": 0,
+        "additional_unacknowledged_writes": 0,
+        "same_after_restart": true,
+        "keys_unchanged": true,
+        "session_survived": true
+      }
+    ],
+    "completion": [
+      {
+        "status": "COMPLETE",
+        "run_id": "20261028-100714Z",
+        "requests": 24263,
+        "stages": 12
+      }
+    ],
+    "request_count": 24263,
+    "failures": 0
+  }
+}

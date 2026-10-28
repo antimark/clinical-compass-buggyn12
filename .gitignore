@@ -24,3 +24,6 @@ test_reports/
 .agents/
 
 deliverables/
+
+# Local append-only stress request traces; sanitized summaries are versioned.
+reports/stress/*/raw/
