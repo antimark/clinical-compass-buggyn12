@@ -30,7 +30,7 @@ async function render(){const current=++renderId,{path}=routeInfo(),{route,param
  container.innerHTML=buildShell(path,content||`${pageTitle('Раздел недоступен')}${state('Не удалось открыть страницу','Проверьте маршрут.')}`);
  document.title=`${route?.title||'Clinical Compass'} · Clinical Compass`;
  if(path==='/invite/accept'||path.startsWith('/invite/')){let code=params.token||app.inviteToken;if(code){const input=$('#invite-token');if(input)input.value=code;}}
- if((path==='/clinical-library'||path==='/doctor/clinical-library')&&routeInfo().query.has('item')){let item=routeInfo().query.get('item')||'';let idx=item.indexOf(':');if(idx>0){const detail=byid('catalog-detail');if(detail){const html=await catalogDetail(item.slice(0,idx),item.slice(idx+1));if(current!==renderId)return;detail.innerHTML=html;detail.scrollIntoView({block:'start'});}}}
+ if((path==='/clinical-library'||path==='/doctor/clinical-library')&&routeInfo().query.has('item')){let item=routeInfo().query.get('item')||'';let idx=item.indexOf(':');if(idx>0){const detail=byid('catalog-detail');if(detail){const html=await catalogDetail(item.slice(0,idx),item.slice(idx+1));if(current!==renderId)return;detail.innerHTML=html;detail.scrollIntoView({block:'start',behavior:'instant'});}}}
 }
 function pageTitle(v){return `<h1 class="page-title">${esc(v)}</h1>`;}
 function navTo(path){if(!path.startsWith('/'))return;menuClose();closeModal();location.href='/#'+path;if(routeInfo().path===path)render();}
@@ -108,6 +108,7 @@ async function saveQuestionnaire(form,submitNow=false){const aid=form.dataset.id
  else toast('Черновик сохранён сервером');}
 async function runCommand(cmd,node){
  try{
+  if(cmd==='catalog-section'){const section=document.getElementById(node.dataset.section);if(section){section.focus({preventScroll:true});section.scrollIntoView({block:'start',behavior:'instant'});}return;}
   if(cmd==='choose-reference-medication'){chooseMedication(node);toast('Название перенесено в форму. Дозу и режим определяет врач; ничего не сохранено.');return;}
   if(cmd==='menu'){menuToggle();return;}
   if(cmd==='settings'){settings();return;}

@@ -85,7 +85,7 @@
 /doctor/colleagues,doctor,Коллеги и профессиональная переписка,чтение,GET /api/v1/public/doctors,Публично видимые коллеги
 /doctor/colleagues/:doctorId/messages,doctor,Личный диалог двух врачей,запись,GET/POST /api/v1/threads/doctor_peer/:id/messages,Переписка без доступа к карте пациента
 /doctor/colleagues/:doctorId/shared-patients,doctor,Общие пациенты с персональным разрешением,чтение,GET /api/v1/doctors/:id/shared-patients,Только по персональному consent
-/clinical-library,shared,Клинический справочник,чтение,GET /api/v1/clinical-catalog/search; GET /api/v1/clinical-catalog/:kind/:id,"242 записи, серверный постраничный поиск; полный состав полей всех 77 лекарственных записей; ссылки на связанные карточки и первоисточники; внешние ссылки онлайн не проверялись"
+/clinical-library,shared,Клинический справочник,чтение,GET /api/v1/clinical-catalog/search; GET /api/v1/clinical-catalog/:kind/:id,"242 записи, серверный постраничный поиск; полный состав полей всех 77 лекарственных записей; ссылки на связанные карточки и первоисточники; внешние ссылки онлайн не проверялись; 2026-10-28 six medicine essentials first; all77 source fields browser PASS; native/Docker light/dark/mobile verified"
 /patient/profile,patient,Мой профиль,запись,GET/PUT /api/v1/profiles/me; GET /api/v1/patient-experience/questionnaires/assignments,Ссылка на сохранённые сервером результаты опросников и управление согласием на ФИО
 /invite/accept,shared,Принять приглашение,запись,POST /api/v1/onboarding/invitations/preview; POST /api/v1/onboarding/invitations/accept,Код или ссылка
 /doctor/clinical-copilot,doctor,Клинический помощник,недоступно,/api/v1/clinical-copilot/...,Нужен подтверждённый контекст пациента и явный аудит

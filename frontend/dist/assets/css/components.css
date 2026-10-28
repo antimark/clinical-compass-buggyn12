@@ -387,3 +387,20 @@
 .invite-qr{width:180px;height:180px;max-width:100%;background:white;padding:12px;border:1px solid #ddd;border-radius:12px}
 #catalog-detail{scroll-margin-top:95px;margin-block:20px}
 @media(max-width:650px){.invite-share{grid-template-columns:1fr}.reference-section.reference-dosing{padding:12px}}
+
+/* Medicine essentials precede all metadata; full source fields stay expanded. */
+.medicine-overview{margin-block:24px 32px}
+.medicine-overview-title{color:var(--ink);font-size:1.5rem;font-weight:750;margin:0 0 16px}
+.medicine-quicknav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.medicine-quicknav .chip{color:var(--ink);font-weight:650;border-color:var(--accent-border)}
+.medicine-key-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.medicine-key-card{padding:22px 24px;border:1px solid var(--accent-border);border-left:5px solid var(--accent-strong);border-radius:var(--r-sm);background:var(--surface-strong);color:var(--ink);overflow-wrap:anywhere;scroll-margin-top:115px}
+.medicine-key-card h3{font-size:1.2rem;font-weight:750;line-height:1.35;color:var(--ink);margin:0 0 14px}
+.medicine-key-card ul{margin:0;padding-left:20px}
+.medicine-key-card li{line-height:1.6;margin-block:7px;white-space:pre-wrap}
+.medicine-key-warning{border:2px solid var(--accent-strong);border-left-width:5px;background:var(--accent-soft)}
+.medicine-source-note,.medicine-missing{color:var(--ink-2);line-height:1.6;margin:0 0 14px}
+.medicine-full-heading{border-top:1px solid var(--border);padding-top:28px;font-size:1.35rem;color:var(--ink)}
+.medicine-key-card:focus-visible{outline:3px solid var(--accent-strong);outline-offset:4px}
+@media(max-width:760px){.medicine-key-grid{grid-template-columns:1fr}.medicine-key-card{padding:18px}.medicine-quicknav .chip{max-width:100%;white-space:normal}}
+.reference-metadata{overflow-wrap:anywhere;line-height:1.6}

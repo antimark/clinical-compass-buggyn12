@@ -33,3 +33,27 @@ def test_unapproved_licensed_scales_never_expose_item_text_through_v5():
         assert 'questions' not in item and 'scoring' not in item
         for section in item['reference_sections']:
             assert 'scoring_' not in str(section)
+
+
+def test_medicine_essential_sections_cover_77_without_invented_dosing():
+    keys=['indications','dosing','administration','composition','contraindications','cautions']
+    for folder in ('by_inn','source_product_instructions'):
+        for path in (ROOT/'clinical_catalog_data/v5/medicines'/folder).glob('*.json'):
+            identifier=('product:' if folder=='source_product_instructions' else '')+path.stem
+            item=CAT['get_item']('medicine',identifier)
+            sections=item['medicine_key_sections']
+            assert [x['key'] for x in sections]==keys
+            assert [x['warning'] for x in sections]==[False,False,False,False,True,True]
+            if folder=='by_inn':
+                assert sections[1]['items']==[] and sections[1]['missing']
+                assert sections[3]['items']==[] and sections[3]['missing']
+            else:
+                import json
+                raw=json.loads(path.read_text())
+                assert all(sections[i]['items'] for i in range(6))
+                # Every dosage qualifier survives: initial, maximum, titration,
+                # interaction dependence, age and time. Never just the base dose.
+                expected=CAT['_plain_lines'](raw['indications_and_dosing'])
+                actual='\n'.join(sections[0]['items']+sections[1]['items'])
+                assert all(line in actual for line in expected)
+    assert all('medicine_key_sections' not in x for x in CAT['search'](kind='medicine',per_page=100)['items'])
