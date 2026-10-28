@@ -1,0 +1,18 @@
+import {strict as assert} from 'node:assert';
+import {formDiagnoses,matchingCards} from '../dist/assets/js/medication-matches.js';
+const row=(code,originalCode='',version='')=>({dataset:{originalCode,originalVersion:version},querySelector:s=>({value:s.includes('diagnosis_status')?'confirmed':code})});
+const form=(...rows)=>({querySelectorAll:()=>rows});
+let requests=0;
+globalThis.fetch=async()=>{requests++;return new Response(JSON.stringify({version:'current-version',items:[{code:'F41.1'}]}),{headers:{'Content-Type':'application/json'}})};
+assert.deepEqual(await formDiagnoses(form(row('F41.1','F41.1','archived-version'),row(''))),[{code:'F41.1',version:'archived-version',status:'confirmed'}]);
+assert.equal(requests,0,'Unchanged diagnosis must preserve its original pinned version');
+assert.deepEqual(await formDiagnoses(form(row('f41.1','F32','archived-version'))),[{code:'F41.1',version:'current-version',status:'confirmed'}]);
+assert.equal(requests,1);
+await assert.rejects(()=>formDiagnoses(form(row('F41.10'))),/Код не найден/);
+assert.deepEqual(await formDiagnoses(form(row(''))),[]);
+await assert.rejects(()=>formDiagnoses(form(row('F41.1'),row('F41.1'))),/несколько раз/);
+const html=matchingCards({label:'Reference',limitation:'No prescription',items:[{reference:{title:'<img src=x>',id:'a" onclick="alert(1)',version:'v'},rule:{code:'F41.1',match_basis:'<script>bad</script>'}}]},{code:'F41.1'},true);
+assert(!html.includes('<img')&&!html.includes('<script>'));
+assert(html.includes('&lt;img')&&html.includes('&lt;script&gt;'));
+assert(html.includes('medicine%3Aproduct%3A'));
+console.log('Medication matches PASS: pinned diagnosis versions, exact code, empty/duplicate input, escaping; simulated HTTP only');

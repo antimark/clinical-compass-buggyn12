@@ -255,3 +255,39 @@ process.stdout.write('Actual designer renderer: nested structure, false/zero, sa
     result=subprocess.run([node,'--input-type=module','-e',script],cwd=ROOT,input=json.dumps(item),text=True,capture_output=True)
     assert result.returncode==0,result.stdout+result.stderr
 
+
+
+def test_f411_aviandr_exact_match_remains_reference_only(app):
+    from cc_api.clinical_workflow_models import MedicationOrder
+    doctor=actor(app)
+    version=doctor.get(CW+'/icd10?q=F41.1').json['version']
+    with app.extensions['cc_session_factory']() as db:before=len(db.scalars(select(MedicationOrder)).all())
+    result=read(doctor,'/matches?code=F41.1&version='+version)
+    item=next(x for x in result['items'] if x['reference']['id']=='aviandr_maritupirdine_instruction')
+    assert item['reference']['title']=='Авиандр'
+    assert item['rule']['source_excerpt']['icd10_code']=='F41.1'
+    assert item['rule']['curation_status']=='synthetic_demo'
+    assert 'dose' not in item['reference']
+    for code in ('F41','F41.10','F41.9'):
+        assert not any(x['reference']['id']=='aviandr_maritupirdine_instruction' for x in read(doctor,'/matches?code='+code+'&version='+version)['items'])
+    with app.extensions['cc_session_factory']() as db:assert len(db.scalars(select(MedicationOrder)).all())==before
+
+
+def test_unseeded_evaluation_imports_references_without_accounts(tmp_path):
+    from cc_api.evaluation_launcher import workspace_config
+    from cc_api.reference_models import ReferenceMatchRule,DrugReference
+    from cc_api.models import User,Patient
+    cfg=workspace_config(tmp_path/'evaluation')
+    for restart in range(2):
+        app=create_app(cfg)
+        assert app.config['AUTO_SEED_DEMO'] is False
+        try:
+            with app.extensions['cc_session_factory']() as db:
+                assert list(db.scalars(select(User)))==[]
+                assert list(db.scalars(select(Patient)))==[]
+                assert len(list(db.scalars(select(DrugReference))))==8
+                rules=list(db.scalars(select(ReferenceMatchRule).where(ReferenceMatchRule.icd10_code=='F41.1')))
+                assert any(r.drug_reference_id=='aviandr_maritupirdine_instruction' for r in rules)
+        finally:
+            app.extensions['safety_runtime'].close()
+            app.extensions['cc_session_factory'].kw['bind'].dispose()
